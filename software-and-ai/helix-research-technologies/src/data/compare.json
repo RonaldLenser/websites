@@ -1,0 +1,70 @@
+{
+  "home": {
+    "title": "A chatbot reads. An agent acts.",
+    "columns": ["Website chatbot", "Generic AI agent", "Helix agent"],
+    "rows": [
+      { "label": "Knows your catalog and prices", "values": ["no", "sometimes", "yes"] },
+      { "label": "Sends a real quote", "values": ["no", "no", "yes"] },
+      { "label": "Follows up until there is an answer", "values": ["no", "no", "yes"] },
+      { "label": "Logs everything in your CRM", "values": ["no", "partial", "yes"] },
+      { "label": "Hands off to a human with context", "values": ["no", "partial", "yes"] },
+      { "label": "Tuned by people after launch", "values": ["no", "no", "30 days included"] },
+      { "label": "You own it", "values": ["no", "no", "yes"] }
+    ]
+  },
+  "pages": [
+    {
+      "slug": "chatbot-vs-ai-agent",
+      "title": "Chatbot vs AI agent: what is the difference?",
+      "intro": "A chatbot answers questions from a script. An agent has access to your systems and can do the work: look up a price, send the quote, log the lead, book the meeting. Read only is a chatbot. Write access is an agent.",
+      "columns": ["Chatbot", "AI agent"],
+      "rows": [
+        { "label": "Data source", "values": ["Scripted answers", "Your catalog, CRM, ERP"] },
+        { "label": "Can take action", "values": ["No", "Yes: quote, log, book, follow up"] },
+        { "label": "Handles the unknown", "values": ["Dead end", "Routes to a person with context"] },
+        { "label": "Improves over time", "values": ["No", "Tuned on real conversations"] },
+        { "label": "Typical result", "values": ["Buyers leave", "Buyers get an answer and stay"] }
+      ]
+    },
+    {
+      "slug": "helix-vs-hiring",
+      "title": "Helix agent vs hiring another coordinator",
+      "intro": "A coordinator costs $45K to $60K a year, works 40 hours, and leaves. An agent answers 24 hours a day, does not forget a follow-up, and costs a fixed build plus a small monthly plan.",
+      "columns": ["New hire", "Helix agent"],
+      "rows": [
+        { "label": "Cost year one", "values": ["$45K to $60K plus onboarding", "Fixed build plus optional monthly plan"] },
+        { "label": "Hours covered", "values": ["40 per week", "168 per week"] },
+        { "label": "Time to productive", "values": ["2 to 3 months", "2 to 5 weeks"] },
+        { "label": "Follow-up discipline", "values": ["Depends on the day", "Every time"] },
+        { "label": "Judgment calls", "values": ["Yes", "Routed to your people"] },
+        { "label": "Best for", "values": ["Relationships and exceptions", "Volume and speed"] }
+      ]
+    },
+    {
+      "slug": "helix-vs-freelancer",
+      "title": "Helix vs a freelancer or offshore dev shop",
+      "intro": "A freelancer builds what you describe and leaves. We start from your revenue problem, build with the tools we run our own company on, and stay for 30 days of tuning.",
+      "columns": ["Freelancer", "Helix"],
+      "rows": [
+        { "label": "Starting point", "values": ["Your spec", "Your quote and reorder numbers"] },
+        { "label": "Pricing", "values": ["Hourly, often overruns", "Fixed, in writing"] },
+        { "label": "After launch", "values": ["Gone", "30 days of tuning, then optional plan"] },
+        { "label": "Ownership", "values": ["Varies", "You own all of it"] },
+        { "label": "Who you talk to", "values": ["Whoever is available", "A founder"] }
+      ]
+    },
+    {
+      "slug": "helix-vs-diy-ghl",
+      "title": "Helix vs setting up GoHighLevel yourself",
+      "intro": "GoHighLevel is the right tool. Learning it while running a supply business is the wrong use of your week. We build the pipelines, automations, and agents, then hand you the keys.",
+      "columns": ["Do it yourself", "Helix"],
+      "rows": [
+        { "label": "Time to a working system", "values": ["Months of evenings", "1 to 3 weeks"] },
+        { "label": "AI agents on top", "values": ["Not without code", "Included"] },
+        { "label": "Catalog and ERP connection", "values": ["Hard", "Scoped and built"] },
+        { "label": "Training", "values": ["YouTube", "Your team, live"] },
+        { "label": "Ownership", "values": ["Yours", "Yours, we just build it"] }
+      ]
+    }
+  ]
+}

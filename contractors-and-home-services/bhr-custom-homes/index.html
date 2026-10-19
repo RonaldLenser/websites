@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BHR Custom Homes | Custom Home Builder | Salt Lake Valley and Utah County</title>
+<meta name="description" content="BHR Custom Homes. Premium custom builds and luxury remodels across Salt Lake Valley and Utah County. Owner Jeff Wyner on every job site, every day. GC #13754277-5501.">
+<link rel="canonical" href="https://bhrcustomhomes.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0F0F0E;
+  --ink2:#181817;
+  --gold:#BF9645;
+  --gold2:#D4AF6A;
+  --sand:#F6F3ED;
+  --warm:#EDEAE3;
+  --mid:#74716A;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--sand);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+/* SHINY METALLIC GOLD (matches logo) */
+.shiny-gold{background:linear-gradient(96deg,#8A6520 0%,#BF9645 14%,#E8D08C 31%,#F4E7B4 40%,#C9A431 53%,#9C7C3C 67%,#D9B86A 85%,#8A6520 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:grid;grid-template-columns:1fr auto 1fr;
+  align-items:center;padding:0 48px;height:72px;
+  background:rgba(15,15,14,0);
+  transition:background .4s,height .3s;
+}
+.nav.solid{background:rgba(15,15,14,.97);backdrop-filter:blur(12px)}
+.nav-left{display:flex;gap:32px}
+.nav-left a,.nav-right-links a{
+  font-size:10.5px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.55);transition:color .25s
+}
+.nav-left a:hover,.nav-right-links a:hover{color:var(--gold)}
+.nav-logo{text-align:center}
+.nav-logo img{height:50px;width:auto;object-fit:contain;margin:0 auto;display:block}
+.nav-right{display:flex;align-items:center;justify-content:flex-end;gap:28px}
+.nav-right-links{display:flex;gap:28px}
+.nav-cta{
+  font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:#241b07;background:linear-gradient(135deg,#9A7A30 0%,#C9A340 22%,#EFDD9C 44%,#F6EBC2 50%,#C9A340 64%,#9A7A30 100%);padding:10px 24px;
+  transition:filter .3s;white-space:nowrap;box-shadow:0 2px 10px rgba(191,150,69,.22)
+}
+.nav-cta:hover{filter:brightness(1.08)}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.ham span{width:22px;height:1.5px;background:#fff;display:block;transition:.3s}
+
+/* MOBILE MENU */
+.mob{display:none;position:fixed;inset:0;z-index:199;background:var(--ink);flex-direction:column;padding:96px 40px 48px}
+.mob.on{display:flex}
+.mob a{font-family:var(--serif);font-size:34px;color:#fff;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.06);transition:color .25s}
+.mob a:hover{color:var(--gold)}
+.mob-soc{display:flex;gap:20px;margin-top:36px}
+.mob-soc a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.mob-soc a:hover{color:var(--gold)}
+
+/* HERO */
+.hero{
+  height:100vh;min-height:640px;
+  background:var(--ink2);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 72px 88px;position:relative;overflow:hidden
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('hero-kitchen.jpg') center/cover no-repeat
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(102deg,rgba(15,15,14,.94) 0%,rgba(15,15,14,.84) 38%,rgba(15,15,14,.52) 72%,rgba(15,15,14,.4) 100%)
+}
+
+.hero-content{position:relative;z-index:2;max-width:1100px}
+.hero-loc{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:32px
+}
+.hero-loc::before{content:'';width:28px;height:1px;background:var(--gold);flex-shrink:0}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(54px,8vw,112px);
+  font-weight:400;color:#fff;
+  line-height:.97;letter-spacing:-1px;
+  margin-bottom:48px
+}
+.hero h1 span{display:block}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.hero-sub{font-size:14px;line-height:1.85;color:rgba(255,255,255,.45);max-width:440px}
+.hero-actions{display:flex;gap:14px;flex-shrink:0}
+.btn-fill{
+  font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  color:#241b07;background:linear-gradient(135deg,#9A7A30 0%,#C9A340 22%,#EFDD9C 44%,#F6EBC2 50%,#C9A340 64%,#9A7A30 100%);padding:15px 34px;
+  transition:filter .3s,transform .25s;display:inline-block;box-shadow:0 2px 14px rgba(191,150,69,.25)
+}
+.btn-fill:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.btn-ghost{
+  font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.18);padding:15px 34px;
+  transition:border-color .25s,color .25s,transform .25s;display:inline-block
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+
+/* STATS BAR */
+.statsbar{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:linear-gradient(100deg,#9A7A30 0%,#C9A340 20%,#E8D08C 38%,#F4E7B4 46%,#D9B863 56%,#BF9645 72%,#A07E2E 100%);
+}
+.sbar-item{
+  padding:28px 48px;border-right:1px solid rgba(0,0,0,.12);
+}
+.sbar-item:last-child{border-right:none}
+.sbar-item strong{display:block;font-family:var(--serif);font-size:38px;color:var(--ink);line-height:1}
+.sbar-item span{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(15,15,14,.55);margin-top:6px;display:block}
+
+/* WORK INTRO */
+.work-intro{
+  padding:100px 72px 0;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:40px;
+}
+.work-intro-left .wi-label{font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.work-intro-left .wi-label::before{content:'';width:20px;height:1px;background:var(--gold)}
+.work-intro-left h2{font-family:var(--serif);font-size:clamp(40px,5vw,68px);font-weight:400;line-height:1.04;letter-spacing:-.5px}
+.work-intro-left h2 em{font-style:italic}
+.work-intro-right{max-width:300px;flex-shrink:0}
+.work-intro-right p{font-size:13px;line-height:1.9;color:var(--mid);font-style:italic}
+
+/* PORTFOLIO MOSAIC */
+.gallery-wrap{padding:48px 72px 0}
+.cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.cat-card{
+  position:relative;overflow:hidden;border:none;padding:0;cursor:pointer;
+  aspect-ratio:16/10;background:var(--ink);display:block;width:100%
+}
+.cat-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.25,.46,.45,.94)}
+.cat-card:hover img{transform:scale(1.07)}
+.cat-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(12,12,11,.92) 0%,rgba(12,12,11,.25) 55%,rgba(12,12,11,.45) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:40px;text-align:left;
+  transition:background .4s
+}
+.cat-card:hover .cat-overlay{background:linear-gradient(to top,rgba(12,12,11,.95) 0%,rgba(12,12,11,.35) 60%,rgba(12,12,11,.5) 100%)}
+.cat-meta h3{font-family:var(--serif);font-size:34px;font-weight:400;color:#fff;line-height:1.1;margin-bottom:8px}
+.cat-meta p{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:20px}
+.cat-count{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)
+}
+.cat-count span:first-child{font-family:var(--serif);font-size:20px;font-weight:400}
+.cat-arrow{font-size:16px;transition:transform .3s}
+.cat-card:hover .cat-arrow{transform:translateX(6px)}
+.lb-head{position:absolute;top:30px;left:0;right:0;text-align:center;font-family:var(--serif);font-size:18px;color:rgba(255,255,255,.85);font-style:italic;pointer-events:none}
+.lb-counter{position:absolute;bottom:30px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.5);pointer-events:none}
+.lightbox{
+  position:fixed;inset:0;z-index:2000;background:rgba(8,8,7,.96);
+  display:none;align-items:center;justify-content:center;padding:40px
+}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:88vh;object-fit:contain;box-shadow:0 20px 80px rgba(0,0,0,.6)}
+.lb-close{position:absolute;top:28px;right:36px;background:none;border:none;color:rgba(255,255,255,.7);font-size:40px;cursor:pointer;line-height:1;transition:color .25s}
+.lb-close:hover{color:var(--gold)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.6);font-size:60px;cursor:pointer;padding:0 24px;transition:color .25s;line-height:1}
+.lb-nav:hover{color:var(--gold)}
+.lb-prev{left:8px}
+.lb-next{right:8px}
+.port-note{padding:32px 0 0;font-size:12px;color:var(--mid);font-style:italic}
+.port-note a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+
+/* PHILOSOPHY */
+.philosophy{padding:120px 72px;background:var(--ink);position:relative;overflow:hidden}
+.phil-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.phil-label{font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.phil-label::before{content:'';width:20px;height:1px;background:var(--gold)}
+.phil-left h2{font-family:var(--serif);font-size:clamp(38px,4.5vw,64px);color:#fff;line-height:1.06;font-weight:400;letter-spacing:-.5px;margin-bottom:32px}
+.phil-left h2 em{font-style:italic}
+.phil-left p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.45);margin-bottom:16px}
+.phil-right blockquote{
+  border-left:1px solid var(--gold);padding-left:32px;
+}
+.phil-right blockquote p{font-family:var(--serif);font-size:22px;font-style:italic;color:rgba(255,255,255,.8);line-height:1.55;font-weight:400;margin-bottom:24px}
+.phil-right blockquote cite{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-style:normal}
+.phil-right .phil-detail{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.phil-detail-item{background:rgba(255,255,255,.03);padding:28px 24px;border:1px solid rgba(191,150,69,.08)}
+.phil-detail-item h4{font-family:var(--serif);font-size:18px;color:#fff;font-weight:400;margin-bottom:8px}
+.phil-detail-item p{font-size:12px;line-height:1.7;color:rgba(255,255,255,.35)}
+
+/* SERVICES */
+.services{padding:120px 72px;background:var(--warm)}
+.svc-head{margin-bottom:64px}
+.svc-head .s-label{font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.svc-head .s-label::before{content:'';width:20px;height:1px;background:var(--gold)}
+.svc-head h2{font-family:var(--serif);font-size:clamp(38px,4.5vw,60px);font-weight:400;line-height:1.05;letter-spacing:-.5px}
+.svc-head h2 em{font-style:italic}
+.svc-list{border-top:1px solid rgba(0,0,0,.09)}
+.svc-row{
+  display:grid;grid-template-columns:64px 300px 1fr 120px;
+  align-items:start;padding:44px 0;border-bottom:1px solid rgba(0,0,0,.07);
+  gap:24px;transition:background .2s;cursor:default
+}
+.svc-row:hover{background:rgba(191,150,69,.04)}
+.svc-n{font-family:var(--serif);font-size:14px;color:var(--gold);padding-top:3px;font-weight:400}
+.svc-name{padding-right:16px}
+.svc-name h3{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.15}
+.svc-desc{font-size:13px;line-height:1.9;color:var(--mid)}
+.svc-tag{
+  font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);text-align:right;padding-top:5px
+}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:46% 54%;min-height:90vh;background:var(--ink2)}
+.about-photo{position:relative;overflow:hidden}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.about-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 65%,rgba(24,24,23,.98) 100%)}
+.about-content{
+  padding:100px 72px 80px 64px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.about-content .a-label{font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.about-content .a-label::before{content:'';width:20px;height:1px;background:var(--gold)}
+.about-content h2{font-family:var(--serif);font-size:clamp(40px,4.5vw,62px);color:#fff;font-weight:400;line-height:1.04;letter-spacing:-.5px;margin-bottom:4px}
+.about-content h2 em{font-style:italic;color:var(--gold)}
+.about-role{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:36px}
+.about-content p{font-size:14px;line-height:1.95;color:rgba(255,255,255,.45);margin-bottom:16px;max-width:460px}
+.about-content p.pull{font-family:var(--serif);font-size:19px;font-style:italic;color:rgba(255,255,255,.75);line-height:1.5;margin:4px 0 24px}
+.lic{display:inline-flex;align-items:center;gap:18px;border:1px solid rgba(191,150,69,.2);padding:14px 20px;margin-top:4px}
+.lic span{font-size:9px;color:rgba(255,255,255,.25);letter-spacing:2px;text-transform:uppercase}
+.lic strong{font-size:12px;color:var(--gold);letter-spacing:1px}
+.about-nums{display:flex;gap:0;margin-top:44px;border-top:1px solid rgba(191,150,69,.12);padding-top:36px}
+.anum{flex:1;padding:0 24px;border-right:1px solid rgba(191,150,69,.1)}
+.anum:first-child{padding-left:0}
+.anum:last-child{border-right:none}
+.anum strong{display:block;font-family:var(--serif);font-size:36px;color:var(--gold);font-weight:400;line-height:1}
+.anum span{font-size:9px;color:rgba(255,255,255,.28);letter-spacing:2px;text-transform:uppercase;margin-top:6px;display:block}
+
+/* TESTIMONIALS */
+.testi{padding:120px 72px;background:var(--sand)}
+.testi-top{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:72px}
+.testi-top-left .t-label{font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.testi-top-left .t-label::before{content:'';width:20px;height:1px;background:var(--gold)}
+.testi-top-left h2{font-family:var(--serif);font-size:clamp(38px,4.5vw,58px);font-weight:400;line-height:1.05;letter-spacing:-.5px}
+.testi-top-left h2 em{font-style:italic}
+.testi-top-right p{font-size:13px;font-style:italic;color:var(--mid);max-width:260px;text-align:right}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.tc{background:#fff;padding:48px 40px;position:relative}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:rgba(191,150,69,0);transition:background .3s}
+.tc:hover::before{background:var(--gold)}
+.tc-rule{width:28px;height:1px;background:var(--gold);margin-bottom:28px}
+.tc p{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--ink);line-height:1.7;margin-bottom:28px;font-weight:400}
+.tc cite{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-style:normal}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:42% 58%;min-height:80vh;background:var(--ink)}
+.contact-l{
+  padding:96px 60px;display:flex;flex-direction:column;justify-content:center;
+  border-right:1px solid rgba(191,150,69,.08);
+}
+.contact-l img{height:120px;width:auto;object-fit:contain;display:block;margin-bottom:44px}
+.contact-l h2{font-family:var(--serif);font-size:clamp(36px,4vw,58px);color:#fff;font-weight:400;line-height:1.05;letter-spacing:-.5px;margin-bottom:20px}
+.contact-l h2 em{font-style:italic}
+.contact-l>p{font-size:13px;line-height:1.9;color:rgba(255,255,255,.35);max-width:360px;margin-bottom:52px}
+.cd{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px}
+.cd-i{width:30px;height:30px;border:1px solid rgba(191,150,69,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cd-i svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.cd-b span{font-size:9px;color:rgba(255,255,255,.25);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:4px}
+.cd-b a,.cd-b p{font-size:13px;color:rgba(255,255,255,.6);transition:color .25s}
+.cd-b a:hover{color:var(--gold)}
+.areas-wrap{margin-top:32px;padding-top:28px;border-top:1px solid rgba(191,150,69,.08)}
+.areas-wrap span{font-size:9px;color:rgba(255,255,255,.25);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:10px}
+.areas-wrap p{font-size:12px;color:rgba(255,255,255,.3);line-height:1.9}
+.contact-r{padding:96px 72px;display:flex;flex-direction:column;justify-content:center}
+.c-label{font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:36px;display:flex;align-items:center;gap:10px}
+.c-label::before{content:'';width:20px;height:1px;background:var(--gold)}
+.cf input,.cf textarea,.cf select{
+  width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.1);
+  color:#fff;padding:14px 0;font-family:var(--sans);font-size:13px;
+  margin-bottom:24px;outline:none;transition:border-color .25s;-webkit-appearance:none
+}
+.cf input:focus,.cf textarea:focus,.cf select:focus{border-bottom-color:var(--gold)}
+.cf input::placeholder,.cf textarea::placeholder{color:rgba(255,255,255,.2)}
+.cf select{color:rgba(255,255,255,.35);background:transparent;cursor:pointer}
+.cf select option{background:var(--ink2)}
+.cf textarea{height:90px;resize:none}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.cf button{
+  background:linear-gradient(135deg,#9A7A30 0%,#C9A340 22%,#EFDD9C 44%,#F6EBC2 50%,#C9A340 64%,#9A7A30 100%);color:#241b07;font-family:var(--sans);
+  font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  padding:17px;border:none;cursor:pointer;width:100%;margin-top:8px;
+  transition:filter .3s;box-shadow:0 2px 14px rgba(191,150,69,.25)
+}
+.cf button:hover{filter:brightness(1.08)}
+.f-ok{display:none;padding:36px;border:1px solid rgba(191,150,69,.25);text-align:center}
+.f-ok p{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--gold)}
+
+/* FOOTER */
+footer{background:#0A0A09;padding:64px 72px 32px;border-top:1px solid rgba(191,150,69,.07)}
+.foot-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:52px}
+.fb{font-family:var(--serif);font-size:30px;color:#fff;font-weight:400;margin-bottom:6px}
+.fb em{font-style:italic;color:var(--gold)}
+.ft{font-family:var(--serif);font-style:italic;font-size:13px;color:rgba(255,255,255,.2);margin-bottom:18px}
+.fs{font-size:11px;color:rgba(255,255,255,.18);line-height:2.3}
+.fc h4{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.fc a{font-size:12px;color:rgba(255,255,255,.28);display:block;line-height:2.5;transition:color .25s}
+.fc a:hover{color:var(--gold)}
+.foot-bot{border-top:1px solid rgba(255,255,255,.04);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot-bot p{font-size:10px;color:rgba(255,255,255,.15)}
+.foot-lic{font-size:10px;color:rgba(191,150,69,.4)}
+
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .nav{padding:0 36px}
+  .svc-row{grid-template-columns:50px 220px 1fr;gap:16px}
+  .svc-tag{display:none}
+}
+@media(max-width:1024px){
+  .nav{padding:0 28px}
+  .nav-left,.nav-right-links{display:none}
+  .ham{display:flex}
+  .hero{padding:0 40px 72px}
+  
+  .statsbar{grid-template-columns:1fr 1fr 1fr}
+  .sbar-item{padding:20px 32px}
+  .work-intro{padding:80px 40px 0;flex-direction:column;align-items:flex-start}
+  .work-intro-right{max-width:100%}
+  .gallery-wrap{padding:40px 40px 0}.cat-meta h3{font-size:28px}.cat-overlay{padding:32px}
+  
+  .philosophy{padding:80px 40px}
+  .phil-grid{grid-template-columns:1fr;gap:48px}
+  .services{padding:80px 40px}
+  .svc-row{grid-template-columns:44px 1fr;gap:12px}
+  .svc-desc{grid-column:2}
+  .svc-tag{display:none}
+  .about{grid-template-columns:1fr}
+  .about-photo{height:65vw;min-height:320px}
+  .about-photo::after{background:linear-gradient(to top,rgba(24,24,23,.95) 0%,transparent 60%)}
+  .about-content{padding:64px 40px 72px}
+  .testi{padding:80px 40px}
+  .testi-top{flex-direction:column;align-items:flex-start}
+  .testi-top-right p{text-align:left}
+  .contact{grid-template-columns:1fr}
+  .contact-l{padding:72px 40px 40px}
+  .contact-r{padding:40px 40px 72px}
+  .foot-g{grid-template-columns:1fr 1fr;gap:40px}
+  footer{padding:56px 40px 28px}
+}
+@media(max-width:768px){
+  .hero{padding:0 24px 60px}
+  
+  .hero h1{font-size:clamp(44px,12vw,72px)}
+  .hero-foot{flex-direction:column;align-items:flex-start;gap:28px}
+  .statsbar{grid-template-columns:1fr;gap:0}
+  .sbar-item{border-right:none;border-bottom:1px solid rgba(0,0,0,.1);padding:20px 24px}
+  .gallery-wrap{padding:32px 24px 0}.cat-grid{grid-template-columns:1fr;gap:4px}.cat-card{aspect-ratio:16/11}.cat-meta h3{font-size:26px}.cat-overlay{padding:28px}
+  
+  
+  
+  
+  .work-intro{padding:64px 24px 0}
+  .philosophy{padding:72px 24px}
+  .phil-right blockquote p{font-size:18px}
+  .phil-detail{grid-template-columns:1fr}
+  .services{padding:72px 24px}
+  .svc-row{grid-template-columns:36px 1fr;padding:32px 0}
+  .about-photo{height:80vw}
+  .about-content{padding:48px 24px 60px}
+  .about-nums{flex-wrap:wrap}
+  .anum{flex:0 0 48%;padding:0 0 16px}
+  .anum:last-child{flex:0 0 100%}
+  .testi{padding:72px 24px}
+  .tgrid{grid-template-columns:1fr}
+  .contact-l{padding:64px 24px 36px}
+  .contact-r{padding:32px 24px 60px}
+  .cf-row{grid-template-columns:1fr}
+  footer{padding:48px 24px 24px}
+  .foot-g{grid-template-columns:1fr;gap:28px}
+  .foot-bot{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-left">
+    <a href="#portfolio">Portfolio</a>
+    <a href="#services">Services</a>
+  </div>
+  <div class="nav-logo">
+    <a href="#"><img src="logo-inverted.png" alt="BHR Custom Homes" style="height:50px;width:auto;object-fit:contain;display:block"></a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-right-links">
+      <a href="#about">About</a>
+      <a href="#testimonials">References</a>
+    </div>
+    <a href="#contact" class="nav-cta">Let's Build</a>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob" id="mob">
+  <a href="#portfolio">Portfolio</a>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#testimonials">References</a>
+  <a href="#contact">Let's Build</a>
+  <div class="mob-soc">
+    <a href="https://www.instagram.com/bhrcustomhomes" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/bhrcustomhomes" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.tiktok.com/@bhr.customhomes" target="_blank" rel="noopener">TikTok</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-loc">Salt Lake Valley and Utah County</div>
+    <h1>
+      <span>We Don't</span>
+      <span>Just Build</span>
+      <em class="shiny-gold">Homes.</em>
+    </h1>
+    <div class="hero-foot">
+      <p class="hero-sub">Custom homes, luxury remodels, and additions built by craftsmen who have been inside enough walls to know exactly what good looks like and refuse to build anything less.</p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn-fill">See Our Work</a>
+        <a href="#contact" class="btn-ghost">Start a Conversation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="statsbar">
+  <div class="sbar-item"><strong>20+</strong><span>Years in the Field</span></div>
+  <div class="sbar-item"><strong>200+</strong><span>Projects Completed</span></div>
+  <div class="sbar-item"><strong>100%</strong><span>Licensed and Insured</span></div>
+</div>
+
+<!-- WORK INTRO -->
+<div class="work-intro" id="portfolio">
+  <div class="work-intro-left">
+    <div class="wi-label">Our Work</div>
+    <h2>The Work<br><em>Speaks First</em></h2>
+  </div>
+  <div class="work-intro-right">
+    <p>Every project below was built to a standard you can see and a standard you cannot. More projects added weekly.</p>
+  </div>
+</div>
+
+<!-- PORTFOLIO CATEGORIES -->
+<div class="gallery-wrap">
+  <div class="cat-grid">
+      <button class="cat-card" data-cat="kitchen">
+        <img src="portfolio/kitchen-01.jpg" alt="Kitchens" loading="lazy">
+        <div class="cat-overlay">
+          <div class="cat-meta">
+            <h3>Kitchens</h3>
+            <p>Custom kitchen builds and remodels</p>
+          </div>
+          <div class="cat-count"><span>11</span> Projects <span class="cat-arrow">&#8594;</span></div>
+        </div>
+      </button>
+      <button class="cat-card" data-cat="bathroom">
+        <img src="portfolio/bathroom-02.jpg" alt="Bathrooms" loading="lazy">
+        <div class="cat-overlay">
+          <div class="cat-meta">
+            <h3>Bathrooms</h3>
+            <p>Spa-grade bathroom renovations</p>
+          </div>
+          <div class="cat-count"><span>5</span> Projects <span class="cat-arrow">&#8594;</span></div>
+        </div>
+      </button>
+      <button class="cat-card" data-cat="remodel">
+        <img src="portfolio/remodel-04.jpg" alt="Home Remodels" loading="lazy">
+        <div class="cat-overlay">
+          <div class="cat-meta">
+            <h3>Home Remodels</h3>
+            <p>Full interior and living space remodels</p>
+          </div>
+          <div class="cat-count"><span>9</span> Projects <span class="cat-arrow">&#8594;</span></div>
+        </div>
+      </button>
+      <button class="cat-card" data-cat="progress">
+        <img src="portfolio/progress-03.jpg" alt="Builds in Progress" loading="lazy">
+        <div class="cat-overlay">
+          <div class="cat-meta">
+            <h3>Builds in Progress</h3>
+            <p>Framing, additions, and active builds</p>
+          </div>
+          <div class="cat-count"><span>5</span> Projects <span class="cat-arrow">&#8594;</span></div>
+        </div>
+      </button>
+  </div>
+  <p class="port-note">Follow <a href="https://www.instagram.com/bhrcustomhomes" target="_blank" rel="noopener">@bhrcustomhomes</a> on Instagram for real-time build updates.</p>
+</div>
+
+<!-- CATEGORY LIGHTBOX GALLERY -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <div class="lb-head" id="lbHead"></div>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <img src="" alt="" id="lbImg">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="phil-grid">
+    <div class="phil-left">
+      <div class="phil-label">Our Standard</div>
+      <h2>Built Different.<br><em>Built Right.</em></h2>
+      <p>Most custom home builders started in an office. We started in the field.</p>
+      <p>For years, BHR was inside people's homes, repairing, remodeling, and rebuilding. We saw firsthand what happens when corners get cut, when crews go unsupervised, and when quality is just a word on a website.</p>
+      <p>So when we made the move into full custom builds and luxury remodels, we brought everything we learned with us. Every decision shaped by years of seeing what actually holds up.</p>
+    </div>
+    <div class="phil-right">
+      <blockquote>
+        <p>"When you hire BHR, you get Jeff. Not a crew you have never met. Not a project manager you talk to twice. The person whose name is on the door."</p>
+        <cite>Jeff Wyner, Owner and General Contractor</cite>
+      </blockquote>
+      <div class="phil-detail">
+        <div class="phil-detail-item">
+          <h4>Fixed Pricing</h4>
+          <p>Real timelines, real numbers. No vague estimates halfway through.</p>
+        </div>
+        <div class="phil-detail-item">
+          <h4>Owner On-Site</h4>
+          <p>Jeff is on the ground every day, not managing from a distance.</p>
+        </div>
+        <div class="phil-detail-item">
+          <h4>No Shortcuts</h4>
+          <p>We have spent years undoing the work of builders who cut corners.</p>
+        </div>
+        <div class="phil-detail-item">
+          <h4>Done Means Done</h4>
+          <p>When we leave, the space is finished. Not mostly finished. Done.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="svc-head">
+    <div class="s-label">What We Build</div>
+    <h2>What We Build<br><em>and How We Build It</em></h2>
+  </div>
+  <div class="svc-list">
+    <div class="svc-row">
+      <div class="svc-n">01</div>
+      <div class="svc-name"><h3>Custom Home Builds</h3></div>
+      <div class="svc-desc"><p>This is where it starts, with a conversation about exactly what you want and an honest plan to build it. Before anything gets framed, we walk your site, review every detail, and give you a fixed price and a real timeline. You tell us the vision. We build it, on time, on budget, and to a standard that holds up 30 years from now.</p></div>
+      <div class="svc-tag">Ground Up</div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-n">02</div>
+      <div class="svc-name"><h3>Luxury Remodels</h3></div>
+      <div class="svc-desc"><p>We have spent years fixing remodels done wrong the first time. We know every shortcut that gets taken because we have had to undo all of them. When BHR remodels your kitchen, bathroom, or entire home, we plan every detail before we start and do it right the first time. When we leave, it is finished. Not mostly finished. Done.</p></div>
+      <div class="svc-tag">Kitchen and Bath</div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-n">03</div>
+      <div class="svc-name"><h3>Home Additions</h3></div>
+      <div class="svc-desc"><p>An addition should look like it was always there. Same materials, same lines, same quality. We design and build additions that match your home so well that guests will not know where the original ended and the new space began. That is the only standard we build to.</p></div>
+      <div class="svc-tag">Seamless</div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-n">04</div>
+      <div class="svc-name"><h3>Commercial Renovations</h3></div>
+      <div class="svc-desc"><p>A delayed commercial project costs you money every day. We know that, so we plan it right, staff it right, and finish it. Tenant improvements and commercial builds done on time, on budget, and built to last. The same quality we bring to every custom home, applied to your commercial space.</p></div>
+      <div class="svc-tag">Commercial</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT JEFF -->
+<section class="about" id="about">
+  <div class="about-photo">
+    <img src="jeffwyner.png" alt="Jeff Wyner, Owner of BHR Custom Homes">
+  </div>
+  <div class="about-content">
+    <div class="a-label">The Person Behind Every Build</div>
+    <h2>Jeff <em class="shiny-gold">Wyner</em></h2>
+    <div class="about-role">Owner and General Contractor</div>
+    <p>Jeff did not start behind a desk. He started behind a tool belt.</p>
+    <p>Twenty-plus years ago he began with small repair work, the kind where you are inside someone's walls, under their floors, learning every system of a home from the inside out. He built a reputation for showing up, doing it right, and never leaving a job unfinished.</p>
+    <p class="pull">Clients kept coming back with bigger projects until the work grew into full custom builds.</p>
+    <p>Today Jeff is on every job site. He is not the guy who sells you the project and hands it to someone else. He is the guy who shows up in the morning and makes sure the work reflects his name.</p>
+    <div class="lic"><span>GC License</span><strong>#13754277-5501</strong></div>
+    <div class="about-nums">
+      <div class="anum"><strong>20+</strong><span>Years Experience</span></div>
+      <div class="anum"><strong>200+</strong><span>Projects Done</span></div>
+      <div class="anum"><strong>100%</strong><span>Licensed and Insured</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi" id="testimonials">
+  <div class="testi-top">
+    <div class="testi-top-left">
+      <div class="t-label">References</div>
+      <h2>The BHR Standard<br><em>In Their Words</em></h2>
+    </div>
+    <div class="testi-top-right"><p>We do not ask for reviews. We earn them.</p></div>
+  </div>
+  <div class="tgrid">
+    <div class="tc">
+      <div class="tc-rule"></div>
+      <p>"Jeff and his team did an incredible job on our kitchen remodel. From start to finish, the communication was excellent and they delivered exactly what they promised. Our kitchen is now the centerpiece of our home."</p>
+      <cite>Sarah M. - Salt Lake City, UT</cite>
+    </div>
+    <div class="tc">
+      <div class="tc-rule"></div>
+      <p>"We hired BHR for a full home renovation and could not be happier. Jeff was on-site daily, always keeping us updated. The craftsmanship is outstanding and the project came in on budget."</p>
+      <cite>David and Karen L. - Riverton, UT</cite>
+    </div>
+    <div class="tc">
+      <div class="tc-rule"></div>
+      <p>"BHR built our custom home from the ground up. Jeff's attention to detail is second to none. He treated our project like it was his own home. We are beyond thrilled with the result."</p>
+      <cite>Mark T. - South Jordan, UT</cite>
+    </div>
+    <div class="tc">
+      <div class="tc-rule"></div>
+      <p>"Jeff transformed our outdated bathrooms into something out of a magazine. His team was professional, clean, and respectful of our home throughout the entire process. Highly recommend BHR."</p>
+      <cite>Michelle R. - Draper, UT</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-l">
+    <img src="logo-inverted.png" alt="BHR Custom Homes" style="height:110px;width:auto;object-fit:contain;display:block;margin-bottom:40px">
+    <h2>Ready<br>to <em>Build?</em></h2>
+    <p>We work with a select number of clients each year so every project gets the time and attention it deserves. No pressure. No pitch. Just a real conversation about your project.</p>
+    <div class="cd">
+      <div class="cd-i"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.49 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.96a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div class="cd-b"><span>Phone</span><a href="tel:8019604663">(801) 960-4663</a></div>
+    </div>
+    <div class="cd">
+      <div class="cd-i"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div class="cd-b"><span>Email</span><a href="mailto:contact@bhrcustomhomes.com">contact@bhrcustomhomes.com</a></div>
+    </div>
+    <div class="areas-wrap">
+      <span>Areas We Serve</span>
+      <p>Riverton - South Jordan - Herriman - Draper - Sandy - Eagle Mountain - Lehi - Provo/Orem - Bluffdale</p>
+    </div>
+  </div>
+  <div class="contact-r">
+    <div class="c-label">Start a Conversation</div>
+    <div class="cf">
+      <form id="cForm">
+        <input type="hidden" name="access_key" value="5a9c1855-ab96-4041-b8d0-625555b1e12c">
+        <input type="hidden" name="subject" value="New Project Inquiry - BHR Custom Homes">
+        <div class="cf-row">
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="tel" name="phone" placeholder="Phone Number">
+        </div>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <select name="service"><option value="" disabled selected>Type of Project</option><option value="custom">Custom Home Build</option><option value="remodel">Luxury Remodel</option><option value="addition">Home Addition</option><option value="commercial">Commercial Renovation</option><option value="other">Other</option></select>
+        <textarea name="message" placeholder="Tell us about your project"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="f-ok" id="fOk"><p>Thank you. We will be in touch within one business day.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-g">
+    <div>
+      <img src="monogram-inverted.png" alt="BHR Custom Homes" style="height:64px;width:auto;object-fit:contain;display:block;margin-bottom:18px">
+      <div class="ft">Built by craftsmen. Built to last.</div>
+      <div class="fs">Custom Home Builds &nbsp;|&nbsp; Luxury Remodels<br>Home Additions &nbsp;|&nbsp; Commercial Renovations</div>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <a href="tel:8019604663">(801) 960-4663</a>
+      <a href="mailto:contact@bhrcustomhomes.com">contact@bhrcustomhomes.com</a>
+      <a href="https://bhrcustomhomes.com">bhrcustomhomes.com</a>
+    </div>
+    <div class="fc">
+      <h4>Services</h4>
+      <a href="#services">Custom Home Builds</a>
+      <a href="#services">Luxury Remodels</a>
+      <a href="#services">Home Additions</a>
+      <a href="#services">Commercial Renovations</a>
+    </div>
+    <div class="fc">
+      <h4>Follow Us</h4>
+      <a href="https://www.instagram.com/bhrcustomhomes" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/bhrcustomhomes" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tiktok.com/@bhr.customhomes" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <p>2025 BHR Custom Homes. All rights reserved.</p>
+    <p class="foot-lic">Licensed General Contractor, State of Utah &nbsp;|&nbsp; GC #13754277-5501</p>
+  </div>
+
+<div style="text-align:center;padding:16px 0 4px;font-size:12px;opacity:.55;letter-spacing:.03em;"><a href="https://ronlenserdigital.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Website by Ron Lenser Digital</a></div>
+</footer>
+
+<script>
+// NAV
+const nav=document.getElementById('nav');
+let lastY=0;
+window.addEventListener('scroll',()=>{
+  const y=scrollY;
+  nav.classList.toggle('solid',y>60);
+  lastY=y;
+},{passive:true});
+
+// MOBILE
+const ham=document.getElementById('ham'),mob=document.getElementById('mob');
+ham.addEventListener('click',()=>{
+  mob.classList.toggle('on');
+  ham.querySelectorAll('span').forEach((s,i)=>{
+    if(mob.classList.contains('on')){
+      if(i===0)s.style.transform='rotate(45deg) translate(4px,4px)';
+      if(i===1)s.style.opacity='0';
+      if(i===2)s.style.transform='rotate(-45deg) translate(4px,-4px)';
+    }else{
+      s.style.transform='';s.style.opacity='';
+    }
+  });
+});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  mob.classList.remove('on');
+  ham.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='';});
+}));
+
+// FORM
+document.getElementById('cForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=this.querySelector('button');
+  btn.textContent='Sending...';btn.disabled=true;
+  try{
+    const r=await fetch('https://api.web3forms.com/submit',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(Object.fromEntries(new FormData(this)))
+    });
+    if(r.ok){this.style.display='none';document.getElementById('fOk').style.display='block';}
+    else{btn.textContent='Send Message';btn.disabled=false;}
+  }catch{btn.textContent='Send Message';btn.disabled=false;}
+});
+
+// PORTFOLIO CATEGORIES + LIGHTBOX
+const GALLERY={"kitchen": ["portfolio/kitchen-01.jpg", "portfolio/kitchen-02.jpg", "portfolio/kitchen-03.jpg", "portfolio/kitchen-04.jpg", "portfolio/kitchen-05.jpg", "portfolio/kitchen-06.jpg", "portfolio/kitchen-07.jpg", "portfolio/kitchen-08.jpg", "portfolio/kitchen-09.jpg", "portfolio/kitchen-10.jpg", "portfolio/kitchen-11.jpg"], "bathroom": ["portfolio/bathroom-01.jpg", "portfolio/bathroom-02.jpg", "portfolio/bathroom-03.jpg", "portfolio/bathroom-04.jpg", "portfolio/bathroom-05.jpg"], "remodel": ["portfolio/remodel-01.jpg", "portfolio/remodel-02.jpg", "portfolio/remodel-03.jpg", "portfolio/remodel-04.jpg", "portfolio/remodel-05.jpg", "portfolio/remodel-06.jpg", "portfolio/remodel-07.jpg", "portfolio/remodel-08.jpg", "portfolio/remodel-09.jpg"], "progress": ["portfolio/progress-01.jpg", "portfolio/progress-02.jpg", "portfolio/progress-03.jpg", "portfolio/progress-04.jpg", "portfolio/progress-05.jpg"]};
+const CATNAMES={"kitchen":"Kitchens","bathroom":"Bathrooms","remodel":"Home Remodels","progress":"Builds in Progress"};
+const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg');
+const lbHead=document.getElementById('lbHead'),lbCounter=document.getElementById('lbCounter');
+let curSet=[],curIdx=0;
+function showLb(){
+  lbImg.src=curSet[curIdx];
+  lbCounter.textContent=(curIdx+1)+' / '+curSet.length;
+}
+function openCat(cat){
+  curSet=GALLERY[cat]||[];curIdx=0;
+  if(!curSet.length)return;
+  lbHead.textContent=CATNAMES[cat]||'';
+  showLb();lb.classList.add('open');document.body.style.overflow='hidden';
+}
+function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.cat-card').forEach(c=>c.addEventListener('click',()=>openCat(c.dataset.cat)));
+document.getElementById('lbClose').addEventListener('click',closeLb);
+document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();curIdx=(curIdx-1+curSet.length)%curSet.length;showLb();});
+document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();curIdx=(curIdx+1)%curSet.length;showLb();});
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowLeft'){curIdx=(curIdx-1+curSet.length)%curSet.length;showLb();}
+  if(e.key==='ArrowRight'){curIdx=(curIdx+1)%curSet.length;showLb();}
+});
+</script>
+</body>
+</html>

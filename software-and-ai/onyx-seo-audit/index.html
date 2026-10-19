@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Audit — Onyx Supplements | theonyxsupps.com</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --onyx: #0a0a0a;
+    --gold: #c9a84c;
+    --gold-light: #e8c96d;
+    --gold-pale: #f5e9c8;
+    --white: #ffffff;
+    --off-white: #f8f6f1;
+    --gray-100: #f3f2ee;
+    --gray-200: #e5e3dc;
+    --gray-400: #a09d94;
+    --gray-600: #6b6860;
+    --gray-800: #2d2b27;
+    --critical: #c0392b;
+    --critical-bg: #fdf2f1;
+    --high: #d35400;
+    --high-bg: #fef5ed;
+    --medium: #d4ac0d;
+    --medium-bg: #fefce8;
+    --low: #27ae60;
+    --low-bg: #f0faf4;
+    --info: #2471a3;
+    --info-bg: #eaf4fb;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--white);
+    color: var(--gray-800);
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  /* ── COVER PAGE ──────────────────────────────── */
+  .cover {
+    background: var(--onyx);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 64px 80px;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover-top { position: relative; z-index: 1; }
+  .cover-mid { position: relative; z-index: 1; flex: 1; display: flex; align-items: center; }
+  .cover-bot { position: relative; z-index: 1; }
+
+  .cover-logo {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .cover-date {
+    font-size: 11px;
+    color: var(--gray-400);
+    letter-spacing: 1px;
+  }
+
+  .cover-headline {
+    font-size: 52px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+  }
+
+  .cover-headline span { color: var(--gold); }
+
+  .cover-sub {
+    font-size: 16px;
+    color: var(--gray-400);
+    font-weight: 400;
+    margin-bottom: 40px;
+    max-width: 480px;
+  }
+
+  .cover-url {
+    display: inline-block;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: var(--gold-light);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .cover-score-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .cover-score-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .cover-score-num {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .cover-score-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    font-weight: 500;
+  }
+
+  .cover-bottom-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+  }
+
+  .cover-bottom-left {
+    font-size: 11px;
+    color: var(--gray-600);
+    letter-spacing: 0.5px;
+  }
+
+  .cover-bottom-right {
+    font-size: 11px;
+    color: var(--gray-600);
+  }
+
+  /* ── LAYOUT ──────────────────────────────────── */
+  .page { max-width: 900px; margin: 0 auto; padding: 48px 40px; }
+
+  @media print {
+    .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { padding: 32px 40px; }
+    .page-break { page-break-before: always; }
+  }
+
+  /* ── SECTION HEADERS ─────────────────────────── */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--onyx);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .section-desc {
+    font-size: 13px;
+    color: var(--gray-600);
+    margin-bottom: 32px;
+    max-width: 600px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--gray-200);
+    margin: 40px 0;
+  }
+
+  .section-rule {
+    border: none;
+    border-top: 2px solid var(--gold);
+    width: 40px;
+    margin: 16px 0 32px;
+  }
+
+  /* ── SCORE GAUGE ─────────────────────────────── */
+  .score-overview {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: center;
+    background: var(--onyx);
+    border-radius: 12px;
+    padding: 36px 40px;
+    margin-bottom: 40px;
+  }
+
+  .gauge-wrap { text-align: center; }
+
+  .gauge-num {
+    font-size: 72px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  .gauge-denom {
+    font-size: 24px;
+    color: var(--gray-400);
+  }
+
+  .gauge-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-top: 6px;
+  }
+
+  .score-bars { display: flex; flex-direction: column; gap: 10px; }
+
+  .score-row {
+    display: grid;
+    grid-template-columns: 160px 1fr 40px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .score-row-label {
+    font-size: 11px;
+    color: var(--gray-400);
+    font-weight: 500;
+  }
+
+  .score-bar-track {
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+
+  .score-val {
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 700;
+    text-align: right;
+  }
+
+  /* ── BADGES ──────────────────────────────────── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .badge-critical { background: var(--critical-bg); color: var(--critical); }
+  .badge-high { background: var(--high-bg); color: var(--high); }
+  .badge-medium { background: var(--medium-bg); color: var(--medium); }
+  .badge-low { background: var(--low-bg); color: var(--low); }
+  .badge-info { background: var(--info-bg); color: var(--info); }
+
+  /* ── ISSUE CARDS ─────────────────────────────── */
+  .issue-card {
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    border-left: 3px solid;
+  }
+
+  .issue-card-critical { background: var(--critical-bg); border-color: var(--critical); }
+  .issue-card-high { background: var(--high-bg); border-color: var(--high); }
+  .issue-card-medium { background: var(--medium-bg); border-color: var(--medium); }
+  .issue-card-low { background: var(--low-bg); border-color: var(--low); }
+
+  .issue-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .issue-title {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--onyx);
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  .issue-body {
+    font-size: 12.5px;
+    color: var(--gray-600);
+    line-height: 1.65;
+  }
+
+  .issue-fix {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: rgba(0,0,0,0.04);
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--gray-800);
+    font-weight: 500;
+  }
+
+  .issue-fix strong { color: var(--onyx); }
+
+  /* ── TABLES ──────────────────────────────────── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    font-size: 12.5px;
+  }
+
+  th {
+    background: var(--onyx);
+    color: var(--white);
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-800);
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td { background: var(--gray-100); }
+
+  td.pass { color: var(--low); font-weight: 600; }
+  td.fail { color: var(--critical); font-weight: 600; }
+  td.warn { color: var(--medium); font-weight: 600; }
+
+  /* ── QUICK WINS ──────────────────────────────── */
+  .quick-wins-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .qw-card {
+    background: var(--off-white);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .qw-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 28px;
+  }
+
+  .qw-title {
+    font-weight: 700;
+    font-size: 12.5px;
+    margin-bottom: 4px;
+    color: var(--onyx);
+  }
+
+  .qw-desc {
+    font-size: 11.5px;
+    color: var(--gray-600);
+    line-height: 1.55;
+  }
+
+  /* ── CODE BLOCKS ─────────────────────────────── */
+  .code-block {
+    background: var(--onyx);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    overflow-x: auto;
+  }
+
+  .code-block pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #d4d0c8;
+    line-height: 1.7;
+    white-space: pre;
+  }
+
+  .code-block .kw { color: #c9a84c; }
+  .code-block .str { color: #98c379; }
+  .code-block .prop { color: #61afef; }
+  .code-block .num { color: #e06c75; }
+
+  /* ── ROADMAP ─────────────────────────────────── */
+  .roadmap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .roadmap-col {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .roadmap-header {
+    padding: 12px 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .roadmap-header-1 { background: var(--critical); color: white; }
+  .roadmap-header-2 { background: var(--high); color: white; }
+  .roadmap-header-3 { background: var(--info); color: white; }
+
+  .roadmap-body {
+    background: var(--gray-100);
+    padding: 16px;
+    min-height: 180px;
+  }
+
+  .roadmap-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+
+  .roadmap-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gray-400);
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .roadmap-text {
+    font-size: 12px;
+    color: var(--gray-800);
+    line-height: 1.5;
+  }
+
+  /* ── KEYWORD TABLE ───────────────────────────── */
+  .kw-difficulty {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+  .kw-d-low { background: var(--low); }
+  .kw-d-med { background: var(--medium); }
+  .kw-d-high { background: var(--critical); }
+
+  /* ── CALLOUTS ────────────────────────────────── */
+  .callout {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+
+  .callout-gold { background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.3); }
+  .callout-info { background: var(--info-bg); border: 1px solid rgba(36,113,163,0.2); }
+
+  .callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .callout-text { font-size: 12.5px; color: var(--gray-800); line-height: 1.6; }
+  .callout-text strong { color: var(--onyx); }
+
+  /* ── SCORE SUMMARY GRID ──────────────────────── */
+  .score-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .score-mini-card {
+    background: var(--gray-100);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid var(--gray-200);
+  }
+
+  .score-mini-num {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .score-mini-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    font-weight: 500;
+  }
+
+  .score-red { color: var(--critical); }
+  .score-orange { color: var(--high); }
+  .score-gold { color: var(--gold); }
+  .score-green { color: var(--low); }
+
+  /* ── COMPETITOR TABLE ────────────────────────── */
+  .check { color: var(--low); font-weight: 700; }
+  .cross { color: var(--critical); font-weight: 700; }
+
+  /* ── TOC ─────────────────────────────────────── */
+  .toc { margin-bottom: 48px; }
+
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--gray-200);
+  }
+
+  .toc-num {
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 700;
+    min-width: 20px;
+  }
+
+  .toc-title {
+    font-size: 13px;
+    color: var(--gray-800);
+    font-weight: 500;
+    flex: 1;
+  }
+
+  .toc-score {
+    font-size: 12px;
+    color: var(--gray-400);
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--onyx);
+    margin-bottom: 12px;
+    margin-top: 28px;
+  }
+
+  h3:first-child { margin-top: 0; }
+
+  p { margin-bottom: 10px; }
+
+  ul, ol {
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+
+  li {
+    margin-bottom: 4px;
+    font-size: 12.5px;
+    color: var(--gray-800);
+    line-height: 1.6;
+  }
+
+  .page-num {
+    text-align: center;
+    font-size: 11px;
+    color: var(--gray-400);
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--gray-200);
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════
+     COVER
+     ════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-logo">SEO Audit Report</div>
+    <div class="cover-date">Prepared June 2, 2026 · Confidential</div>
+  </div>
+
+  <div class="cover-mid">
+    <div>
+      <div class="cover-headline">Onyx<br><span>Supplements</span><br>SEO Audit</div>
+      <div class="cover-sub">A comprehensive 7-dimension search performance analysis covering technical SEO, content quality, schema markup, e-commerce readiness, AI search visibility, and search experience optimization.</div>
+      <div class="cover-url">https://theonyxsupps.com</div>
+    </div>
+  </div>
+
+  <div class="cover-bot">
+    <div class="cover-score-grid">
+      <div class="cover-score-card">
+        <div class="cover-score-num">32</div>
+        <div class="cover-score-label">Overall Score</div>
+      </div>
+      <div class="cover-score-card">
+        <div class="cover-score-num">1</div>
+        <div class="cover-score-label">Products Indexed</div>
+      </div>
+      <div class="cover-score-card">
+        <div class="cover-score-num">0</div>
+        <div class="cover-score-label">Blog Posts</div>
+      </div>
+      <div class="cover-score-card">
+        <div class="cover-score-num">20+</div>
+        <div class="cover-score-label">Action Items</div>
+      </div>
+    </div>
+
+    <div class="cover-bottom-line">
+      <div class="cover-bottom-left">Platform: Shopify · Category: Supplements (YMYL) · Stage: Pre-Launch</div>
+      <div class="cover-bottom-right">For internal use only</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     TABLE OF CONTENTS
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Navigation</div>
+  <div class="section-title">Table of Contents</div>
+  <hr class="section-rule">
+
+  <div class="toc">
+    <div class="toc-item">
+      <div class="toc-num">01</div>
+      <div class="toc-title">Executive Summary &amp; Overall Score</div>
+      <div class="toc-score">32/100</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">02</div>
+      <div class="toc-title">Top 5 Critical Issues</div>
+      <div class="toc-score">—</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">03</div>
+      <div class="toc-title">Quick Wins</div>
+      <div class="toc-score">—</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">04</div>
+      <div class="toc-title">Technical SEO Analysis</div>
+      <div class="toc-score">41/100</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">05</div>
+      <div class="toc-title">Content Quality &amp; E-E-A-T</div>
+      <div class="toc-score">29/100</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">06</div>
+      <div class="toc-title">Schema &amp; Structured Data</div>
+      <div class="toc-score">18/100</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">07</div>
+      <div class="toc-title">E-Commerce SEO</div>
+      <div class="toc-score">31/100</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">08</div>
+      <div class="toc-title">AI Search &amp; GEO Readiness</div>
+      <div class="toc-score">28/100</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">09</div>
+      <div class="toc-title">Search Experience Optimization (SXO)</div>
+      <div class="toc-score">28/100</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">10</div>
+      <div class="toc-title">Keyword Opportunities</div>
+      <div class="toc-score">—</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">11</div>
+      <div class="toc-title">Competitor Benchmarking</div>
+      <div class="toc-score">—</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">12</div>
+      <div class="toc-title">90-Day Implementation Roadmap</div>
+      <div class="toc-score">—</div>
+    </div>
+    <div class="toc-item">
+      <div class="toc-num">13</div>
+      <div class="toc-title">Schema Code: Ready to Implement</div>
+      <div class="toc-score">—</div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <div class="callout-icon">⚡</div>
+    <div class="callout-text"><strong>Key finding:</strong> Onyx Supplements has a strong brand identity and a genuinely competitive formula. The SEO infrastructure is essentially absent — but the site is new, penalty-free, and everything flagged here is fixable. A focused 30-day sprint on schema, titles, and content could produce measurable ranking movement before inventory goes live.</div>
+  </div>
+
+  <div class="page-num">Page 2</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     01 — EXECUTIVE SUMMARY
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 01</div>
+  <div class="section-title">Executive Summary</div>
+  <hr class="section-rule">
+
+  <div class="score-overview">
+    <div class="gauge-wrap">
+      <div class="gauge-num">32<span class="gauge-denom">/100</span></div>
+      <div class="gauge-label">SEO Health Score</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-row">
+        <div class="score-row-label">Technical SEO</div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:41%"></div></div>
+        <div class="score-val">41</div>
+      </div>
+      <div class="score-row">
+        <div class="score-row-label">Content Quality / E-E-A-T</div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:29%"></div></div>
+        <div class="score-val">29</div>
+      </div>
+      <div class="score-row">
+        <div class="score-row-label">E-Commerce SEO</div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:31%"></div></div>
+        <div class="score-val">31</div>
+      </div>
+      <div class="score-row">
+        <div class="score-row-label">Schema / Structured Data</div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:18%"></div></div>
+        <div class="score-val">18</div>
+      </div>
+      <div class="score-row">
+        <div class="score-row-label">Core Web Vitals (est.)</div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:45%"></div></div>
+        <div class="score-val">45</div>
+      </div>
+      <div class="score-row">
+        <div class="score-row-label">AI Search Readiness</div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:28%"></div></div>
+        <div class="score-val">28</div>
+      </div>
+      <div class="score-row">
+        <div class="score-row-label">Search Experience (SXO)</div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:28%"></div></div>
+        <div class="score-val">28</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Site Profile</h3>
+  <table>
+    <tr><th>Property</th><th>Value</th></tr>
+    <tr><td>URL</td><td>https://theonyxsupps.com</td></tr>
+    <tr><td>Platform</td><td>Shopify (theme: Molding v2.0)</td></tr>
+    <tr><td>Business Type</td><td>E-commerce — Direct-to-Consumer Supplements (YMYL)</td></tr>
+    <tr><td>Product Count</td><td>1 (Golden Hour Pre-Workout, $54.99, 30 servings)</td></tr>
+    <tr><td>Current Status</td><td>Pre-launch — Join Waitlist mode</td></tr>
+    <tr><td>Blog Posts</td><td>0 published</td></tr>
+    <tr><td>Pages</td><td>7 (home, product, about, manifesto, faq, contact, data-opt-out)</td></tr>
+    <tr><td>Reviews</td><td>0</td></tr>
+    <tr><td>Third-Party Certifications</td><td>None (NSF, Informed Sport — absent)</td></tr>
+    <tr><td>Founder Identified</td><td>No</td></tr>
+  </table>
+
+  <h3>The Core Problem in One Paragraph</h3>
+  <p style="font-size:13px; line-height:1.7; color:#2d2b27;">Onyx Supplements has built a premium brand with a real differentiator — clinical dosages, transparent labeling, and a luxury aesthetic that is genuinely underrepresented in the supplement market. However, the SEO infrastructure that would allow Google, AI models, and potential customers to <em>find</em> the brand does not yet exist. There are no meta descriptions, no Product schema (the existing schema incorrectly labels the flavor as the brand), no blog content, no customer reviews, no third-party certifications, and no named founders. As a YMYL (Your Money or Your Life) site selling an ingestible product, Google applies maximum trust scrutiny — and Onyx currently has no trust signals beyond a GMP manufacturing claim referencing an unnamed facility. This is entirely fixable, and the absence of legacy technical debt means the brand can be built correctly from the start.</p>
+
+  <div class="page-num">Page 3</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     02 — CRITICAL ISSUES
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 02</div>
+  <div class="section-title">Top 5 Critical Issues</div>
+  <hr class="section-rule">
+
+  <div class="issue-card issue-card-critical">
+    <div class="issue-header">
+      <span class="badge badge-critical">Critical</span>
+      <div class="issue-title">No Product Schema — Product Page Ineligible for Rich Results &amp; Google Shopping</div>
+    </div>
+    <div class="issue-body">The Golden Hour product page has zero Product schema markup. The existing JSON-LD on the site is a WebSite type that incorrectly credits the theme developer as the site creator. The Microdata on the product page has the <strong>brand field set to "Mango Pineapple"</strong> (a flavor, not the brand name), all schema URLs use <code>http://</code> instead of <code>https://</code>, and no aggregateRating is present. Google cannot display product rich results (price, availability, star ratings) in SERPs. The product is ineligible for Google Shopping free listings. This affects every commercial SERP appearance.</div>
+    <div class="issue-fix"><strong>Fix:</strong> Add Product JSON-LD to the product template with correct brand name ("Onyx Supplements"), absolute HTTPS image URLs, Offer block, availability set to PreOrder, and wire Okendo review data into aggregateRating. Code provided in Section 13.</div>
+  </div>
+
+  <div class="issue-card issue-card-critical">
+    <div class="issue-header">
+      <span class="badge badge-critical">Critical</span>
+      <div class="issue-title">No Meta Descriptions Sitewide — Google Will Auto-Generate Poor Snippets</div>
+    </div>
+    <div class="issue-body">Every page on theonyxsupps.com — homepage, product page, about, FAQ, manifesto, contact — has no meta description set. For a luxury brand where first impressions in search results are critical, Google will pull random on-page text as the snippet. On a minimalist brand site with sparse copy, this means non-descriptive, non-converting SERP snippets. This also wastes the homepage's potential to rank for brand-adjacent queries.</div>
+    <div class="issue-fix"><strong>Fix:</strong> Set unique 120–155 character meta descriptions in Shopify Admin for every page. Takes under 1 hour. Highest effort-to-impact ratio fix on the entire site.</div>
+  </div>
+
+  <div class="issue-card issue-card-critical">
+    <div class="issue-header">
+      <span class="badge badge-critical">Critical</span>
+      <div class="issue-title">Anonymous Brand — No Named Founder, No Contact Info, No Credentials (YMYL Failure)</div>
+    </div>
+    <div class="issue-body">Supplements are classified as YMYL (Your Money or Your Life) content by Google. The Quality Rater Guidelines require elevated trust signals for sites selling ingestible products. Onyx has no named founder, no city/state, no phone number, no direct email — only a contact form. The "about" page (230 words) contains zero business information. Google's quality systems and AI answer engines both downrank anonymous health product brands. The $54.99 price point also demands trust credibility that the site cannot currently supply.</div>
+    <div class="issue-fix"><strong>Fix:</strong> Add a named founder section to the About page, publish a city/state location in the footer, add a direct email address to the Contact page. Even first name + role + brief bio dramatically improves E-E-A-T signals.</div>
+  </div>
+
+  <div class="issue-card issue-card-critical">
+    <div class="issue-header">
+      <span class="badge badge-critical">Critical</span>
+      <div class="issue-title">Zero Blog Content — No Topical Authority, No Keyword Targeting Surface</div>
+    </div>
+    <div class="issue-body">The blog section exists (/blogs/news) and is indexed by Google — but contains zero posts. This wastes crawl budget on an empty page while simultaneously meaning the brand cannot rank for any of the ingredient-level, informational, or comparison queries that drive supplement purchases. Competitors like Gorilla Mind, Transparent Labs, and Legion have 50–150+ blog posts targeting these queries. The ingredient list (L-Citrulline, Alpha-GPC, Rhodiola, Huperzine A) is an untapped content goldmine that could rank for dozens of low-competition terms.</div>
+    <div class="issue-fix"><strong>Fix:</strong> Publish a minimum of 4–5 blog posts targeting ingredient education keywords before or at product launch. Noindex /blogs/news until at least 3 posts are live. Priority topics provided in Section 10.</div>
+  </div>
+
+  <div class="issue-card issue-card-critical">
+    <div class="issue-header">
+      <span class="badge badge-critical">Critical</span>
+      <div class="issue-title">Product Title Tag Has Zero SEO Keyword Value</div>
+    </div>
+    <div class="issue-body">Current title: <code>Golden Hour – Onyx Supplements</code>. The word "pre-workout," "supplement," "preworkout," or any category term appears nowhere in the title. "Golden Hour" alone generates zero organic search demand. Google uses the title tag as its primary on-page ranking signal and as the blue link text in SERPs. This page cannot rank for any pre-workout category query, and even branded searches ("Golden Hour pre-workout") would benefit from the category term in the title.</div>
+    <div class="issue-fix"><strong>Fix:</strong> Change to: <code>Golden Hour Pre-Workout | 8g Citrulline, No Prop Blends — Onyx Supplements</code> (58 chars). Implement in Shopify Admin → Products → Golden Hour → SEO.</div>
+  </div>
+
+  <div class="page-num">Page 4</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     03 — QUICK WINS
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 03</div>
+  <div class="section-title">Quick Wins — Do These First</div>
+  <hr class="section-rule">
+
+  <p style="margin-bottom:24px; color:var(--gray-600);">These actions take under 2 hours each and produce immediate SEO gains. No developer required — all doable in the Shopify Admin.</p>
+
+  <div class="quick-wins-grid">
+    <div class="qw-card">
+      <div class="qw-num">1</div>
+      <div>
+        <div class="qw-title">Write Meta Descriptions for All Pages</div>
+        <div class="qw-desc">7 pages, each needs a 120–155 char description. ~45 minutes in Shopify Admin. Immediately improves SERP click-through rate and signals content intent to Google.</div>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">2</div>
+      <div>
+        <div class="qw-title">Fix Product Page Title Tag</div>
+        <div class="qw-desc">Add "Pre-Workout" to the title. One field in Shopify product SEO settings. No code required. Unlocks category keyword indexing immediately.</div>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">3</div>
+      <div>
+        <div class="qw-title">Fix Brand Field in Product Schema</div>
+        <div class="qw-desc">The brand is currently "Mango Pineapple." Change to "Onyx Supplements" in the theme's Microdata OR replace with JSON-LD (preferred). Fixes a schema validation error that blocks rich results.</div>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">4</div>
+      <div>
+        <div class="qw-title">Install a Review App</div>
+        <div class="qw-desc">Judge.me (free) or Loox. Install today and embed on the product page. Collect 5–10 reviews from beta users before launch. Star ratings in SERP lift CTR by 15–30%.</div>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">5</div>
+      <div>
+        <div class="qw-title">Add Founder Name to About Page</div>
+        <div class="qw-desc">Even a single line — "Founded by [Name], [brief background]" — transforms the brand from anonymous entity to accountable business. Critical for Google's YMYL E-E-A-T assessment.</div>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">6</div>
+      <div>
+        <div class="qw-title">Add Email Address to Contact Page</div>
+        <div class="qw-desc">A contact form alone fails consumer trust standards for supplement brands. Add a direct email. This single addition improves trustworthiness scoring in Google's quality evaluation.</div>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">7</div>
+      <div>
+        <div class="qw-title">Noindex Empty Blog + Data-Opt-Out Page</div>
+        <div class="qw-desc">Two pages consuming crawl budget with zero value: the empty /blogs/news and /pages/data-sharing-opt-out. Add <code>noindex</code> meta tags to both until the blog has real content.</div>
+      </div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">8</div>
+      <div>
+        <div class="qw-title">Fix Collection H1 Prefix</div>
+        <div class="qw-desc">Shopify auto-generates "Collection: Luxury Pre-Workout" as the H1. Edit this to just "Luxury Pre-Workout Supplements" and add 150 words of editorial copy to the collection page.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">📋</div>
+    <div class="callout-text"><strong>Priority order:</strong> Schema fix → Title tag → Meta descriptions → Review app install → Contact info → Founder bio. These 6 actions, completed in a single afternoon, would move the overall SEO Health Score from 32 to an estimated 48–52 out of 100.</div>
+  </div>
+
+  <div class="page-num">Page 5</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     04 — TECHNICAL SEO
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 04</div>
+  <div class="section-title">Technical SEO Analysis</div>
+  <div class="section-desc">Crawlability, indexability, security, URL structure, Core Web Vitals, and mobile optimization.</div>
+  <hr class="section-rule">
+
+  <div class="score-grid">
+    <div class="score-mini-card"><div class="score-mini-num score-orange">41</div><div class="score-mini-label">Overall</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-gold">72</div><div class="score-mini-label">Crawlability</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-red">38</div><div class="score-mini-label">Indexability</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-orange">55</div><div class="score-mini-label">Security</div></div>
+  </div>
+
+  <h3>Crawlability Checklist</h3>
+  <table>
+    <tr><th>Item</th><th>Status</th><th>Notes</th></tr>
+    <tr><td>robots.txt present</td><td class="pass">PASS</td><td>Standard Shopify config, well-structured</td></tr>
+    <tr><td>Cart / checkout / admin blocked</td><td class="pass">PASS</td><td>Shopify default correctly configured</td></tr>
+    <tr><td>Sitemap.xml present</td><td class="pass">PASS</td><td>5 sub-sitemaps (products, pages, collections, blogs, agentic_discovery)</td></tr>
+    <tr><td>Products sub-sitemap</td><td class="pass">PASS</td><td>1 product URL correctly listed</td></tr>
+    <tr><td>Collections sub-sitemap</td><td class="pass">PASS</td><td>2 collections listed, updated daily</td></tr>
+    <tr><td>Blogs sub-sitemap</td><td class="warn">WARNING</td><td>Submitted but 0 posts exist — wastes crawl budget</td></tr>
+    <tr><td>noindex on data-opt-out page</td><td class="fail">FAIL</td><td>/pages/data-sharing-opt-out is indexed — no SEO value</td></tr>
+    <tr><td>noindex on empty blog</td><td class="fail">FAIL</td><td>/blogs/news should be noindexed until populated</td></tr>
+    <tr><td>Duplicate content (collection/product URLs)</td><td class="warn">WARNING</td><td>Shopify creates /collections/*/products/* variants — verify canonical tags</td></tr>
+    <tr><td>Open Graph / Twitter Card tags</td><td class="fail">FAIL</td><td>Not detected — critical for social sharing and Meta ads</td></tr>
+    <tr><td>Internal linking</td><td class="fail">FAIL</td><td>Only nav-level links — no contextual links between content pages</td></tr>
+  </table>
+
+  <h3>High Priority Technical Issues</h3>
+
+  <div class="issue-card issue-card-high">
+    <div class="issue-header">
+      <span class="badge badge-high">High</span>
+      <div class="issue-title">Missing Open Graph &amp; Twitter Card Meta Tags</div>
+    </div>
+    <div class="issue-body">No OG tags detected on homepage or product page. Link previews on Facebook, Instagram, and Twitter/X will render without images or descriptions — a critical failure for a supplement brand relying on social media traffic and Meta ads. Required tags: og:title, og:description, og:image (1200×630px minimum), og:url, og:type. Product page also needs product:price:amount and product:price:currency.</div>
+    <div class="issue-fix"><strong>Fix:</strong> Check if Shopify theme head template has OG tags stripped. If Dawn-based, restore via theme editor. If custom, add OG Liquid variables to theme.liquid &lt;head&gt;.</div>
+  </div>
+
+  <div class="issue-card issue-card-high">
+    <div class="issue-header">
+      <span class="badge badge-high">High</span>
+      <div class="issue-title">Critically Thin Internal Linking Structure</div>
+    </div>
+    <div class="issue-body">Only navigation-level links exist. No page links to /products/golden-hour contextually. The FAQ, manifesto, and about pages contain no product links. Google distributes PageRank through internal links — isolated pages with no contextual links cannot accumulate authority for target keywords.</div>
+    <div class="issue-fix"><strong>Fix:</strong> Add at least one contextual link to /products/golden-hour on every static page. FAQ answers should link to the product. The manifesto "performance" section should link to the product. Use keyword-rich anchor text (e.g., "Golden Hour pre-workout").</div>
+  </div>
+
+  <h3>Core Web Vitals Risk Assessment (Shopify Estimates)</h3>
+  <table>
+    <tr><th>Metric</th><th>Target</th><th>Estimated Range</th><th>Risk</th></tr>
+    <tr><td>LCP (Largest Contentful Paint)</td><td>&lt; 2.5s</td><td>2.8 – 4.2s</td><td class="fail">HIGH RISK</td></tr>
+    <tr><td>INP (Interaction to Next Paint)</td><td>&lt; 200ms</td><td>150 – 300ms</td><td class="warn">MEDIUM RISK</td></tr>
+    <tr><td>CLS (Cumulative Layout Shift)</td><td>&lt; 0.1</td><td>0.05 – 0.15</td><td class="warn">MEDIUM RISK</td></tr>
+  </table>
+  <p style="font-size:11.5px; color:var(--gray-600);">LCP risk is common on Shopify stores with large hero images not marked fetchpriority="high". Verify with PageSpeed Insights after launch.</p>
+
+  <div class="page-num">Page 6</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     05 — CONTENT & E-E-A-T
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 05</div>
+  <div class="section-title">Content Quality &amp; E-E-A-T</div>
+  <div class="section-desc">Experience, Expertise, Authoritativeness, Trustworthiness — the four pillars Google applies to YMYL health supplement sites.</div>
+  <hr class="section-rule">
+
+  <div class="score-grid">
+    <div class="score-mini-card"><div class="score-mini-num score-red">29</div><div class="score-mini-label">Overall</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-red">8/20</div><div class="score-mini-label">Experience</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-red">10/25</div><div class="score-mini-label">Expertise</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-red">6/25</div><div class="score-mini-label">Authority</div></div>
+  </div>
+
+  <h3>Thin Content Audit</h3>
+  <table>
+    <tr><th>Page</th><th>Est. Words</th><th>Minimum for Type</th><th>Status</th></tr>
+    <tr><td>Homepage</td><td>~300</td><td>500+</td><td class="fail">THIN — 200+ words short</td></tr>
+    <tr><td>/products/golden-hour</td><td>~149 (desc only)</td><td>600+</td><td class="fail">THIN — needs ingredient explanations</td></tr>
+    <tr><td>/pages/about</td><td>~230</td><td>400+</td><td class="fail">CRITICAL — no credentials or people</td></tr>
+    <tr><td>/pages/manifesto</td><td>~380</td><td>Contextual</td><td class="warn">BORDERLINE — style over substance</td></tr>
+    <tr><td>/pages/faqs</td><td>~600 (9 Q&As)</td><td>Contextual</td><td class="pass">ADEQUATE</td></tr>
+    <tr><td>/blogs/news</td><td>0</td><td>Any</td><td class="fail">ABSENT — no posts published</td></tr>
+    <tr><td>/pages/contact</td><td>Form only</td><td>Should include contact info</td><td class="fail">STRUCTURALLY DEFICIENT</td></tr>
+  </table>
+
+  <h3>E-E-A-T Gap Analysis</h3>
+
+  <div class="issue-card issue-card-critical">
+    <div class="issue-header">
+      <span class="badge badge-critical">Critical — Trust</span>
+      <div class="issue-title">Trustworthiness Score: 5/30 — Anonymous Brand Selling a $54.99 Ingestible Product</div>
+    </div>
+    <div class="issue-body">Contact form with no email or phone. No physical address. No founder name. Three unverified testimonials (first name only, no photos, no dates, no platform). GMP manufacturing claimed but facility unnamed. No FDA disclaimer visible. No privacy policy linked from the contact page. For a supplement brand in the YMYL category, this is a near-disqualifying trust profile. Google's Quality Raters would flag every page as "Low Page Quality."</div>
+  </div>
+
+  <div class="issue-card issue-card-high">
+    <div class="issue-header">
+      <span class="badge badge-high">High — Expertise</span>
+      <div class="issue-title">Formula is Strong — But Expertise is Entirely Anonymous</div>
+    </div>
+    <div class="issue-body">The product page discloses clinical dosages (L-Citrulline 8g, Alpha-GPC 300mg, Betaine 3g) that demonstrate real formulation knowledge. This is the site's single strongest content asset. However, that expertise is completely anonymous — no named formulator, no sports nutritionist credit, no citations to PubMed research, no explanation of why these specific doses were chosen. Expertise exists but is invisible to Google.</div>
+    <div class="issue-fix"><strong>Fix:</strong> Write a 600-word "Why We Formulated Golden Hour This Way" page. Cite clinical research thresholds for each key ingredient. Credit the formulator by name and credential. This single page transforms anonymous claims into documented expertise.</div>
+  </div>
+
+  <h3>Missing Content Categories vs. Competitors</h3>
+  <table>
+    <tr><th>Content Type</th><th>Gorilla Mind</th><th>Transparent Labs</th><th>Onyx Supps</th></tr>
+    <tr><td>Ingredient science blog posts</td><td class="check">✓ 50+</td><td class="check">✓ 100+</td><td class="cross">✗ 0</td></tr>
+    <tr><td>Named founder / team page</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
+    <tr><td>Third-party certifications</td><td class="check">✓</td><td class="check">✓ NSF</td><td class="cross">✗</td></tr>
+    <tr><td>Customer reviews (volume)</td><td class="check">✓ 10,000+</td><td class="check">✓ 5,000+</td><td class="cross">✗ 0</td></tr>
+    <tr><td>Certificate of Analysis (COA)</td><td class="warn">Some</td><td class="check">✓</td><td class="cross">✗</td></tr>
+    <tr><td>Comparison / vs. content</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
+    <tr><td>Video content</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
+    <tr><td>Email newsletter / community</td><td class="check">✓</td><td class="check">✓</td><td class="warn">Waitlist only</td></tr>
+  </table>
+
+  <div class="page-num">Page 7</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     06 — SCHEMA
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 06</div>
+  <div class="section-title">Schema &amp; Structured Data</div>
+  <div class="section-desc">Detection, validation errors, and missing opportunities for rich results and AI citation readiness.</div>
+  <hr class="section-rule">
+
+  <div class="score-grid">
+    <div class="score-mini-card"><div class="score-mini-num score-red">18</div><div class="score-mini-label">Overall</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-red">0/13</div><div class="score-mini-label">Product Fields</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-red">0</div><div class="score-mini-label">AggregateRating</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-red">0</div><div class="score-mini-label">FAQPage Schema</div></div>
+  </div>
+
+  <div class="callout callout-gold">
+    <div class="callout-icon">🔎</div>
+    <div class="callout-text"><strong>Critical finding:</strong> The brand field in the product Microdata is set to <strong>"Mango Pineapple"</strong> (a flavor variant), not "Onyx Supplements." Any Google or AI parser reading this schema will attribute the product to a brand called "Mango Pineapple." This must be corrected before any other schema work begins.</div>
+  </div>
+
+  <h3>Schema Validation Results</h3>
+  <table>
+    <tr><th>Schema Element</th><th>Status</th><th>Issue</th></tr>
+    <tr><td>WebSite JSON-LD</td><td class="warn">PRESENT / BROKEN</td><td>Creator points to theme developer (Noor Ahmed), not Onyx Supplements</td></tr>
+    <tr><td>Product schema (@type)</td><td class="fail">ABSENT</td><td>No Product JSON-LD — only broken Microdata</td></tr>
+    <tr><td>Brand field</td><td class="fail">WRONG VALUE</td><td>Set to "Mango Pineapple" — must be "Onyx Supplements"</td></tr>
+    <tr><td>Schema URL protocol</td><td class="fail">FAIL</td><td>All Microdata uses http://schema.org (not https://)</td></tr>
+    <tr><td>Image URL</td><td class="fail">FAIL</td><td>Protocol-relative URL (//cdn...) — must be absolute https://</td></tr>
+    <tr><td>AggregateRating</td><td class="fail">ABSENT</td><td>Missing — blocks star ratings in SERPs</td></tr>
+    <tr><td>Offer block</td><td class="fail">ABSENT</td><td>No Offer in JSON-LD — ineligible for Google Shopping via schema</td></tr>
+    <tr><td>FAQPage schema</td><td class="fail">ABSENT</td><td>FAQ page exists with 9 Q&As — high AI citation opportunity</td></tr>
+    <tr><td>BreadcrumbList</td><td class="fail">ABSENT</td><td>Visual breadcrumbs exist but no schema equivalent</td></tr>
+    <tr><td>Organization schema</td><td class="fail">ABSENT</td><td>No entity declaration for Onyx Supplements</td></tr>
+    <tr><td>SearchAction (WebSite)</td><td class="fail">ABSENT</td><td>Missing Sitelinks Searchbox opportunity</td></tr>
+    <tr><td>Canonical tags</td><td class="warn">PARTIAL</td><td>Verify all /pages/* templates have self-referencing canonicals</td></tr>
+  </table>
+
+  <h3>Schema Priority Stack</h3>
+  <div class="issue-card issue-card-critical">
+    <div class="issue-header"><span class="badge badge-critical">Priority 1</span><div class="issue-title">Product JSON-LD with Offers + aggregateRating</div></div>
+    <div class="issue-body">Unlocks rich results, Google Shopping eligibility, and star ratings in SERP. Wire to Okendo review app data (already installed — okendoProductReviewAverageValue and okendoProductReviewCount are available as JS variables). Full code in Section 13.</div>
+  </div>
+  <div class="issue-card issue-card-high">
+    <div class="issue-header"><span class="badge badge-high">Priority 2</span><div class="issue-title">Organization JSON-LD on Homepage</div></div>
+    <div class="issue-body">Declares the brand as a Google Knowledge Graph entity. Include name, url, logo, sameAs (Instagram/Facebook/TikTok URLs). Removes the theme developer credit from the WebSite block.</div>
+  </div>
+  <div class="issue-card issue-card-high">
+    <div class="issue-header"><span class="badge badge-high">Priority 3</span><div class="issue-title">FAQPage JSON-LD on /pages/faqs</div></div>
+    <div class="issue-body">Note: Google suspended FAQ rich results for commercial sites in Aug 2023, but FAQPage schema significantly increases AI answer engine citation probability (ChatGPT, Perplexity, Gemini). All 9 existing Q&As should be wrapped in FAQPage JSON-LD.</div>
+  </div>
+
+  <div class="page-num">Page 8</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     07 — E-COMMERCE SEO
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 07</div>
+  <div class="section-title">E-Commerce SEO</div>
+  <div class="section-desc">Product page completeness, Google Shopping readiness, collection architecture, and review acquisition strategy.</div>
+  <hr class="section-rule">
+
+  <div class="score-grid">
+    <div class="score-mini-card"><div class="score-mini-num score-red">31</div><div class="score-mini-label">Overall</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-red">0/13</div><div class="score-mini-label">Schema Fields</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-red">0</div><div class="score-mini-label">Customer Reviews</div></div>
+    <div class="score-mini-card"><div class="score-mini-num score-red">5/100</div><div class="score-mini-label">Shopping Ready</div></div>
+  </div>
+
+  <h3>Product Page Gaps</h3>
+  <table>
+    <tr><th>Element</th><th>Current</th><th>Required</th><th>Priority</th></tr>
+    <tr><td>Title tag</td><td>Golden Hour – Onyx Supplements</td><td>Include "Pre-Workout" + differentiator</td><td class="fail">Critical</td></tr>
+    <tr><td>H1 tag</td><td>Golden Hour (name only)</td><td>Golden Hour High-Performance Pre-Workout</td><td class="fail">High</td></tr>
+    <tr><td>Meta description</td><td>Brand tagline (not keyword-bearing)</td><td>Ingredient-led, includes price, CTR-optimized</td><td class="fail">Critical</td></tr>
+    <tr><td>H2 structure</td><td>None</td><td>Section headings for Description, Formula, Usage</td><td class="fail">High</td></tr>
+    <tr><td>Word count</td><td>~149 words</td><td>600–1,200 words</td><td class="fail">High</td></tr>
+    <tr><td>Product JSON-LD</td><td>None (broken Microdata)</td><td>Full Product + Offer + aggregateRating</td><td class="fail">Critical</td></tr>
+    <tr><td>GTIN / UPC</td><td>Not present</td><td>Required for Google Shopping</td><td class="fail">High</td></tr>
+    <tr><td>SKU</td><td>Not present</td><td>GOLDEN-HOUR-MANGO (any format)</td><td class="warn">Medium</td></tr>
+    <tr><td>Customer reviews</td><td>0</td><td>Minimum 5 before launch</td><td class="fail">Critical</td></tr>
+    <tr><td>Availability schema</td><td>InStock (incorrect — waitlist)</td><td>PreOrder with availabilityStarts date</td><td class="fail">Critical</td></tr>
+    <tr><td>Image file names</td><td>UUID hashes (5FF6BFF1...jpg)</td><td>golden-hour-preworkout-front.jpg</td><td class="warn">Medium</td></tr>
+    <tr><td>Image alt text</td><td>Not detected</td><td>Descriptive: "Golden Hour pre-workout tub, Mango Pineapple"</td><td class="fail">High</td></tr>
+  </table>
+
+  <h3>Google Shopping Readiness Checklist</h3>
+  <table>
+    <tr><th>Requirement</th><th>Status</th><th>Action</th></tr>
+    <tr><td>Google Merchant Center account</td><td class="warn">Unknown</td><td>Create and verify at merchants.google.com</td></tr>
+    <tr><td>Product feed / sync</td><td class="warn">Unknown</td><td>Install Google & YouTube Shopify app (free)</td></tr>
+    <tr><td>Product schema with Offers</td><td class="fail">ABSENT</td><td>Add JSON-LD Product schema (Section 13)</td></tr>
+    <tr><td>GTIN/UPC barcode</td><td class="fail">ABSENT</td><td>Purchase from GS1.org (~$30)</td></tr>
+    <tr><td>In-stock availability</td><td class="warn">WAITLIST</td><td>Switch schema to PreOrder; switch to InStock at launch</td></tr>
+    <tr><td>High-quality square image (800×800+)</td><td class="warn">Unverified</td><td>Confirm image dimensions in Shopify admin</td></tr>
+    <tr><td>GMC-optimized title</td><td class="fail">Not set</td><td>See product title recommendation above</td></tr>
+  </table>
+
+  <h3>Review Acquisition Strategy</h3>
+  <div class="issue-card issue-card-critical">
+    <div class="issue-header"><span class="badge badge-critical">Critical</span><div class="issue-title">Zero Reviews — Star Ratings Cannot Appear in SERPs Until Resolved</div></div>
+    <div class="issue-body">
+      <strong>Phase 1 (Pre-Launch — This Week):</strong> Install Judge.me or Loox. Collect 5–10 reviews from beta users, friends, or early adopters. Even 5 reviews with a 4.5+ average adds star ratings to SERP listings, increasing CTR by an estimated 15–30%.<br><br>
+      <strong>Phase 2 (Post-Launch — First 30 Days):</strong> Automated post-purchase Klaviyo sequence: request review 7–10 days after delivery. Incentivize with 10% discount on next order (FTC-compliant: "honest review" language).<br><br>
+      <strong>Phase 3 (Ongoing):</strong> Seed authentic discussions on r/preworkout and r/Supplements. These Reddit threads index well for "[product] review" queries and are the #2 predictor of AI model citation after YouTube.
+    </div>
+  </div>
+
+  <div class="page-num">Page 9</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     08 — AI / GEO
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 08</div>
+  <div class="section-title">AI Search &amp; GEO Readiness</div>
+  <div class="section-desc">How visible Onyx Supplements is to ChatGPT, Perplexity, Google AI Overviews, and commerce AI agents.</div>
+  <hr class="section-rule">
+
+  <table>
+    <tr><th>Platform</th><th>Score</th><th>Primary Blocker</th></tr>
+    <tr><td>Google AI Overviews</td><td class="fail">12/100</td><td>No E-E-A-T, no FAQPage schema, no author credentials, YMYL disqualifiers</td></tr>
+    <tr><td>ChatGPT</td><td class="fail">8/100</td><td>No training corpus presence — no Wikipedia, Reddit, or YouTube signal</td></tr>
+    <tr><td>Perplexity</td><td class="warn">20/100</td><td>Crawlable product page but no long-form citable content to synthesize</td></tr>
+    <tr><td>Bing Copilot</td><td class="warn">15/100</td><td>Can surface product for branded queries; nothing for category queries</td></tr>
+    <tr><td>AI Shopping Agents</td><td class="warn">62/100</td><td>UCP/MCP correctly wired; vendor data error ("Mango Pineapple") hurts precision</td></tr>
+  </table>
+
+  <div class="callout callout-gold">
+    <div class="callout-icon">✅</div>
+    <div class="callout-text"><strong>One genuine advantage:</strong> Onyx has Shopify's agentic commerce infrastructure (agents.md, UCP, MCP endpoint) correctly configured — ahead of most brands in its category. This benefits <em>transactional</em> AI (shopping agents completing purchases) but has zero impact on <em>informational</em> AI (ChatGPT, Perplexity answering "what's the best luxury preworkout"). Both layers are needed.</div>
+  </div>
+
+  <h3>Missing: llms.txt File</h3>
+  <p style="font-size:12.5px; color:var(--gray-800); line-height:1.7;">No <code>/llms.txt</code> file exists. This file is the brand's direct statement to AI answer engines about who Onyx Supplements is, what Golden Hour contains, and how AI models should describe the brand. The <code>agents.md</code> file serves commerce agents — <code>llms.txt</code> serves answer engines. Both are needed and are not redundant.</p>
+
+  <h3>Content Questions AI Cannot Currently Answer From This Site</h3>
+  <table>
+    <tr><th>Question a User Might Ask an AI</th><th>Can Onyx Answer It?</th></tr>
+    <tr><td>"What does L-Citrulline do in a pre-workout?"</td><td class="fail">NO — not on site</td></tr>
+    <tr><td>"How much caffeine is in Golden Hour?"</td><td class="warn">PARTIAL — in FAQ only</td></tr>
+    <tr><td>"Is Yohimbine safe in pre-workout?"</td><td class="fail">NO — not addressed</td></tr>
+    <tr><td>"Is Golden Hour third-party tested?"</td><td class="fail">NO — GMP mentioned, unnamed</td></tr>
+    <tr><td>"Who makes Onyx Supplements?"</td><td class="fail">NO — anonymous brand</td></tr>
+    <tr><td>"What is the best luxury pre-workout in 2026?"</td><td class="fail">NO — no content to surface</td></tr>
+    <tr><td>"What ingredients are in Golden Hour?"</td><td class="warn">PARTIAL — list visible, no explanation</td></tr>
+    <tr><td>"Is Onyx Supplements legit?"</td><td class="fail">NO — no trust signals for AI to reference</td></tr>
+  </table>
+
+  <div class="page-num">Page 10</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     09 — SXO
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 09</div>
+  <div class="section-title">Search Experience Optimization (SXO)</div>
+  <div class="section-desc">SERP intent match, user journey analysis, and persona scoring — why a well-branded site can still fail to rank.</div>
+  <hr class="section-rule">
+
+  <div class="callout callout-gold">
+    <div class="callout-icon">⚡</div>
+    <div class="callout-text"><strong>Core finding:</strong> Every high-volume supplement keyword Onyx should target is dominated by <em>third-party editorial roundups</em> (BarBend, Men's Journal, Healthline) — not brand websites. A supplement brand's homepage or product page cannot out-rank BarBend's "Best Pre-Workout 2026" article. The path to organic traffic is: (1) get <em>featured in</em> those roundups, and (2) own the long-tail ingredient queries where brand sites can rank.</div>
+  </div>
+
+  <h3>Persona Scoring</h3>
+  <table>
+    <tr><th>Persona</th><th>Score</th><th>Primary Blocker</th></tr>
+    <tr><td>A — First-time supplement buyer (googled "best preworkout")</td><td class="fail">18/100</td><td>No trust signals, waitlist blocks purchase, no comparison content</td></tr>
+    <tr><td>B — Experienced athlete evaluating clinical doses</td><td class="warn">37/100</td><td>Formula is strong, but no clinical rationale written, no certifications</td></tr>
+    <tr><td>C — High-intent "best preworkout 2025" searcher</td><td class="fail">8/100</td><td>Site doesn't appear in SERP for this query — brand is invisible</td></tr>
+  </table>
+
+  <h3>SXO Gap Scoring</h3>
+  <table>
+    <tr><th>Dimension</th><th>Max</th><th>Score</th><th>Note</th></tr>
+    <tr><td>Page-type / intent match</td><td>15</td><td>3</td><td>Homepage vs. editorial SERP dominance</td></tr>
+    <tr><td>Content depth</td><td>15</td><td>4</td><td>149 words on product page</td></tr>
+    <tr><td>UX &amp; friction signals</td><td>15</td><td>7</td><td>Clean UX hurt by waitlist dead-end</td></tr>
+    <tr><td>Schema completeness</td><td>15</td><td>3</td><td>No Product, FAQ, or Review schema</td></tr>
+    <tr><td>Media richness</td><td>15</td><td>5</td><td>Product photography only; no video, no tables</td></tr>
+    <tr><td>External authority</td><td>15</td><td>2</td><td>Zero press, backlinks, or third-party reviews</td></tr>
+    <tr><td>Freshness signals</td><td>10</td><td>4</td><td>No blog, no new content</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>100</strong></td><td><strong>28</strong></td><td>—</td></tr>
+  </table>
+
+  <h3>The Luxury Gap</h3>
+  <p style="font-size:12.5px; line-height:1.7; color:var(--gray-800);">The "luxury preworkout" keyword is the most ownable in the market for Onyx. There is no dominant incumbent. Luxury Nutrition has a weak product page. Ghost is mainstream, not luxury. Onyx's positioning is the right call — but the collection URL (<code>/collections/luxury-pre-workout</code>) exists while the page has no meta description, a default H1 ("Collection: Luxury Pre-Workout"), and zero editorial copy. The brand is one page rewrite away from ranking in a niche it has already correctly identified as its own.</p>
+
+  <div class="page-num">Page 11</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     10 — KEYWORD OPPORTUNITIES
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 10</div>
+  <div class="section-title">Keyword Opportunities</div>
+  <div class="section-desc">Tiered targeting strategy based on competition level and brand fit. Ownable now vs. content-driven vs. long-term.</div>
+  <hr class="section-rule">
+
+  <h3>Tier 1 — Ownable Now (Product Page Optimization)</h3>
+  <table>
+    <tr><th>Keyword</th><th>Difficulty</th><th>Intent</th><th>Target Page</th></tr>
+    <tr><td>luxury pre-workout supplement</td><td><span class="kw-difficulty kw-d-low"></span>Low</td><td>Commercial</td><td>/collections/luxury-pre-workout</td></tr>
+    <tr><td>pre-workout no proprietary blend</td><td><span class="kw-difficulty kw-d-low"></span>Low-Med</td><td>Commercial</td><td>/products/golden-hour</td></tr>
+    <tr><td>pre-workout with L-citrulline 8g</td><td><span class="kw-difficulty kw-d-low"></span>Low</td><td>Commercial</td><td>/products/golden-hour</td></tr>
+    <tr><td>alpha gpc pre-workout</td><td><span class="kw-difficulty kw-d-low"></span>Low</td><td>Commercial</td><td>/products/golden-hour</td></tr>
+    <tr><td>transparent pre-workout supplement</td><td><span class="kw-difficulty kw-d-med"></span>Medium</td><td>Commercial</td><td>/products/golden-hour</td></tr>
+    <tr><td>pre-workout with theanine and caffeine</td><td><span class="kw-difficulty kw-d-low"></span>Low</td><td>Commercial</td><td>/products/golden-hour</td></tr>
+    <tr><td>high stim pre-workout focus</td><td><span class="kw-difficulty kw-d-med"></span>Medium</td><td>Commercial</td><td>/products/golden-hour</td></tr>
+    <tr><td>nootropic pre-workout supplement</td><td><span class="kw-difficulty kw-d-med"></span>Medium</td><td>Commercial</td><td>/products/golden-hour</td></tr>
+  </table>
+
+  <h3>Tier 2 — Content-Driven (Blog Required, 3–6 Months)</h3>
+  <table>
+    <tr><th>Keyword</th><th>Difficulty</th><th>Content Type</th></tr>
+    <tr><td>what does L-citrulline do for pre-workout</td><td><span class="kw-difficulty kw-d-low"></span>Low</td><td>Ingredient guide — 1,500 words + PubMed citations</td></tr>
+    <tr><td>alpha GPC benefits pre-workout</td><td><span class="kw-difficulty kw-d-low"></span>Low</td><td>Ingredient spotlight — link to product</td></tr>
+    <tr><td>pre-workout no crash explained</td><td><span class="kw-difficulty kw-d-low"></span>Low-Med</td><td>Educational: caffeine + theanine ratio, Rhodiola</td></tr>
+    <tr><td>beta-alanine tingling why</td><td><span class="kw-difficulty kw-d-low"></span>Low</td><td>FAQ expansion — FAQ page or blog</td></tr>
+    <tr><td>transparent label supplements</td><td><span class="kw-difficulty kw-d-med"></span>Medium</td><td>Brand/category page — "why full disclosure matters"</td></tr>
+    <tr><td>best preworkout for aesthetics 2026</td><td><span class="kw-difficulty kw-d-med"></span>Medium</td><td>Listicle — include Golden Hour as top pick</td></tr>
+    <tr><td>rhodiola rosea pre-workout effects</td><td><span class="kw-difficulty kw-d-low"></span>Low</td><td>Ingredient spotlight — low competition, high differentiation</td></tr>
+    <tr><td>huperzine A pre-workout nootropic</td><td><span class="kw-difficulty kw-d-low"></span>Low</td><td>Ingredient spotlight — almost no brand content on this</td></tr>
+  </table>
+
+  <h3>Tier 3 — Brand Defense (Own These Immediately)</h3>
+  <table>
+    <tr><th>Keyword</th><th>Target Page</th><th>Action</th></tr>
+    <tr><td>Golden Hour pre-workout</td><td>/products/golden-hour</td><td>Add to title tag, H1, meta description NOW</td></tr>
+    <tr><td>Onyx Supplements review</td><td>/pages/faqs + Reddit</td><td>FAQ page SEO + seed Reddit discussions post-launch</td></tr>
+    <tr><td>Golden Hour pre-workout review</td><td>Reddit + blog</td><td>Encourage post-purchase reviews on multiple platforms</td></tr>
+    <tr><td>theonyxsupps review</td><td>Multiple surfaces</td><td>Google Business Profile + Trustpilot setup</td></tr>
+  </table>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">💡</div>
+    <div class="callout-text"><strong>Recommended first blog post:</strong> "Golden Hour Full Ingredient Breakdown: The Science Behind Every Dose" — this single article targets 8–12 keyword phrases simultaneously, demonstrates formulation expertise, provides PubMed citations for E-E-A-T, and links directly to the product page. It is the highest-leverage single piece of content the brand can create.</div>
+  </div>
+
+  <div class="page-num">Page 12</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     11 — COMPETITOR BENCHMARKING
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 11</div>
+  <div class="section-title">Competitor Benchmarking</div>
+  <div class="section-desc">How Onyx Supplements compares to established players in the transparent-label premium pre-workout segment.</div>
+  <hr class="section-rule">
+
+  <table>
+    <tr><th>Brand</th><th>Price</th><th>Schema</th><th>Reviews</th><th>Blog Posts</th><th>Certifications</th><th>Named Founder</th></tr>
+    <tr><td><strong>Gorilla Mode</strong></td><td>$49.99</td><td class="check">✓ Full</td><td class="check">✓ 10,000+</td><td class="check">✓ 50+</td><td class="warn">Partial</td><td class="check">✓ Derek Lunsford</td></tr>
+    <tr><td><strong>Transparent Labs</strong></td><td>$49.99</td><td class="check">✓ Full</td><td class="check">✓ 5,000+</td><td class="check">✓ 100+</td><td class="check">✓ NSF</td><td class="warn">Team page</td></tr>
+    <tr><td><strong>Pre-Lab Pro</strong></td><td>$59.00</td><td class="check">✓ Full</td><td class="check">✓ 2,000+</td><td class="check">✓ Active</td><td class="check">✓ Informed Sport</td><td class="warn">Team page</td></tr>
+    <tr><td><strong>Wrecked (Huge Supps)</strong></td><td>$49.95</td><td class="check">✓ Full</td><td class="check">✓ 5,000+</td><td class="check">✓ Active</td><td class="warn">Partial</td><td class="warn">Partial</td></tr>
+    <tr><td><strong>Legion Pulse</strong></td><td>$44.99</td><td class="check">✓ Full</td><td class="check">✓ 8,000+</td><td class="check">✓ 80+</td><td class="check">✓ Labdoor</td><td class="check">✓ Mike Matthews</td></tr>
+    <tr><td><strong>Onyx Supplements</strong></td><td>$54.99</td><td class="cross">✗ None</td><td class="cross">✗ 0</td><td class="cross">✗ 0</td><td class="cross">✗ None</td><td class="cross">✗ Anonymous</td></tr>
+  </table>
+
+  <h3>What Onyx Has That Competitors Don't</h3>
+  <ul>
+    <li><strong>The luxury aesthetic angle is genuinely unclaimed.</strong> No competitor at clinical-dose transparency level is using luxury brand positioning this coherently. Ghost is mainstream. Gorilla Mode is aggressive. Onyx's "Discipline is Luxury" positioning is a real market gap.</li>
+    <li><strong>Mucuna (98% L-Dopa) + Rhodiola Rosea combination.</strong> Most pre-workouts don't include both. This is a differentiating formula element with genuine AI-driven niche appeal if the brand publishes content explaining it.</li>
+    <li><strong>Agentic commerce infrastructure ahead of most brands.</strong> The agents.md / UCP / MCP setup positions Onyx well for the AI shopping agent channel that is growing rapidly.</li>
+    <li><strong>Early mover in the aesthetic fitness + supplements brand category.</strong> There is a real audience that cares about how their supplements are packaged and positioned. Onyx has identified this audience correctly.</li>
+  </ul>
+
+  <h3>The Gap That Matters Most</h3>
+  <p style="font-size:12.5px; line-height:1.7; color:var(--gray-800);">Every competitor has thousands of customer reviews feeding fresh, keyword-rich UGC to their product pages while simultaneously generating review schema star ratings in SERPs. Onyx has zero. At launch, Gorilla Mode's product page is dynamically updated by 50+ new reviews per week. Onyx's page will be static for months without a structured review acquisition plan in place before day one of order fulfillment.</p>
+
+  <div class="page-num">Page 13</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     12 — ROADMAP
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 12</div>
+  <div class="section-title">90-Day Implementation Roadmap</div>
+  <div class="section-desc">Prioritized actions from pre-launch sprint through sustained content build. No developer required for Week 1.</div>
+  <hr class="section-rule">
+
+  <div class="roadmap">
+    <div class="roadmap-col">
+      <div class="roadmap-header roadmap-header-1">Week 1–2 — Critical Sprint</div>
+      <div class="roadmap-body">
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Add Product JSON-LD to product template (fix brand field from "Mango Pineapple" → "Onyx Supplements")</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Rewrite product page title tag to include "Pre-Workout" + differentiator</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Write and publish meta descriptions for all 7 pages</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Install Judge.me / Loox review app, embed on product page</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Add founder name + brief bio to About page</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Add email address to Contact page</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Noindex /blogs/news + /pages/data-sharing-opt-out</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Fix collection H1: remove "Collection:" prefix</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Add OG + Twitter Card meta tags to theme head</div></div>
+      </div>
+    </div>
+    <div class="roadmap-col">
+      <div class="roadmap-header roadmap-header-2">Month 1–2 — High Priority</div>
+      <div class="roadmap-body">
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Add Organization JSON-LD to homepage</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Add FAQPage JSON-LD to /pages/faqs</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Add BreadcrumbList schema to product + collection pages</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Create Google Merchant Center account + install G&Y Shopify app</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Get GS1 GTIN/UPC for Golden Hour (~$30)</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Publish first 2 blog posts (ingredient breakdowns)</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Add contextual links to product from all static pages</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Create /llms.txt file</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Rebuild About page to 400+ words with real brand story</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Add FDA supplement disclaimer sitewide</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Pursue NSF for Sport or Informed Sport certification</div></div>
+      </div>
+    </div>
+    <div class="roadmap-col">
+      <div class="roadmap-header roadmap-header-3">Month 3 — Authority Build</div>
+      <div class="roadmap-body">
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Publish 3 more blog posts (ingredient spotlights + comparison content)</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Seed 5–10 supplement review micro-influencers with product samples</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Outreach to BarBend / FitnessVolt for product inclusion in roundups</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Set up Google Business Profile for brand reviews</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Create LinkedIn company page for entity authority</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Publish Certificate of Analysis (COA) for launch batch</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Build "Golden Hour vs. Gorilla Mode" comparison page</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Rename product images to keyword-descriptive filenames</div></div>
+        <div class="roadmap-item"><div class="roadmap-dot"></div><div class="roadmap-text">Add ingredient alt text to all product images</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Projected Score After 90 Days (Consistent Execution)</h3>
+  <table>
+    <tr><th>Dimension</th><th>Current</th><th>30-Day Est.</th><th>90-Day Est.</th></tr>
+    <tr><td>Technical SEO</td><td>41/100</td><td>62/100</td><td>72/100</td></tr>
+    <tr><td>Content Quality / E-E-A-T</td><td>29/100</td><td>42/100</td><td>58/100</td></tr>
+    <tr><td>Schema / Structured Data</td><td>18/100</td><td>65/100</td><td>74/100</td></tr>
+    <tr><td>E-Commerce SEO</td><td>31/100</td><td>55/100</td><td>68/100</td></tr>
+    <tr><td>AI Search Readiness</td><td>28/100</td><td>38/100</td><td>52/100</td></tr>
+    <tr><td>SXO</td><td>28/100</td><td>40/100</td><td>55/100</td></tr>
+    <tr><td><strong>Overall Score</strong></td><td><strong>32/100</strong></td><td><strong>~50/100</strong></td><td><strong>~63/100</strong></td></tr>
+  </table>
+
+  <div class="page-num">Page 14</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     13 — SCHEMA CODE
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="section-label">Section 13</div>
+  <div class="section-title">Schema Code — Ready to Implement</div>
+  <div class="section-desc">Copy-paste JSON-LD blocks. Implement in Shopify theme via Online Store → Themes → Edit code.</div>
+  <hr class="section-rule">
+
+  <h3>1. Product Schema (product template — sections/main-product.liquid)</h3>
+
+  <div class="code-block"><pre><span class="kw">&lt;script type="application/ld+json"&gt;</span>
+{
+  <span class="prop">"@context"</span>: <span class="str">"https://schema.org/"</span>,
+  <span class="prop">"@type"</span>: <span class="str">"Product"</span>,
+  <span class="prop">"name"</span>: <span class="str">"Golden Hour Pre-Workout"</span>,
+  <span class="prop">"brand"</span>: {
+    <span class="prop">"@type"</span>: <span class="str">"Brand"</span>,
+    <span class="prop">"name"</span>: <span class="str">"Onyx Supplements"</span>
+  },
+  <span class="prop">"description"</span>: <span class="str">"Premium pre-workout with 8g L-Citrulline, 300mg Alpha-GPC, 300mg caffeine, and full-label transparency. No proprietary blends."</span>,
+  <span class="prop">"image"</span>: <span class="str">"https://theonyxsupps.com/cdn/shop/files/golden-hour-preworkout.jpg"</span>,
+  <span class="prop">"sku"</span>: <span class="str">"GOLDEN-HOUR-MANGO-01"</span>,
+  <span class="prop">"offers"</span>: {
+    <span class="prop">"@type"</span>: <span class="str">"Offer"</span>,
+    <span class="prop">"url"</span>: <span class="str">"https://theonyxsupps.com/products/golden-hour"</span>,
+    <span class="prop">"priceCurrency"</span>: <span class="str">"USD"</span>,
+    <span class="prop">"price"</span>: <span class="str">"54.99"</span>,
+    <span class="prop">"priceValidUntil"</span>: <span class="str">"2026-12-31"</span>,
+    <span class="prop">"itemCondition"</span>: <span class="str">"https://schema.org/NewCondition"</span>,
+    <span class="prop">"availability"</span>: <span class="str">"https://schema.org/PreOrder"</span>,
+    <span class="prop">"seller"</span>: {
+      <span class="prop">"@type"</span>: <span class="str">"Organization"</span>,
+      <span class="prop">"name"</span>: <span class="str">"Onyx Supplements"</span>
+    }
+  },
+  <span class="prop">"aggregateRating"</span>: {
+    <span class="prop">"@type"</span>: <span class="str">"AggregateRating"</span>,
+    <span class="prop">"ratingValue"</span>: <span class="str">"{{ product.metafields.reviews.rating.value }}"</span>,
+    <span class="prop">"reviewCount"</span>: <span class="str">"{{ product.metafields.reviews.rating_count.value }}"</span>,
+    <span class="prop">"bestRating"</span>: <span class="str">"5"</span>,
+    <span class="prop">"worstRating"</span>: <span class="str">"1"</span>
+  }
+}
+<span class="kw">&lt;/script&gt;</span></pre></div>
+
+  <h3>2. Organization Schema (theme.liquid &lt;head&gt; — homepage only)</h3>
+
+  <div class="code-block"><pre><span class="kw">&lt;script type="application/ld+json"&gt;</span>
+{
+  <span class="prop">"@context"</span>: <span class="str">"https://schema.org"</span>,
+  <span class="prop">"@type"</span>: <span class="str">"Organization"</span>,
+  <span class="prop">"name"</span>: <span class="str">"Onyx Supplements"</span>,
+  <span class="prop">"url"</span>: <span class="str">"https://theonyxsupps.com"</span>,
+  <span class="prop">"logo"</span>: <span class="str">"https://theonyxsupps.com/cdn/shop/files/onyx-logo.png"</span>,
+  <span class="prop">"description"</span>: <span class="str">"Luxury supplements for disciplined athletes. Transparent formulas, clinical dosages, no proprietary blends."</span>,
+  <span class="prop">"contactPoint"</span>: {
+    <span class="prop">"@type"</span>: <span class="str">"ContactPoint"</span>,
+    <span class="prop">"contactType"</span>: <span class="str">"customer support"</span>,
+    <span class="prop">"email"</span>: <span class="str">"support@theonyxsupps.com"</span>,
+    <span class="prop">"availableLanguage"</span>: <span class="str">"English"</span>
+  },
+  <span class="prop">"sameAs"</span>: [
+    <span class="str">"https://www.instagram.com/theonyxsupps"</span>,
+    <span class="str">"https://www.facebook.com/theonyxsupps"</span>
+  ]
+}
+<span class="kw">&lt;/script&gt;</span></pre></div>
+
+  <h3>3. FAQPage Schema (/pages/faqs template)</h3>
+
+  <div class="code-block"><pre><span class="kw">&lt;script type="application/ld+json"&gt;</span>
+{
+  <span class="prop">"@context"</span>: <span class="str">"https://schema.org"</span>,
+  <span class="prop">"@type"</span>: <span class="str">"FAQPage"</span>,
+  <span class="prop">"mainEntity"</span>: [
+    {
+      <span class="prop">"@type"</span>: <span class="str">"Question"</span>,
+      <span class="prop">"name"</span>: <span class="str">"What is Golden Hour pre-workout?"</span>,
+      <span class="prop">"acceptedAnswer"</span>: { <span class="prop">"@type"</span>: <span class="str">"Answer"</span>,
+        <span class="prop">"text"</span>: <span class="str">"Golden Hour is a performance pre-workout by Onyx Supplements designed for sustained clarity, endurance, and vascular precision without chaotic stimulation or crash."</span> }
+    },
+    {
+      <span class="prop">"@type"</span>: <span class="str">"Question"</span>,
+      <span class="prop">"name"</span>: <span class="str">"How much caffeine is in Golden Hour?"</span>,
+      <span class="prop">"acceptedAnswer"</span>: { <span class="prop">"@type"</span>: <span class="str">"Answer"</span>,
+        <span class="prop">"text"</span>: <span class="str">"Golden Hour contains 300mg of caffeine anhydrous, structured with 150mg L-Theanine and 150mg Theobromine for controlled, sustained energy without a crash."</span> }
+    },
+    {
+      <span class="prop">"@type"</span>: <span class="str">"Question"</span>,
+      <span class="prop">"name"</span>: <span class="str">"Does Golden Hour contain a proprietary blend?"</span>,
+      <span class="prop">"acceptedAnswer"</span>: { <span class="prop">"@type"</span>: <span class="str">"Answer"</span>,
+        <span class="prop">"text"</span>: <span class="str">"No. Golden Hour uses a fully transparent label — every ingredient and its exact dose is disclosed on the packaging and product page. No hidden blends."</span> }
+    },
+    {
+      <span class="prop">"@type"</span>: <span class="str">"Question"</span>,
+      <span class="prop">"name"</span>: <span class="str">"Is Golden Hour third-party tested?"</span>,
+      <span class="prop">"acceptedAnswer"</span>: { <span class="prop">"@type"</span>: <span class="str">"Answer"</span>,
+        <span class="prop">"text"</span>: <span class="str">"Golden Hour is manufactured in a GMP-certified facility with strict quality control. Contact us at support@theonyxsupps.com for current certification details."</span> }
+    },
+    {
+      <span class="prop">"@type"</span>: <span class="str">"Question"</span>,
+      <span class="prop">"name"</span>: <span class="str">"Will I experience tingling from Golden Hour?"</span>,
+      <span class="prop">"acceptedAnswer"</span>: { <span class="prop">"@type"</span>: <span class="str">"Answer"</span>,
+        <span class="prop">"text"</span>: <span class="str">"A mild tingling sensation may occur due to 1.6g Beta-Alanine in the formula. This sensation is temporary, harmless, and is a sign the ingredient is active."</span> }
+    }
+  ]
+}
+<span class="kw">&lt;/script&gt;</span></pre></div>
+
+  <p style="font-size:11.5px; color:var(--gray-600); margin-top:8px;">Add all 9 Q&As from the FAQ page. Each Question "name" field should match the exact wording users would search. Update the email address placeholders with real contact information before publishing.</p>
+
+  <div class="page-num">Page 15</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     CLOSING
+     ════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div style="background: var(--onyx); border-radius: 12px; padding: 48px; margin-bottom: 32px;">
+    <div style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:16px;">Final Assessment</div>
+    <div style="font-size:24px; font-weight:800; color:var(--white); line-height:1.3; margin-bottom:20px; letter-spacing:-0.5px;">The Brand is Right.<br>The Infrastructure Isn't Built Yet.</div>
+    <div style="font-size:13px; color:#a09d94; line-height:1.8; max-width:620px;">Onyx Supplements has correctly identified its market position (luxury, aesthetic, transparent), built a genuinely competitive formula, and established a distinctive brand voice. None of that shows up in search results yet — because the content, schema, reviews, and trust signals that Google and AI systems use to evaluate a brand don't exist yet. The corrective path is clear: schema first (1 day), meta tags second (1 afternoon), founder + contact transparency third (2 hours). Then a sustained content investment — ingredient education, review acquisition, press outreach — that compounds over 6–12 months. A brand with this positioning could realistically reach page 1 for 3–5 niche pre-workout terms within 6 months with consistent execution.</div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:32px;">
+    <div style="background:var(--gray-100); border-radius:8px; padding:24px;">
+      <div style="font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:600;">Biggest Strengths</div>
+      <ul style="list-style:none; padding:0;">
+        <li style="padding:6px 0; border-bottom:1px solid var(--gray-200); font-size:12.5px;">✓ Clinical-dose formula is genuinely competitive</li>
+        <li style="padding:6px 0; border-bottom:1px solid var(--gray-200); font-size:12.5px;">✓ Luxury positioning is unclaimed in this segment</li>
+        <li style="padding:6px 0; border-bottom:1px solid var(--gray-200); font-size:12.5px;">✓ Agentic commerce setup is ahead of most brands</li>
+        <li style="padding:6px 0; border-bottom:1px solid var(--gray-200); font-size:12.5px;">✓ No legacy technical debt — clean build foundation</li>
+        <li style="padding:6px 0; font-size:12.5px;">✓ Distinctive brand voice that doesn't sound like AI</li>
+      </ul>
+    </div>
+    <div style="background:var(--gray-100); border-radius:8px; padding:24px;">
+      <div style="font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--critical); margin-bottom:12px; font-weight:600;">Biggest Risks</div>
+      <ul style="list-style:none; padding:0;">
+        <li style="padding:6px 0; border-bottom:1px solid var(--gray-200); font-size:12.5px;">✗ Anonymous brand in YMYL category = Google trust failure</li>
+        <li style="padding:6px 0; border-bottom:1px solid var(--gray-200); font-size:12.5px;">✗ Zero reviews at launch = no star ratings, no conversion proof</li>
+        <li style="padding:6px 0; border-bottom:1px solid var(--gray-200); font-size:12.5px;">✗ No blog = no keyword surface, no topical authority</li>
+        <li style="padding:6px 0; border-bottom:1px solid var(--gray-200); font-size:12.5px;">✗ Brand field in schema says "Mango Pineapple"</li>
+        <li style="padding:6px 0; font-size:12.5px;">✗ No certifications = premium price without premium proof</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid var(--gray-200); padding-top:20px; display:flex; justify-content:space-between; align-items:center;">
+    <div>
+      <div style="font-size:11px; color:var(--gray-400);">Prepared for review of theonyxsupps.com</div>
+      <div style="font-size:11px; color:var(--gray-400);">June 2, 2026</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-size:11px; color:var(--gray-400);">Overall SEO Health Score</div>
+      <div style="font-size:24px; font-weight:800; color:var(--gold);">32 / 100</div>
+    </div>
+  </div>
+
+  <div class="page-num">Page 16</div>
+</div>
+
+</body>
+</html>

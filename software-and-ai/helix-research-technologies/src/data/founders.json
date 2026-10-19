@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Ron Lenser",
+    "role": "Co-founder, sales systems and automation",
+    "kind": "founder",
+    "credentials": [
+      "Building client sites, tools, and automations with AI since 2025",
+      "Runs the Helix lead engine: scraping, grading, GoHighLevel pipeline",
+      "Built the Discord ops bot that records calls and syncs tasks to the CRM"
+    ],
+    "linkedin": "https://linkedin.com/in/ronlenser",
+    "email": "ron@helixresearchtech.com",
+    "photo": "/founders/ron.svg"
+  },
+  {
+    "name": "Martin Shurtleff",
+    "role": "Co-founder, engineering and infrastructure",
+    "kind": "founder",
+    "credentials": [
+      "Owns backend infrastructure and the engineering repo",
+      "Sets the collaboration workflow for humans and agents: PR rules, agent files, branch hygiene",
+      "Product and design direction for the Helix platform"
+    ],
+    "linkedin": "TODO",
+    "email": "martin@helixresearchtech.com",
+    "photo": "/founders/martin.svg"
+  },
+  {
+    "name": "Thomas Arnold",
+    "role": "Co-founder, outreach and go-to-market",
+    "kind": "founder",
+    "credentials": [
+      "Writes and runs the cold call scripts and email sequences",
+      "Owns the company domain, Google Workspace, and email deliverability",
+      "Runs competitor and pricing research for each offer"
+    ],
+    "linkedin": "TODO",
+    "email": "",
+    "photo": "/founders/thomas.svg"
+  },
+  {
+    "name": "Constantine Beseris",
+    "role": "Co-founder, offers and partnerships",
+    "kind": "founder",
+    "credentials": [
+      "Scopes the offer documents: what each build includes, what it costs",
+      "Opens doors through medical device, pharma packaging, and logistics contacts",
+      "Runs the sales scripts on live calls with the team"
+    ],
+    "linkedin": "TODO",
+    "email": "",
+    "photo": "/founders/constantine.svg"
+  }
+]

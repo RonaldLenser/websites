@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fifth Pentacle — Live Tarot Readings & Spiritual Guidance</title>
+    <meta name="description" content="Live tarot readings, spiritual guidance, and deck reviews by Stefan (My5Pentacles). No paywalls. Real guidance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ========== FLOATING SIDE STAINED GLASS PANELS (parallax on scroll) ========== -->
+    <div class="side-panel side-panel-left" id="sidePanelLeft">
+        <svg class="side-stained-glass" viewBox="0 0 120 800" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="sgBlueL" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2E5FA1" stop-opacity="0.5"/><stop offset="100%" stop-color="#1A1525" stop-opacity="0.1"/></linearGradient>
+                <linearGradient id="sgRedL" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8B2E3B" stop-opacity="0.5"/><stop offset="100%" stop-color="#1A1525" stop-opacity="0.1"/></linearGradient>
+                <linearGradient id="sgGreenL" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3A6B4A" stop-opacity="0.4"/><stop offset="100%" stop-color="#1A1525" stop-opacity="0.1"/></linearGradient>
+            </defs>
+            <path d="M10,800 L10,120 Q10,40 60,10 Q110,40 110,120 L110,800" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.3"/>
+            <path d="M20,780 L20,140 Q20,60 60,30 Q100,60 100,140 L100,780" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.18"/>
+            <ellipse cx="60" cy="110" rx="30" ry="55" fill="url(#sgBlueL)" opacity="0.35"/>
+            <ellipse cx="60" cy="250" rx="25" ry="45" fill="url(#sgRedL)" opacity="0.3"/>
+            <ellipse cx="60" cy="380" rx="28" ry="50" fill="url(#sgGreenL)" opacity="0.25"/>
+            <ellipse cx="60" cy="520" rx="25" ry="45" fill="url(#sgBlueL)" opacity="0.2"/>
+            <ellipse cx="60" cy="660" rx="28" ry="48" fill="url(#sgRedL)" opacity="0.18"/>
+            <line x1="60" y1="50" x2="60" y2="760" stroke="#C9A84C" stroke-width="0.5" opacity="0.12"/>
+            <line x1="30" y1="110" x2="90" y2="110" stroke="#C9A84C" stroke-width="0.4" opacity="0.1"/>
+            <line x1="30" y1="250" x2="90" y2="250" stroke="#C9A84C" stroke-width="0.4" opacity="0.1"/>
+            <line x1="30" y1="380" x2="90" y2="380" stroke="#C9A84C" stroke-width="0.4" opacity="0.1"/>
+            <line x1="30" y1="520" x2="90" y2="520" stroke="#C9A84C" stroke-width="0.4" opacity="0.1"/>
+            <line x1="30" y1="660" x2="90" y2="660" stroke="#C9A84C" stroke-width="0.4" opacity="0.1"/>
+            <polygon points="60,180 70,195 60,210 50,195" fill="#C9A84C" opacity="0.15"/>
+            <polygon points="60,310 68,322 60,334 52,322" fill="#D4943A" opacity="0.12"/>
+            <polygon points="60,450 68,462 60,474 52,462" fill="#C9A84C" opacity="0.13"/>
+            <polygon points="60,590 68,602 60,614 52,602" fill="#D4943A" opacity="0.1"/>
+            <!-- Blood drip on left window -->
+            <circle cx="40" cy="300" r="3" fill="#8B2E3B" opacity="0.25"/>
+            <path d="M40,303 Q39,315 40,325" stroke="#8B2E3B" stroke-width="1.8" fill="none" opacity="0.15" stroke-linecap="round"/>
+            <circle cx="75" cy="550" r="2.5" fill="#8B2E3B" opacity="0.2"/>
+        </svg>
+    </div>
+    <div class="side-panel side-panel-right" id="sidePanelRight">
+        <svg class="side-stained-glass" viewBox="0 0 120 800" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10,800 L10,120 Q10,40 60,10 Q110,40 110,120 L110,800" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.3"/>
+            <path d="M20,780 L20,140 Q20,60 60,30 Q100,60 100,140 L100,780" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.18"/>
+            <ellipse cx="60" cy="110" rx="30" ry="55" fill="url(#sgRedL)" opacity="0.3"/>
+            <ellipse cx="60" cy="250" rx="25" ry="45" fill="url(#sgGreenL)" opacity="0.25"/>
+            <ellipse cx="60" cy="380" rx="28" ry="50" fill="url(#sgBlueL)" opacity="0.3"/>
+            <ellipse cx="60" cy="520" rx="25" ry="45" fill="url(#sgRedL)" opacity="0.2"/>
+            <ellipse cx="60" cy="660" rx="28" ry="48" fill="url(#sgGreenL)" opacity="0.15"/>
+            <line x1="60" y1="50" x2="60" y2="760" stroke="#C9A84C" stroke-width="0.5" opacity="0.12"/>
+            <line x1="30" y1="110" x2="90" y2="110" stroke="#C9A84C" stroke-width="0.4" opacity="0.1"/>
+            <line x1="30" y1="250" x2="90" y2="250" stroke="#C9A84C" stroke-width="0.4" opacity="0.1"/>
+            <line x1="30" y1="380" x2="90" y2="380" stroke="#C9A84C" stroke-width="0.4" opacity="0.1"/>
+            <line x1="30" y1="520" x2="90" y2="520" stroke="#C9A84C" stroke-width="0.4" opacity="0.1"/>
+            <line x1="30" y1="660" x2="90" y2="660" stroke="#C9A84C" stroke-width="0.4" opacity="0.1"/>
+            <polygon points="60,180 70,195 60,210 50,195" fill="#D4943A" opacity="0.13"/>
+            <polygon points="60,310 68,322 60,334 52,322" fill="#C9A84C" opacity="0.12"/>
+            <polygon points="60,450 68,462 60,474 52,462" fill="#D4943A" opacity="0.15"/>
+            <polygon points="60,590 68,602 60,614 52,602" fill="#C9A84C" opacity="0.1"/>
+            <!-- Blood drip on right window -->
+            <circle cx="80" cy="420" r="3.5" fill="#8B2E3B" opacity="0.22"/>
+            <path d="M80,424 Q79,438 80,448" stroke="#8B2E3B" stroke-width="2" fill="none" opacity="0.12" stroke-linecap="round"/>
+            <circle cx="45" cy="700" r="2" fill="#8B2E3B" opacity="0.18"/>
+        </svg>
+    </div>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">
+                <svg class="nav-pentacle-svg" viewBox="0 0 40 40" width="28" height="28">
+                    <circle cx="20" cy="20" r="17" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+                    <polygon points="20,4 24.5,14.5 36,14.5 26.8,21.5 30,33 20,26 10,33 13.2,21.5 4,14.5 15.5,14.5" fill="none" stroke="#C9A84C" stroke-width="1"/>
+                </svg>
+                <span class="nav-logo-text">The Fifth Pentacle</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#live">Live Readings</a></li>
+                <li><a href="#archive">The Archive</a></li>
+                <li><a href="#reader">The Reader</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#live" class="nav-cta">Watch Live</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========== HERO — Cathedral Banner with Hooded Figure, Lantern, Stained Glass ========== -->
+    <section class="hero" id="hero">
+        <canvas class="hero-particles" id="heroParticles"></canvas>
+        <div class="hero-banner-art">
+            <svg class="hero-cathedral-svg" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <radialGradient id="lanternGlow" cx="50%" cy="65%" r="40%"><stop offset="0%" stop-color="#D4943A" stop-opacity="0.3"/><stop offset="40%" stop-color="#C9A84C" stop-opacity="0.1"/><stop offset="100%" stop-color="#0D0A14" stop-opacity="0"/></radialGradient>
+                    <radialGradient id="windowGlow" cx="50%" cy="30%" r="50%"><stop offset="0%" stop-color="#2E5FA1" stop-opacity="0.12"/><stop offset="50%" stop-color="#8B2E3B" stop-opacity="0.05"/><stop offset="100%" stop-color="#0D0A14" stop-opacity="0"/></radialGradient>
+                    <linearGradient id="bloodDrip" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B2E3B" stop-opacity="0.65"/><stop offset="100%" stop-color="#5A1520" stop-opacity="0"/></linearGradient>
+                    <linearGradient id="cloakGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1A1525"/><stop offset="100%" stop-color="#0D0A14"/></linearGradient>
+                    <filter id="glowF"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <clipPath id="archClip"><path d="M400,650 L400,200 Q400,50 600,20 Q800,50 800,200 L800,650 Z"/></clipPath>
+                </defs>
+                <rect width="1200" height="700" fill="url(#windowGlow)"/>
+                <!-- Gothic arch outer -->
+                <path d="M400,660 L400,200 Q400,50 600,15 Q800,50 800,200 L800,660" fill="none" stroke="#C9A84C" stroke-width="2.5" opacity="0.4"/>
+                <path d="M430,640 L430,215 Q430,75 600,40 Q770,75 770,215 L770,640" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.22"/>
+                <!-- Stained glass fills -->
+                <g clip-path="url(#archClip)" opacity="0.5">
+                    <ellipse cx="600" cy="120" rx="120" ry="80" fill="#2E5FA1" opacity="0.18"/>
+                    <ellipse cx="510" cy="260" rx="60" ry="90" fill="#8B2E3B" opacity="0.16"/>
+                    <ellipse cx="690" cy="260" rx="60" ry="90" fill="#3A6B4A" opacity="0.14"/>
+                    <circle cx="600" cy="170" r="35" fill="#C9A84C" opacity="0.1"/>
+                    <circle cx="600" cy="170" r="25" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.18"/>
+                    <ellipse cx="520" cy="420" rx="50" ry="70" fill="#8B2E3B" opacity="0.1"/>
+                    <ellipse cx="680" cy="420" rx="50" ry="70" fill="#8B2E3B" opacity="0.1"/>
+                    <line x1="600" y1="40" x2="600" y2="640" stroke="#C9A84C" stroke-width="0.8" opacity="0.1"/>
+                    <line x1="500" y1="120" x2="500" y2="640" stroke="#C9A84C" stroke-width="0.6" opacity="0.07"/>
+                    <line x1="700" y1="120" x2="700" y2="640" stroke="#C9A84C" stroke-width="0.6" opacity="0.07"/>
+                    <line x1="430" y1="200" x2="770" y2="200" stroke="#C9A84C" stroke-width="0.6" opacity="0.08"/>
+                    <line x1="440" y1="340" x2="760" y2="340" stroke="#C9A84C" stroke-width="0.6" opacity="0.06"/>
+                    <line x1="440" y1="480" x2="760" y2="480" stroke="#C9A84C" stroke-width="0.6" opacity="0.06"/>
+                </g>
+                <!-- Pentacle in rosette -->
+                <g transform="translate(600,170)" opacity="0.45">
+                    <circle cx="0" cy="0" r="22" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                    <polygon points="0,-20 5.9,-6.2 19,-6.2 9.5,2.4 11.8,16.2 0,10 -11.8,16.2 -9.5,2.4 -19,-6.2 -5.9,-6.2" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+                </g>
+                <!-- Hooded Figure -->
+                <g class="hooded-figure" opacity="0.65">
+                    <path d="M560,660 Q565,520 555,440 Q548,380 560,340 Q570,310 600,280 Q630,310 640,340 Q652,380 645,440 Q635,520 640,660 Z" fill="url(#cloakGrad)" stroke="#1A1525" stroke-width="1"/>
+                    <path d="M570,340 Q570,290 580,270 Q590,255 600,250 Q610,255 620,270 Q630,290 630,340 Q615,320 600,315 Q585,320 570,340 Z" fill="#0D0A14"/>
+                    <ellipse cx="600" cy="310" rx="16" ry="20" fill="#050308" opacity="0.9"/>
+                    <path d="M575,420 Q585,440 580,480 Q578,520 575,560" fill="none" stroke="#2A2040" stroke-width="0.8" opacity="0.4"/>
+                    <path d="M625,420 Q615,445 618,480 Q620,520 625,560" fill="none" stroke="#2A2040" stroke-width="0.8" opacity="0.4"/>
+                    <ellipse cx="595" cy="435" rx="8" ry="5" fill="#1A1525"/>
+                    <ellipse cx="605" cy="435" rx="8" ry="5" fill="#1A1525"/>
+                </g>
+                <!-- Lantern -->
+                <g class="lantern" transform="translate(600,460)">
+                    <line x1="0" y1="-30" x2="0" y2="0" stroke="#C9A84C" stroke-width="1" opacity="0.45"/>
+                    <rect x="-12" y="0" width="24" height="30" rx="3" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.55"/>
+                    <line x1="-12" y1="10" x2="12" y2="10" stroke="#C9A84C" stroke-width="0.8" opacity="0.35"/>
+                    <line x1="-12" y1="20" x2="12" y2="20" stroke="#C9A84C" stroke-width="0.8" opacity="0.35"/>
+                    <line x1="0" y1="0" x2="0" y2="30" stroke="#C9A84C" stroke-width="0.8" opacity="0.35"/>
+                    <ellipse cx="0" cy="15" rx="8" ry="10" fill="#D4943A" opacity="0.3" filter="url(#glowF)"/>
+                    <path d="M-8,-2 L-12,0 L12,0 L8,-2 Z" fill="#C9A84C" opacity="0.35"/>
+                    <path d="M-6,30 L-10,34 L10,34 L6,30 Z" fill="#C9A84C" opacity="0.25"/>
+                </g>
+                <ellipse cx="600" cy="480" rx="180" ry="150" fill="url(#lanternGlow)" class="lantern-glow-pulse"/>
+                <!-- Blood splatters -->
+                <g class="blood-splats" opacity="0.45">
+                    <path d="M430,350 Q432,370 430,400 Q429,415 430,430" stroke="url(#bloodDrip)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <circle cx="430" cy="435" r="4" fill="#8B2E3B" opacity="0.45"/>
+                    <path d="M770,280 Q772,300 770,330 Q769,345 771,355" stroke="url(#bloodDrip)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <circle cx="771" cy="360" r="3.5" fill="#8B2E3B" opacity="0.4"/>
+                    <circle cx="350" cy="180" r="5" fill="#8B2E3B" opacity="0.25"/>
+                    <circle cx="344" cy="186" r="2.5" fill="#8B2E3B" opacity="0.2"/>
+                    <path d="M350,185 Q348,200 350,210" stroke="#8B2E3B" stroke-width="1.5" fill="none" opacity="0.15" stroke-linecap="round"/>
+                    <circle cx="860" cy="150" r="4" fill="#8B2E3B" opacity="0.2"/>
+                    <circle cx="855" cy="158" r="2" fill="#8B2E3B" opacity="0.15"/>
+                    <circle cx="300" cy="440" r="6" fill="#8B2E3B" opacity="0.18"/>
+                    <path d="M300,446 Q298,460 301,475" stroke="#8B2E3B" stroke-width="1.8" fill="none" opacity="0.12" stroke-linecap="round"/>
+                    <circle cx="910" cy="400" r="5" fill="#8B2E3B" opacity="0.17"/>
+                </g>
+                <!-- Dice near figure -->
+                <g class="dice-elements" opacity="0.35">
+                    <g transform="translate(540,600) rotate(-15)"><rect x="-12" y="-12" width="24" height="24" rx="3" fill="none" stroke="#C9A84C" stroke-width="1"/><circle cx="0" cy="0" r="2.5" fill="#C9A84C"/><circle cx="-6" cy="-6" r="2" fill="#C9A84C"/><circle cx="6" cy="6" r="2" fill="#C9A84C"/></g>
+                    <g transform="translate(665,610) rotate(10)"><rect x="-11" y="-11" width="22" height="22" rx="3" fill="none" stroke="#C9A84C" stroke-width="1"/><circle cx="-5" cy="-5" r="2" fill="#C9A84C"/><circle cx="5" cy="-5" r="2" fill="#C9A84C"/><circle cx="-5" cy="5" r="2" fill="#C9A84C"/><circle cx="5" cy="5" r="2" fill="#C9A84C"/><circle cx="0" cy="0" r="2" fill="#C9A84C"/></g>
+                </g>
+                <!-- Scattered pentacles -->
+                <g class="scattered-pentacles" opacity="0.18">
+                    <g transform="translate(200,300) scale(0.6)"><circle cx="0" cy="0" r="18" fill="none" stroke="#C9A84C" stroke-width="1.2"/><polygon points="0,-16 4.7,-5 15.2,-5 7.6,1.9 9.5,13 0,8 -9.5,13 -7.6,1.9 -15.2,-5 -4.7,-5" fill="none" stroke="#C9A84C" stroke-width="0.8"/></g>
+                    <g transform="translate(1000,250) scale(0.5)"><circle cx="0" cy="0" r="18" fill="none" stroke="#C9A84C" stroke-width="1.2"/><polygon points="0,-16 4.7,-5 15.2,-5 7.6,1.9 9.5,13 0,8 -9.5,13 -7.6,1.9 -15.2,-5 -4.7,-5" fill="none" stroke="#C9A84C" stroke-width="0.8"/></g>
+                    <g transform="translate(150,520) scale(0.4)"><circle cx="0" cy="0" r="18" fill="none" stroke="#C9A84C" stroke-width="1.5"/><polygon points="0,-16 4.7,-5 15.2,-5 7.6,1.9 9.5,13 0,8 -9.5,13 -7.6,1.9 -15.2,-5 -4.7,-5" fill="none" stroke="#C9A84C" stroke-width="1"/></g>
+                    <g transform="translate(1050,480) scale(0.45)"><circle cx="0" cy="0" r="18" fill="none" stroke="#C9A84C" stroke-width="1.5"/><polygon points="0,-16 4.7,-5 15.2,-5 7.6,1.9 9.5,13 0,8 -9.5,13 -7.6,1.9 -15.2,-5 -4.7,-5" fill="none" stroke="#C9A84C" stroke-width="1"/></g>
+                </g>
+            </svg>
+        </div>
+        <div class="hero-content">
+            <div class="hero-pentacle-sigil">
+                <svg viewBox="0 0 80 80" width="64" height="64"><circle cx="40" cy="40" r="34" fill="none" stroke="#C9A84C" stroke-width="1.8" opacity="0.7"/><circle cx="40" cy="40" r="30" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.3"/><polygon points="40,8 49.4,27 70.2,27 53.4,39.6 58.8,59.6 40,48 21.2,59.6 26.6,39.6 9.8,27 30.6,27" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.8"/></svg>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-title-the">The</span>
+                <span class="hero-title-fifth">Fifth</span>
+                <span class="hero-title-pentacle">Pentacle</span>
+            </h1>
+            <p class="hero-tagline">Live Tarot Readings · Spiritual Guidance · Deck Reviews</p>
+            <p class="hero-sub">Real guidance. No paywalls.</p>
+            <div class="hero-actions">
+                <a href="#live" class="btn btn-gold btn-glow"><span class="btn-live-dot"></span> Watch Live</a>
+                <a href="#archive" class="btn btn-outline">Browse Readings</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator"><span>Scroll</span><div class="scroll-line"></div></div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider">
+        <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 Q100,10 200,40 Q300,70 400,40 Q500,10 600,40 Q700,70 800,40 Q900,10 1000,40 Q1100,70 1200,40" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.25"/>
+            <g transform="translate(600,40) scale(0.5)"><circle cx="0" cy="0" r="18" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.4"/><polygon points="0,-16 4.7,-5 15.2,-5 7.6,1.9 9.5,13 0,8 -9.5,13 -7.6,1.9 -15.2,-5 -4.7,-5" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.3"/></g>
+            <circle cx="300" cy="40" r="3" fill="#8B2E3B" opacity="0.2"/>
+            <circle cx="900" cy="40" r="2.5" fill="#8B2E3B" opacity="0.18"/>
+        </svg>
+    </div>
+
+    <!-- ========== LIVE STREAM ========== -->
+    <section class="section section-live" id="live">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title reveal">Live Readings</h2>
+                <div class="pentacle-divider"><span></span><svg class="pentacle-svg-sm" viewBox="0 0 36 36" width="20" height="20"><circle cx="18" cy="18" r="15" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/><polygon points="18,4 21.5,12.5 30.5,12.5 23.5,18 25.5,27 18,22 10.5,27 12.5,18 5.5,12.5 14.5,12.5" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/></svg><span></span></div>
+            </div>
+            <div class="live-layout">
+                <div class="live-main">
+                    <div class="live-player reveal">
+                        <div class="live-badge" id="liveBadge"><span class="live-dot"></span> LIVE</div>
+                        <div class="live-embed">
+                            <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID" title="The Fifth Pentacle — Live Stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                        <div class="live-offline" id="liveOffline">
+                            <svg class="offline-pentacle" viewBox="0 0 60 60" width="48" height="48"><circle cx="30" cy="30" r="26" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.3"/><polygon points="30,6 35.5,19 49,19 38,27 42,40 30,32 18,40 22,27 11,19 24.5,19" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.25"/></svg>
+                            <h3>Stefan is currently offline</h3>
+                            <p>Next stream: <strong id="nextStream">Check the schedule below</strong></p>
+                            <a href="#schedule" class="btn btn-outline btn-sm">View Schedule</a>
+                        </div>
+                    </div>
+                    <!-- ADSENSE: 728x90 Leaderboard -->
+                    <div class="ad-placeholder ad-leaderboard reveal"><span>Ad Space — 728×90</span></div>
+                </div>
+                <div class="live-sidebar">
+                    <div class="live-chat reveal">
+                        <div class="chat-header"><span>Live Chat</span><span class="chat-viewers"><span class="live-dot-sm"></span> --</span></div>
+                        <div class="chat-embed"><iframe src="https://www.youtube.com/live_chat?v=CHANNEL_ID&embed_domain=thefifthpentacle.com" title="Live Chat" frameborder="0" loading="lazy"></iframe></div>
+                    </div>
+                    <!-- ADSENSE: 300x250 Medium Rectangle -->
+                    <div class="ad-placeholder ad-rect reveal"><span>Ad — 300×250</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inline pentacle divider -->
+    <div class="inline-divider"><svg viewBox="0 0 400 40" width="200" height="20" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="20" x2="160" y2="20" stroke="#C9A84C" stroke-width="0.8" opacity="0.2"/><g transform="translate(200,20) scale(0.55)"><circle cx="0" cy="0" r="18" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.4"/><polygon points="0,-16 4.7,-5 15.2,-5 7.6,1.9 9.5,13 0,8 -9.5,13 -7.6,1.9 -15.2,-5 -4.7,-5" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.3"/></g><line x1="240" y1="20" x2="400" y2="20" stroke="#C9A84C" stroke-width="0.8" opacity="0.2"/><circle cx="80" cy="20" r="3" fill="#8B2E3B" opacity="0.18"/><circle cx="320" cy="20" r="2.5" fill="#8B2E3B" opacity="0.15"/></svg></div>
+
+    <!-- ========== VIDEO ARCHIVE ========== -->
+    <section class="section section-archive" id="archive">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title reveal">The Archive</h2>
+                <p class="section-subtitle reveal">Past Readings & Reviews</p>
+                <div class="pentacle-divider"><span></span><svg class="pentacle-svg-sm" viewBox="0 0 36 36" width="20" height="20"><circle cx="18" cy="18" r="15" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/><polygon points="18,4 21.5,12.5 30.5,12.5 23.5,18 25.5,27 18,22 10.5,27 12.5,18 5.5,12.5 14.5,12.5" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/></svg><span></span></div>
+            </div>
+            <div class="archive-filters reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="live">Live Readings</button>
+                <button class="filter-btn" data-filter="deck">Deck Reviews</button>
+                <button class="filter-btn" data-filter="pick">Pick a Card</button>
+            </div>
+            <div class="archive-grid" id="archiveGrid"></div>
+            <div class="archive-load reveal"><button class="btn btn-outline" id="loadMore">Load More</button></div>
+        </div>
+    </section>
+
+    <!-- ========== THE READER ========== -->
+    <section class="section section-reader" id="reader">
+        <div class="stained-glass-frame"></div>
+        <svg class="reader-blood-corner reader-blood-tl" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="9" fill="#8B2E3B" opacity="0.15"/><circle cx="30" cy="12" r="4.5" fill="#8B2E3B" opacity="0.12"/><circle cx="12" cy="30" r="3.5" fill="#8B2E3B" opacity="0.1"/><path d="M18,27 Q17,42 19,55" stroke="#8B2E3B" stroke-width="2.2" fill="none" opacity="0.1" stroke-linecap="round"/></svg>
+        <svg class="reader-blood-corner reader-blood-br" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="8" fill="#8B2E3B" opacity="0.15"/><circle cx="52" cy="66" r="4" fill="#8B2E3B" opacity="0.12"/><circle cx="66" cy="50" r="3" fill="#8B2E3B" opacity="0.1"/><path d="M60,52 Q59,42 61,32" stroke="#8B2E3B" stroke-width="2" fill="none" opacity="0.08" stroke-linecap="round"/></svg>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title reveal">The Reader</h2>
+                <div class="pentacle-divider"><span></span><svg class="pentacle-svg-sm" viewBox="0 0 36 36" width="20" height="20"><circle cx="18" cy="18" r="15" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/><polygon points="18,4 21.5,12.5 30.5,12.5 23.5,18 25.5,27 18,22 10.5,27 12.5,18 5.5,12.5 14.5,12.5" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/></svg><span></span></div>
+            </div>
+            <div class="reader-layout">
+                <div class="reader-photo reveal">
+                    <div class="reader-photo-frame">
+                        <div class="reader-photo-placeholder">
+                            <svg viewBox="0 0 200 260" width="160" height="210" xmlns="http://www.w3.org/2000/svg">
+                                <defs><radialGradient id="photoGI" cx="50%" cy="60%" r="50%"><stop offset="0%" stop-color="#D4943A" stop-opacity="0.1"/><stop offset="100%" stop-color="#0D0A14" stop-opacity="0"/></radialGradient></defs>
+                                <rect width="200" height="260" fill="url(#photoGI)"/>
+                                <path d="M70,260 Q72,200 68,160 Q64,130 72,105 Q80,85 100,72 Q120,85 128,105 Q136,130 132,160 Q128,200 130,260 Z" fill="#0D0A14" stroke="#1A1525" stroke-width="1"/>
+                                <path d="M78,105 Q78,80 85,68 Q92,58 100,54 Q108,58 115,68 Q122,80 122,105 Q112,90 100,86 Q88,90 78,105 Z" fill="#0D0A14"/>
+                                <ellipse cx="100" cy="96" rx="12" ry="15" fill="#050308"/>
+                                <g transform="translate(100,140) scale(0.35)" opacity="0.4"><circle cx="0" cy="0" r="18" fill="none" stroke="#C9A84C" stroke-width="2"/><polygon points="0,-16 4.7,-5 15.2,-5 7.6,1.9 9.5,13 0,8 -9.5,13 -7.6,1.9 -15.2,-5 -4.7,-5" fill="none" stroke="#C9A84C" stroke-width="1.5"/></g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="reader-photo-glow"></div>
+                </div>
+                <div class="reader-bio reveal">
+                    <p class="reader-bio-text">Stefan is a tarot reader and spiritual guide who believes readings should be accessible to everyone — not locked behind paywalls. Through live streams and recorded content, he brings honest, personal guidance to anyone seeking clarity.</p>
+                    <p class="reader-bio-text">Known online as <strong>My5Pentacles</strong>, Stefan draws from deep study of tarot symbolism, astrology, and spiritual tradition. Every reading is approached with authenticity and care — no scripts, no gimmicks.</p>
+                    <div class="reader-symbols"><span title="Moon">☽</span><span title="Venus">♀</span><span title="Mercury">☿</span><span title="Saturn">♄</span><span title="Libra">♎</span></div>
+                    <a href="https://www.youtube.com/@My5Pentacles" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Subscribe on YouTube</a>
+                </div>
+            </div>
+            <div class="tarot-carousel reveal">
+                <h3 class="carousel-title">The Collection</h3>
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="tarot-card" data-tilt><div class="tarot-card-inner"><div class="tarot-card-face"><svg class="card-pentacle" viewBox="0 0 50 50" width="36" height="36"><circle cx="25" cy="25" r="20" fill="none" stroke="#C9A84C" stroke-width="1.2"/><polygon points="25,6 29.5,18 42,18 32,25 36,37 25,30 14,37 18,25 8,18 20.5,18" fill="none" stroke="#C9A84C" stroke-width="1"/></svg><span class="tarot-numeral">V</span><span class="tarot-name">Five of Pentacles</span></div></div></div>
+                    <div class="tarot-card" data-tilt><div class="tarot-card-inner"><div class="tarot-card-face"><svg class="card-pentacle" viewBox="0 0 50 50" width="36" height="36"><circle cx="25" cy="25" r="20" fill="none" stroke="#C9A84C" stroke-width="1.2"/><polygon points="25,6 29.5,18 42,18 32,25 36,37 25,30 14,37 18,25 8,18 20.5,18" fill="none" stroke="#C9A84C" stroke-width="1"/></svg><span class="tarot-numeral">IX</span><span class="tarot-name">Nine of Pentacles</span></div></div></div>
+                    <div class="tarot-card" data-tilt><div class="tarot-card-inner"><div class="tarot-card-face tarot-card-emperor"><span class="tarot-large-symbol">♔</span><span class="tarot-numeral">IV</span><span class="tarot-name">The Emperor</span></div></div></div>
+                    <div class="tarot-card" data-tilt><div class="tarot-card-inner"><div class="tarot-card-face tarot-card-priestess"><span class="tarot-large-symbol">☽</span><span class="tarot-numeral">II</span><span class="tarot-name">High Priestess</span></div></div></div>
+                    <div class="tarot-card" data-tilt><div class="tarot-card-inner"><div class="tarot-card-face"><span class="tarot-large-symbol">♃</span><span class="tarot-numeral">X</span><span class="tarot-name">Wheel of Fortune</span></div></div></div>
+                    <div class="tarot-card" data-tilt><div class="tarot-card-inner"><div class="tarot-card-face tarot-card-star"><svg class="card-pentacle" viewBox="0 0 50 50" width="36" height="36"><circle cx="25" cy="25" r="20" fill="none" stroke="#C9A84C" stroke-width="1.2"/><polygon points="25,6 29.5,18 42,18 32,25 36,37 25,30 14,37 18,25 8,18 20.5,18" fill="none" stroke="#C9A84C" stroke-width="1"/></svg><span class="tarot-numeral">XVII</span><span class="tarot-name">The Star</span></div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SCHEDULE ========== -->
+    <section class="section section-schedule" id="schedule">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title reveal">When I'm Live</h2>
+                <div class="pentacle-divider"><span></span><svg class="pentacle-svg-sm" viewBox="0 0 36 36" width="20" height="20"><circle cx="18" cy="18" r="15" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/><polygon points="18,4 21.5,12.5 30.5,12.5 23.5,18 25.5,27 18,22 10.5,27 12.5,18 5.5,12.5 14.5,12.5" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/></svg><span></span></div>
+            </div>
+            <div class="schedule-tz reveal"><label for="tzSelect">Timezone:</label><select id="tzSelect" class="tz-select"><option value="America/New_York">Eastern (ET)</option><option value="America/Chicago">Central (CT)</option><option value="America/Denver">Mountain (MT)</option><option value="America/Los_Angeles">Pacific (PT)</option><option value="Europe/London">London (GMT/BST)</option></select></div>
+            <div class="schedule-grid reveal">
+                <div class="schedule-card"><div class="schedule-day">Monday</div><div class="schedule-time">8:00 PM</div><div class="schedule-type">Live General Reading</div></div>
+                <div class="schedule-card schedule-off"><div class="schedule-day">Tuesday</div><div class="schedule-time">—</div><div class="schedule-type">Off</div></div>
+                <div class="schedule-card"><div class="schedule-day">Wednesday</div><div class="schedule-time">8:00 PM</div><div class="schedule-type">Pick a Card</div></div>
+                <div class="schedule-card schedule-off"><div class="schedule-day">Thursday</div><div class="schedule-time">—</div><div class="schedule-type">Off</div></div>
+                <div class="schedule-card"><div class="schedule-day">Friday</div><div class="schedule-time">9:00 PM</div><div class="schedule-type">Live Personal Readings</div></div>
+                <div class="schedule-card"><div class="schedule-day">Saturday</div><div class="schedule-time">3:00 PM</div><div class="schedule-type">Deck Review</div></div>
+                <div class="schedule-card schedule-off"><div class="schedule-day">Sunday</div><div class="schedule-time">—</div><div class="schedule-type">Off</div></div>
+            </div>
+            <div class="schedule-cta reveal">
+                <a href="https://www.youtube.com/@My5Pentacles?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-gold">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                    Get Notified — Subscribe
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SUPPORT ========== -->
+    <section class="section section-support" id="support">
+        <div class="container">
+            <div class="support-card reveal">
+                <svg class="support-pentacle" viewBox="0 0 50 50" width="32" height="32"><circle cx="25" cy="25" r="20" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.4"/><polygon points="25,6 29.5,18 42,18 32,25 36,37 25,30 14,37 18,25 8,18 20.5,18" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.3"/></svg>
+                <h3 class="support-title">Support the Channel</h3>
+                <p class="support-text">Enjoying the readings? Every bit helps keep the stream going and the content free.</p>
+                <div class="support-links">
+                    <a href="#" class="btn btn-outline btn-sm">Ko-fi</a>
+                    <a href="#" class="btn btn-outline btn-sm">PayPal</a>
+                    <a href="#" class="btn btn-outline btn-sm">CashApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <svg viewBox="0 0 36 36" width="24" height="24"><circle cx="18" cy="18" r="15" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/><polygon points="18,4 21.5,12.5 30.5,12.5 23.5,18 25.5,27 18,22 10.5,27 12.5,18 5.5,12.5 14.5,12.5" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/></svg>
+                    <span class="footer-name">The Fifth Pentacle</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.youtube.com/@My5Pentacles" target="_blank" rel="noopener" aria-label="YouTube" class="social-link"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="social-link"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="TikTok" class="social-link"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                </div>
+            </div>
+            <nav class="footer-nav"><a href="#live">Live</a><a href="#archive">Archive</a><a href="#reader">About</a><a href="#schedule">Schedule</a><a href="#support">Support</a></nav>
+            <div class="footer-disclaimer">Readings are for entertainment and spiritual guidance purposes.</div>
+            <div class="footer-copy">&copy; 2025 The Fifth Pentacle. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- ADSENSE: Anchor Ad (Mobile) -->
+    <div class="ad-anchor-mobile" id="adAnchor"><div class="ad-placeholder ad-anchor"><span>Mobile Anchor Ad</span></div></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

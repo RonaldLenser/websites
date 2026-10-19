@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>America Affordable Home Improvement LLC | Eastern Shore MD</title>
+  <meta name="description" content="Roofing, siding, gutters, doors, windows, porches, decks & flooring. Serving Eastern Shore MD, Annapolis, Arnold & Edgewater. Free estimates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-[#0a0d14] text-white overflow-x-hidden">
+
+  <!-- NAV -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+    <div class="nav-inner max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="logo.png" alt="America Affordable Home Improvement" class="nav-logo-img" />
+        <div class="hidden sm:block">
+          <div class="font-oswald font-700 text-white text-base leading-none tracking-wide">AMERICA AFFORDABLE</div>
+          <div class="font-barlow text-[#C8102E] text-[11px] tracking-[0.18em] uppercase font-600">Home Improvement LLC</div>
+        </div>
+      </a>
+      <ul class="hidden lg:flex items-center gap-8">
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#process"  class="nav-link">Process</a></li>
+        <li><a href="#why-us"   class="nav-link">Why Us</a></li>
+        <li><a href="#areas"    class="nav-link">Areas</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+        <li><a href="#contact"  class="nav-cta">Free Estimate</a></li>
+        <li>
+          <a href="https://www.facebook.com/share/1N6GBFyJpH/" target="_blank" rel="noopener" class="nav-fb-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+        </li>
+      </ul>
+      <button id="menu-btn" class="lg:hidden flex flex-col gap-[5px] p-2 z-50" aria-label="Menu">
+        <span class="ham-line block w-6 h-0.5 bg-white transition-all origin-center"></span>
+        <span class="ham-line block w-4 h-0.5 bg-[#C8102E] transition-all"></span>
+        <span class="ham-line block w-6 h-0.5 bg-white transition-all origin-center"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-400">
+    <div class="mobile-menu-bg absolute inset-0"></div>
+    <ul class="relative z-10 flex flex-col items-center gap-7 text-center">
+      <li><a href="#services" class="mobile-nav-link font-oswald text-3xl font-600 text-white hover:text-[#C8102E] transition-colors">Services</a></li>
+      <li><a href="#process"  class="mobile-nav-link font-oswald text-3xl font-600 text-white hover:text-[#C8102E] transition-colors">Process</a></li>
+      <li><a href="#why-us"   class="mobile-nav-link font-oswald text-3xl font-600 text-white hover:text-[#C8102E] transition-colors">Why Us</a></li>
+      <li><a href="#areas"    class="mobile-nav-link font-oswald text-3xl font-600 text-white hover:text-[#C8102E] transition-colors">Areas</a></li>
+      <li><a href="#contact"  class="mobile-nav-link font-oswald text-3xl font-600 text-white hover:text-[#C8102E] transition-colors">Contact</a></li>
+      <li class="mt-2">
+        <a href="#contact" class="font-barlow-condensed tracking-widest text-base uppercase px-10 py-4 bg-[#C8102E] text-white font-600 block">Get Free Estimate</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- HERO -->
+  <section id="home" class="hero-section relative min-h-screen flex items-center overflow-hidden">
+    <div class="hero-bg-base absolute inset-0"></div>
+    <div class="hero-grid absolute inset-0"></div>
+    <div class="hero-vignette absolute inset-0"></div>
+    <div class="hero-stripe-1 absolute"></div>
+    <div class="hero-stripe-2 absolute"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-5 pt-28 pb-16">
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+        <div class="flex-1 text-center lg:text-left">
+          <div id="hero-badge" class="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-badge">
+            <span class="w-2 h-2 rounded-full bg-[#C8102E] animate-pulse flex-shrink-0"></span>
+            <span class="font-barlow-condensed text-xs tracking-[0.22em] uppercase text-gray-300">Eastern Shore · Annapolis · Arnold · Edgewater, MD</span>
+          </div>
+
+          <h1 id="hero-title" class="font-oswald font-700 leading-[0.9] mb-6">
+            <span class="block text-white"       style="font-size:clamp(2.8rem,7.5vw,6rem);">BUILT FOR</span>
+            <span class="block hero-outline-red" style="font-size:clamp(3rem,8.5vw,7rem);">AMERICA.</span>
+            <span class="block text-white"       style="font-size:clamp(1.9rem,4.5vw,3.8rem);">PRICED FOR YOUR FAMILY.</span>
+          </h1>
+
+          <p id="hero-sub" class="font-barlow text-gray-300 text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 mb-8">
+            Roofing, siding, windows, doors, gutters, decks, porches & flooring — done right, on budget, the first time.
+          </p>
+
+          <div id="hero-ctas" class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+            <a href="#contact" class="btn-red font-barlow-condensed tracking-widest text-sm uppercase font-600 px-10 py-4 flex items-center justify-center gap-2">
+              Get Free Estimate
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:4107587943" class="btn-outline font-barlow-condensed tracking-widest text-sm uppercase font-600 px-10 py-4 flex items-center justify-center gap-2">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.4 2.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L4.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              410-758-7943
+            </a>
+          </div>
+
+          <div id="hero-trust" class="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <div class="trust-chip font-barlow text-sm text-gray-400 flex items-center gap-2">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Licensed & Insured
+            </div>
+            <div class="trust-chip font-barlow text-sm text-gray-400 flex items-center gap-2">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Free Estimates
+            </div>
+            <div class="trust-chip font-barlow text-sm text-gray-400 flex items-center gap-2">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Fast Turnaround
+            </div>
+          </div>
+        </div>
+
+        <div id="hero-logo-wrap" class="flex-shrink-0 flex justify-center">
+          <div class="hero-logo-frame">
+            <div class="hero-logo-glow"></div>
+            <img src="logo.png" alt="America Affordable Home Improvement LLC" class="hero-logo-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="scroll-hint" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
+      <span class="font-barlow-condensed text-[10px] tracking-widest uppercase text-gray-600">Scroll</span>
+      <div class="w-px h-10 bg-gradient-to-b from-[#C8102E] to-transparent scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services" class="relative py-20 overflow-hidden">
+    <div class="section-bg-2 absolute inset-0"></div>
+    <div class="section-rule absolute top-0 left-0 w-full h-px"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5">
+      <div class="text-center mb-14 section-hdr">
+        <span class="section-label">What We Do</span>
+        <h2 class="font-oswald font-700 text-white" style="font-size:clamp(2.2rem,4.5vw,3.2rem);">OUR SERVICES</h2>
+        <div class="w-16 h-0.5 bg-[#C8102E] mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <div class="service-card" data-service>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+              <polygon points="16,3 30,18 2,18" stroke="#C8102E" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <rect x="10" y="18" width="12" height="10" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" fill="none"/>
+              <rect x="13.5" y="21" width="5" height="7" stroke="rgba(255,255,255,0.3)" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Roofing</h3>
+          <p class="svc-body">Full replacements, storm repairs, and inspections. Asphalt, architectural shingles, and metal roofing — installed with a workmanship warranty.</p>
+        </div>
+
+        <div class="service-card" data-service>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+              <rect x="2" y="5"  width="28" height="5" rx="1" stroke="#C8102E" stroke-width="1.8" fill="none"/>
+              <rect x="2" y="13" width="28" height="5" rx="1" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" fill="none"/>
+              <rect x="2" y="21" width="28" height="5" rx="1" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Siding</h3>
+          <p class="svc-body">Vinyl, fiber cement, and wood siding that protects against moisture and Maryland's coastal humidity while boosting curb appeal.</p>
+        </div>
+
+        <div class="service-card" data-service>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+              <path d="M2 9 H30 V15 H2 Z" stroke="#C8102E" stroke-width="1.8" fill="none"/>
+              <path d="M27 15 V28" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+              <path d="M23 22 Q27 22 27 28" stroke="rgba(255,255,255,0.3)" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Gutters</h3>
+          <p class="svc-body">Seamless aluminum gutters cut on-site, gutter guard systems, and cleaning. Proper drainage protects your foundation and fascia.</p>
+        </div>
+
+        <div class="service-card" data-service>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+              <rect x="7" y="3" width="18" height="26" rx="1" stroke="#C8102E" stroke-width="1.8" fill="none"/>
+              <circle cx="22" cy="16" r="2" stroke="rgba(255,255,255,0.45)" stroke-width="1.4" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Doors</h3>
+          <p class="svc-body">Entry, storm, and patio door installs — including framing and weatherstripping. Better security, less draft, stronger curb appeal.</p>
+        </div>
+
+        <div class="service-card" data-service>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+              <rect x="3" y="3" width="26" height="26" rx="1" stroke="#C8102E" stroke-width="1.8" fill="none"/>
+              <line x1="16" y1="3"  x2="16" y2="29" stroke="rgba(255,255,255,0.35)" stroke-width="1.4"/>
+              <line x1="3"  y1="16" x2="29" y2="16" stroke="rgba(255,255,255,0.35)" stroke-width="1.4"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Windows</h3>
+          <p class="svc-body">Double-pane, energy-efficient replacements in all styles. Cut bills, eliminate drafts, and modernize the look of your home inside and out.</p>
+        </div>
+
+        <div class="service-card" data-service>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+              <line x1="2"  y1="28" x2="30" y2="28" stroke="#C8102E" stroke-width="2"/>
+              <line x1="8"  y1="28" x2="8"  y2="15" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+              <line x1="24" y1="28" x2="24" y2="15" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+              <line x1="5"  y1="15" x2="27" y2="15" stroke="rgba(255,255,255,0.35)" stroke-width="1.4"/>
+              <polygon points="16,5 27,15 5,15" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Porches</h3>
+          <p class="svc-body">Front, wrap-around, and screened porch builds — framing, decking, railings, columns, and roofing handled start to finish.</p>
+        </div>
+
+        <div class="service-card" data-service>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+              <line x1="2" y1="12" x2="30" y2="12" stroke="#C8102E" stroke-width="2"/>
+              <line x1="2" y1="18" x2="30" y2="18" stroke="rgba(255,255,255,0.4)" stroke-width="1.4"/>
+              <line x1="2" y1="24" x2="30" y2="24" stroke="rgba(255,255,255,0.3)" stroke-width="1.4"/>
+              <line x1="8"  y1="12" x2="8"  y2="30" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+              <line x1="16" y1="12" x2="16" y2="30" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+              <line x1="24" y1="12" x2="24" y2="30" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Decks</h3>
+          <p class="svc-body">Pressure-treated wood, composite, and Trex decks built to Maryland's code — proper footings, ledger attachment, and railing systems.</p>
+        </div>
+
+        <div class="service-card" data-service>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+              <rect x="2"  y="2"  width="12" height="12" rx="1" stroke="#C8102E" stroke-width="1.8" fill="none"/>
+              <rect x="18" y="2"  width="12" height="12" rx="1" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+              <rect x="2"  y="18" width="12" height="12" rx="1" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+              <rect x="18" y="18" width="12" height="12" rx="1" stroke="#C8102E" stroke-width="1.5" fill="none" opacity="0.55"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Flooring</h3>
+          <p class="svc-body">Hardwood, LVP, tile, and laminate — demo, subfloor prep, and full install for kitchens, living areas, bathrooms, and basements.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROCESS -->
+  <section id="process" class="relative py-20 overflow-hidden">
+    <div class="section-bg-3 absolute inset-0"></div>
+    <div class="section-rule absolute top-0 left-0 w-full h-px"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5">
+      <div class="text-center mb-14 section-hdr">
+        <span class="section-label">How It Works</span>
+        <h2 class="font-oswald font-700 text-white" style="font-size:clamp(2rem,4vw,3rem);">SIMPLE. TRANSPARENT. DONE RIGHT.</h2>
+        <div class="w-16 h-0.5 bg-[#C8102E] mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div class="process-card" data-process>
+          <div class="process-num">01</div>
+          <div class="process-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.4 2.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L4.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <h3 class="font-oswald font-600 text-white text-lg tracking-wide mb-2">Call or Contact</h3>
+          <p class="font-barlow text-gray-400 text-sm leading-relaxed">Reach out by phone, text, or the form below. Tell us about your project and we'll schedule a time to come out.</p>
+        </div>
+
+        <div class="process-card" data-process>
+          <div class="process-num">02</div>
+          <div class="process-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3 class="font-oswald font-600 text-white text-lg tracking-wide mb-2">Free Estimate</h3>
+          <p class="font-barlow text-gray-400 text-sm leading-relaxed">We come to your property, assess what needs to be done, and give you a detailed written quote — no cost, no pressure.</p>
+        </div>
+
+        <div class="process-card" data-process>
+          <div class="process-num">03</div>
+          <div class="process-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-oswald font-600 text-white text-lg tracking-wide mb-2">We Get to Work</h3>
+          <p class="font-barlow text-gray-400 text-sm leading-relaxed">Once you approve, we schedule and show up on time with the right crew and materials. Clean, efficient, professional.</p>
+        </div>
+
+        <div class="process-card" data-process>
+          <div class="process-num">04</div>
+          <div class="process-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="font-oswald font-600 text-white text-lg tracking-wide mb-2">Final Walkthrough</h3>
+          <p class="font-barlow text-gray-400 text-sm leading-relaxed">We walk the site with you when the job is done. Everything meets your expectations before we leave — that's the standard.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHY US -->
+  <section id="why-us" class="relative py-20 overflow-hidden">
+    <div class="section-bg-2 absolute inset-0"></div>
+    <div class="section-rule absolute top-0 left-0 w-full h-px"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5">
+      <div class="flex flex-col lg:flex-row items-center gap-14">
+
+        <div class="flex-shrink-0 flex justify-center section-hdr">
+          <div class="why-logo-frame">
+            <div class="why-logo-glow"></div>
+            <img src="logo.png" alt="America Affordable Home Improvement" class="why-logo-img" />
+          </div>
+        </div>
+
+        <div class="flex-1">
+          <span class="section-label">Our Commitment</span>
+          <h2 class="font-oswald font-700 text-white mb-10" style="font-size:clamp(2rem,4vw,3rem);">WHY HOMEOWNERS CHOOSE US</h2>
+
+          <div class="flex flex-col gap-5">
+            <div class="why-point" data-why>
+              <div class="why-num">01</div>
+              <div>
+                <h3 class="font-oswald font-600 text-white text-base tracking-wide mb-1">UPFRONT PRICING — NO SURPRISES</h3>
+                <p class="font-barlow text-gray-400 text-sm leading-relaxed">The number on your estimate is the number you pay. No change orders, no hidden fees after the job starts.</p>
+              </div>
+            </div>
+            <div class="why-point" data-why>
+              <div class="why-num">02</div>
+              <div>
+                <h3 class="font-oswald font-600 text-white text-base tracking-wide mb-1">LOCAL CREWS WHO KNOW MARYLAND</h3>
+                <p class="font-barlow text-gray-400 text-sm leading-relaxed">We know the coastal climate, the humidity, and the local codes. We're not a franchise — we're local tradespeople who stand behind our work.</p>
+              </div>
+            </div>
+            <div class="why-point" data-why>
+              <div class="why-num">03</div>
+              <div>
+                <h3 class="font-oswald font-600 text-white text-base tracking-wide mb-1">FULLY LICENSED & INSURED</h3>
+                <p class="font-barlow text-gray-400 text-sm leading-relaxed">Full general liability and worker's comp on every job. Your home is protected — don't risk it with an unlicensed contractor.</p>
+              </div>
+            </div>
+            <div class="why-point" data-why>
+              <div class="why-num">04</div>
+              <div>
+                <h3 class="font-oswald font-600 text-white text-base tracking-wide mb-1">ONE CALL FOR THE FULL JOB</h3>
+                <p class="font-barlow text-gray-400 text-sm leading-relaxed">Roof, siding, gutters, windows, deck — all handled by one company. No juggling multiple contractors or conflicting schedules.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SERVICE AREAS -->
+  <section id="areas" class="relative py-20 overflow-hidden">
+    <div class="section-bg-3 absolute inset-0"></div>
+    <div class="section-rule absolute top-0 left-0 w-full h-px"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5">
+      <div class="text-center mb-14 section-hdr">
+        <span class="section-label">Where We Work</span>
+        <h2 class="font-oswald font-700 text-white" style="font-size:clamp(2rem,4vw,3rem);">PROUDLY SERVING MARYLAND</h2>
+        <div class="w-16 h-0.5 bg-[#C8102E] mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+
+        <div class="area-card" data-area>
+          <div class="area-dot mx-auto mb-3"></div>
+          <div class="font-oswald font-600 text-white text-xl mb-2">Eastern Shore</div>
+          <p class="font-barlow text-gray-500 text-sm leading-relaxed">Queen Anne's, Talbot, Kent & surrounding counties. We build for the coast — moisture-resistant materials, tight installs.</p>
+        </div>
+
+        <div class="area-card" data-area>
+          <div class="area-dot mx-auto mb-3"></div>
+          <div class="font-oswald font-600 text-white text-xl mb-2">Annapolis</div>
+          <p class="font-barlow text-gray-500 text-sm leading-relaxed">Protecting Annapolis homes with quality roofing, siding, and exterior upgrades that hold up to the Bay area climate.</p>
+        </div>
+
+        <div class="area-card" data-area>
+          <div class="area-dot mx-auto mb-3"></div>
+          <div class="font-oswald font-600 text-white text-xl mb-2">Arnold</div>
+          <p class="font-barlow text-gray-500 text-sm leading-relaxed">Broadneck Peninsula and Bay Front neighborhoods — same quality, same standard, every job.</p>
+        </div>
+
+        <div class="area-card" data-area>
+          <div class="area-dot mx-auto mb-3"></div>
+          <div class="font-oswald font-600 text-white text-xl mb-2">Edgewater</div>
+          <p class="font-barlow text-gray-500 text-sm leading-relaxed">South River waterfront and inland neighborhoods. We spec materials built for humidity and salt-air exposure.</p>
+        </div>
+
+      </div>
+
+      <div class="area-note flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-4">
+        <span class="font-barlow text-gray-400 text-sm">Serving surrounding areas too — call us to confirm your location.</span>
+        <a href="#contact" class="btn-red font-barlow-condensed tracking-widest text-xs uppercase font-600 px-7 py-3 flex items-center gap-2 whitespace-nowrap">
+          Get an Estimate
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA BANNER -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="cta-bg absolute inset-0"></div>
+    <div class="cta-stripes absolute inset-0"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-5 text-center" id="cta-block">
+      <div class="cta-glass py-14 px-8 md:px-16">
+        <h2 class="font-oswald font-700 text-white mb-3" style="font-size:clamp(1.8rem,4vw,2.8rem);">GET YOUR FREE ESTIMATE</h2>
+        <p class="font-barlow text-gray-300 text-base leading-relaxed max-w-md mx-auto mb-8">We come to your home, assess the job, and give you a clear written quote — no cost, no obligation. Most estimates scheduled within 48–72 hours.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" class="btn-red font-barlow-condensed tracking-widest text-sm uppercase font-600 px-10 py-4 flex items-center justify-center gap-2">
+            Request Estimate
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:4107587943" class="btn-outline font-barlow-condensed tracking-widest text-sm uppercase font-600 px-10 py-4 flex items-center justify-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.4 2.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L4.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            410-758-7943
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="relative py-20 overflow-hidden">
+    <div class="section-bg-2 absolute inset-0"></div>
+    <div class="section-rule absolute top-0 left-0 w-full h-px"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5">
+      <div class="flex flex-col lg:flex-row gap-14 items-start">
+
+        <!-- Left -->
+        <div class="flex-1 section-hdr">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="font-oswald font-700 text-white mb-3" style="font-size:clamp(1.9rem,3.5vw,3rem);">REQUEST A FREE ESTIMATE</h2>
+          <p class="font-barlow text-gray-400 text-base leading-relaxed mb-8 max-w-sm">Fill out the form and we will follow up within one business day. Prefer to talk? Call or text us directly.</p>
+
+          <div class="flex flex-col gap-5">
+            <a href="tel:4107587943" class="contact-row group">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.4 2.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L4.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="font-barlow-condensed text-[10px] tracking-widest uppercase text-gray-500 mb-0.5">Call or Text</div>
+                <div class="font-oswald text-white text-xl group-hover:text-[#C8102E] transition-colors">410-758-7943</div>
+              </div>
+            </a>
+
+            <a href="mailto:Americahomeimprov21@gmail.com" class="contact-row group">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="font-barlow-condensed text-[10px] tracking-widest uppercase text-gray-500 mb-0.5">Email</div>
+                <div class="font-oswald text-white text-base group-hover:text-[#C8102E] transition-colors break-all">Americahomeimprov21@gmail.com</div>
+              </div>
+            </a>
+
+            <div class="contact-row">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="font-barlow-condensed text-[10px] tracking-widest uppercase text-gray-500 mb-0.5">Service Areas</div>
+                <div class="font-oswald text-white text-base">Eastern Shore · Annapolis · Arnold · Edgewater, MD</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="flex-1 w-full">
+          <div class="form-wrap">
+            <h3 class="font-oswald font-600 text-white text-xl mb-6 tracking-wide">ESTIMATE REQUEST</h3>
+            <form id="contact-form" class="flex flex-col gap-4">
+              <input type="hidden" name="access_key" value="ee89a481-bc2e-4c7b-8385-703546c6bed9">
+              <input type="hidden" name="subject" value="New Estimate Request - America Affordable Home Improvement">
+              <input type="hidden" name="from_name" value="America Affordable Website">
+              <input type="checkbox" name="botcheck" style="display:none">
+
+              <div>
+                <label class="form-label">Full Name *</label>
+                <input type="text" name="name" required placeholder="John Smith" class="form-field" />
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="form-label">Phone *</label>
+                  <input type="tel" name="phone" required placeholder="(410) 000-0000" class="form-field" />
+                </div>
+                <div>
+                  <label class="form-label">Email</label>
+                  <input type="email" name="email" placeholder="you@email.com" class="form-field" />
+                </div>
+              </div>
+              <div>
+                <label class="form-label">Service Needed *</label>
+                <select name="service" required class="form-field form-select">
+                  <option value="" disabled selected>Select a service…</option>
+                  <option>Roofing</option>
+                  <option>Siding</option>
+                  <option>Gutters</option>
+                  <option>Doors</option>
+                  <option>Windows</option>
+                  <option>Porch</option>
+                  <option>Deck</option>
+                  <option>Flooring</option>
+                  <option>Multiple Services</option>
+                  <option>Not Sure — Need Assessment</option>
+                </select>
+              </div>
+              <div>
+                <label class="form-label">Project Details</label>
+                <textarea name="message" rows="4" placeholder="Describe what you need and your location…" class="form-field resize-none"></textarea>
+              </div>
+              <button type="submit" class="form-submit font-barlow-condensed tracking-widest text-sm uppercase font-600 py-4 text-white flex items-center justify-center gap-2 mt-1">
+                Send Request
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <div id="form-result" class="font-barlow text-sm text-center mt-1" style="display:none;"></div>
+            </form>
+            <script>
+              (function(){
+                var form = document.getElementById('contact-form');
+                var result = document.getElementById('form-result');
+                var btn = form.querySelector('.form-submit');
+                form.addEventListener('submit', function(e){
+                  e.preventDefault();
+                  btn.style.opacity = '0.7';
+                  btn.style.pointerEvents = 'none';
+                  btn.textContent = 'Sending...';
+                  var data = Object.fromEntries(new FormData(form));
+                  fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                    body: JSON.stringify(data)
+                  })
+                  .then(function(r){ return r.json(); })
+                  .then(function(res){
+                    if(res.success){
+                      result.textContent = 'Request sent. We will be in touch within one business day.';
+                      result.style.color = '#4ade80';
+                      result.style.display = 'block';
+                      form.reset();
+                    } else {
+                      result.textContent = 'Something went wrong. Please call 410-758-7943.';
+                      result.style.color = '#f87171';
+                      result.style.display = 'block';
+                    }
+                    btn.style.opacity = '1';
+                    btn.style.pointerEvents = 'auto';
+                    btn.textContent = 'Send Request';
+                  })
+                  .catch(function(){
+                    result.textContent = 'Network error. Please call 410-758-7943.';
+                    result.style.color = '#f87171';
+                    result.style.display = 'block';
+                    btn.style.opacity = '1';
+                    btn.style.pointerEvents = 'auto';
+                    btn.textContent = 'Send Request';
+                  });
+                });
+              })();
+            </script>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="relative py-20 overflow-hidden">
+    <div class="section-bg-3 absolute inset-0"></div>
+    <div class="section-rule absolute top-0 left-0 w-full h-px"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5 text-center">
+      <div class="section-hdr mb-14">
+        <span class="section-label">Reviews</span>
+        <h2 class="font-oswald font-700 text-white" style="font-size:clamp(2rem,4vw,3rem);">WHAT OUR CUSTOMERS SAY</h2>
+        <div class="w-16 h-0.5 bg-[#C8102E] mx-auto mt-4"></div>
+      </div>
+
+      <div class="reviews-cta-wrap max-w-lg mx-auto">
+        <div class="reviews-fb-icon mb-6 mx-auto">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="#1877F2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </div>
+        <p class="font-barlow text-gray-400 text-base leading-relaxed mb-8">We're just getting started and would love to hear from you. If we've worked on your home, leave us a review on Facebook — it helps other Maryland homeowners find us.</p>
+        <a href="https://www.facebook.com/share/1N6GBFyJpH/" target="_blank" rel="noopener"
+           class="btn-red font-barlow-condensed tracking-widest text-sm uppercase font-600 px-10 py-4 inline-flex items-center gap-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          Leave Us a Review
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="relative pt-14 pb-8 overflow-hidden">
+    <div class="footer-bg absolute inset-0"></div>
+    <div class="footer-rule absolute top-0 left-0 w-full h-px"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-10 mb-10">
+
+        <div class="max-w-xs">
+          <img src="logo.png" alt="America Affordable Home Improvement" class="footer-logo mb-4" />
+          <p class="font-barlow text-gray-500 text-sm leading-relaxed">Local home improvement serving the Chesapeake Bay region — roofing, siding, gutters, windows, doors, decks, porches & flooring.</p>
+        </div>
+
+        <div>
+          <div class="font-barlow-condensed text-xs tracking-[0.25em] uppercase text-gray-500 mb-4">Services</div>
+          <ul class="flex flex-col gap-2">
+            <li class="font-barlow text-gray-400 text-sm">Roofing</li>
+            <li class="font-barlow text-gray-400 text-sm">Siding</li>
+            <li class="font-barlow text-gray-400 text-sm">Gutters</li>
+            <li class="font-barlow text-gray-400 text-sm">Windows & Doors</li>
+            <li class="font-barlow text-gray-400 text-sm">Porches & Decks</li>
+            <li class="font-barlow text-gray-400 text-sm">Flooring</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-barlow-condensed text-xs tracking-[0.25em] uppercase text-gray-500 mb-4">Areas Served</div>
+          <ul class="flex flex-col gap-2">
+            <li class="font-barlow text-gray-400 text-sm">Eastern Shore, MD</li>
+            <li class="font-barlow text-gray-400 text-sm">Annapolis, MD</li>
+            <li class="font-barlow text-gray-400 text-sm">Arnold, MD</li>
+            <li class="font-barlow text-gray-400 text-sm">Edgewater, MD</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-barlow-condensed text-xs tracking-[0.25em] uppercase text-gray-500 mb-4">Contact</div>
+          <ul class="flex flex-col gap-3">
+            <li><a href="tel:4107587943" class="font-barlow text-gray-400 text-sm hover:text-white transition-colors">410-758-7943</a></li>
+            <li><a href="mailto:Americahomeimprov21@gmail.com" class="font-barlow text-gray-400 text-sm hover:text-white transition-colors break-all">Americahomeimprov21@gmail.com</a></li>
+            <li>
+              <a href="https://www.facebook.com/share/1N6GBFyJpH/" target="_blank" rel="noopener" class="font-barlow text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                Facebook
+              </a>
+            </li>
+          </ul>
+          <div class="mt-5">
+            <a href="#contact" class="btn-red font-barlow-condensed tracking-widest text-xs uppercase font-600 px-6 py-3 flex items-center justify-center gap-2">
+              Free Estimate
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="font-barlow text-gray-600 text-xs">© 2025 America Affordable Home Improvement LLC. All rights reserved.</p>
+        <p class="font-barlow text-gray-600 text-xs">Licensed & Insured · Maryland</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

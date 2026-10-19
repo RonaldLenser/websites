@@ -1,0 +1,2 @@
+# SPA fallback (Netlify; safe on static hosts that ignore unknown files)
+/*    /index.html   200

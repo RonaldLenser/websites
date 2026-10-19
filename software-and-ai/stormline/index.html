@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Stormline — Wisconsin Storm Leads</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #080c14;
+  --surface: #0d1421;
+  --surface2: #111827;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.12);
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --orange: #f97316;
+  --orange2: #ea580c;
+  --red: #ef4444;
+  --green: #22c55e;
+  --blue: #38bdf8;
+  --yellow: #fbbf24;
+  --purple: #a78bfa;
+  --teal: #2dd4bf;
+  --pink: #f472b6;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  background-image:
+    radial-gradient(ellipse 80% 40% at 50% -20%, rgba(249,115,22,0.12), transparent),
+    radial-gradient(ellipse 60% 30% at 80% 80%, rgba(56,189,248,0.06), transparent);
+}
+
+/* HEADER */
+.header{
+  padding: 36px 36px 0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.logo-icon{
+  width:48px;height:48px;
+  background:linear-gradient(135deg,var(--orange),var(--orange2));
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+  box-shadow:0 0 32px rgba(249,115,22,0.35);
+  flex-shrink:0;
+}
+.logo-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:32px;
+  letter-spacing:.06em;
+  line-height:1;
+}
+.logo-sub{
+  font-size:12px;
+  color:var(--muted);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin-top:3px;
+}
+.header-right{
+  text-align:right;
+}
+.storm-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  background:rgba(239,68,68,0.12);
+  border:1px solid rgba(239,68,68,0.3);
+  color:#fca5a5;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:6px 14px;
+  border-radius:999px;
+}
+.storm-badge::before{content:'●';color:var(--red);animation:blink 1.2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+.date-label{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* STAT STRIP */
+.stats-strip{
+  display:flex;
+  gap:1px;
+  margin:28px 36px 0;
+  background:var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.stat-item{
+  flex:1;
+  background:var(--surface);
+  padding:20px 24px;
+  min-width:0;
+}
+.stat-item:first-child{border-radius:19px 0 0 19px;}
+.stat-item:last-child{border-radius:0 19px 19px 0;}
+.stat-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:38px;
+  letter-spacing:.04em;
+  line-height:1;
+}
+.stat-label{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:4px;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+
+/* CONTROLS */
+.controls{
+  padding:24px 36px 0;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.search-wrap{
+  position:relative;
+  flex:1;
+  min-width:220px;
+}
+.search-icon{
+  position:absolute;
+  left:14px;top:50%;transform:translateY(-50%);
+  color:var(--muted);
+  font-size:15px;
+  pointer-events:none;
+}
+input[type=text]{
+  width:100%;
+  background:var(--surface2);
+  border:1px solid var(--border2);
+  color:var(--text);
+  padding:12px 16px 12px 40px;
+  border-radius:12px;
+  font-size:14px;
+  font-family:'DM Sans',sans-serif;
+  outline:none;
+  transition:border-color .2s;
+}
+input[type=text]:focus{border-color:rgba(249,115,22,0.5);}
+input[type=text]::placeholder{color:var(--muted);}
+select{
+  background:var(--surface2);
+  border:1px solid var(--border2);
+  color:var(--text);
+  padding:12px 16px;
+  border-radius:12px;
+  font-size:14px;
+  font-family:'DM Sans',sans-serif;
+  outline:none;
+  cursor:pointer;
+  transition:border-color .2s;
+}
+select:focus{border-color:rgba(249,115,22,0.5);}
+.result-count{
+  font-size:13px;
+  color:var(--muted);
+  white-space:nowrap;
+  padding:12px 0;
+}
+.result-count span{color:var(--orange);font-weight:700;}
+
+/* CATEGORY TABS */
+.tabs{
+  padding:20px 36px 0;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.tab{
+  padding:9px 18px;
+  border-radius:999px;
+  border:1px solid var(--border2);
+  background:transparent;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:600;
+  font-family:'DM Sans',sans-serif;
+  cursor:pointer;
+  transition:all .18s;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  white-space:nowrap;
+}
+.tab:hover{color:var(--text);border-color:rgba(255,255,255,0.2);}
+.tab.active{
+  background:rgba(249,115,22,0.15);
+  border-color:rgba(249,115,22,0.45);
+  color:#fed7aa;
+}
+.tab-dot{
+  width:7px;height:7px;
+  border-radius:50%;
+  flex-shrink:0;
+}
+
+/* TABLE */
+.table-section{
+  padding:20px 36px 48px;
+}
+.table-wrap{
+  border-radius:18px;
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+.table-scroll{overflow-x:auto;}
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:900px;
+  background:var(--surface);
+}
+thead tr{
+  background:rgba(255,255,255,0.03);
+  border-bottom:1px solid var(--border2);
+}
+th{
+  padding:13px 16px;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--muted);
+  text-align:left;
+  white-space:nowrap;
+  user-select:none;
+  cursor:pointer;
+}
+th:hover{color:var(--text);}
+th .sort-arrow{margin-left:4px;opacity:0.4;}
+tbody tr{
+  border-bottom:1px solid var(--border);
+  transition:background .12s;
+}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,0.03);}
+td{
+  padding:13px 16px;
+  font-size:13.5px;
+  vertical-align:middle;
+}
+.cat-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.05em;
+  white-space:nowrap;
+}
+.biz-name{
+  font-weight:600;
+  color:var(--text);
+  max-width:240px;
+}
+.phone-link{
+  color:var(--blue);
+  text-decoration:none;
+  font-weight:500;
+  white-space:nowrap;
+}
+.phone-link:hover{text-decoration:underline;}
+.site-link{
+  color:var(--orange);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+  padding:4px 10px;
+  border:1px solid rgba(249,115,22,0.3);
+  border-radius:8px;
+  white-space:nowrap;
+  transition:all .15s;
+}
+.site-link:hover{background:rgba(249,115,22,0.1);}
+.no-site{color:var(--muted);font-size:12px;}
+.score-bar-wrap{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:90px;
+}
+.score-bar{
+  flex:1;
+  height:5px;
+  background:rgba(255,255,255,0.07);
+  border-radius:999px;
+  overflow:hidden;
+}
+.score-fill{
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--orange2),var(--orange));
+}
+.score-num{
+  font-size:12px;
+  font-weight:700;
+  color:var(--muted);
+  min-width:28px;
+  text-align:right;
+}
+.city-tag{
+  font-size:12px;
+  color:var(--muted);
+}
+.stars{
+  color:var(--yellow);
+  font-size:12px;
+  white-space:nowrap;
+}
+.star-count{
+  color:var(--muted);
+  font-size:11px;
+  margin-left:4px;
+}
+.empty-state{
+  padding:80px 20px;
+  text-align:center;
+  color:var(--muted);
+}
+.empty-state .emoji{font-size:40px;margin-bottom:12px;}
+.empty-state p{font-size:15px;}
+
+/* Category colors */
+.c-roof{background:rgba(239,68,68,0.12);color:#fca5a5;border:1px solid rgba(239,68,68,0.25);}
+.c-ins{background:rgba(251,191,36,0.12);color:#fde68a;border:1px solid rgba(251,191,36,0.25);}
+.c-pm{background:rgba(56,189,248,0.12);color:#bae6fd;border:1px solid rgba(56,189,248,0.25);}
+.c-church{background:rgba(167,139,250,0.12);color:#ddd6fe;border:1px solid rgba(167,139,250,0.25);}
+.c-apt{background:rgba(34,197,94,0.12);color:#bbf7d0;border:1px solid rgba(34,197,94,0.25);}
+.c-al{background:rgba(244,114,182,0.12);color:#fbcfe8;border:1px solid rgba(244,114,182,0.25);}
+.c-golf{background:rgba(45,212,191,0.12);color:#99f6e4;border:1px solid rgba(45,212,191,0.25);}
+
+/* dot colors */
+.d-roof{background:var(--red);}
+.d-ins{background:var(--yellow);}
+.d-pm{background:var(--blue);}
+.d-church{background:var(--purple);}
+.d-apt{background:var(--green);}
+.d-al{background:var(--pink);}
+.d-golf{background:var(--teal);}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">
+    <div class="logo-icon">🌪️</div>
+    <div>
+      <div class="logo-text">Stormline Tree &amp; Debris</div>
+      <div class="logo-sub">Wisconsin Storm Lead Command Center</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="storm-badge">Active Storm Zone</div>
+    <div class="date-label">April 13–14, 2026 • Southern WI • Jefferson, Waukesha, Dane, Dodge Counties</div>
+  </div>
+</div>
+
+<div class="stats-strip">
+  <div class="stat-item">
+    <div class="stat-num" id="totalCount" style="color:var(--orange)">—</div>
+    <div class="stat-label">Total Leads</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" style="color:var(--red)">66</div>
+    <div class="stat-label">🔧 Roofing Partners</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" style="color:var(--yellow)">40</div>
+    <div class="stat-label">🛡️ Insurance Agents</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" style="color:var(--blue)">45</div>
+    <div class="stat-label">🏢 Property Mgmt</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" style="color:var(--purple)">56</div>
+    <div class="stat-label">⛪ Churches</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" style="color:var(--green)">54</div>
+    <div class="stat-label">🏠 Apartments</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" style="color:var(--pink)">54</div>
+    <div class="stat-label">🏥 Assisted Living</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" style="color:var(--teal)">40</div>
+    <div class="stat-label">⛳ Golf Courses</div>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search" placeholder="Search name, city, phone, website…"/>
+  </div>
+  <select id="cityFilter"><option value="">All Cities</option></select>
+  <select id="sortFilter">
+    <option value="score">Sort: Best Score</option>
+    <option value="rating">Sort: Rating</option>
+    <option value="reviews">Sort: Most Reviews</option>
+    <option value="name">Sort: Name A–Z</option>
+  </select>
+  <div class="result-count"><span id="resultCount">0</span> results</div>
+</div>
+
+<div class="tabs" id="tabs"></div>
+
+<div class="table-section">
+  <div class="table-wrap">
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Business</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Rating</th>
+            <th>Score</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const RAW = [{"category":"Apartment Complex","name":"The Glade Residences","phone":"(608) 302-6844","website":"https://gladelife.com/?y_source=1_MTQ4ODMyMTAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D","address":"711 Myrtle Wy","city":"Janesville","rating":5.0,"reviews":102,"score":23.22},{"category":"Apartment Complex","name":"The Rive Madison","phone":"(608) 820-3104","website":"https://www.therivemadison.com/?utm_source=GoogleMyBusiness&utm_medium=organic&utm_campaign=GMB&switch_cls[id]=66734","address":"506 W Johnson St","city":"Madison","rating":4.9,"reviews":104,"score":22.85},{"category":"Apartment Complex","name":"The Ridge Apartments","phone":"(833) 410-0983","website":"http://www.theridgemadison.com/","address":"620 W Badger Rd","city":"Madison","rating":4.5,"reviews":121,"score":21.65},{"category":"Apartment Complex","name":"Rivers Edge Apartments","phone":"(833) 750-1615","website":"https://www.riversedgewaukesha.com/?rcstdid=Mg%3D%3D-YRjTEizZPgM%3D&utm_source=GMB&utm_medium=organic","address":"100 Corrina Blvd","city":"Waukesha","rating":4.2,"reviews":156,"score":21.26},{"category":"Apartment Complex","name":"Broadway Commons Apartment Homes","phone":"(262) 444-5933","website":"https://www.morgenson.com/apartments/waukesha-wi/broadway-commons-i-ii/","address":"1916 E Broadway","city":"Waukesha","rating":4.5,"reviews":94,"score":20.54},{"category":"Apartment Complex","name":"Mountain Village Apartments","phone":"(262) 444-0317","website":"https://www.axiomproperties.com/communities/mountain-village","address":"304 W North St","city":"Waukesha","rating":4.5,"reviews":79,"score":19.78},{"category":"Apartment Complex","name":"Longfellow Lofts Apartments","phone":"(833) 293-6132","website":"https://www.longfellowlofts.com/?utm_source=google","address":"1015 Mound St","city":"Madison","rating":5.0,"reviews":45,"score":19.25},{"category":"Apartment Complex","name":"Mammoth Springs Apartments & Townhomes","phone":"(262) 297-4444","website":"http://www.mammoth-springs.com/","address":"N63 W23217, Main St #102","city":"Sussex","rating":3.9,"reviews":129,"score":19.01},{"category":"Apartment Complex","name":"BridgeWalk Apartments","phone":"(262) 672-4685","website":"http://bridgewalkapartments.com/","address":"205 W St Paul Ave","city":"Waukesha","rating":4.5,"reviews":66,"score":18.99},{"category":"Apartment Complex","name":"The Continental","phone":"(608) 640-3259","website":"http://continentalmadison.com/","address":"408 E Washington Ave","city":"Madison","rating":5.0,"reviews":41,"score":18.81},{"category":"Apartment Complex","name":"The Waterfront Apartments","phone":"(608) 409-9963","website":"https://waterfrontmadison.com/","address":"633 N Henry St","city":"Madison","rating":4.3,"reviews":75,"score":18.68},{"category":"Apartment Complex","name":"Springs at Meadowbrook Apartments","phone":"(262) 384-6148","website":"https://www.springsapartments.com/apartments/wi/waukesha/springs-at-meadowbrook/","address":"601 Sierra Cir","city":"Waukesha","rating":4.7,"reviews":51,"score":18.66},{"category":"Apartment Complex","name":"Ridge View Apartments","phone":"(262) 364-7050","website":"https://www.morgenson.com/apartments/waukesha-wi/ridge-view/","address":"212 W North St","city":"Waukesha","rating":5.0,"reviews":36,"score":18.19},{"category":"Apartment Complex","name":"The Eastern","phone":"(833) 900-1636","website":"https://www.easternmadison.com/","address":"1868 E Washington Ave","city":"Madison","rating":4.3,"reviews":66,"score":18.14},{"category":"Apartment Complex","name":"The Marling Apartments","phone":"(608) 429-6585","website":"https://www.themarling.com/?utm_knock=gmb","address":"1825 E Washington Ave","city":"Madison","rating":4.5,"reviews":49,"score":17.69},{"category":"Apartment Complex","name":"Watermark Lofts","phone":"(608) 575-1018","website":"http://www.twallenterprises.com/watermark-lofts/","address":"960 John Nolen Dr","city":"Madison","rating":4.9,"reviews":29,"score":16.83},{"category":"Apartment Complex","name":"Ridge Pointe Apartments","phone":"(262) 422-6530","website":"https://www.morgenson.com/apartments/waukesha-wi/ridge-pointe-apartments/","address":"200 W North St","city":"Waukesha","rating":4.8,"reviews":26,"score":15.99},{"category":"Apartment Complex","name":"Willow Creek Apartments","phone":"(866) 891-3307","website":"http://www.willowcreekwaukesha.com/","address":"2420 Parklawn Dr","city":"Waukesha","rating":4.1,"reviews":47,"score":15.96},{"category":"Apartment Complex","name":"Arden","phone":"(608) 867-2328","website":"https://www.ardeninmadison.com/","address":"1050 E Washington Ave","city":"Madison","rating":4.6,"reviews":30,"score":15.94},{"category":"Apartment Complex","name":"306 West Apartments","phone":"(608) 257-1440","website":"http://306west.com/","address":"306 W Main St","city":"Madison","rating":4.8,"reviews":23,"score":15.45},{"category":"Apartment Complex","name":"Spring Lake Apartments","phone":"(920) 219-4404","website":"https://www.bascodevelopment.com/property-single.cfm?pid=9","address":"201 Woodland Dr","city":"Beaver Dam","rating":4.0,"reviews":41,"score":15.04},{"category":"Apartment Complex","name":"Village at Fox River Apartments","phone":"(262) 975-5296","website":"https://villageatfoxriver.com/","address":"2601 Elkhart Dr #100","city":"Waukesha","rating":4.1,"reviews":36,"score":14.91},{"category":"Apartment Complex","name":"Maple Creek Apartments","phone":"(262) 820-0741","website":"https://www.morgenson.com/apartments/sussex-wi/maple-creek/","address":"N 58, W24041 Clover Dr","city":"Sussex","rating":4.5,"reviews":21,"score":14.11},{"category":"Apartment Complex","name":"The Seasons Apartments","phone":"(262) 820-0627","website":"http://jbjcompanies.com/the-seasons-apartments/","address":"N67 W24969 Stonegate Ct","city":"Sussex","rating":4.1,"reviews":26,"score":13.66},{"category":"Apartment Complex","name":"The Preserve Apartments","phone":"(920) 763-5992","website":"https://www.wisconsinapartments.biz/all-communities#BEAVERDAM","address":"1100 S University Ave","city":"Beaver Dam","rating":3.7,"reviews":31,"score":12.94},{"category":"Apartment Complex","name":"Hartwell Place Apartments","phone":"(262) 719-4700","website":"https://www.jjgfproperties.com/available-units-waukesha","address":"601 N Hartwell Ave","city":"Waukesha","rating":5.0,"reviews":10,"score":12.42},{"category":"Apartment Complex","name":"Maple Grove Apartments","phone":"(262) 246-9797","website":"https://www.morgenson.com/apartments/sussex-wi/maple-grove/","address":"N59W24050 Clover Dr","city":"Sussex","rating":3.8,"reviews":24,"score":12.38},{"category":"Apartment Complex","name":"Stoneridge Apartments","phone":"(262) 439-9959","website":"https://www.rentwithdiamond.com/stoneridge-apartments","address":"123 Knaup Dr","city":"Beaver Dam","rating":4.5,"reviews":13,"score":12.19},{"category":"Apartment Complex","name":"Ivy Meadows Apartments","phone":"(262) 565-3386","website":"http://rentivymeadowsapts.com/","address":"N64 W24375-85-95 Ivy Ave","city":"Sussex","rating":4.3,"reviews":14,"score":11.92},{"category":"Apartment Complex","name":"Bowling Green Apartments","phone":"(262) 246-8551","website":"","address":"Ivy Ave","city":"Sussex","rating":4.4,"reviews":12,"score":11.61},{"category":"Apartment Complex","name":"Spring Isle Apartments","phone":"(920) 461-1170","website":"https://www.springisle.com/","address":"1333 Wayland St","city":"Beaver Dam","rating":2.9,"reviews":44,"score":11.1},{"category":"Apartment Complex","name":"Park Creek Apartments","phone":"(920) 356-0914","website":"https://bascodevelopment.com/property-single.cfm?pid=7","address":"201 Monroe St","city":"Beaver Dam","rating":3.4,"reviews":22,"score":10.81},{"category":"Apartment Complex","name":"Clover Ridge Apartments","phone":"(414) 349-2197","website":"http://ripprealty.com/","address":"W239 N, 5998 Maple Ave #218","city":"Sussex","rating":3.3,"reviews":20,"score":10.2},{"category":"Apartment Complex","name":"Stonegate Apartments","phone":"(262) 820-0911","website":"https://stonegateapartmentliving.com/","address":"n68 w24877, N68W24955 Stonegate Ct #227","city":"Sussex","rating":3.6,"reviews":14,"score":9.98},{"category":"Apartment Complex","name":"Shoe Factory Apartments","phone":"(262) 439-9959","website":"https://www.rentwithdiamond.com/shoe-factory-apartments","address":"913 N Spring St","city":"Beaver Dam","rating":3.4,"reviews":14,"score":9.43},{"category":"Apartment Complex","name":"Rockview Apartments","phone":"(608) 728-1314","website":"http://rockviewapartments.com/","address":"805 Rockview Ln","city":"Jefferson","rating":4.0,"reviews":7,"score":8.79},{"category":"Apartment Complex","name":"Timber Falls Apartments","phone":"(920) 360-5572","website":"https://timberfallsapartments.com/","address":"120 Mary Ann Rd","city":"Beaver Dam","rating":4.2,"reviews":5,"score":8.17},{"category":"Apartment Complex","name":"Orchard Hollow Apartments","phone":"(920) 674-2180","website":"","address":"1015 Collins Rd","city":"Jefferson","rating":3.8,"reviews":5,"score":7.39},{"category":"Apartment Complex","name":"Lakeside Estates","phone":"(262) 439-9959","website":"https://www.rentwithdiamond.com/lakeside-estates-apartments","address":"228 Baker Blvd","city":"Beaver Dam","rating":5.0,"reviews":2,"score":6.93},{"category":"Apartment Complex","name":"North Pointe Apartments","phone":"(920) 470-9816","website":"","address":"310 W Blackhawk Dr","city":"Fort Atkinson","rating":5.0,"reviews":2,"score":6.93},{"category":"Apartment Complex","name":"Lakeshore Apartments","phone":"(414) 302-1115","website":"http://www.guardianinvrealestate.com/","address":"108 Lake Crest Dr","city":"Beaver Dam","rating":3.2,"reviews":6,"score":6.65},{"category":"Apartment Complex","name":"Meadowview Apartments","phone":"(920) 885-2195","website":"https://meadowviewapartmentliving.com/","address":"209 Webster St","city":"Beaver Dam","rating":3.4,"reviews":5,"score":6.62},{"category":"Apartment Complex","name":"Sussex Mill Apartments","phone":"(262) 350-2217","website":"https://www.sussexmills.com/","address":"W240N6345 Maple Ave","city":"Sussex","rating":4.5,"reviews":2,"score":6.24},{"category":"Apartment Complex","name":"Fairview Senior Apartment Homes","phone":"(920) 674-2997","website":"http://www.coachlightcommunities.com/","address":"203 N Jackson Ave","city":"Jefferson","rating":4.0,"reviews":2,"score":5.55},{"category":"Apartment Complex","name":"Rock View Apartments","phone":"(888) 759-1990","website":"https://rockviewapartments.com/","address":"207 E Henry St","city":"Jefferson","rating":2.6,"reviews":5,"score":5.06},{"category":"Apartment Complex","name":"School House Apartments","phone":"(414) 764-8750","website":"http://www.coachlightcommunities.com/properties/jefferson-schoolhouse-apartment-homes","address":"201 S Copeland Ave","city":"Jefferson","rating":1.9,"reviews":9,"score":4.56},{"category":"Apartment Complex","name":"Blackhawk Ridge Senior Apartments","phone":"(920) 563-2440","website":"","address":"252 W Blackhawk Dr","city":"Fort Atkinson","rating":2.7,"reviews":3,"score":4.35},{"category":"Apartment Complex","name":"Woodbury Apartments","phone":"(920) 261-6311","website":"","address":"1555 Commonwealth Dr","city":"Fort Atkinson","rating":1.5,"reviews":16,"score":4.34},{"category":"Apartment Complex","name":"Jefferson Apartments","phone":"(920) 674-4450","website":"https://www.accmanagementgroup.com/properties/property.php?propertyid=101","address":"602 Collins Rd","city":"Jefferson","rating":1.9,"reviews":7,"score":4.17},{"category":"Apartment Complex","name":"Jefferson Apartments - Elizabeth Avenue","phone":"(920) 253-9470","website":"","address":"417 N Elizabeth Ave","city":"Jefferson","rating":3.0,"reviews":2,"score":4.16},{"category":"Apartment Complex","name":"Rockland Court","phone":"(920) 568-8862","website":"http://www.meridiangroupinc.net/","address":"915 S Main St","city":"Fort Atkinson","rating":2.3,"reviews":4,"score":4.12},{"category":"Apartment Complex","name":"Jefferson Oaks Apartments","phone":"(920) 650-1314","website":"","address":"514 Collins Rd","city":"Jefferson","rating":1.0,"reviews":2,"score":1.39},{"category":"Apartment Complex","name":"Rockwell Court","phone":"(920) 691-0163","website":"https://www.accmanagementgroup.com/properties/property.php?propertyid=210","address":"100 Rockwell Ave","city":"Fort Atkinson","rating":1.0,"reviews":1,"score":1.1},{"category":"Apartment Complex","name":"Walnut Grove Apartments","phone":"(608) 444-8343","website":"https://www.thinv.com/walnut-grove","address":"1103 Whitewater Ave","city":"Fort Atkinson","rating":1.0,"reviews":1,"score":1.1},{"category":"Assisted Living","name":"Brookfield Highlands Apartments 55+","phone":"(262) 588-3100","website":"https://www.ardenpropertygroup.com/wi/waukesha/brookfield-highlands-apartments-55","address":"20825 George Hunt Cir #708","city":"Waukesha","rating":4.6,"reviews":217,"score":24.79},{"category":"Assisted Living","name":"Oak Hill Terrace Senior Living","phone":"(262) 548-1457","website":"https://sinceriseniorliving.com/oak-hill-terrace","address":"1805 Kensington Dr","city":"Waukesha","rating":4.7,"reviews":146,"score":23.49},{"category":"Assisted Living","name":"Oak Park Place","phone":"(608) 663-8600","website":"https://www.oakparkplace.com/c/madison-east-grandview","address":"719 Jupiter Dr","city":"Madison","rating":4.2,"reviews":95,"score":19.21},{"category":"Assisted Living","name":"Reena Senior Living","phone":"(920) 542-1521","website":"https://reenaseniorliving.com/","address":"737 Reena Ave","city":"Fort Atkinson","rating":4.7,"reviews":54,"score":18.92},{"category":"Assisted Living","name":"The Terraces at Coventry Village","phone":"(608) 829-0603","website":"https://sinceriseniorliving.com/the-terraces-at-coventry-village/","address":"7707 N Brookline Dr","city":"Madison","rating":4.8,"reviews":47,"score":18.68},{"category":"Assisted Living","name":"Eden Vista Madison","phone":"(608) 249-5558","website":"https://edenvistamadison.com/","address":"1601 Wheeler Rd","city":"Madison","rating":4.5,"reviews":48,"score":17.6},{"category":"Assisted Living","name":"Renaissance Senior Living of Hilldale","phone":"(608) 949-7550","website":"http://www.renaissancehilldale.net/","address":"602 N Segoe Rd","city":"Madison","rating":4.7,"reviews":34,"score":16.84},{"category":"Assisted Living","name":"Charleston House Assisted Living & Memory Care","phone":"(920) 219-4941","website":"https://www.charlestonhouseseniorliving.com/","address":"104 Fakes Ct","city":"Beaver Dam","rating":4.9,"reviews":25,"score":16.15},{"category":"Assisted Living","name":"The Waters of Pewaukee","phone":"(262) 506-1600","website":"https://www.thewaters.com/locations/the-waters-pewaukee","address":"W239N2540 Dahlia Blvd","city":"Waukesha","rating":5.0,"reviews":23,"score":16.09},{"category":"Assisted Living","name":"The Courtyard at Sussex","phone":"(262) 932-2800","website":"https://thecourtyardatsussex.com/","address":"W235N6350 Hickory Dr","city":"Sussex","rating":4.6,"reviews":30,"score":15.94},{"category":"Assisted Living","name":"Aging & Disability Resource Center","phone":"(866) 740-2372","website":"http://www.dhs.wisconsin.gov/adrc/","address":"1541 Annex Rd","city":"Jefferson","rating":4.4,"reviews":31,"score":15.38},{"category":"Assisted Living","name":"Capitol Lakes","phone":"(608) 283-2000","website":"https://www.capitollakes.org/","address":"333 W Main St","city":"Madison","rating":4.1,"reviews":36,"score":14.91},{"category":"Assisted Living","name":"New Perspective Waukesha","phone":"(262) 955-1998","website":"https://npseniorliving.com/communities/waukesha/","address":"1701 E Broadway","city":"Waukesha","rating":3.9,"reviews":41,"score":14.67},{"category":"Assisted Living","name":"Avalon Square","phone":"(262) 446-9300","website":"https://preshomes.org/living-options/find-a-community/avalon-square/","address":"222 Park Pl","city":"Waukesha","rating":4.4,"reviews":23,"score":14.16},{"category":"Assisted Living","name":"Mission Creek Senior Living","phone":"(262) 896-8888","website":"http://www.missioncreekseniorliving.com/","address":"3217 Fiddlers Creek Dr","city":"Waukesha","rating":3.6,"reviews":45,"score":13.86},{"category":"Assisted Living","name":"Summit Woods","phone":"(262) 521-1388","website":"https://www.capricommunities.com/locations/summit-woods/","address":"2501 Summit Ave","city":"Waukesha","rating":4.2,"reviews":25,"score":13.84},{"category":"Assisted Living","name":"Jefferson Memory Care","phone":"(920) 541-3520","website":"https://jeffersonmemorycare.com/","address":"414 Co Rd Y","city":"Jefferson","rating":4.2,"reviews":25,"score":13.84},{"category":"Assisted Living","name":"Jefferson Area Senior Center","phone":"(920) 674-7728","website":"https://jeffersonwis.com/residents/departments/senior-center/","address":"859 Collins Rd","city":"Jefferson","rating":4.6,"reviews":18,"score":13.78},{"category":"Assisted Living","name":"Beaver Dam Health Care Center","phone":"(920) 887-7191","website":"https://www.beaverdamhcc.com/","address":"410 Roedl Ct","city":"Beaver Dam","rating":3.6,"reviews":42,"score":13.62},{"category":"Assisted Living","name":"Brookdale Madison West","phone":"(608) 277-1010","website":"https://www.brookdale.com/en/communities/brookdale-madison-west.html","address":"429 S Yellowstone Dr","city":"Madison","rating":4.0,"reviews":27,"score":13.47},{"category":"Assisted Living","name":"Brookdale Sussex","phone":"(262) 820-0330","website":"https://www.brookdale.com/en/communities/brookdale-sussex.html","address":"Maple Ave W240 N6351","city":"Sussex","rating":4.9,"reviews":13,"score":13.27},{"category":"Assisted Living","name":"Charter Senior Living of Madison","phone":"(608) 360-8765","website":"https://www.charterofmadison.com/","address":"5601 Burke Rd","city":"Madison","rating":4.4,"reviews":18,"score":13.18},{"category":"Assisted Living","name":"Rock River Nursing & Rehab","phone":"(920) 563-5533","website":"https://www.amalfihealthgroup.com/","address":"430 Wilcox St","city":"Fort Atkinson","rating":4.0,"reviews":22,"score":12.71},{"category":"Assisted Living","name":"Oakwood Village University Woods","phone":"(608) 230-4280","website":"http://www.oakwoodvillage.net/","address":"6205 Mineral Point Rd","city":"Madison","rating":4.2,"reviews":18,"score":12.58},{"category":"Assisted Living","name":"Alden Estates of Jefferson","phone":"(920) 674-3170","website":"http://www.aldenestatesofjefferson.com/","address":"1130 Collins Rd","city":"Jefferson","rating":3.1,"reviews":54,"score":12.48},{"category":"Assisted Living","name":"Bay Harbor Of Beaver Dam","phone":"(920) 219-9517","website":"http://www.bayharborassisted.com/","address":"911 S Center St","city":"Beaver Dam","rating":4.7,"reviews":10,"score":11.68},{"category":"Assisted Living","name":"Sunset Ridge Jefferson","phone":"(920) 541-3660","website":"http://sunsetridgejefferson.com/","address":"826 E Reinel St","city":"Jefferson","rating":4.3,"reviews":11,"score":11.03},{"category":"Assisted Living","name":"Stone Terrace Senior Living","phone":"(920) 887-6693","website":"https://www.marshfieldclinic.org/Locations/Centers/Stone%20Terrace","address":"819 S University Ave","city":"Beaver Dam","rating":4.4,"reviews":10,"score":10.93},{"category":"Assisted Living","name":"St Coletta of Wisconsin","phone":"(920) 674-4330","website":"http://www.stcolettawi.org/","address":"N4637 Co Rd Y","city":"Jefferson","rating":3.7,"reviews":15,"score":10.48},{"category":"Assisted Living","name":"Jefferson Square","phone":"(608) 905-0645","website":"http://www.jefferson-square.com/","address":"717 Deforest St","city":"DeForest","rating":5.0,"reviews":6,"score":10.4},{"category":"Assisted Living","name":"Black Hawk Senior Residence","phone":"(920) 563-1480","website":"https://www.aplaceformom.com/community/black-hawk-senior-residence-67534","address":"1 Milwaukee Ave W","city":"Fort Atkinson","rating":3.8,"reviews":13,"score":10.29},{"category":"Assisted Living","name":"Homes For Independent Living","phone":"(920) 568-9554","website":"http://www.hil-wi.com/","address":"22 N 3rd St","city":"Fort Atkinson","rating":3.6,"reviews":13,"score":9.75},{"category":"Assisted Living","name":"Wellington Place at Fort Atkinson","phone":"(920) 563-6959","website":"https://www.wellingtonplacefortatkinson.org/","address":"200 S Water St W","city":"Fort Atkinson","rating":5.0,"reviews":4,"score":8.96},{"category":"Assisted Living","name":"Wellington Meadows","phone":"(920) 563-2199","website":"http://www.wellingtonmeadows.org/","address":"525 Memorial Dr","city":"Fort Atkinson","rating":5.0,"reviews":4,"score":8.96},{"category":"Assisted Living","name":"Madison Pointe Senior Living","phone":"(608) 244-8863","website":"https://madisonpointeliving.com/","address":"705 Ziegler Rd","city":"Madison","rating":4.2,"reviews":5,"score":8.17},{"category":"Assisted Living","name":"Hillside Manor Nursing Facility","phone":"(920) 887-5901","website":"https://www.marshfieldclinic.org/Locations/Centers/Hillside%20Manor%20Nursing%20Facility","address":"803 S University Ave","city":"Beaver Dam","rating":5.0,"reviews":2,"score":6.93},{"category":"Assisted Living","name":"Dimensions Living Jefferson","phone":"(920) 674-0698","website":"https://dimensionsliving.com/dimensions-living-jefferson/","address":"279 N Jackson Ave","city":"Jefferson","rating":3.0,"reviews":7,"score":6.59},{"category":"Assisted Living","name":"Sunset Ridge Memory Care","phone":"(920) 541-3536","website":"http://www.sunsetridgememorycare.com/","address":"816 E Reinel St","city":"Jefferson","rating":3.0,"reviews":7,"score":6.59},{"category":"Assisted Living","name":"Orchard View Adult Family Home","phone":"(920) 568-9568","website":"","address":"N2510 Commonwealth Dr","city":"Fort Atkinson","rating":4.0,"reviews":3,"score":6.44},{"category":"Assisted Living","name":"Dimensions Living Beaver Dam","phone":"(920) 885-1790","website":"https://dimensionsliving.com/dimensions-living-beaver-dam/","address":"626 Monroe St","city":"Beaver Dam","rating":3.0,"reviews":4,"score":5.38},{"category":"Church","name":"Elmbrook Church","phone":"(262) 786-7051","website":"http://www.elmbrook.org/","address":"777 S Barker Rd","city":"Brookfield","rating":4.6,"reviews":316,"score":26.51},{"category":"Church","name":"Bridge Church","phone":"(262) 542-4922","website":"https://bridgechurch.net/","address":"1314 S Grand Ave","city":"Waukesha","rating":4.8,"reviews":144,"score":23.92},{"category":"Church","name":"RiverGlen Christian Church","phone":"(262) 968-5252","website":"http://www.riverglen.cc/","address":"S31 W30601 Sunset Dr","city":"Waukesha","rating":4.8,"reviews":143,"score":23.89},{"category":"Church","name":"Spring Creek Church","phone":"(262) 695-2211","website":"http://www.springcreek.church/","address":"N35W22000 W Capitol Dr","city":"Pewaukee","rating":4.5,"reviews":172,"score":23.22},{"category":"Church","name":"Fox River Christian Church","phone":"(262) 544-6000","website":"https://foxriverchristian.org/","address":"S46W24130 Lawnsdale Rd","city":"Waukesha","rating":4.6,"reviews":152,"score":23.17},{"category":"Church","name":"City Church Madison","phone":"(608) 221-1528","website":"http://www.citychurchmadison.org/","address":"4909 E Buckeye Rd","city":"Madison","rating":4.6,"reviews":104,"score":21.45},{"category":"Church","name":"St Katharine Drexel Catholic Church","phone":"(920) 887-2082","website":"http://www.stkatharinedrexelbd.org/","address":"511 S Spring St","city":"Beaver Dam","rating":4.7,"reviews":79,"score":20.65},{"category":"Church","name":"High Point Church","phone":"(608) 836-3236","website":"http://www.highpointchurch.org/","address":"7702 Old Sauk Rd","city":"Madison","rating":4.6,"reviews":77,"score":20.1},{"category":"Church","name":"St John the Baptist Catholic Church","phone":"(920) 674-2025","website":"https://pastorate14.org/","address":"324 E North St","city":"Jefferson","rating":4.6,"reviews":75,"score":19.98},{"category":"Church","name":"Faith Community Church","phone":"(920) 563-4730","website":"http://fccfa.com/","address":"W5949 Hackbarth Rd","city":"Fort Atkinson","rating":4.9,"reviews":52,"score":19.55},{"category":"Church","name":"St. Patrick Catholic Church","phone":"(608) 257-5000","website":"https://www.madisoncathedral.org/","address":"404 E Main St","city":"Madison","rating":4.6,"reviews":67,"score":19.48},{"category":"Church","name":"City on a Hill","phone":"(608) 620-5422","website":"http://cityonahill.co/","address":"2924 Fish Hatchery Rd","city":"Fitchburg","rating":4.9,"reviews":44,"score":18.76},{"category":"Church","name":"Good Shepherd Lutheran Church","phone":"(920) 885-6482","website":"http://www.goodshepherdbd.org/","address":"1310 N Center St","city":"Beaver Dam","rating":4.9,"reviews":37,"score":17.95},{"category":"Church","name":"Harvest Evangelical Free Church","phone":"(920) 887-0799","website":"http://www.harvestefc.com/","address":"W7444 WI-33","city":"Beaver Dam","rating":4.8,"reviews":38,"score":17.71},{"category":"Church","name":"Waukesha City Church","phone":"(414) 501-3856","website":"https://waukeshacitychurch.org/","address":"810 N East Ave","city":"Waukesha","rating":5.0,"reviews":30,"score":17.33},{"category":"Church","name":"First United Methodist Church Waukesha","phone":"(262) 542-4256","website":"http://fumcwaukesha.org/","address":"121 Wisconsin Ave","city":"Waukesha","rating":4.8,"reviews":32,"score":16.93},{"category":"Church","name":"Waukesha Bible Church","phone":"(262) 542-7177","website":"https://www.waukeshabible.org/","address":"s53w24079 Glendale Rd","city":"Waukesha","rating":4.7,"reviews":33,"score":16.71},{"category":"Church","name":"St. John's Lutheran Church Jefferson","phone":"(920) 674-2922","website":"http://sjlwels.org/","address":"215 E Church St","city":"Jefferson","rating":4.9,"reviews":28,"score":16.67},{"category":"Church","name":"Calvary Chapel Madison","phone":"(608) 273-2911","website":"https://calvarychapelmadison.com/","address":"4702 E Broadway","city":"Madison","rating":4.7,"reviews":31,"score":16.43},{"category":"Church","name":"St. Paul's Evangelical Lutheran Church","phone":"(920) 563-2263","website":"http://stpaulsfort.org/","address":"301 S High St","city":"Fort Atkinson","rating":4.3,"reviews":43,"score":16.37},{"category":"Church","name":"St Stephen's Lutheran Church","phone":"(920) 885-6484","website":"http://www.ssbdwels.com/","address":"300 West St","city":"Beaver Dam","rating":4.4,"reviews":38,"score":16.23},{"category":"Church","name":"First United Methodist Fort Atkinson","phone":"(920) 563-4903","website":"https://fortmethodist.org/","address":"320 S Main St","city":"Fort Atkinson","rating":4.6,"reviews":31,"score":16.08},{"category":"Church","name":"Bethany Lutheran Church","phone":"(920) 563-8113","website":"https://bethanylutheranfort.org/","address":"404 Roosevelt St","city":"Fort Atkinson","rating":4.5,"reviews":33,"score":16.0},{"category":"Church","name":"RChurch","phone":"(608) 277-8777","website":"http://www.rchurchonline.com/","address":"5201 Turner Ave","city":"Madison","rating":4.7,"reviews":28,"score":15.99},{"category":"Church","name":"First Evangelical Lutheran Church","phone":"(920) 885-4497","website":"http://www.firstluthbd.org/","address":"311 W Mackie St","city":"Beaver Dam","rating":4.4,"reviews":35,"score":15.89},{"category":"Church","name":"Peace Lutheran Church & Academy","phone":"(262) 246-3200","website":"http://www.peacesussex.org/","address":"W240 N6145 Maple Ave","city":"Sussex","rating":4.8,"reviews":25,"score":15.82},{"category":"Church","name":"Crossway Church Sussex","phone":"(262) 255-0702","website":"https://www.crosswayc.org/sussex","address":"N64 W22680 State Hwy 74","city":"Sussex","rating":4.9,"reviews":22,"score":15.57},{"category":"Church","name":"Trinity Church United Methodist","phone":"(920) 887-7211","website":"http://www.trinityumbd.org/","address":"308 Oneida St","city":"Beaver Dam","rating":4.8,"reviews":21,"score":15.05},{"category":"Church","name":"Christ Our Savior Lutheran Church","phone":"(262) 246-6537","website":"http://www.coslc.com/","address":"N59W22476 Silver Spring Dr","city":"Sussex","rating":4.8,"reviews":21,"score":15.05},{"category":"Church","name":"Trinity Lutheran Church Fort Atkinson","phone":"(920) 563-4145","website":"http://trinityfort.org/","address":"314 Barrie St","city":"Fort Atkinson","rating":4.5,"reviews":24,"score":14.66},{"category":"Church","name":"Life Center Madison","phone":"(608) 222-4900","website":"http://www.lifecentermadison.com/","address":"4402 Femrite Dr","city":"Madison","rating":4.6,"reviews":22,"score":14.62},{"category":"Church","name":"The Chapel Jefferson","phone":"(847) 201-2777","website":"http://www.chapel.org/","address":"250 S Wisconsin Dr","city":"Jefferson","rating":5.0,"reviews":15,"score":14.17},{"category":"Church","name":"United Unitarian Universalist Congregation","phone":"(262) 544-1050","website":"http://www.uniteduuc.org/","address":"506 N Washington Ave","city":"Waukesha","rating":4.9,"reviews":15,"score":13.88},{"category":"Church","name":"Edgewood Community Church","phone":"(920) 557-2877","website":"https://edgewoodcommunity.org/","address":"1209 W Cir Dr","city":"Beaver Dam","rating":5.0,"reviews":14,"score":13.86},{"category":"Church","name":"First Baptist Church of Madison","phone":"(608) 233-1880","website":"http://firstbaptistmadison.org/","address":"518 N Franklin Ave","city":"Madison","rating":4.3,"reviews":20,"score":13.29},{"category":"Church","name":"First Baptist Church Fort Atkinson","phone":"(920) 563-5222","website":"http://firstbaptistfta.org/","address":"420 Whitewater Ave","city":"Fort Atkinson","rating":5.0,"reviews":12,"score":13.2},{"category":"Church","name":"St Peter's Episcopal Church","phone":"(920) 563-3889","website":"https://www.stpetersfort.org/","address":"302 Merchants Ave","city":"Fort Atkinson","rating":4.8,"reviews":13,"score":13.0},{"category":"Church","name":"First Congregational Church Fort Atkinson","phone":"(920) 563-4802","website":"http://www.fortfcc.org/","address":"31 Milwaukee Ave W","city":"Fort Atkinson","rating":4.8,"reviews":12,"score":12.67},{"category":"Church","name":"Crosswalk Community Church","phone":"(920) 344-4298","website":"https://www.crosswalkccbd.org/","address":"333 Beichl Ave","city":"Beaver Dam","rating":5.0,"reviews":10,"score":12.42},{"category":"Church","name":"Waukesha Church of Christ","phone":"(262) 542-5072","website":"http://www.waukeshachurch.org/","address":"2816 Madison St","city":"Waukesha","rating":5.0,"reviews":10,"score":12.42},{"category":"Church","name":"Rock River Assembly Of God","phone":"(920) 674-6770","website":"","address":"651 E Racine St","city":"Jefferson","rating":4.7,"reviews":12,"score":12.4},{"category":"Church","name":"St Mark's Lutheran Church Jefferson","phone":"(920) 674-2370","website":"http://stmarksjefferson.360unite.com/home","address":"324 S Sanborn Ave","city":"Jefferson","rating":4.5,"reviews":13,"score":12.19},{"category":"Church","name":"Calvary Baptist Church Jefferson","phone":"(920) 674-5291","website":"http://cbcjeff.org/","address":"971 W Milwaukee St","city":"Jefferson","rating":4.9,"reviews":9,"score":11.75},{"category":"Church","name":"Faith Community Christian Church Beaver Dam","phone":"(920) 887-8577","website":"https://faithchurchbd.wordpress.com/about/","address":"401 Stone St","city":"Beaver Dam","rating":4.3,"reviews":13,"score":11.64},{"category":"Church","name":"Immanuel United Methodist Jefferson","phone":"(920) 674-5273","website":"http://www.immanueljefferson.com/","address":"201 E Racine St","city":"Jefferson","rating":4.5,"reviews":11,"score":11.54},{"category":"Church","name":"Gospel Fellowship of Sussex","phone":"(262) 246-8737","website":"http://gospelfellowshipofsussex.com/","address":"N74W25332 Howard Ln","city":"Sussex","rating":4.6,"reviews":10,"score":11.43},{"category":"Church","name":"First Baptist Church Of Waukesha","phone":"(262) 542-7233","website":"http://www.firstbaptistwaukesha.com/","address":"247 Wisconsin Ave","city":"Waukesha","rating":4.3,"reviews":12,"score":11.35},{"category":"Church","name":"St Alban's Episcopal Church Sussex","phone":"(262) 246-4430","website":"http://www.stalbans-sussex.org/","address":"W239 N6440 Maple Ave","city":"Sussex","rating":4.6,"reviews":9,"score":11.03},{"category":"Church","name":"Sussex United Methodist Church","phone":"(262) 246-3748","website":"","address":"N63W23523 Main St","city":"Sussex","rating":4.5,"reviews":8,"score":10.36},{"category":"Church","name":"Beaver Dam Church of Christ","phone":"(605) 295-0513","website":"http://beaverdamcoc.weebly.com/","address":"920 S University Ave","city":"Beaver Dam","rating":4.3,"reviews":3,"score":6.92},{"category":"Golf Course","name":"Vitense Golfland","phone":"(608) 271-1411","website":"http://www.vitense.com/","address":"5501 Schroeder Rd","city":"Madison","rating":4.4,"reviews":1296,"score":31.54},{"category":"Golf Course","name":"University Ridge Golf Course","phone":"(608) 845-7700","website":"https://universityridge.com/","address":"9002 County Rd PD","city":"Verona","rating":4.7,"reviews":376,"score":27.89},{"category":"Golf Course","name":"Coachman's Golf Resort","phone":"(608) 884-8484","website":"http://www.coachmans.com/","address":"984 County Hwy A","city":"Edgerton","rating":4.3,"reviews":590,"score":27.45},{"category":"Golf Course","name":"Western Lakes Golf Club","phone":"(262) 691-0900","website":"http://www.westernlakes.com/","address":"W287 N1963 Oakton Rd","city":"Pewaukee","rating":4.4,"reviews":497,"score":27.34},{"category":"Golf Course","name":"Wisconsin Indoor Golf Center","phone":"(262) 436-0002","website":"http://wisconsinindoorgolfcenter.com/","address":"206 Travis Ln Suite 2","city":"Waukesha","rating":4.8,"reviews":264,"score":26.8},{"category":"Golf Course","name":"New Berlin Hills Golf Course","phone":"(262) 780-5200","website":"http://www.newberlinhillsgolf.com/","address":"13175 W Graham St","city":"New Berlin","rating":4.3,"reviews":419,"score":25.98},{"category":"Golf Course","name":"Naga-Waukee War Memorial Golf Course","phone":"(262) 367-2153","website":"https://www.waukeshacounty.gov/parks-and-land-use/parks-and-recreation/golf/","address":"W307N1897 Maple Ave","city":"Pewaukee","rating":4.5,"reviews":289,"score":25.53},{"category":"Golf Course","name":"Muskego Lakes Country Club","phone":"(414) 425-6500","website":"https://bit.ly/3v7fKaR","address":"S100W14020 Loomis Rd","city":"Muskego","rating":4.3,"reviews":316,"score":24.78},{"category":"Golf Course","name":"Westmoor Country Club","phone":"(262) 796-7800","website":"http://www.westmoor.org/","address":"400 S Moorland Rd","city":"Brookfield","rating":4.8,"reviews":167,"score":24.62},{"category":"Golf Course","name":"Nemadji Golf Course","phone":"(715) 394-0266","website":"https://www.nemadjigolf.com/","address":"5 N 58th St","city":"Superior","rating":4.4,"reviews":263,"score":24.55},{"category":"Golf Course","name":"Brookfield Hills Golf Course","phone":"(262) 782-0885","website":"http://brookfieldhillsgolf.com/","address":"16075 Pinehurst Dr","city":"Brookfield","rating":4.3,"reviews":292,"score":24.44},{"category":"Golf Course","name":"The Club at Strawberry Creek","phone":"(262) 857-8400","website":"http://www.strawberrycreekclub.com/","address":"14810 72nd St","city":"Kenosha","rating":4.6,"reviews":201,"score":24.44},{"category":"Golf Course","name":"Blackhawk Country Club","phone":"(608) 231-2454","website":"http://www.blackhawkcc.com/","address":"3606 Blackhawk Dr","city":"Madison","rating":4.7,"reviews":179,"score":24.43},{"category":"Golf Course","name":"Morningstar Golfers Club","phone":"(262) 662-1600","website":"http://www.golfthestar.com/","address":"S77W26285 Prairieside Dr","city":"Waukesha","rating":4.3,"reviews":291,"score":24.42},{"category":"Golf Course","name":"Brighton Dale Links","phone":"(262) 697-4653","website":"https://www.golfbrightondale.com/","address":"830 248th Ave","city":"Kansasville","rating":4.3,"reviews":268,"score":24.07},{"category":"Golf Course","name":"The Legend at Brandybrook","phone":"(262) 968-9717","website":"http://www.thelegendclubs.com/","address":"1 Legend Way","city":"Wales","rating":4.7,"reviews":162,"score":23.97},{"category":"Golf Course","name":"Kettle Moraine Golf Club","phone":"(262) 965-6200","website":"https://www.golfkmgc.com/","address":"W365 S4299 Hwy 67","city":"Dousman","rating":4.1,"reviews":329,"score":23.79},{"category":"Golf Course","name":"Moor Downs Golf Course","phone":"(262) 548-7821","website":"https://www.waukeshacounty.gov/parks-and-land-use/parks-and-recreation/golf/moor-downs-golf-course/","address":"438 Prospect Ave","city":"Waukesha","rating":4.2,"reviews":261,"score":23.4},{"category":"Golf Course","name":"Pleasant View Golf Course","phone":"(608) 831-6666","website":"http://www.golfpleasantview.com/","address":"1322 N Pleasant View Rd","city":"Middleton","rating":4.6,"reviews":156,"score":23.29},{"category":"Golf Course","name":"Tuckaway Country Club","phone":"(414) 425-4280","website":"http://www.tuckawaycountryclub.com/","address":"6901 W Drexel Ave","city":"Franklin","rating":4.6,"reviews":155,"score":23.26},{"category":"Golf Course","name":"Broadlands Golf Club","phone":"(262) 392-6320","website":"http://www.broadlandsgolfclub.com/","address":"18 Augusta Way","city":"North Prairie","rating":4.2,"reviews":241,"score":23.07},{"category":"Golf Course","name":"Towne Country Club","phone":"(608) 884-4231","website":"https://www.townecountryclub.com/","address":"115 Jenson St","city":"Edgerton","rating":4.4,"reviews":187,"score":23.06},{"category":"Golf Course","name":"Maple Bluff Country Club","phone":"(608) 249-2144","website":"https://www.maplebluffcc.com/","address":"500 Kensington Dr","city":"Madison","rating":4.7,"reviews":133,"score":23.05},{"category":"Golf Course","name":"Nakoma Golf Club","phone":"(608) 238-3141","website":"http://nakoma.org/","address":"4145 Country Club Rd","city":"Madison","rating":4.6,"reviews":147,"score":23.02},{"category":"Golf Course","name":"Janesville Country Club","phone":"(608) 755-7777","website":"http://www.janesvillecc.com/","address":"2615 W Memorial Dr","city":"Janesville","rating":4.6,"reviews":138,"score":22.73},{"category":"Golf Course","name":"Yahara Hills Golf Course","phone":"(608) 229-8250","website":"http://www.cityofmadison.com/parks/golf/yaharahills/","address":"7051 Millpond Rd","city":"Madison","rating":4.0,"reviews":288,"score":22.68},{"category":"Golf Course","name":"The Glen Golf Park","phone":"(608) 266-4737","website":"http://www.cityofmadison.com/golf/glenway/","address":"3747 Speedway Rd","city":"Madison","rating":4.5,"reviews":143,"score":22.4},{"category":"Golf Course","name":"Bridges Golf Course","phone":"(608) 244-1822","website":"http://www.golfthebridges.com/","address":"2702 Shopko Dr","city":"Madison","rating":4.0,"reviews":260,"score":22.27},{"category":"Golf Course","name":"The Legend at Merrill Hills","phone":"(262) 548-1100","website":"http://www.thelegendclubs.com/","address":"W270S3425 Merrill Hills Rd","city":"Waukesha","rating":4.5,"reviews":125,"score":21.8},{"category":"Golf Course","name":"Blue Mound Golf & Country Club","phone":"(414) 258-4656","website":"http://www.bluemoundgcc.com/","address":"10122 W North Ave","city":"Wauwatosa","rating":4.6,"reviews":112,"score":21.79},{"category":"Golf Course","name":"Stoughton Country Club","phone":"(608) 873-7861","website":"http://www.stoughtoncountryclub.com/","address":"3165 Shadyside Dr","city":"Stoughton","rating":4.7,"reviews":100,"score":21.74},{"category":"Golf Course","name":"Jefferson Golf Course","phone":"(920) 541-3513","website":"http://www.jeffersongolfcourse.org/","address":"913 Golf Dr","city":"Jefferson","rating":4.3,"reviews":142,"score":21.37},{"category":"Golf Course","name":"Odana Hills Golf Course","phone":"(608) 266-4724","website":"http://www.cityofmadison.com/golf/odanahills/","address":"4635 Odana Rd","city":"Madison","rating":4.1,"reviews":177,"score":21.27},{"category":"Golf Course","name":"Lake Ripley Country Club","phone":"(608) 423-3411","website":"https://lakeripleycc.com/","address":"W9575 US-12","city":"Cambridge","rating":4.7,"reviews":89,"score":21.2},{"category":"Golf Course","name":"Edgewood Golf Course","phone":"(262) 662-3110","website":"https://edgewoodgolf.com/","address":"W240s9950 Castle Rd","city":"Big Bend","rating":3.9,"reviews":222,"score":21.11},{"category":"Golf Course","name":"TPC Wisconsin","phone":"(608) 249-1000","website":"https://www.tpcwisconsin.com/","address":"1659 Players Dr","city":"Madison","rating":4.2,"reviews":136,"score":20.69},{"category":"Golf Course","name":"Monona Golf Course","phone":"(608) 266-4736","website":"http://www.cityofmadison.com/parks/golf/monona/","address":"111 E Dean Ave","city":"Madison","rating":4.3,"reviews":117,"score":20.55},{"category":"Golf Course","name":"Pewaukee Golf Club","phone":"(262) 544-8585","website":"http://www.pewaukeegolf.com/","address":"N 12, W26506 Golf Rd","city":"Pewaukee","rating":3.6,"reviews":236,"score":19.7},{"category":"Golf Course","name":"Bishops Bay Country Club","phone":"(608) 232-4201","website":"http://www.bishopsbay.com/","address":"3500 Bishops Bay Dr","city":"Middleton","rating":4.6,"reviews":36,"score":16.73},{"category":"Insurance Agent","name":"First Choice Insurance Solutions","phone":"(608) 318-1200","website":"http://myfcis.com/","address":"1261 W Main St Suite 101","city":"Sun Prairie","rating":5.0,"reviews":628,"score":32.23},{"category":"Insurance Agent","name":"Aune & Associates American Family Insurance","phone":"(608) 274-9702","website":"https://www.amfam.com/agents/wisconsin/madison/steven-aune","address":"579 D'onofrio Dr STE 203","city":"Madison","rating":5.0,"reviews":192,"score":26.34},{"category":"Insurance Agent","name":"Vicki Wagener Agency LLC American Family","phone":"(608) 249-2184","website":"https://www.amfam.com/agents/wisconsin/madison/vicki-wagener","address":"5609 Medical Cir Suite 1","city":"Madison","rating":4.9,"reviews":148,"score":24.55},{"category":"Insurance Agent","name":"Chris Wagner: Allstate Insurance","phone":"(262) 548-3800","website":"https://agents.allstate.com/chris-wagner-waukesha-wi.html","address":"100 E Sunset Dr Ste 110","city":"Waukesha","rating":4.9,"reviews":143,"score":24.39},{"category":"Insurance Agent","name":"Stokes & Associates American Family Insurance","phone":"(608) 221-1149","website":"https://www.amfam.com/agents/wisconsin/madison/paul-stokes","address":"3830 Atwood Ave","city":"Madison","rating":4.9,"reviews":133,"score":24.04},{"category":"Insurance Agent","name":"Homewood Insurance Agency","phone":"(608) 837-3611","website":"https://homewoodagency.com/","address":"1262 W Main St","city":"Sun Prairie","rating":4.8,"reviews":121,"score":23.1},{"category":"Insurance Agent","name":"Harvey Lewis Insurance Agency","phone":"(920) 887-7020","website":"https://harveylewisagency.com/","address":"211 Corporate Dr Suite B","city":"Beaver Dam","rating":5.0,"reviews":93,"score":22.77},{"category":"Insurance Agent","name":"Jennifer Haack & Associates American Family","phone":"(608) 249-2182","website":"https://www.amfam.com/agents/wisconsin/madison/jennifer-haack","address":"3312 Packers Ave","city":"Madison","rating":4.8,"reviews":101,"score":22.25},{"category":"Insurance Agent","name":"Sherry A Lange Agency American Family","phone":"(920) 674-0400","website":"https://www.amfam.com/agents/wisconsin/jefferson/sherry-lange","address":"142 E Milwaukee St","city":"Jefferson","rating":4.7,"reviews":109,"score":22.13},{"category":"Insurance Agent","name":"Agency Insurance","phone":"(920) 397-5041","website":"http://www.agency-insurance.com/","address":"114 S Main St","city":"Lake Mills","rating":4.9,"reviews":89,"score":22.1},{"category":"Insurance Agent","name":"Kyle Schroeder Agency American Family","phone":"(920) 887-3033","website":"https://www.amfam.com/agents/wisconsin/beaver-dam/kyle-schroeder","address":"1301 N Center St","city":"Beaver Dam","rating":4.9,"reviews":79,"score":21.53},{"category":"Insurance Agent","name":"Gina Oemig - State Farm","phone":"(920) 885-9115","website":"https://www.ginaoemig.com/","address":"1017 N Spring St","city":"Beaver Dam","rating":4.9,"reviews":77,"score":21.41},{"category":"Insurance Agent","name":"Eric Felth - State Farm","phone":"(920) 674-2626","website":"https://www.ericfelth.com/","address":"229 S Main St","city":"Jefferson","rating":4.8,"reviews":83,"score":21.32},{"category":"Insurance Agent","name":"John Grey - State Farm","phone":"(920) 885-3158","website":"https://www.johngreyagency.com/","address":"800 Park Ave","city":"Beaver Dam","rating":4.7,"reviews":81,"score":20.77},{"category":"Insurance Agent","name":"Matty Smith Agency American Family","phone":"(608) 249-3111","website":"https://www.amfam.com/agents/wisconsin/madison/matthew-smith","address":"821 E Washington Ave #110","city":"Madison","rating":4.8,"reviews":63,"score":20.04},{"category":"Insurance Agent","name":"Rusch Insurance","phone":"(608) 724-1924","website":"https://www.ruschins.com/","address":"703 Commercial Ave suite C","city":"Sun Prairie","rating":4.9,"reviews":45,"score":18.87},{"category":"Insurance Agent","name":"Rural Mutual Insurance: Hudson Agency","phone":"(608) 295-7582","website":"https://www.ruralmutual.com/agent/hudson-agency-associates/","address":"2273 McCoy Rd","city":"Sun Prairie","rating":5.0,"reviews":40,"score":18.69},{"category":"Insurance Agent","name":"David Ryan-Sukup American Family","phone":"(608) 833-1717","website":"https://www.amfam.com/agents/wisconsin/madison/david-ryan-sukup","address":"514 Grand Canyon Dr","city":"Madison","rating":4.8,"reviews":33,"score":17.07},{"category":"Insurance Agent","name":"Leitch Insurance Agency Inc.","phone":"(715) 425-0159","website":"http://www.leitchinsurance.com/","address":"174 E Pine St","city":"River Falls","rating":4.9,"reviews":28,"score":16.67},{"category":"Insurance Agent","name":"TRICOR Insurance","phone":"(608) 837-2484","website":"https://tricorinsurance.com/sun-prairie-insurance-office","address":"804 Liberty Blvd #203","city":"Sun Prairie","rating":4.6,"reviews":26,"score":15.33},{"category":"Insurance Agent","name":"Heiar Insurance Services","phone":"(920) 887-0580","website":"https://heiarinsurance.com/","address":"1645 N Spring St","city":"Beaver Dam","rating":4.6,"reviews":21,"score":14.42},{"category":"Insurance Agent","name":"Richards Insurance Beaver Dam","phone":"(920) 887-1615","website":"http://www.richardsinsurance.com/","address":"207 Corporate Dr Suite B","city":"Beaver Dam","rating":4.7,"reviews":18,"score":14.08},{"category":"Insurance Agent","name":"State Farm Insurance Fort Atkinson","phone":"(920) 563-6047","website":"http://statefarm.com/","address":"45 S Water St E Ste C","city":"Fort Atkinson","rating":3.9,"reviews":35,"score":14.08},{"category":"Insurance Agent","name":"Ace Insurance Group Jefferson","phone":"(920) 674-4944","website":"https://aceinsurancegroup.com/","address":"1016 S Main St","city":"Jefferson","rating":4.9,"reviews":15,"score":13.88},{"category":"Insurance Agent","name":"DDR Insurance Service","phone":"(920) 674-4996","website":"http://ddrinsurance.com/","address":"223 S Main St","city":"Jefferson","rating":4.7,"reviews":9,"score":11.27},{"category":"Insurance Agent","name":"Pine Hill Insurance Services","phone":"(920) 219-9046","website":"http://www.pinehillinsurance.com/","address":"919 De Clark St","city":"Beaver Dam","rating":3.9,"reviews":16,"score":11.27},{"category":"Insurance Agent","name":"The Gunderson Agency American Family","phone":"(920) 887-7286","website":"https://www.amfam.com/agents/wisconsin/beaver-dam/mason-gunderson","address":"1748 N Spring St","city":"Beaver Dam","rating":4.3,"reviews":11,"score":11.03},{"category":"Insurance Agent","name":"Dan Ohlson - COUNTRY Financial","phone":"(920) 885-6209","website":"https://advisors.countryfinancial.com/usa/wi/beaver-dam/daniel-ohlson","address":"200 Front St Ste 1E","city":"Beaver Dam","rating":5.0,"reviews":5,"score":9.73},{"category":"Insurance Agent","name":"Gallagher Insurance Beaver Dam","phone":"(920) 885-5252","website":"https://www.avidrisk.com/","address":"1011 S Spring St","city":"Beaver Dam","rating":3.8,"reviews":10,"score":9.44},{"category":"Property Management","name":"Real Property Management Greater Milwaukee Suburbs","phone":"(262) 309-6961","website":"https://www.rpmgreatermilwaukee.com/","address":"401 W Main St","city":"Waukesha","rating":4.8,"reviews":1768,"score":35.9},{"category":"Property Management","name":"Smart Asset Realty","phone":"(262) 232-8738","website":"http://www.smartassetrealty.com/","address":"200 W Main St","city":"Waukesha","rating":4.1,"reviews":1373,"score":29.63},{"category":"Property Management","name":"Wisconsin Property Managers","phone":"(608) 554-1490","website":"http://wisconsinpropertymanagers.com/","address":"12 S Pontiac Dr","city":"Janesville","rating":4.8,"reviews":373,"score":28.45},{"category":"Property Management","name":"Real Property Management Greater Madison Metro","phone":"(608) 310-1290","website":"https://www.rpmgreatermadison.com/","address":"6441 Enterprise Ln Suite 115","city":"Madison","rating":4.7,"reviews":413,"score":28.33},{"category":"Property Management","name":"Bartsch Management, LLC","phone":"(414) 763-7160","website":"http://bartschmanagement.com/","address":"4701 W Schroeder Dr","city":"Brown Deer","rating":4.4,"reviews":513,"score":27.47},{"category":"Property Management","name":"VantagePoint Property Management","phone":"(920) 412-7773","website":"https://vantagepointpropertymanagement.com/","address":"111 N Broadway B","city":"Green Bay","rating":4.5,"reviews":406,"score":27.05},{"category":"Property Management","name":"Top Level Property Management LLC","phone":"(608) 957-3538","website":"https://www.toplevelpropertymanagement.com/","address":"2987 Yarmouth Greenway Dr Suite 201","city":"Fitchburg","rating":4.7,"reviews":141,"score":23.33},{"category":"Property Management","name":"Shine Realty","phone":"(920) 674-9821","website":"http://housesthatshine.com/","address":"101 N Main St","city":"Jefferson","rating":5.0,"reviews":68,"score":21.24},{"category":"Property Management","name":"Madison Property Management, Inc.","phone":"(608) 251-8777","website":"https://www.madisonproperty.com/","address":"1202 Regent St","city":"Madison","rating":3.2,"reviews":694,"score":20.95},{"category":"Property Management","name":"Diamond Property Management, LLC","phone":"(262) 439-9959","website":"http://www.rentwithdiamond.com/","address":"300 N Corporate Dr #280","city":"Brookfield","rating":3.8,"reviews":238,"score":20.83},{"category":"Property Management","name":"Greenbush Properties","phone":"(608) 256-0525","website":"https://greenbushmadison.com/","address":"444 W Main St","city":"Madison","rating":4.6,"reviews":65,"score":19.34},{"category":"Property Management","name":"Dobson Property Management LLC","phone":"(608) 729-8756","website":"http://dobsonpropertymanagementllc.com/contact-dpm/","address":"122 E Olin Ave Suite #255","city":"Madison","rating":4.4,"reviews":54,"score":17.71},{"category":"Property Management","name":"Palisade Property Management","phone":"(608) 442-4200","website":"https://www.palisadeproperty.com/","address":"725 E Johnson St","city":"Madison","rating":3.4,"reviews":168,"score":17.46},{"category":"Property Management","name":"Kader Property Management","phone":"(608) 843-2464","website":"http://www.kaderproperties.com/","address":"2902 Perry St","city":"Madison","rating":3.8,"reviews":96,"score":17.42},{"category":"Property Management","name":"CCL Management","phone":"(608) 833-0009","website":"http://www.cclmanagement.com/","address":"26 Schroeder Ct Suite 230","city":"Madison","rating":3.5,"reviews":119,"score":16.79},{"category":"Property Management","name":"Maple Grove Homes","phone":"(920) 674-2110","website":"http://maplegrovehomes.com/","address":"303 Maple Grove Blvd","city":"Jefferson","rating":4.3,"reviews":44,"score":16.46},{"category":"Property Management","name":"Smith Management","phone":"(608) 284-8483","website":"https://www.smithmgt.com/","address":"20 N Blair St # 105","city":"Madison","rating":4.1,"reviews":48,"score":16.04},{"category":"Property Management","name":"Devout Real Estate Group LLC","phone":"(920) 397-7244","website":"http://www.devoutrealestate.com/","address":"96 S Main St","city":"Fort Atkinson","rating":5.0,"reviews":22,"score":15.89},{"category":"Property Management","name":"Fort Real Estate Co, LLC","phone":"(920) 568-8700","website":"http://fortrealestate.com/","address":"407 Robert St","city":"Fort Atkinson","rating":4.5,"reviews":25,"score":14.83},{"category":"Property Management","name":"Capri Communities","phone":"(262) 798-1224","website":"http://www.capricommunities.com/","address":"20875 Crossroads Cir #400","city":"Waukesha","rating":4.4,"reviews":27,"score":14.82},{"category":"Property Management","name":"Century 21 Integrity Group Jefferson","phone":"(920) 674-2041","website":"https://sellzhomez.com/","address":"238 S Main St","city":"Jefferson","rating":5.0,"reviews":17,"score":14.72},{"category":"Property Management","name":"Riverfront Apartments","phone":"(920) 650-1933","website":"http://www.theriverfrontapartments.com/","address":"411 S Wisconsin Dr","city":"Jefferson","rating":4.4,"reviews":23,"score":14.16},{"category":"Property Management","name":"JS Urban Homes","phone":"(262) 566-9602","website":"http://www.jsurbanhomes.com/","address":"1256 Capitol Dr Ste 700 PMB 302","city":"Pewaukee","rating":4.3,"reviews":19,"score":13.09},{"category":"Property Management","name":"Riverview Manor","phone":"(920) 568-8862","website":"http://www.meridiangroupinc.net/","address":"217 S Water St E","city":"Fort Atkinson","rating":4.0,"reviews":23,"score":12.88},{"category":"Property Management","name":"Tony Brus","phone":"(920) 728-1760","website":"","address":"201 N Main St 4th Floor","city":"Fort Atkinson","rating":5.0,"reviews":11,"score":12.82},{"category":"Property Management","name":"NextHome Success","phone":"(920) 563-4606","website":"http://nexthomesuccess.com/","address":"913 Madison Ave #917","city":"Fort Atkinson","rating":5.0,"reviews":8,"score":11.51},{"category":"Property Management","name":"Riverside Lofts","phone":"(920) 541-0150","website":"https://www.riversideloftapartments.com/","address":"138 W Candise St","city":"Jefferson","rating":3.7,"reviews":21,"score":11.6},{"category":"Property Management","name":"Jefferson Area Moving & Business Center","phone":"(920) 674-9000","website":"http://www.jeffersonabc.com/","address":"218 S Wisconsin Dr","city":"Jefferson","rating":3.9,"reviews":15,"score":11.05},{"category":"Roofing","name":"Ridge Top Exteriors","phone":"(608) 218-4904","website":"http://www.ridgetopexteriors.com/locations/madison-wi","address":"4620 Dovetail Dr","city":"Madison","rating":4.8,"reviews":1175,"score":33.94},{"category":"Roofing","name":"Modern Exterior Roofing","phone":"(262) 228-2722","website":"https://www.modernexteriorroofing.com/","address":"137 Wisconsin Ave","city":"Waukesha","rating":4.9,"reviews":708,"score":32.17},{"category":"Roofing","name":"Storm Guard Roofing of Madison","phone":"(608) 497-3301","website":"https://www.stormguardrc.com/wi/madison/","address":"2906 Marketplace Dr","city":"Madison","rating":4.9,"reviews":489,"score":30.36},{"category":"Roofing","name":"Smith Roofing and Exteriors","phone":"(608) 577-6501","website":"http://smithroofingexteriors.com/","address":"N2603 Kutz Rd","city":"Fort Atkinson","rating":5.0,"reviews":337,"score":29.13},{"category":"Roofing","name":"Infinity Exteriors","phone":"(608) 680-3070","website":"https://www.infinityroofing.com/wi/madison","address":"2830 Progress Rd","city":"Madison","rating":4.9,"reviews":354,"score":28.79},{"category":"Roofing","name":"Exterior Pros","phone":"(262) 300-5384","website":"https://www.extpros.com/","address":"W227N6270 Sussex Rd","city":"Sussex","rating":4.6,"reviews":505,"score":28.65},{"category":"Roofing","name":"Wrightway Home Improvements","phone":"(920) 929-8999","website":"https://www.wrightwaybuilt.com/","address":"235 W Scott St","city":"Fond du Lac","rating":4.9,"reviews":298,"score":27.95},{"category":"Roofing","name":"Prestige Roofing LLC","phone":"(920) 791-0414","website":"https://www.prestigeroofingllc.com/","address":"1492 S Overland Rd","city":"De Pere","rating":4.9,"reviews":288,"score":27.78},{"category":"Roofing","name":"Isthmus Roofing","phone":"(608) 949-0533","website":"http://www.isthmusroofing.com/","address":"3007 Kapec Rd","city":"Fitchburg","rating":5.0,"reviews":189,"score":26.26},{"category":"Roofing","name":"Riedl and Son Exterior Specialists","phone":"(920) 696-9323","website":"https://riedlandson.com/","address":"1550 Madison Ave Suite 104","city":"Fort Atkinson","rating":4.9,"reviews":207,"score":26.18},{"category":"Roofing","name":"Erie Home","phone":"(262) 310-8166","website":"https://eriehome.com/locations/roofing/sussex-wi/","address":"N56W24790 N Corporate Cir","city":"Sussex","rating":4.6,"reviews":293,"score":26.16},{"category":"Roofing","name":"L. H. Krueger and Son, Inc.","phone":"(262) 547-5054","website":"http://www.lhkruegerandson.com/","address":"1401 Pearl St","city":"Waukesha","rating":4.8,"reviews":229,"score":26.12},{"category":"Roofing","name":"123 Exteriors Waukesha","phone":"(262) 347-4599","website":"https://www.123exteriors.com/","address":"2110 Pewaukee Rd #110A","city":"Waukesha","rating":4.6,"reviews":245,"score":25.34},{"category":"Roofing","name":"New Roofs Inc.","phone":"(262) 232-8004","website":"http://newroofsinc.com/","address":"1596 E North St Suite #2","city":"Waukesha","rating":5.0,"reviews":152,"score":25.18},{"category":"Roofing","name":"Siding Unlimited, LLC","phone":"(262) 567-4513","website":"http://sidingunlimited.com/","address":"665 Larry Ct","city":"Waukesha","rating":4.8,"reviews":178,"score":24.93},{"category":"Roofing","name":"Kingdom Roofing","phone":"(920) 404-5760","website":"https://www.kingdomroofingwi.com/","address":"2323 E Capitol Dr","city":"Appleton","rating":4.9,"reviews":141,"score":24.32},{"category":"Roofing","name":"Wisconsin Roofing, LLC","phone":"(920) 547-0638","website":"https://mywisconsinroof.com/","address":"W6948 Clark Rd","city":"Elkhart Lake","rating":5.0,"reviews":100,"score":23.12},{"category":"Roofing","name":"Storm Guard Roofing of Madison (2)","phone":"(608) 889-9332","website":"https://www.stormguardrc.com/wi/madison/","address":"2605 S Stoughton Rd Suite 400","city":"Madison","rating":4.9,"reviews":106,"score":22.94},{"category":"Roofing","name":"Great Lakes Roofing Corporation","phone":"(920) 996-9550","website":"http://www.greatlakesroofing.net/","address":"1605 Drum Corps Dr","city":"Menasha","rating":4.7,"reviews":110,"score":22.18},{"category":"Roofing","name":"MBA EXTERIORS, INC.","phone":"(920) 253-9144","website":"https://mbaexteriorsinc.com/","address":"1690 S Church St","city":"Watertown","rating":5.0,"reviews":75,"score":21.72},{"category":"Roofing","name":"All-State Roofing","phone":"(608) 271-9810","website":"https://all-stateroofing.com/","address":"2832 Index Rd","city":"Madison","rating":5.0,"reviews":75,"score":21.72},{"category":"Roofing","name":"Rutters Roofing","phone":"(920) 891-3891","website":"https://www.ruttersroofing.com/","address":"5757 Country Club Rd","city":"Oshkosh","rating":5.0,"reviews":62,"score":20.79},{"category":"Roofing","name":"E2 Home Solutions","phone":"(414) 299-6606","website":"https://e2homesolutions.com/","address":"N62w27165 Meghan Ct","city":"Sussex","rating":5.0,"reviews":60,"score":20.64},{"category":"Roofing","name":"Ready Roofing LLC","phone":"(920) 674-5648","website":"http://www.readyroofingllc.com/","address":"W7834 US-18","city":"Fort Atkinson","rating":4.5,"reviews":96,"score":20.63},{"category":"Roofing","name":"Great Lakes Roofing Corporation (Madison)","phone":"(608) 838-9900","website":"http://www.greatlakesroofing.net/","address":"4229 Marsh Rd","city":"Madison","rating":4.7,"reviews":67,"score":19.9},{"category":"Roofing","name":"Premier Roofing","phone":"(262) 755-2123","website":"https://premierroofingguys.com/waukesha-wi/","address":"2210 Oaklawn Ave","city":"Waukesha","rating":5.0,"reviews":51,"score":19.85},{"category":"Roofing","name":"Paramount Roofing and Siding, LLC","phone":"(608) 467-4112","website":"https://www.paramountroof.com/","address":"5531 Femrite Dr","city":"Madison","rating":4.7,"reviews":62,"score":19.55},{"category":"Roofing","name":"A&M Contractors LLC","phone":"(262) 806-1162","website":"https://amcontractorsllc.com/","address":"234 W Broadway","city":"Waukesha","rating":4.9,"reviews":46,"score":18.97},{"category":"Roofing","name":"Weather Tight Roofing","phone":"(608) 221-4447","website":"https://www.weathertightdoneright.com/","address":"3424 Lake Farm Rd","city":"Madison","rating":4.9,"reviews":44,"score":18.76},{"category":"Roofing","name":"Warner Commercial Roofing","phone":"(920) 249-4857","website":"https://warnercommercialroofing.com/","address":"1006 S Lawe St","city":"Appleton","rating":4.6,"reviews":54,"score":18.52},{"category":"Roofing","name":"Loyal Exteriors, LLC","phone":"(920) 382-4409","website":"https://www.loyalexteriors.com/","address":"300 N Center St","city":"Beaver Dam","rating":4.6,"reviews":52,"score":18.35},{"category":"Roofing","name":"Reliable Roofing LLC Enterprises","phone":"(920) 723-1139","website":"http://reliableroofingllcent.com/","address":"1227 S Main St #9307","city":"Fort Atkinson","rating":4.7,"reviews":40,"score":17.57},{"category":"Roofing","name":"Heimerl Corporation","phone":"(920) 887-3881","website":"http://www.heimerlcorp.com/","address":"1401 N Center St","city":"Beaver Dam","rating":5.0,"reviews":28,"score":17.01},{"category":"Roofing","name":"WDS Construction","phone":"(920) 356-1255","website":"http://www.wdsconstruction.net/","address":"100 Tower Dr","city":"Beaver Dam","rating":4.6,"reviews":38,"score":16.97},{"category":"Roofing","name":"NORTHERN STAR SOLUTIONS LLC","phone":"(920) 579-4671","website":"http://www.northern-star-solutions.com/","address":"415 Pioneer Rd","city":"North Fond Du Lac","rating":5.0,"reviews":26,"score":16.66},{"category":"Roofing","name":"HH Improvements, LLC","phone":"(920) 904-6999","website":"http://hhimprovementsllc.com/","address":"131 E Maple Ave","city":"Beaver Dam","rating":4.6,"reviews":33,"score":16.35},{"category":"Roofing","name":"J&B Quality Roofing","phone":"(920) 253-1181","website":"http://jbqualityroofingllc.com/","address":"216 S 3rd St","city":"Watertown","rating":5.0,"reviews":25,"score":16.48},{"category":"Roofing","name":"Standard Roofing & Restoration","phone":"(262) 212-5853","website":"https://standardroofingandrestoration.com/","address":"4321 W College Ave","city":"Appleton","rating":5.0,"reviews":32,"score":17.63},{"category":"Roofing","name":"PK Contractors Inc.","phone":"(920) 397-4533","website":"https://pkcontractors.net/","address":"N441 Old 26","city":"Fort Atkinson","rating":4.9,"reviews":15,"score":13.88},{"category":"Roofing","name":"Schloesser Construction","phone":"(920) 563-8364","website":"https://www.schloesserconstruction.net/","address":"N, 1290 Poeppel Rd","city":"Fort Atkinson","rating":4.6,"reviews":17,"score":13.54},{"category":"Roofing","name":"Waukesha Roofing & Sheet Metal, Inc.","phone":"(262) 521-1112","website":"http://www.waukesharoofingwi.net/","address":"W226N825 Eastmound Dr","city":"Waukesha","rating":4.4,"reviews":19,"score":13.4},{"category":"Roofing","name":"Modern Exterior Roofing (Jefferson)","phone":"(262) 288-2381","website":"http://modern-exterior.com/","address":"N2680 Mehring Rd","city":"Jefferson","rating":4.8,"reviews":19,"score":14.61},{"category":"Roofing","name":"Simmons Roofing","phone":"(920) 723-0695","website":"","address":"209 Clarence St","city":"Fort Atkinson","rating":5.0,"reviews":4,"score":8.96},{"category":"Roofing","name":"T&R Roofing and Construction","phone":"(920) 260-6166","website":"","address":"N 5197 Harvey Rd","city":"Jefferson","rating":5.0,"reviews":1,"score":5.49},{"category":"Roofing","name":"Roofing America","phone":"(920) 319-8773","website":"https://roofingamericaco.com/beaver-dam-wi/","address":"1659 N Spring St #113","city":"Beaver Dam","rating":5.0,"reviews":4,"score":8.96}];
+
+const CATS = [
+  {key:'All',label:'All Leads',dot:'',cls:''},
+  {key:'Roofing',label:'🔧 Roofing',dot:'d-roof',cls:'c-roof'},
+  {key:'Insurance Agent',label:'🛡️ Insurance',dot:'d-ins',cls:'c-ins'},
+  {key:'Property Management',label:'🏢 Property Mgmt',dot:'d-pm',cls:'c-pm'},
+  {key:'Church',label:'⛪ Churches',dot:'d-church',cls:'c-church'},
+  {key:'Apartment Complex',label:'🏠 Apartments',dot:'d-apt',cls:'c-apt'},
+  {key:'Assisted Living',label:'🏥 Assisted Living',dot:'d-al',cls:'c-al'},
+  {key:'Golf Course',label:'⛳ Golf Courses',dot:'d-golf',cls:'c-golf'},
+];
+
+const catMap = {};
+CATS.forEach(c => { if(c.key!=='All') catMap[c.key]=c; });
+
+function getCatStyle(cat){
+  return catMap[cat] || {cls:'c-pm',dot:'d-pm'};
+}
+
+let activeTab = 'All';
+let sortBy = 'score';
+
+// Build tabs
+const tabsEl = document.getElementById('tabs');
+CATS.forEach(c => {
+  const count = c.key==='All' ? RAW.length : RAW.filter(r=>r.category===c.key).length;
+  const btn = document.createElement('button');
+  btn.className = 'tab' + (c.key==='All'?' active':'');
+  btn.dataset.key = c.key;
+  btn.innerHTML = c.dot ? `<span class="tab-dot ${c.dot}"></span>${c.label} <span style="opacity:.5;font-weight:400">(${count})</span>` : `${c.label} <span style="opacity:.5;font-weight:400">(${count})</span>`;
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    activeTab=c.key;
+    render();
+  });
+  tabsEl.appendChild(btn);
+});
+
+// Build city filter
+const cityFilter = document.getElementById('cityFilter');
+const cities = [...new Set(RAW.map(r=>r.city).filter(Boolean))].sort();
+cities.forEach(c=>{
+  const o = document.createElement('option');
+  o.value=c; o.textContent=c;
+  cityFilter.appendChild(o);
+});
+
+document.getElementById('totalCount').textContent = RAW.length;
+
+function stars(rating){
+  if(!rating) return '<span style="color:var(--muted)">—</span>';
+  const full = Math.floor(rating);
+  const half = rating-full >= 0.5 ? 1 : 0;
+  const empty = 5-full-half;
+  return '★'.repeat(full) + (half?'½':'') + '<span style="opacity:.25">' + '★'.repeat(empty) + '</span>';
+}
+
+const MAX_SCORE = Math.max(...RAW.map(r=>r.score));
+
+function render(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const city = cityFilter.value;
+  sortBy = document.getElementById('sortFilter').value;
+
+  let data = RAW.filter(r=>{
+    if(activeTab!=='All' && r.category!==activeTab) return false;
+    if(city && r.city!==city) return false;
+    if(q){
+      const blob = [r.name,r.city,r.phone,r.website,r.category].join(' ').toLowerCase();
+      if(!blob.includes(q)) return false;
+    }
+    return true;
+  });
+
+  data.sort((a,b)=>{
+    if(sortBy==='score') return b.score-a.score;
+    if(sortBy==='rating') return b.rating-a.rating;
+    if(sortBy==='reviews') return b.reviews-a.reviews;
+    if(sortBy==='name') return a.name.localeCompare(b.name);
+    return 0;
+  });
+
+  document.getElementById('resultCount').textContent = data.length;
+
+  const tbody = document.getElementById('tbody');
+  if(!data.length){
+    tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="emoji">🔍</div><p>No results. Try adjusting your filters.</p></div></td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = data.map(r=>{
+    const cs = getCatStyle(r.category);
+    const pct = MAX_SCORE > 0 ? Math.round((r.score/MAX_SCORE)*100) : 0;
+    const site = r.website
+      ? `<a class="site-link" href="${r.website}" target="_blank" rel="noopener">Visit →</a>`
+      : `<span class="no-site">—</span>`;
+    const starStr = r.rating
+      ? `<span class="stars">${stars(r.rating)}<span class="star-count">${r.rating} (${r.reviews})</span></span>`
+      : `<span class="muted">—</span>`;
+    return `<tr>
+      <td><span class="cat-pill ${cs.cls}">${r.category}</span></td>
+      <td><div class="biz-name">${r.name}</div></td>
+      <td><a class="phone-link" href="tel:${r.phone}">${r.phone}</a></td>
+      <td><span class="city-tag">${r.city||'—'}</span></td>
+      <td>${starStr}</td>
+      <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:${pct}%"></div></div><span class="score-num">${r.score}</span></div></td>
+      <td>${site}</td>
+    </tr>`;
+  }).join('');
+}
+
+document.getElementById('search').addEventListener('input', render);
+cityFilter.addEventListener('change', render);
+document.getElementById('sortFilter').addEventListener('change', render);
+render();
+</script>
+</body>
+</html>

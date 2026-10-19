@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L&M Integrations | Low Voltage & Security Camera Contractor in Virginia</title>
+<meta name="description" content="L&M Integrations installs commercial IP camera systems, camera drops, PoE cabling, and MDF room buildouts across Virginia. Every run tested and labeled. Call (540) 360-6541 for a free site walk.">
+<link rel="canonical" href="https://lmintegrationsva.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="L&M Integrations | Low Voltage & Security Camera Contractor in Virginia">
+<meta property="og:description" content="Commercial IP camera systems, PoE cabling, and MDF room buildouts across Virginia. Free site walks.">
+<meta property="og:url" content="https://lmintegrationsva.com/">
+<meta property="og:image" content="https://lmintegrationsva.com/rack.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "L&M Integrations",
+  "description": "Commercial low voltage contractor installing IP camera systems, camera drops, PoE cabling, and MDF room buildouts.",
+  "telephone": "+1-540-360-6541",
+  "url": "https://lmintegrationsva.com/",
+  "image": "https://lmintegrationsva.com/rack.jpg",
+  "areaServed": {"@type": "State", "name": "Virginia"},
+  "priceRange": "$$",
+  "knowsAbout": ["CCTV installation","IP camera systems","structured cabling","PoE infrastructure","MDF buildouts","NVR configuration","smart home installation"]
+}
+</script>
+<script data-goatcounter="https://lmintegrations.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E2A47;
+  --navy-deep:#081C31;
+  --orange:#018DDA;
+  --orange-dark:#0072B5;
+  --green:#89C93E;
+  --bg:#FFFFFF;
+  --bg-soft:#F3F6FA;
+  --text:#1C2836;
+  --mute:#5B6B7D;
+  --line:#DDE5EE;
+  --radius:10px;
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Barlow',system-ui,sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--orange);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:4px}
+.display{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.015em}
+
+/* ---------- FLOATING NAV ---------- */
+.nav2{position:absolute;top:0;left:0;right:0;z-index:30;padding:20px 0}
+.nav2-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-logo{
+  width:65px;height:65px;flex:0 0 auto;display:block;
+  object-fit:contain;object-position:center;
+  filter:drop-shadow(0 0 5px rgba(255,255,255,.45)) drop-shadow(0 2px 8px rgba(0,0,0,.35));
+}
+.brand-text .name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;line-height:1.05;text-transform:uppercase;color:#fff}
+.brand-text .name b{color:var(--orange)}
+.brand-text .sub{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
+.pill-nav{
+  display:flex;align-items:center;gap:2px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);
+  border-radius:100px;padding:5px 6px;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.pill-nav > a{padding:9px 16px;font-size:14.5px;font-weight:600;color:rgba(255,255,255,.85);border-radius:100px;transition:all .2s}
+.pill-nav > a:hover{color:#fff;background:rgba(255,255,255,.09)}
+.pill-phone{display:inline-flex;align-items:center;gap:7px}
+.pill-phone svg{width:15px;height:15px;stroke:var(--orange)}
+.pill-cta{
+  margin-left:4px;display:inline-flex;align-items:center;gap:8px;
+  background:#fff;color:var(--navy)!important;font-weight:700!important;
+}
+.pill-cta:hover{background:rgba(255,255,255,.9)!important}
+.pill-cta svg{width:14px;height:14px}
+.menu-toggle{
+  display:none;width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  color:#fff;cursor:pointer;font-size:17px;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.mobile-menu{
+  display:none;position:absolute;top:76px;left:24px;right:24px;z-index:29;
+  background:rgba(8,28,49,.97);border:1px solid rgba(255,255,255,.16);
+  border-radius:14px;padding:10px;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 24px 60px rgba(0,0,0,.5);
+}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:13px 16px;color:#fff;font-weight:600;border-radius:9px;font-size:16px}
+.mobile-menu a:hover{background:rgba(255,255,255,.08)}
+.mobile-menu .mm-cta{margin-top:6px;background:var(--orange);text-align:center}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-weight:700;font-size:15.5px;padding:14px 28px;border-radius:8px;
+  border:2px solid transparent;cursor:pointer;
+  transition:transform .18s,box-shadow .18s,background .18s,border-color .18s,color .18s;
+  font-family:'Barlow',sans-serif;
+}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 10px 26px rgba(1,141,218,.35)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-deep);transform:translateY(-2px);box-shadow:0 10px 26px rgba(14,42,71,.3)}
+.btn-pill{border-radius:100px;padding:15px 30px}
+.btn-glass{
+  background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.btn-glass:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4);transform:translateY(-2px)}
+.btn-glass svg{width:16px;height:16px;stroke:var(--orange)}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;min-height:100svh;display:flex;flex-direction:column;
+  justify-content:center;color:#fff;overflow:hidden;
+  background:
+    radial-gradient(1100px 620px at 50% -12%,rgba(32,84,140,.6),transparent 65%),
+    linear-gradient(180deg,#0B2340 0%,#081C31 55%,#06131F 100%);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 85% 70% at 50% 40%,#000 30%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 85% 70% at 50% 40%,#000 30%,transparent 100%);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(880px 400px at 62% 106%,rgba(1,141,218,.22),transparent 62%),
+    radial-gradient(700px 340px at 30% 104%,rgba(137,201,62,.14),transparent 60%),
+    radial-gradient(ellipse 120% 100% at 50% 50%,transparent 55%,rgba(4,10,17,.55) 100%);
+}
+.hero-content{position:relative;z-index:10;text-align:center;max-width:880px;margin:0 auto;padding:158px 24px 0}
+.badge{
+  display:inline-flex;align-items:center;gap:11px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+  border-radius:100px;padding:6px 16px 6px 6px;margin-bottom:30px;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.badge b{
+  background:var(--green);color:#fff;font-size:11.5px;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;border-radius:100px;padding:5px 12px;
+}
+.badge span{font-size:14px;font-weight:600;color:rgba(255,255,255,.9)}
+h1{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;
+  font-size:clamp(50px,7.4vw,94px);line-height:.96;letter-spacing:.01em;margin-bottom:26px;
+}
+h1 span{color:var(--orange)}
+.hero-sub{font-size:19px;color:rgba(255,255,255,.75);max-width:620px;margin:0 auto 40px}
+.hero-ctas{display:flex;justify-content:center;gap:13px;flex-wrap:wrap}
+.hero-foot{position:relative;z-index:10;text-align:center;margin-top:76px;padding:0 24px 56px}
+.hero-foot > p{
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);font-weight:700;margin-bottom:20px;
+}
+.hero-chips{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  column-gap:34px;row-gap:14px;max-width:920px;margin:0 auto;
+}
+.hero-chip{
+  position:relative;display:inline-flex;align-items:center;gap:9px;
+  font-size:13.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.8);white-space:nowrap;
+}
+.hero-chip + .hero-chip::before{
+  content:"";position:absolute;left:-19px;top:50%;transform:translateY(-50%);
+  width:5px;height:5px;border-radius:50%;background:var(--orange);
+}
+.hero-chip svg{width:15px;height:15px;stroke:var(--green);flex:0 0 auto}
+@keyframes fadeSlideIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.fs1{animation:fadeSlideIn .8s ease .1s both}
+.fs2{animation:fadeSlideIn .8s ease .25s both}
+.fs3{animation:fadeSlideIn .8s ease .4s both}
+.fs4{animation:fadeSlideIn .8s ease .55s both}
+.fs5{animation:fadeSlideIn .8s ease .7s both}
+
+/* ---------- INTRO + SERVICE LINKS ---------- */
+.intro{padding:96px 0 88px;text-align:center}
+.intro h2{max-width:720px;margin:0 auto 18px}
+h2{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;
+  font-size:clamp(32px,4vw,48px);line-height:1.04;color:var(--navy);
+}
+h2 em{font-style:normal;color:var(--orange)}
+.intro > .container > p{max-width:640px;margin:0 auto 40px;color:var(--mute);font-size:18px}
+.service-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:860px;margin:0 auto}
+.pill{
+  font-weight:600;font-size:15px;padding:13px 24px;border-radius:100px;
+  border:1.5px solid var(--line);color:var(--navy);background:#fff;
+  transition:all .2s;
+}
+.pill:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px);box-shadow:0 8px 20px rgba(14,42,71,.1)}
+.pill.soon{border-style:dashed;color:var(--mute)}
+.pill.soon:hover{color:var(--mute);border-color:var(--mute);transform:none;box-shadow:none}
+.pill.soon i{font-style:normal;font-size:11px;letter-spacing:.08em;color:var(--green);margin-left:7px;text-transform:uppercase;font-weight:700}
+
+/* ---------- TRUST STRIP ---------- */
+.trust{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.trust-item{text-align:center;padding:10px 16px}
+.trust-icon{
+  width:66px;height:66px;margin:0 auto 16px;border-radius:50%;
+  background:#fff;border:2px solid var(--line);display:grid;place-items:center;
+  transition:border-color .25s,transform .25s;
+}
+.trust-item:hover .trust-icon{border-color:var(--green);transform:translateY(-4px)}
+.trust-icon svg{width:30px;height:30px;stroke:var(--navy)}
+.trust-item h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:19px;color:var(--navy);line-height:1.2}
+.trust-item p{font-size:14px;color:var(--mute);margin-top:6px}
+
+/* ---------- ABOUT ---------- */
+.about{padding:110px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-visual{position:relative}
+.about-slider{
+  position:relative;width:100%;aspect-ratio:4/4.2;border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:22px 22px 0 var(--bg-soft),22px 22px 0 1px var(--line);
+}
+.slider-track{
+  display:flex;height:100%;
+  transition:transform .5s cubic-bezier(.4,0,.2,1);
+}
+.slider-track img{
+  width:100%;height:100%;flex:0 0 100%;
+  object-fit:cover;object-position:center 38%;display:block;
+}
+.slider-btn{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(8,28,49,.65);color:#fff;
+  display:grid;place-items:center;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  transition:background .2s,transform .2s;
+}
+.slider-btn svg{width:20px;height:20px}
+.slider-btn:hover{background:var(--orange);transform:translateY(-50%) scale(1.06)}
+.slider-btn.prev{left:14px}
+.slider-btn.next{right:14px}
+.slider-dots{
+  position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:5;
+  display:flex;gap:8px;
+}
+.slider-dots .dot{
+  width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);
+  transition:background .2s,transform .2s;
+}
+.slider-dots .dot.on{background:#fff;transform:scale(1.25)}
+.about-copy .kicker{
+  display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:13px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;
+}
+.about-copy .kicker::before{content:"";width:28px;height:3px;background:var(--green)}
+.about-copy h2{margin-bottom:20px}
+.about-copy p{color:var(--mute);margin-bottom:18px;font-size:17px}
+.about-copy p b{color:var(--text)}
+.about-copy .btn{margin-top:12px}
+
+/* ---------- BEFORE / AFTER ---------- */
+.ba{padding:0 0 110px}
+.ba-head{text-align:center;max-width:640px;margin:0 auto 52px}
+.ba-head p{color:var(--mute);font-size:18px;margin-top:14px}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:960px;margin:0 auto}
+.ba-card{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 44px rgba(14,42,71,.12)}
+.ba-card img{display:block;width:100%;aspect-ratio:4/4.6;object-fit:cover}
+.ba-tag{
+  position:absolute;top:16px;left:16px;z-index:2;
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;
+  letter-spacing:.12em;text-transform:uppercase;color:#fff;
+  padding:7px 16px;border-radius:100px;
+}
+.ba-tag.before{background:rgba(28,40,54,.85)}
+.ba-tag.after{background:var(--green)}
+.ba-note{text-align:center;margin-top:26px;color:var(--mute);font-size:15px}
+
+/* ---------- PROCESS ---------- */
+.process{background:var(--navy);color:#fff;padding:110px 0;position:relative;overflow:hidden}
+.process::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:52px 52px;
+}
+.process .container{position:relative}
+.process-head{text-align:center;max-width:640px;margin:0 auto 64px}
+.process-head h2{color:#fff}
+.process-head p{color:#9FB3C8;font-size:18px;margin-top:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pstep{
+  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.13);
+  border-radius:var(--radius);padding:40px 32px;text-align:center;position:relative;
+  transition:transform .25s,border-color .25s,background .25s;
+}
+.pstep:hover{transform:translateY(-6px);border-color:var(--orange);background:rgba(255,255,255,.07)}
+.pstep-num{
+  width:58px;height:58px;margin:0 auto 22px;border-radius:50%;
+  background:linear-gradient(135deg,var(--orange),var(--green));display:grid;place-items:center;
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;color:#fff;
+  box-shadow:0 0 0 8px rgba(1,141,218,.16);
+}
+.pstep h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:23px;margin-bottom:12px}
+.pstep p{color:#B7C7D8;font-size:15.5px}
+
+/* ---------- EQUIPMENT ---------- */
+.equip{padding:84px 0;text-align:center}
+.equip h2{margin-bottom:16px}
+.equip > .container > p{max-width:660px;margin:0 auto 48px;color:var(--mute);font-size:17.5px}
+.equip-chips{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  column-gap:72px;row-gap:30px;max-width:1050px;margin:0 auto;
+}
+.equip-logo{
+  height:48px;width:auto;max-width:230px;object-fit:contain;
+  transition:transform .25s;
+}
+.equip-logo.tall{height:72px}
+.equip-logo:hover{transform:translateY(-2px)}
+.equip-note{margin-top:48px;font-size:13.5px;color:var(--mute)}
+
+/* ---------- QUOTE CTA ---------- */
+.quote{
+  position:relative;color:#fff;padding:100px 0;text-align:center;overflow:hidden;
+  background:
+    linear-gradient(rgba(8,28,49,.88),rgba(8,28,49,.88)),
+    repeating-linear-gradient(115deg,#12314F 0 3px,#0E2A47 3px 30px);
+}
+.quote::after{
+  content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);
+  width:120px;height:5px;background:linear-gradient(90deg,var(--orange),var(--green));
+}
+.quote h2{color:#fff;margin-bottom:16px}
+.quote p{color:#C7D5E3;font-size:18.5px;max-width:560px;margin:0 auto 34px}
+
+/* ---------- CONTACT ---------- */
+.contact{padding:110px 0;background:var(--bg-soft);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.contact-info .kicker{
+  display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:13px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;
+}
+.contact-info .kicker::before{content:"";width:28px;height:3px;background:var(--green)}
+.contact-info h2{margin-bottom:18px}
+.contact-info > p{color:var(--mute);margin-bottom:36px;max-width:420px;font-size:17px}
+.c-lines{display:flex;flex-direction:column;gap:18px}
+.c-line{display:flex;align-items:center;gap:16px}
+.c-line .ic{
+  width:48px;height:48px;border-radius:10px;flex:0 0 auto;background:#fff;
+  border:1.5px solid var(--line);display:grid;place-items:center;
+}
+.c-line .ic svg{width:21px;height:21px;stroke:var(--orange)}
+.c-line .lbl{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:700}
+.c-line .val{font-weight:700;font-size:17px;color:var(--navy)}
+.c-line .val a:hover{color:var(--orange)}
+.form{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:40px;box-shadow:0 18px 50px rgba(14,42,71,.08);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:18px}
+.field label{
+  display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--navy);font-weight:700;margin-bottom:8px;
+}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--bg-soft);border:1.5px solid var(--line);border-radius:8px;
+  color:var(--text);font-family:'Barlow',sans-serif;font-size:15.5px;
+  padding:13px 15px;transition:border-color .2s,background .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);background:#fff}
+.field textarea{resize:vertical;min-height:120px}
+.form .btn{width:100%;padding:16px}
+.form-status{margin-top:14px;text-align:center;font-size:14.5px;font-weight:700;display:none}
+.form-status.ok{display:block;color:#1E8E4F}
+.form-status.err{display:block;color:var(--orange-dark)}
+.form-note{margin-top:12px;text-align:center;font-size:13.5px;color:var(--mute)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--navy-deep);color:#9FB3C8;padding:72px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:48px;padding-bottom:56px}
+.footer-brand .name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:27px;color:#fff;text-transform:uppercase;margin-bottom:14px}
+.footer-brand .name b{color:var(--orange)}
+.footer-brand p{font-size:15px;max-width:320px;margin-bottom:22px}
+.footer-social{display:flex;gap:12px}
+.footer-social a{
+  width:40px;height:40px;border-radius:9px;display:grid;place-items:center;
+  border:1px solid rgba(255,255,255,.16);color:#9FB3C8;transition:all .2s;
+}
+.footer-social a:hover{color:#fff;border-color:var(--orange);background:rgba(1,141,218,.14);transform:translateY(-2px)}
+.footer-social svg{width:18px;height:18px}
+.footer-col h4{
+  font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:#fff;
+  font-weight:700;margin-bottom:18px;
+}
+.footer-col a{display:block;font-size:15px;padding:5px 0;transition:color .2s}
+.footer-col a:hover{color:var(--orange)}
+.footer-col p{font-size:15px;padding:5px 0}
+.footer-sep{height:1px;background:rgba(255,255,255,.1)}
+.footer-bottom{padding:24px 0;text-align:center;font-size:13.5px}
+.footer-bottom .lic{color:#6B8299;margin-top:6px}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}
+.reveal.d2{transition-delay:.2s}
+.reveal.d3{transition-delay:.3s}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:980px){
+  .pill-nav{display:none}
+  .menu-toggle{display:grid;place-items:center}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:56px}
+  .ba-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr 1fr;gap:30px 14px}
+  .steps{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  body{font-size:16px}
+  .hero-content{padding-top:120px}
+  .hero-foot{margin-top:56px}
+  .hero-chips{flex-direction:column;row-gap:12px}
+  .hero-chip + .hero-chip::before{display:none}
+  .brand-text .sub{display:none}
+  .intro,.about,.process,.contact{padding:76px 0}
+  .equip{padding:64px 0}
+  .equip-logo{height:38px}
+  .equip-logo.tall{height:56px}
+  .quote{padding:76px 0}
+  .form{padding:26px 20px}
+  .form-row{grid-template-columns:1fr}
+  .about-slider{box-shadow:none}
+  .footer-grid{grid-template-columns:1fr}
+}
+
+/* ---------- STICKY MOBILE CTA ---------- */
+.mcta{
+  position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;
+  gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(8,28,49,.96);border-top:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:transform .3s;
+}
+.mcta.hidden{transform:translateY(110%)}
+.mcta a{
+  flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-weight:700;font-size:15px;padding:13px 10px;border-radius:9px;
+}
+.mcta-call{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.mcta-call svg{width:16px;height:16px;stroke:var(--green)}
+.mcta-quote{background:var(--orange);color:#fff}
+
+/* ---------- COOKIE BANNER ---------- */
+.cookie-banner{
+  position:fixed;left:16px;right:16px;bottom:16px;z-index:95;
+  display:none;align-items:center;gap:16px;flex-wrap:wrap;
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:16px 20px;box-shadow:0 20px 50px rgba(14,42,71,.25);
+  max-width:520px;margin:0 auto;
+}
+.cookie-banner.show{display:flex}
+.cookie-banner p{font-size:13.5px;color:var(--mute);flex:1;min-width:220px}
+.cookie-banner a{color:var(--orange);text-decoration:underline}
+
+/* ---------- FORM STATES ---------- */
+.field input.err,.field textarea.err{border-color:#D64541;background:#FDF3F3}
+.field .field-msg{display:none;font-size:12.5px;color:#D64541;margin-top:6px;font-weight:600}
+.field.show-err .field-msg{display:block}
+.btn .spinner{
+  width:16px;height:16px;border:2.5px solid rgba(255,255,255,.35);
+  border-top-color:#fff;border-radius:50%;display:inline-block;
+  animation:spin .7s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media(max-width:700px){
+  .mcta{display:flex}
+  footer{padding-bottom:96px}
+}
+@media(max-width:400px){
+  h1{font-size:44px}
+  .hero-sub{font-size:16.5px}
+  .badge span{font-size:12.5px}
+  .btn-pill{padding:13px 22px;font-size:14.5px}
+  .container{padding:0 18px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <nav class="nav2">
+    <div class="nav2-inner">
+      <a href="#top" class="brand" aria-label="L&M Integrations home">
+        <img class="brand-logo" src="logo.png" alt="L&amp;M Integrations logo">
+        <span class="brand-text">
+          <span class="name">L&amp;M <b>Integrations</b></span>
+          <span class="sub">Low Voltage Contractor</span>
+        </span>
+      </a>
+      <div class="pill-nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+15403606541" class="pill-phone" aria-label="Call us">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+          (540) 360-6541
+        </a>
+        <a href="#contact" class="pill-cta">Get a Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10M7 17L17 7"/></svg>
+        </a>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+15403606541">Call (540) 360-6541</a>
+      <a href="#contact" class="mm-cta">Get a Quote</a>
+    </div>
+  </nav>
+
+  <div class="hero-content">
+    <div class="badge fs1"><b>Now Booking</b><span>Camera installs &amp; MDF buildouts across Virginia</span></div>
+    <h1 class="fs2">Security infrastructure<br><span>built to spec.</span></h1>
+    <p class="hero-sub fs3">Commercial IP camera systems, PoE cabling, and clean MDF rooms. Installed by the owners, tested end to end, and done right the first time.</p>
+    <div class="hero-ctas fs4">
+      <a href="#contact" class="btn btn-orange btn-pill">Get a Free Quote
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="tel:+15403606541" class="btn btn-glass btn-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+        (540) 360-6541
+      </a>
+    </div>
+    <div class="hero-foot fs5">
+      <p>Every install includes</p>
+      <div class="hero-chips">
+        <span class="hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Every Run Tested</span>
+        <span class="hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Labeled Both Ends</span>
+        <span class="hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Dressed &amp; Managed Racks</span>
+        <span class="hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Documented Handoff</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO + SERVICE LINKS -->
+<section class="intro" id="services">
+  <div class="container">
+    <div class="reveal">
+      <h2>Wired for security. <em>Built for uptime.</em></h2>
+      <p>From the first camera drop to the last patch panel port, we handle the full low voltage scope so your property stays covered and connected.</p>
+    </div>
+    <div class="service-pills reveal d1">
+      <a class="pill" href="#contact">IP Camera Systems</a>
+      <a class="pill" href="#contact">Camera Drops &amp; Cable Runs</a>
+      <a class="pill" href="#contact">PoE Infrastructure</a>
+      <a class="pill" href="#contact">MDF / IDF Buildouts</a>
+      <a class="pill" href="#contact">NVR &amp; Switch Configuration</a>
+      <a class="pill" href="#contact">Testing &amp; Labeling</a>
+      <a class="pill" href="#contact">Smart Home Installations</a>
+      <span class="pill soon">Access Control <i>Coming Soon</i></span>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust">
+  <div class="container trust-grid">
+    <div class="trust-item reveal">
+      <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="13" height="9" rx="2"/><path d="M15 10l7-3v10l-7-3"/><circle cx="7.5" cy="11.5" r="2"/></svg></div>
+      <h3>CCTV Specialists</h3>
+      <p>Commercial IP camera design and installation</p>
+    </div>
+    <div class="trust-item reveal d1">
+      <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+      <h3>PoE Certified Work</h3>
+      <p>Power and data over a single clean run</p>
+    </div>
+    <div class="trust-item reveal d2">
+      <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="6" rx="1.5"/><rect x="3" y="11" width="18" height="6" rx="1.5"/><path d="M7 6h.01M7 14h.01M12 19v2"/></svg></div>
+      <h3>MDF Room Buildouts</h3>
+      <p>Racks, patch panels, and cable management</p>
+    </div>
+    <div class="trust-item reveal d3">
+      <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h3>Verified Quality</h3>
+      <p>Every run tested and documented at handoff</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="about-slider" id="aboutSlider">
+        <div class="slider-track" id="sliderTrack">
+          <img src="rack.jpg" alt="Patch panel rack with labeled, combed cable runs installed by L&M Integrations">
+          <img src="switch.jpg" alt="Managed PoE switch installation with bundled and labeled cables" loading="lazy">
+          <img src="homerack.jpg" alt="Wall-mounted rack with NVR, PoE switch, UPS, and live 12-camera monitoring display" loading="lazy">
+        </div>
+        <button class="slider-btn prev" aria-label="Previous photo" onclick="slideTo(-1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="slider-btn next" aria-label="Next photo" onclick="slideTo(1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+        <div class="slider-dots" id="sliderDots">
+          <span class="dot on"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+    </div>
+    <div class="about-copy reveal d1">
+      <span class="kicker">About Us</span>
+      <h2>Two techs. One standard: <em>do it right.</em></h2>
+      <p>L&amp;M Integrations is an owner-operated low voltage company built on hands-on field work. We specialize in <b>commercial IP camera systems, camera drops, PoE cabling, NVR and switch setups, and MDF room buildouts</b> for properties across Virginia.</p>
+      <p>Because the owners are the installers, nothing gets subbed out and nothing gets rushed. The people who quote your project are the same people pulling the cable, terminating the runs, and standing behind the work after handoff.</p>
+      <a href="#contact" class="btn btn-navy">Work With Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba">
+  <div class="container">
+    <div class="ba-head reveal">
+      <span class="kicker" style="display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange)">Real Results</span>
+      <h2>From spaghetti to <em>spec.</em></h2>
+      <p>Same cabinet. This is what a proper cleanup, re-termination, and dress-out looks like.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card reveal">
+        <span class="ba-tag before">Before</span>
+        <img src="before.jpg" alt="Network cabinet before service with tangled unlabeled cabling" loading="lazy">
+      </div>
+      <div class="ba-card reveal d1">
+        <span class="ba-tag after">After</span>
+        <img src="after.jpg" alt="Same network cabinet after L&M Integrations cleanup with combed labeled runs and dressed patch panels" loading="lazy">
+      </div>
+    </div>
+    <p class="ba-note reveal d2">Inherited a messy closet? We clean up existing installs too.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-head reveal">
+      <h2>How it works</h2>
+      <p>Three steps from first call to live cameras. No surprises, no change-order games.</p>
+    </div>
+    <div class="steps">
+      <div class="pstep reveal">
+        <div class="pstep-num">1</div>
+        <h3>Site Walk</h3>
+        <p>Call us and we'll walk your property, map camera positions, locate the MDF, and scope every cable pathway.</p>
+      </div>
+      <div class="pstep reveal d1">
+        <div class="pstep-num">2</div>
+        <h3>Install</h3>
+        <p>Firm quote, then clean execution: drops pulled, runs terminated and tested, rack dressed, cameras aimed and recording.</p>
+      </div>
+      <div class="pstep reveal d2">
+        <div class="pstep-num">3</div>
+        <h3>Support</h3>
+        <p>Full walkthrough at handoff, documentation of every run, and a direct line to us when you expand or need help.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPMENT -->
+<section class="equip">
+  <div class="container">
+    <div class="reveal">
+      <h2>Equipment we <em>work with</em></h2>
+      <p>We install proven commercial-grade camera and network equipment, and we can work with your existing infrastructure or preferred manufacturers on request.</p>
+    </div>
+    <div class="equip-chips reveal d1">
+      <img class="equip-logo" src="axis.png" loading="lazy" alt="Axis Communications">
+      <img class="equip-logo" src="verkada.png" loading="lazy" alt="Verkada">
+      <img class="equip-logo" src="rhombus.png" loading="lazy" alt="Rhombus">
+      <img class="equip-logo tall" src="hanwha.png" loading="lazy" alt="Hanwha Vision">
+    </div>
+    <p class="equip-note">Working with other equipment or existing infrastructure? We can install and integrate on request.</p>
+  </div>
+</section>
+
+<!-- QUOTE CTA -->
+<section class="quote">
+  <div class="container reveal">
+    <h2>Get a free quote</h2>
+    <p>Tell us about your property and what you need covered. We'll walk the site and get you a firm number fast.</p>
+    <a href="#contact" class="btn btn-orange">Get Started</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="kicker">Contact</span>
+      <h2>Request a site walk</h2>
+      <p>Reach out by phone or send the form. We respond within one business day.</p>
+      <div class="c-lines">
+        <div class="c-line">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg></span>
+          <div><div class="lbl">Phone</div><div class="val"><a href="tel:+15403606541">(540) 360-6541</a></div></div>
+        </div>
+        <div class="c-line">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span>
+          <div><div class="lbl">Email</div><div class="val">Coming Soon</div></div>
+        </div>
+        <div class="c-line">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><div class="lbl">Service Area</div><div class="val">Virginia</div></div>
+        </div>
+      </div>
+    </div>
+    <form class="form reveal d1" id="contactForm">
+      <input type="hidden" name="access_key" value="f07fb4fd-ba9a-487c-909c-768bac872c11">
+      <input type="hidden" name="subject" value="New Quote Request — L&M Integrations">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="form-row">
+        <div class="field"><label for="fName">Name</label><input id="fName" type="text" name="name" required placeholder="Your name"><span class="field-msg">Enter your name</span></div>
+        <div class="field"><label for="fCompany">Company</label><input id="fCompany" type="text" name="company" placeholder="Business name"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="fPhone">Phone</label><input id="fPhone" type="tel" name="phone" required placeholder="(555) 555-5555"><span class="field-msg">Enter a phone number</span></div>
+        <div class="field"><label for="fEmail">Email</label><input id="fEmail" type="email" name="email" required placeholder="you@company.com"><span class="field-msg">Enter a valid email</span></div>
+      </div>
+      <div class="field">
+        <label for="fType">Project Type</label>
+        <select id="fType" name="project_type">
+          <option>Camera system installation</option>
+          <option>Camera drops / cable runs</option>
+          <option>MDF / IDF buildout</option>
+          <option>Full deployment (cameras + MDF)</option>
+          <option>Smart home installation</option>
+          <option>Other / not sure yet</option>
+        </select>
+      </div>
+      <div class="field"><label for="fMsg">Project Details</label><textarea id="fMsg" name="message" required placeholder="Property type, approximate camera count, timeline..."></textarea><span class="field-msg">Tell us a bit about the project</span></div>
+      <button type="submit" class="btn btn-orange">Send Request</button>
+      <p class="form-status" id="formStatus" role="status"></p>
+      <p class="form-note">We respond within one business day.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="brand-logo" src="logo.png" alt="L&amp;M Integrations logo" style="margin-bottom:16px;width:74px;height:74px" loading="lazy">
+        <div class="name">L&amp;M <b>Integrations</b></div>
+        <p>Commercial low voltage contractor. IP camera systems, structured cabling, and MDF buildouts installed clean, tested, and documented across Virginia.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.3-.04-1.3-.13-2.45-.13-2.4 0-4.05 1.47-4.05 4.17v2.33H7.5V13h2.7v8h3.3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8h.01"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.3 8.6H3.5V21h2.8V8.6zM4.9 3.2a1.7 1.7 0 100 3.4 1.7 1.7 0 000-3.4zM20.5 13.9c0-3-1.6-4.5-3.8-4.5-1.7 0-2.5 1-2.9 1.6V8.6H11V21h2.8v-6.6c0-1.2.6-2.2 1.9-2.2s1.9.9 1.9 2.3V21h2.9v-7.1z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Sitemap</h4>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">IP Camera Systems</a>
+        <a href="#services">Camera Drops</a>
+        <a href="#services">PoE Infrastructure</a>
+        <a href="#services">MDF Buildouts</a>
+        <a href="#services">Smart Home</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Details</h4>
+        <p><a href="tel:+15403606541">(540) 360-6541</a></p>
+        <p>Email coming soon</p>
+        <p>Serving Virginia</p>
+      </div>
+    </div>
+    <div class="footer-sep"></div>
+    <div class="footer-bottom">
+      <p>© <span id="yr"></span> L&amp;M Integrations. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html" style="text-decoration:underline">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html" style="text-decoration:underline">Terms</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+function toggleMenu(btn){
+  const menu = document.getElementById('mobileMenu');
+  const open = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+document.querySelectorAll('#mobileMenu a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');
+  });
+});
+
+let slideIdx = 0;
+const slideCount = 3;
+function slideTo(dir){
+  slideIdx = (slideIdx + dir + slideCount) % slideCount;
+  document.getElementById('sliderTrack').style.transform = 'translateX(-' + (slideIdx*100) + '%)';
+  document.querySelectorAll('#sliderDots .dot').forEach((d,i)=>d.classList.toggle('on', i===slideIdx));
+}
+(()=>{ // swipe support
+  const s = document.getElementById('aboutSlider');
+  let x0 = null;
+  s.addEventListener('touchstart', e=>{ x0 = e.touches[0].clientX; }, {passive:true});
+  s.addEventListener('touchend', e=>{
+    if(x0===null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if(Math.abs(dx) > 40) slideTo(dx < 0 ? 1 : -1);
+    x0 = null;
+  }, {passive:true});
+})();
+
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.getElementById('contactForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  // inline validation
+  let ok = true;
+  this.querySelectorAll('input[required],textarea[required]').forEach(el=>{
+    const bad = !el.checkValidity();
+    el.classList.toggle('err', bad);
+    el.closest('.field').classList.toggle('show-err', bad);
+    if(bad) ok = false;
+  });
+  if(!ok) return;
+  const status = document.getElementById('formStatus');
+  const btn = this.querySelector('button[type=submit]');
+  btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> Sending...';
+  status.className = 'form-status';
+  try{
+    const res = await fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body: JSON.stringify(Object.fromEntries(new FormData(this)))
+    });
+    const data = await res.json();
+    if(data.success){
+      status.textContent = 'Request sent. We\'ll be in touch within one business day.';
+      status.classList.add('ok');
+      this.reset();
+    } else { throw new Error(); }
+  }catch{
+    status.textContent = 'Something went wrong. Call us at (540) 360-6541.';
+    status.classList.add('err');
+  }
+  btn.disabled = false; btn.textContent = 'Send Request';
+});
+</script>
+
+<!-- STICKY MOBILE CTA -->
+<div class="mcta" id="mcta">
+  <a href="tel:+15403606541" class="mcta-call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+    Call Now
+  </a>
+  <a href="#contact" class="mcta-quote">Get a Free Quote</a>
+</div>
+
+<!-- COOKIE / PRIVACY BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Privacy notice">
+  <p>We use privacy-friendly analytics to see how the site is used. No personal data is sold. See our <a href="privacy.html">Privacy Policy</a>.</p>
+  <button class="btn btn-orange" style="padding:10px 22px;font-size:14px" onclick="acceptCookies()">Got It</button>
+</div>
+
+<script>
+document.querySelectorAll('#contactForm input,#contactForm textarea').forEach(el=>{
+  el.addEventListener('input',()=>{ el.classList.remove('err'); el.closest('.field').classList.remove('show-err'); });
+});
+// cookie banner
+if(!localStorage.getItem('lm_consent')){
+  document.getElementById('cookieBanner').classList.add('show');
+}
+function acceptCookies(){
+  localStorage.setItem('lm_consent','1');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+// hide sticky CTA when contact section in view
+const contactSec = document.getElementById('contact');
+const mcta = document.getElementById('mcta');
+new IntersectionObserver(es=>{
+  es.forEach(e=> mcta.classList.toggle('hidden', e.isIntersecting));
+},{threshold:.15}).observe(contactSec);
+</script>
+</body>
+</html>

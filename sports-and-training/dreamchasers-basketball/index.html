@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dreamchasers Basketball Training | Train With Champions, Become One</title>
+<meta name="description" content="Elite AAU basketball training in Hampton Roads, VA. 100+ Division 1 athletes developed. Camps, personal training, AAU teams & showcases led by Coach Donovan Bridgeforth. Newport News · Williamsburg.">
+<meta name="keywords" content="basketball training, AAU basketball Virginia, basketball camp Newport News, Williamsburg basketball, Hampton Roads basketball training, youth basketball camp, Dreamchasers">
+<meta name="author" content="Dreamchasers Basketball Training">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dreamchasers Basketball Training">
+<meta property="og:description" content="Train With Champions, Become a Champion. 100+ D1 athletes developed in Hampton Roads, VA.">
+<meta property="og:url" content="https://dreamchaserstraining.org/">
+<meta property="og:image" content="https://i.vimeocdn.com/video/1674049515-91a8e60c6eb2a4eb16bb61c3d304d35ca0734b573ddc450d66daa2cfeb2aec18-d_960x540?r=pad">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DreamChasersVA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#08090c;--ink-2:#0e1015;--ink-3:#15181f;
+    --line:rgba(255,255,255,.09);--paper:#efe9dd;--paper-ink:#16181d;
+    --white:#fff;--mut:#9aa1ad;--mut-2:#6b7280;
+    --orange:#ff5722;--orange-2:#ff7a3c;--orange-glow:rgba(255,87,34,.35);
+    --maxw:1240px;--ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:var(--ink);color:var(--white);font-family:'Manrope',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;position:relative}
+  /* film grain overlay for depth */
+  body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--orange);color:#fff}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:13px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.28em;font-size:.74rem;font-weight:600;color:var(--orange)}
+  .eyebrow::before{content:"";width:7px;height:7px;background:var(--orange);transform:rotate(45deg);flex:none}
+  h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;line-height:.95;text-transform:uppercase;letter-spacing:.01em}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.92rem;padding:17px 34px;border:none;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s;position:relative}
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 10px 40px -8px var(--orange-glow)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 50px -8px var(--orange-glow);background:var(--orange-2)}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25)}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.05);transform:translateY(-3px)}
+  .btn svg{width:16px;height:16px}
+
+  /* ===== brand wordmark (no icon) ===== */
+  .brand{display:inline-flex;align-items:baseline;gap:11px;font-family:'Anton',sans-serif;font-size:1.42rem;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+  .brand .rule{width:1.5px;height:18px;background:var(--orange);align-self:center;flex:none}
+  .brand .est{font-family:'Oswald',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.22em;color:var(--mut);text-transform:uppercase}
+  .brand b{color:var(--orange);font-weight:400}
+  footer .brand,.foot-brand .brand{font-size:1.55rem}
+
+  /* ===== nav ===== */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s var(--ease)}
+  header.scrolled{background:rgba(8,9,12,.85);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;font-weight:500;color:#cfd3da;transition:color .2s;position:relative}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--orange);transition:width .3s var(--ease)}
+  .nav-links a:not(.btn):hover{color:#fff}
+  .nav-links a:not(.btn):hover::after{width:100%}
+  .nav-cta{padding:11px 22px;font-size:.8rem}
+  .burger{display:none;background:none;border:none;cursor:pointer;width:30px;height:22px;position:relative}
+  .burger span{position:absolute;left:0;height:2.5px;width:100%;background:#fff;transition:.3s var(--ease)}
+  .burger span:nth-child(1){top:0}.burger span:nth-child(2){top:50%;transform:translateY(-50%)}.burger span:nth-child(3){bottom:0}
+  body.menu-open .burger span:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg)}
+  body.menu-open .burger span:nth-child(2){opacity:0}
+  body.menu-open .burger span:nth-child(3){bottom:auto;top:50%;transform:translateY(-50%) rotate(-45deg)}
+  .mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(8,9,12,.98);backdrop-filter:blur(10px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+  body.menu-open .mobile-menu{opacity:1;pointer-events:auto}
+  .mobile-menu a{font-family:'Anton',sans-serif;font-size:2rem;text-transform:uppercase;color:#fff;letter-spacing:.02em}
+  .mobile-menu a:active{color:var(--orange)}
+
+  /* ===== hero ===== */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:78px}
+  .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .hero-video iframe{position:absolute;top:50%;left:50%;width:177.78vh;min-width:100%;height:56.25vw;min-height:100%;transform:translate(-50%,-50%);pointer-events:none}
+  .hero-video::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,9,12,.94) 0%,rgba(8,9,12,.72) 45%,rgba(8,9,12,.45) 100%),linear-gradient(0deg,var(--ink) 2%,transparent 40%)}
+  .hero-grid{position:absolute;inset:0;z-index:1;opacity:.5;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 70% at 30% 50%,#000,transparent)}
+  .hero-inner{position:relative;z-index:2;width:100%}
+  .hero h1{font-size:clamp(3.2rem,9vw,8.4rem);max-width:14ch}
+  .hero h1 .o{color:var(--orange)}
+  .hero p.lead{font-size:clamp(1rem,1.6vw,1.22rem);color:#c7cdd6;max-width:50ch;margin:26px 0 38px;line-height:1.65;font-weight:500}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-badge{display:inline-flex;align-items:center;gap:10px;margin-bottom:28px;background:rgba(255,87,34,.12);border:1px solid rgba(255,87,34,.3);padding:9px 18px;border-radius:100px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;font-weight:600;color:var(--orange-2)}
+  .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 0 var(--orange-glow);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 var(--orange-glow)}70%{box-shadow:0 0 0 12px transparent}100%{box-shadow:0 0 0 0 transparent}}
+  .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;font-family:'Oswald',sans-serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);display:flex;flex-direction:column;align-items:center;gap:10px}
+  .scroll-hint .line{width:1px;height:40px;background:linear-gradient(var(--orange),transparent);animation:drop 1.8s infinite}
+  @keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* ===== stats ===== */
+  .stats{background:var(--orange);color:#0a0a0a;position:relative;z-index:5}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:42px 28px;text-align:center;border-right:1px solid rgba(0,0,0,.13)}
+  .stat:last-child{border-right:none}
+  .stat .num{font-family:'Anton',sans-serif;font-size:clamp(2.6rem,5vw,3.6rem);line-height:1}
+  .stat .lbl{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:600;margin-top:8px;color:rgba(0,0,0,.7)}
+
+  section{position:relative}
+  .pad{padding:clamp(70px,9vw,130px) 0}
+  .sec-head{max-width:680px;margin-bottom:54px}
+  .sec-head h2{font-size:clamp(2.4rem,5.5vw,4.4rem);margin-top:18px}
+  .sec-head .o{color:var(--orange)}
+  .sec-head p{color:var(--mut);font-size:1.05rem;margin-top:18px;max-width:54ch;font-weight:500}
+
+  /* ===== camp ===== */
+  .camp{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative}
+  .camp::before{content:"2026";position:absolute;right:-2%;top:50%;transform:translateY(-50%);font-family:'Anton',sans-serif;font-size:28vw;color:rgba(255,255,255,.022);z-index:0;pointer-events:none;line-height:1}
+  .camp-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative;z-index:2}
+  .camp h2{font-size:clamp(2.6rem,6vw,5rem);margin:16px 0 22px}
+  .camp h2 .o{color:var(--orange);display:block}
+  .camp-list{list-style:none;margin:30px 0 0}
+  .camp-list li{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line);font-weight:500;color:#d6dae1}
+  .camp-list li svg{width:20px;height:20px;flex:none;color:var(--orange);margin-top:2px}
+  .camp-card{background:linear-gradient(160deg,var(--ink-3),var(--ink));border:1px solid var(--line);padding:40px;position:relative;overflow:hidden}
+  .camp-card::after{content:"";position:absolute;top:-40%;right:-30%;width:300px;height:300px;background:radial-gradient(circle,var(--orange-glow),transparent 70%);opacity:.5}
+  .camp-card .tag{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:.74rem;color:var(--orange);font-weight:600}
+  .camp-card .big{font-family:'Anton',sans-serif;font-size:3.4rem;line-height:1;margin:14px 0 4px}
+  .camp-card .small{color:var(--mut);font-size:.92rem}
+  .camp-card .div{height:1px;background:var(--line);margin:26px 0}
+  .camp-card .row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-size:.95rem}
+  .camp-card .row span:first-child{color:var(--mut)}
+  .camp-card .row span:last-child{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.03em}
+  .camp-card .btn{width:100%;margin-top:26px}
+
+  /* ===== programs : numbered editorial rows (dark) ===== */
+  .lite{background:var(--ink-2);color:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .lite-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:46px;flex-wrap:wrap}
+  .lite-head h2{font-size:clamp(2.4rem,5.5vw,4.6rem);color:var(--white);margin-top:16px}
+  .lite-head .o{color:var(--orange)}
+  .lite-head .aside{font-family:'Manrope',sans-serif;font-weight:500;color:var(--mut);max-width:34ch;font-size:.98rem;text-transform:none;letter-spacing:0;line-height:1.6}
+  .prog-rows{border-top:1px solid var(--line)}
+  .prow{display:grid;grid-template-columns:64px 1fr auto;gap:34px;align-items:center;padding:30px 12px;border-bottom:1px solid var(--line);position:relative;transition:padding .4s var(--ease),background .35s}
+  .prow::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--orange);transition:width .4s var(--ease);z-index:0}
+  .prow>*{position:relative;z-index:1}
+  .prow .pnum{font-family:'Anton',sans-serif;font-size:1.5rem;color:rgba(255,255,255,.25);transition:color .35s}
+  .prow .ph{display:flex;flex-direction:column;gap:7px}
+  .prow h3{font-family:'Anton',sans-serif;font-size:clamp(1.55rem,3.6vw,2.7rem);color:var(--white);transition:color .35s,transform .4s var(--ease);line-height:.98}
+  .prow p{color:var(--mut);font-weight:500;max-width:62ch;font-size:.98rem}
+  .prow .arrow{font-family:'Anton';font-size:1.8rem;color:var(--white);transition:transform .4s var(--ease),color .35s;line-height:1}
+  .prow:hover{padding-left:30px;background:rgba(255,255,255,.025)}
+  .prow:hover::before{width:5px}
+  .prow:hover .pnum,.prow:hover h3,.prow:hover .arrow{color:var(--orange)}
+  .prow:hover .arrow{transform:translate(6px,-6px)}
+
+  /* ===== founder ===== */
+  .founder{background:var(--ink-2);border-top:1px solid var(--line)}
+  .founder-inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+  .founder-visual{position:relative;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--line);background:linear-gradient(150deg,#1a1d24,#0b0c10)}
+  .founder-visual .court{position:absolute;inset:0;opacity:.5;background:radial-gradient(circle at 50% 18%,rgba(255,87,34,.18),transparent 42%)}
+  .founder-visual .lines{position:absolute;inset:0;opacity:.16}
+  .founder-visual .initials{position:absolute;inset:0;display:grid;place-items:center;font-family:'Anton',sans-serif;font-size:9rem;color:rgba(255,255,255,.06);letter-spacing:.05em}
+  .founder-visual .name-plate{position:absolute;left:0;right:0;bottom:0;padding:28px;background:linear-gradient(0deg,rgba(8,9,12,.95),transparent)}
+  .founder-visual .name-plate .n{font-family:'Anton',sans-serif;font-size:1.7rem;letter-spacing:.02em}
+  .founder-visual .name-plate .t{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;color:var(--orange);font-weight:600;margin-top:4px}
+  .founder h2{font-size:clamp(2.2rem,5vw,3.8rem);margin:16px 0 22px}
+  .founder h2 .o{color:var(--orange)}
+  .founder p.bio{color:#c7cdd6;font-weight:500;margin-bottom:26px}
+  .accolades{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .accolade{background:var(--ink-2);padding:22px 24px}
+  .accolade .h{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;font-weight:600;color:var(--orange);margin-bottom:8px}
+  .accolade .d{font-size:.9rem;color:#cfd3da;font-weight:500;line-height:1.5}
+
+  /* ===== video ===== */
+  .video-sec{text-align:center}
+  .video-frame{position:relative;max-width:960px;margin:48px auto 0;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 90px -30px rgba(0,0,0,.8)}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+
+  /* ===== split ===== */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .feature-card{position:relative;overflow:hidden;min-height:380px;display:flex;align-items:flex-end;padding:42px;border:1px solid var(--line)}
+  .feature-card.fc1{background:linear-gradient(150deg,#1c1410,#0b0c10)}
+  .feature-card.fc2{background:linear-gradient(150deg,#101a1c,#0b0c10)}
+  .feature-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,rgba(255,87,34,.18),transparent 50%);opacity:.9}
+  .feature-card .fc-body{position:relative;z-index:2}
+  .feature-card .kick{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:.74rem;color:var(--orange);font-weight:600}
+  .feature-card h3{font-size:2rem;margin:14px 0}
+  .feature-card p{color:var(--mut);font-weight:500;margin-bottom:22px;max-width:42ch}
+  .feature-card .links a{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;font-weight:600;color:#fff;display:inline-flex;align-items:center;gap:7px}
+  .feature-card .links a:hover{color:var(--orange)}
+
+  /* ===== contact ===== */
+  .contact{background:var(--ink-2);border-top:1px solid var(--line)}
+  .contact-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px}
+  .contact h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:16px 0 20px}
+  .contact h2 .o{color:var(--orange)}
+  .contact .lead{color:var(--mut);font-weight:500;margin-bottom:34px;max-width:42ch}
+  .contact-list{list-style:none}
+  .contact-list li{display:flex;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+  .contact-list .ci{width:46px;height:46px;display:grid;place-items:center;background:rgba(255,87,34,.12);border:1px solid rgba(255,87,34,.25);flex:none}
+  .contact-list .ci svg{width:20px;height:20px;color:var(--orange)}
+  .contact-list .ct .k{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;color:var(--mut);font-weight:600}
+  .contact-list .ct .v{font-weight:700;font-size:1.05rem;margin-top:2px}
+  .form{background:var(--ink-3);border:1px solid var(--line);padding:40px}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:600;color:var(--mut);margin-bottom:9px}
+  .field input,.field textarea,.field select{width:100%;background:var(--ink);border:1px solid var(--line);padding:14px 16px;color:#fff;font-family:'Manrope',sans-serif;font-size:.98rem;transition:border-color .25s,box-shadow .25s}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,87,34,.14)}
+  .field textarea{resize:vertical;min-height:120px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .form .btn{width:100%;margin-top:8px}
+  .form-note{text-align:center;font-size:.82rem;color:var(--mut-2);margin-top:16px}
+
+  footer{background:var(--ink);border-top:1px solid var(--line);padding:64px 0 30px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;padding-bottom:44px;border-bottom:1px solid var(--line)}
+  .foot-brand .brand{margin-bottom:18px}
+  .foot-brand p{color:var(--mut);font-weight:500;max-width:38ch;font-size:.95rem}
+  .foot-col h4{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;font-weight:600;color:#fff;margin-bottom:18px}
+  .foot-col a{display:block;color:var(--mut);font-weight:500;font-size:.94rem;padding:7px 0;transition:color .2s}
+  .foot-col a:hover{color:var(--orange)}
+  .socials{display:flex;gap:12px;margin-top:22px}
+  .socials a{width:42px;height:42px;border:1px solid var(--line);display:grid;place-items:center;transition:.3s var(--ease)}
+  .socials a:hover{background:var(--orange);border-color:var(--orange);transform:translateY(-3px)}
+  .socials svg{width:18px;height:18px}
+  .foot-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:26px;color:var(--mut-2);font-size:.84rem;font-weight:500}
+  .foot-bot .built a{color:var(--mut);font-weight:600}
+  .foot-bot .built a:hover{color:var(--orange)}
+
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+  @media(max-width:1000px){
+    .camp-inner,.founder-inner,.contact-inner{grid-template-columns:1fr;gap:44px}
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:none}
+    .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(0,0,0,.13)}
+    .camp::before{font-size:42vw}
+    .founder-visual{max-width:420px}
+  }
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .burger{display:block}
+    .split,.accolades,.row2{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr;gap:36px}
+    .hero{min-height:auto;padding:140px 0 90px}
+    .camp-card,.form{padding:28px}
+    .feature-card{padding:32px;min-height:300px}
+    .prow{grid-template-columns:42px 1fr;gap:18px;padding:24px 4px}
+    .prow .arrow{display:none}
+    .prow:hover{padding-left:14px}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand">DREAM<b>CHASERS</b><span class="rule"></span><span class="est">EST · 757</span></a>
+    <nav class="nav-links">
+      <a href="#camp">Summer Camp</a>
+      <a href="#programs">Programs</a>
+      <a href="#founder">The Founder</a>
+      <a href="#showcase">Showcase</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Get Started</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#camp">Summer Camp</a>
+  <a href="#programs">Programs</a>
+  <a href="#founder">The Founder</a>
+  <a href="#showcase">Showcase</a>
+  <a href="#contact">Get Started</a>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-video">
+    <iframe src="https://player.vimeo.com/video/829610354?h=456de8ad6e&background=1&autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0&controls=0" allow="autoplay; fullscreen" title="Dreamchasers background"></iframe>
+  </div>
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <span class="hero-badge reveal"><span class="dot"></span>Hampton Roads, VA · Newport News · Williamsburg</span>
+    <h1 class="reveal d1">Train With <span class="o">Champions.</span><br>Become One.</h1>
+    <p class="lead reveal d2">Dreamchasers is one of the top independent AAU programs in the country. We've put <strong>100+ athletes into Division 1</strong> by building skill, character, and a relentless winning mindset, on and off the court.</p>
+    <div class="hero-actions reveal d3">
+      <a href="#camp" class="btn btn-primary">Join Summer Camp 2026
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#programs" class="btn btn-ghost">Explore Programs</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<section class="stats">
+  <div class="wrap"><div class="stats-grid">
+    <div class="stat"><div class="num">100+</div><div class="lbl">D1 Athletes</div></div>
+    <div class="stat"><div class="num">#1</div><div class="lbl">Ranked AAU Program</div></div>
+    <div class="stat"><div class="num">15+</div><div class="lbl">Years Developing Players</div></div>
+    <div class="stat"><div class="num">757</div><div class="lbl">Built In Hampton Roads</div></div>
+  </div></div>
+</section>
+
+<section class="camp pad" id="camp">
+  <div class="wrap camp-inner">
+    <div class="reveal">
+      <span class="eyebrow">Registration Open</span>
+      <h2>Summer<span class="o">Basketball Camp</span></h2>
+      <p style="color:#c7cdd6;font-weight:500;font-size:1.08rem;">Five days of elite skill development, real competition, and championship coaching. Built for serious players who want to take their game to the next level this summer.</p>
+      <ul class="camp-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Position-specific skill stations led by D1-track coaches</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Live 5-on-5 competition and game IQ breakdowns</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Strength, conditioning & shooting form development</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Mentorship and the mindset that separates winners</li>
+      </ul>
+    </div>
+    <div class="camp-card reveal d2">
+      <span class="tag">Dreamchasers Summer Camp</span>
+      <div class="big">2026</div>
+      <div class="small">Spots are limited and fill fast every year.</div>
+      <div class="div"></div>
+      <div class="row"><span>Open To</span><span>Boys & Girls · All Levels</span></div>
+      <div class="row"><span>Location</span><span>Hampton Roads, VA</span></div>
+      <div class="row"><span>Coaching</span><span>Championship Staff</span></div>
+      <a href="#contact" class="btn btn-primary">Reserve Your Spot
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="lite pad" id="programs">
+  <div class="wrap">
+    <div class="lite-head reveal">
+      <div>
+        <span class="eyebrow">What We Do</span>
+        <h2>Train To <span class="o">Excel</span></h2>
+      </div>
+      <p class="aside">Every player is different. Our programs meet you where you are and push you to where you want to be.</p>
+    </div>
+    <div class="prog-rows">
+      <a class="prow reveal" href="#contact">
+        <span class="pnum">01</span>
+        <div class="ph"><h3>AAU Teams</h3><p>Compete at the highest level. Our acclaimed AAU teams develop skill and passion in a supportive, winning environment.</p></div>
+        <span class="arrow">&#8599;</span>
+      </a>
+      <a class="prow reveal" href="#contact">
+        <span class="pnum">02</span>
+        <div class="ph"><h3>Personal Training</h3><p>One-on-one coaching built around your goals. Sharpen your handles, your shot, and your confidence with focused reps.</p></div>
+        <span class="arrow">&#8599;</span>
+      </a>
+      <a class="prow reveal" href="#camp">
+        <span class="pnum">03</span>
+        <div class="ph"><h3>Camps & Clinics</h3><p>Fun, dynamic and intense. Our camps build a love for the game while drilling individual skills, team play and game IQ.</p></div>
+        <span class="arrow">&#8599;</span>
+      </a>
+      <a class="prow reveal" href="#contact">
+        <span class="pnum">04</span>
+        <div class="ph"><h3>Team Training</h3><p>Build chemistry that wins. We develop team strategy, on-court communication and the mentality of a true unit.</p></div>
+        <span class="arrow">&#8599;</span>
+      </a>
+      <a class="prow reveal" href="#contact">
+        <span class="pnum">05</span>
+        <div class="ph"><h3>Coach Education</h3><p>Level up your coaching. Learn training techniques, player management and strategy from championship professionals.</p></div>
+        <span class="arrow">&#8599;</span>
+      </a>
+      <a class="prow reveal" href="#showcase">
+        <span class="pnum">06</span>
+        <div class="ph"><h3>Community Events</h3><p>Bigger than basketball. From our Alumni Tournament to Stop The Violence games, we use the game to bring people together.</p></div>
+        <span class="arrow">&#8599;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="founder pad" id="founder">
+  <div class="wrap founder-inner">
+    <div class="founder-visual reveal">
+      <div class="court"></div>
+      <svg class="lines" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#fff" stroke-width="1.5"><circle cx="200" cy="90" r="70"/><path d="M0 90h130M270 90h130"/><rect x="120" y="0" width="160" height="200"/><circle cx="200" cy="200" r="40"/><path d="M0 250h400"/></g></svg>
+      <div class="initials">DB</div>
+      <div class="name-plate">
+        <div class="n">Donovan Bridgeforth</div>
+        <div class="t">Founder & Director · Team Loaded 757</div>
+      </div>
+    </div>
+    <div class="reveal d2">
+      <span class="eyebrow">The Founder</span>
+      <h2>Coached By A <span class="o">Champion</span></h2>
+      <p class="bio">Dreamchasers is led by Coach Donovan Bridgeforth, one of the most respected developers of basketball talent in Virginia. As a head coach and AAU director, he has built championship programs and sent over 100 players to the Division 1 level. When you train here, you train under a proven winner.</p>
+      <div class="accolades">
+        <div class="accolade"><div class="h">Jamestown HS · Head Coach</div><div class="d">District, Conference & Regional Champions. State Runner-Up. Most wins in school history. Coach of the Year.</div></div>
+        <div class="accolade"><div class="h">Williamsburg Christian Academy</div><div class="d">Two-time State Runner-Up. Two-time Metro Champions. Metro Coach of the Year.</div></div>
+        <div class="accolade"><div class="h">Team Loaded 757 · Director</div><div class="d">Adidas-sponsored program. Voted #1 AAU program in the country. 100+ Division 1 players developed.</div></div>
+        <div class="accolade"><div class="h">Featured In</div><div class="d">Daily Press · The Virginian-Pilot · Chicago Tribune · Phenom Hoop Report · WY Daily.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad video-sec">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin:0 auto 0;text-align:center">
+      <span class="eyebrow" style="justify-content:center">Straight From The Players</span>
+      <h2>Hear From Our <span class="o">Athletes</span></h2>
+    </div>
+    <div class="video-frame reveal d1">
+      <iframe src="https://www.youtube.com/embed/_WMDssNuLMY?rel=0&showinfo=0" title="Dreamchasers Athlete Testimonial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="showcase">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Compete & Get Seen</span>
+      <h2>Showcases & <span class="o">Community</span></h2>
+      <p>Exposure for the next generation and impact for the whole community. This is what we're about.</p>
+    </div>
+    <div class="split">
+      <div class="feature-card fc1 reveal d1">
+        <div class="fc-body">
+          <span class="kick">Get Recruited</span>
+          <h3>Top 40 Showcase</h3>
+          <p>Our Top 40 Showcases (Class of 2030 & 2031) and Summer League put the area's best young talent in front of the right eyes.</p>
+          <div class="links"><a href="#contact">Showcase Info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </div>
+      <div class="feature-card fc2 reveal d2">
+        <div class="fc-body">
+          <span class="kick">Bigger Than Ball</span>
+          <h3>Giving Back</h3>
+          <p>Our annual Alumni Tournament and Stop The Violence games promote peace, unity and community, one game at a time.</p>
+          <div class="links"><a href="#contact">Become A Sponsor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact pad" id="contact">
+  <div class="wrap contact-inner">
+    <div class="reveal">
+      <span class="eyebrow">Let's Talk</span>
+      <h2>Start Your <span class="o">Journey</span></h2>
+      <p class="lead">Ready to register for camp, book training, or learn more about our teams? Reach out and we'll get right back to you.</p>
+      <ul class="contact-list">
+        <li><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div><div class="ct"><div class="k">Call Us</div><div class="v"><a href="tel:7572916507">(757) 291-6507</a></div></div></li>
+        <li><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div><div class="ct"><div class="k">Email</div><div class="v"><a href="mailto:dbridgeforth23@gmail.com">dbridgeforth23@gmail.com</a></div></div></li>
+        <li><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="ct"><div class="k">Based In</div><div class="v">Hampton Roads, VA</div></div></li>
+      </ul>
+    </div>
+    <form class="form reveal d2" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+      <input type="hidden" name="subject" value="New Dreamchasers Inquiry">
+      <input type="checkbox" name="botcheck" style="display:none">
+      <div class="row2">
+        <div class="field"><label>Player / Parent Name</label><input type="text" name="name" required placeholder="Full name"></div>
+        <div class="field"><label>Phone</label><input type="tel" name="phone" required placeholder="(757) 000-0000"></div>
+      </div>
+      <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@email.com"></div>
+      <div class="row2">
+        <div class="field"><label>Grade / Class</label><input type="text" name="grade" placeholder="e.g. 9th"></div>
+        <div class="field"><label>Interested In</label>
+          <select name="interest"><option>Summer Camp 2026</option><option>Personal Training</option><option>AAU Team Tryout</option><option>Team Training</option><option>Showcase / Top 40</option><option>Sponsorship</option><option>Other</option></select>
+        </div>
+      </div>
+      <div class="field"><label>Message</label><textarea name="message" placeholder="Tell us a little about your goals..."></textarea></div>
+      <button type="submit" class="btn btn-primary">Send Message
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+      <div class="form-note">We typically respond within 24 hours.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="brand">DREAM<b>CHASERS</b><span class="rule"></span><span class="est">EST · 757</span></a>
+        <p>Empowering athletes and building champions. One of the nation's top independent AAU basketball programs, based in Hampton Roads, Virginia.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/dreamchasersva757" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://www.x.com/DreamChasersVA" aria-label="X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="tel:7572916507" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Programs</h4>
+        <a href="#camp">Summer Camp 2026</a><a href="#programs">Personal Training</a><a href="#programs">AAU Teams</a><a href="#programs">Team Training</a><a href="#programs">Coach Education</a>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#founder">The Founder</a><a href="#showcase">Top 40 Showcase</a><a href="#showcase">Community Events</a><a href="#showcase">Become A Sponsor</a><a href="#contact">Contact Us</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div>© 2026 Dreamchasers Basketball Training. All Rights Reserved.</div>
+      <div class="built">Built by <a href="https://www.ronlenserdigital.com" target="_blank" rel="noopener">Ron Lenser Digital</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>40);
+  window.addEventListener('scroll',onScroll);onScroll();
+  const burger=document.getElementById('burger');
+  const mm=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>document.body.classList.toggle('menu-open'));
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('menu-open')));
+  const io=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

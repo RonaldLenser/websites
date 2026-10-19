@@ -1,0 +1,61 @@
+{
+  "intro": "No hourly. No retainer you did not choose. One written number after one call, and the audit fee comes off the build.",
+  "tiers": [
+    {
+      "name": "Discovery call",
+      "price": "$0",
+      "unit": "30 minutes",
+      "body": "We map how quotes, orders, and follow-ups move through your business and tell you which agent pays for itself first.",
+      "cta": "Book the call",
+      "href": "/contact",
+      "featured": false
+    },
+    {
+      "name": "Workflow audit",
+      "price": "TODO",
+      "unit": "one week",
+      "body": "We read your inbox patterns, catalog, and CRM, then deliver a written plan with the exact build, timeline, and fixed price. Credited back if you go ahead with the build.",
+      "cta": "Start with an audit",
+      "href": "/contact",
+      "featured": true
+    },
+    {
+      "name": "Fixed-price build",
+      "price": "Quoted",
+      "unit": "in writing",
+      "body": "One agent or system, scoped, built, launched, and tuned for 30 days. Optional monthly plan after that for hosting, minutes, and improvements.",
+      "cta": "Get a quote",
+      "href": "/contact",
+      "featured": false
+    }
+  ],
+  "budgetTiers": [
+    "Under $5K",
+    "$5K to $15K",
+    "$15K+",
+    "Monthly agent plan"
+  ],
+  "shapes": [
+    {
+      "name": "Single workflow",
+      "timeline": "2 to 4 weeks",
+      "example": "One agent on one channel: receptionist on the main line, follow-up on open quotes."
+    },
+    {
+      "name": "Cross-system",
+      "timeline": "4 to 8 weeks",
+      "example": "Quote desk connected to catalog, ERP export, and GoHighLevel with approvals."
+    },
+    {
+      "name": "Platform",
+      "timeline": "2 to 4 months",
+      "example": "Customer portal plus agents plus CRM, built as one system you own."
+    }
+  ],
+  "principles": [
+    "Fixed price, quoted in writing after one call",
+    "You own the code, the repo, the accounts, the data",
+    "No seat fees, no lock-in, no hourly",
+    "30 days of tuning included in every build"
+  ]
+}

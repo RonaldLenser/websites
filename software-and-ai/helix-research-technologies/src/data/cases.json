@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "lab-consumables-quote-desk",
+    "client": "Lab consumables distributor",
+    "profile": "Northeast US, 40 staff",
+    "service": "quote-desk-agent",
+    "title": "Quote turnaround 6 hours to 12 minutes",
+    "metrics": [
+      { "before": "6 hr", "after": "12 min", "label": "median quote turnaround" },
+      { "before": "31%", "after": "58%", "label": "quotes that got a reply" }
+    ],
+    "summary": "TODO: replace with a real engagement. Illustrative target outcome for a Quote Desk Agent on a shared sales inbox, connected to a 4,000 SKU price list.",
+    "status": "placeholder"
+  },
+  {
+    "slug": "medical-supply-reorders",
+    "client": "Medical supply company",
+    "profile": "Mid-Atlantic, 25 staff",
+    "service": "reorder-follow-up-agent",
+    "title": "Reorder rate up 22% in 60 days",
+    "metrics": [
+      { "before": "manual", "after": "automatic", "label": "reorder reminders" },
+      { "before": "0", "after": "22%", "label": "lift in repeat orders" }
+    ],
+    "summary": "TODO: replace with a real engagement. Illustrative target outcome for a Reorder Follow-up Agent on 900 active accounts.",
+    "status": "placeholder"
+  },
+  {
+    "slug": "distributor-receptionist",
+    "client": "Scientific equipment distributor",
+    "profile": "Southeast US, 60 staff",
+    "service": "ai-receptionist",
+    "title": "Zero missed calls during peak hours",
+    "metrics": [
+      { "before": "38%", "after": "0%", "label": "calls to voicemail 11am to 2pm" },
+      { "before": "0", "after": "14 / wk", "label": "rep meetings booked by the agent" }
+    ],
+    "summary": "TODO: replace with a real engagement. Illustrative target outcome for an AI Receptionist on an overflow line.",
+    "status": "placeholder"
+  }
+]

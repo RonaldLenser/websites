@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "quote-desk-agent",
+    "name": "Quote Desk Agent",
+    "short": "Answers quote requests in minutes, with real prices from your catalog.",
+    "eyebrow": "Flagship",
+    "problem": "A quote request comes in at 4:47pm. It sits in a shared inbox until tomorrow. By then the buyer has three other quotes.",
+    "outcome": "Every request gets a correct, formatted quote or a qualified handoff to a human inside minutes, 24 hours a day.",
+    "bullets": [
+      "Reads the request from email, web form, or chat",
+      "Pulls pricing and specs from your catalog, price list, or ERP export",
+      "Drafts the quote in your template, sends or routes for approval",
+      "Logs the lead in GoHighLevel and schedules the follow-up",
+      "Hands off to a person when it is not sure, with the context attached"
+    ],
+    "deliverables": [
+      "Working agent on your inbox and site",
+      "Catalog and pricing connection",
+      "Quote template and approval rules",
+      "GoHighLevel pipeline and tags",
+      "Runbook and 30 days of tuning"
+    ],
+    "timeline": "3 to 5 weeks",
+    "icon": "quote"
+  },
+  {
+    "slug": "reorder-follow-up-agent",
+    "name": "Reorder Follow-up Agent",
+    "short": "Reaches out before the customer runs out, and chases quotes that went quiet.",
+    "eyebrow": "Revenue",
+    "problem": "Repeat customers reorder late or from someone else. Sent quotes get no reply and nobody has time to chase.",
+    "outcome": "Timed, personal follow-ups on every open quote and every predictable reorder, with replies routed back to your team.",
+    "bullets": [
+      "Follow-up sequences on every open quote, by email and SMS",
+      "Reorder reminders based on order history and typical usage",
+      "Replies classified and routed: order, question, not now, unsubscribe",
+      "Everything tracked in GoHighLevel pipelines",
+      "Weekly summary of what converted and what stalled"
+    ],
+    "deliverables": [
+      "Sequences written in your voice",
+      "Order history import and reorder model",
+      "Reply handling agent",
+      "Reporting dashboard",
+      "Runbook and 30 days of tuning"
+    ],
+    "timeline": "2 to 4 weeks",
+    "icon": "repeat"
+  },
+  {
+    "slug": "ai-receptionist",
+    "name": "AI Receptionist",
+    "short": "Answers the phone and the chat, books the call, takes the order details.",
+    "eyebrow": "Front desk",
+    "problem": "Calls go to voicemail during busy hours. Website chat is a dead widget. Buyers move on.",
+    "outcome": "A voice and chat agent that answers instantly, knows your products, books time with the right rep, and never forgets to log the conversation.",
+    "bullets": [
+      "Voice agent on your main line or an overflow line",
+      "Chat agent on your site with your catalog loaded",
+      "Books meetings on your reps' calendars",
+      "Captures order and account details into GoHighLevel",
+      "Escalates to a human with a transcript"
+    ],
+    "deliverables": [
+      "Voice and chat agent configured and tested",
+      "Knowledge base from your catalog and FAQs",
+      "Calendar and CRM connection",
+      "Escalation rules",
+      "Runbook and 30 days of tuning"
+    ],
+    "timeline": "2 to 3 weeks",
+    "icon": "phone"
+  },
+  {
+    "slug": "ghl-systems",
+    "name": "GoHighLevel Systems",
+    "short": "Your CRM, pipelines, automations, and reporting, built and running in GHL.",
+    "eyebrow": "Backbone",
+    "problem": "Leads live in inboxes, spreadsheets, and someone's head. Nothing is measured.",
+    "outcome": "One system where every lead, quote, order, and follow-up lives, with automations doing the repetitive parts.",
+    "bullets": [
+      "Pipelines for quotes, orders, and reactivation",
+      "Lead intake from site, email, phone, and imports",
+      "Automated tasks, reminders, and notifications",
+      "Dashboards your team actually opens",
+      "Migration from HubSpot, Zoho, spreadsheets"
+    ],
+    "deliverables": [
+      "Configured sub-account",
+      "Pipelines, workflows, and templates",
+      "Data migration",
+      "Team training session",
+      "Documentation"
+    ],
+    "timeline": "1 to 3 weeks",
+    "icon": "grid"
+  },
+  {
+    "slug": "custom-apps",
+    "name": "Custom Apps and Sites",
+    "short": "Internal tools, customer portals, and sites built with AI, shipped fast, owned by you.",
+    "eyebrow": "Build",
+    "problem": "The tool you need does not exist, or the one you have costs per seat and does half the job.",
+    "outcome": "Software built for your exact process. Portals, dashboards, integrations, and marketing sites. No seat fees, ever.",
+    "bullets": [
+      "Customer reorder portals and quote lookup",
+      "Internal dashboards and admin tools",
+      "Integrations between ERP, CRM, email, and shipping",
+      "Marketing sites that load fast and rank",
+      "Built on Next.js, Supabase, Vercel"
+    ],
+    "deliverables": [
+      "Scoped spec with fixed price",
+      "Working software in your accounts",
+      "Source code in your repo",
+      "Deployment and monitoring",
+      "Handoff and support path"
+    ],
+    "timeline": "3 to 8 weeks",
+    "icon": "code"
+  }
+]

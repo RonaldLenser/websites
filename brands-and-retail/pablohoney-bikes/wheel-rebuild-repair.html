@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wheel Rebuild and Repair</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="inner">
+
+  <header>
+    <div class="wrap bar">
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="logo" aria-label="PabloHoney Bikes">
+        <span class="mark"><span class="ring"></span><span class="txt">PABLO<small>HONEY</small></span></span>
+      </a>
+      <nav class="desk">
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><button class="top" type="button">Wheels <i class="caret"></i></button>
+            <ul class="dropdown">
+              <li><a href="#">Hand Built Wheels</a></li>
+              <li><a href="custom-wheels.html">PabloHoney Custom Wheels</a></li>
+              <li><a href="nox-builds.html">Nox Composites Builds</a></li>
+              <li><a href="wheel-rebuild-repair.html">Wheel Rebuild &amp; Repair</a></li>
+            </ul>
+          </li>
+          <li><button class="top" type="button">Used Bikes <i class="caret"></i></button>
+            <ul class="dropdown">
+              <li><a href="certified-used.html">Certified Used Bikes</a></li>
+            </ul>
+          </li>
+          <li><a href="dream-builds.html">Dream Builds</a></li>
+          <li><a href="#">Parts &amp; Service</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer">
+    <ul>
+      <li class="item"><a href="index.html">Home</a></li>
+      <li class="item"><button class="top" type="button">Wheels <i class="chev"></i></button>
+        <ul class="sub">
+          <li><a href="#">Hand Built Wheels</a></li>
+          <li><a href="custom-wheels.html">PabloHoney Custom Wheels</a></li>
+          <li><a href="nox-builds.html">Nox Composites Builds</a></li>
+          <li><a href="wheel-rebuild-repair.html">Wheel Rebuild &amp; Repair</a></li>
+        </ul>
+      </li>
+      <li class="item"><button class="top" type="button">Used Bikes <i class="chev"></i></button>
+        <ul class="sub">
+          <li><a href="certified-used.html">Certified Used Bikes</a></li>
+        </ul>
+      </li>
+      <li class="item"><a href="dream-builds.html">Dream Builds</a></li>
+      <li class="item"><a href="#">Parts &amp; Service</a></li>
+      <li class="item"><a href="#">About Us</a></li>
+      <li class="item"><a href="#">Contact</a></li>
+    </ul>
+  </aside>
+
+  <section class="banner"><div class="narrow"><h1>Wheel Rebuild &amp; Repair</h1></div></section>
+
+  <div class="pagebody"><div class="narrow">
+    <p>Do you have a set of wheels that you like but that need some love? Maybe you want to upgrade spokes. Or you want to pair up some nice rims with new hubs. Perhaps you have nice hubs that need a set of new carbon rims. Whatever you need, we can do it. All with the same attention to detail and commitment to quality that we commit to with our new wheels.</p>
+
+    <div class="gallery">
+      <div class="ph"><span>wheels/byo/rim-1.jpg</span></div>
+      <div class="ph"><span>wheels/byo/hub-blue.jpg</span></div>
+      <div class="ph"><span>wheels/byo/nipples-color.jpg</span></div>
+      <div class="ph"><span>wheels/byo/spokes-fan.jpg</span></div>
+      <div class="ph"><span>wheels/byo/rim-2.jpg</span></div>
+      <div class="ph"><span>wheels/byo/spokes-color.jpg</span></div>
+    </div>
+
+    <form class="form-box" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New Wheel Rebuild / Repair request">
+      <input type="hidden" name="from_name" value="PabloHoney Website">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="form-title">Wheel Rebuild &amp; Repair Request</div>
+      <div class="estimate-note">Fill this out and you'll get an estimate back for your rebuild or repair.</div>
+
+      <div class="form-h">Contact Information</div>
+      <div class="helper">We will only use this information to contact you about your wheels.</div>
+      <div class="field"><label class="q">Full Name <span class="req">*</span></label><input type="text" name="Full Name" required></div>
+      <div class="field"><label class="q">Email address <span class="req">*</span></label><input type="email" name="Email" required></div>
+      <div class="field"><label class="q">Phone Number <span class="req">*</span></label><input type="tel" name="Phone" placeholder="555-555-5555" required></div>
+      <div class="field"><label class="q">Preferred contact methods <span class="req">*</span></label>
+        <div class="opts">
+          <label><input type="checkbox" name="Preferred contact" value="Email"> Email</label>
+          <label><input type="checkbox" name="Preferred contact" value="Text"> Text</label>
+          <label><input type="checkbox" name="Preferred contact" value="Phone call"> Phone call</label>
+        </div>
+      </div>
+
+      <div class="form-h">Your Wheels</div>
+
+      <div class="field"><label class="q">Rims</label>
+        <select name="Rims"><option selected>No choice</option>
+          <option>I have my own rims</option>
+          <option>I want new rims</option></select></div>
+      <div class="field"><label class="q">What brand rims I have/want</label><input type="text" name="Rim brand"></div>
+
+      <div class="field"><label class="q">Hubs</label>
+        <select name="Hubs"><option selected>No choice</option>
+          <option>I have my own hubs</option>
+          <option>I want new hubs</option></select></div>
+      <div class="field"><label class="q">What brand hubs I have/want</label><input type="text" name="Hub brand"></div>
+
+      <div class="field"><label class="q">Rim size</label>
+        <select name="Rim size"><option selected>No choice</option>
+          <option>I have/want 29" rims</option>
+          <option>I have/want 27.5" rims</option></select></div>
+
+      <div class="field"><label class="q">Hub spacing front</label>
+        <select name="Hub spacing front"><option selected>No choice</option>
+          <option>I have/want 12x100</option>
+          <option>I have/want 15x100</option>
+          <option>I have/want 15x110 boost</option></select></div>
+
+      <div class="field"><label class="q">Hub spacing rear</label>
+        <select name="Hub spacing rear"><option selected>No choice</option>
+          <option>I have/want 12x142</option>
+          <option>I have/want 15x148 boost</option>
+          <option>I have/want 15x157 super boost</option></select></div>
+
+      <div class="field"><label class="q">Other hub options</label>
+        <select name="Other hub options"><option selected>No choice</option>
+          <option>I have/want ISO 6 bolt</option>
+          <option>I have/want Centerlock</option>
+          <option>I have/want Shimano HG</option>
+          <option>I have/want SRAM XD/XDR</option>
+          <option>I have/want Shimano Microspline</option></select></div>
+
+      <div class="field"><label class="q">Please enter any other notes on your rebuild/repair here:</label><textarea name="Notes"></textarea></div>
+
+      <div class="disc-strong">By selecting "submit", You are agreeing only to receive a call, text or email regarding your request.</div>
+      <div class="disc">We do not do anything with your data except use it to contact you for your project.</div>
+      <div class="captcha"><span class="box"></span> I am human <span class="brand">hCaptcha<br>Privacy - Terms</span></div>
+      <button type="submit" class="submit">Submit</button>
+    </form>
+  </div></div>
+
+  <div class="wrap">
+    <div class="share">
+      <a class="x" href="#" aria-label="Share on X">X</a>
+      <a class="fb" href="#" aria-label="Share on Facebook">f</a>
+      <a class="li" href="#" aria-label="Share on LinkedIn">in</a>
+      <a class="em" href="#" aria-label="Share by email">&#9993;</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="fname">PabloHoney Bikes</div>
+    <div class="fline">Salt Lake City UT</div>
+    <div class="fline"><a href="tel:8018914273">(801) 891-4273</a></div>
+    <div class="fline"><a href="mailto:info@pablohoneybikes.com">info@pablohoneybikes.com</a></div>
+    <div class="legal"><a href="#">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="#">Warranty</a></div>
+    <div class="follow">Follow Me</div>
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61579531640419" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="10" fill="#1877F2"/><path d="M30.5 25.5l.8-5.2h-5v-3.4c0-1.4.7-2.8 3-2.8h2.3V9.7s-2-.4-4-.4c-4.1 0-6.7 2.5-6.7 6.9v3.9h-4.5v5.2h4.5V38h5.6V25.5h3.7z" fill="#fff"/></svg>
+      </a>
+      <a href="https://www.instagram.com/pablohoneybikes" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 48 48"><defs><radialGradient id="ig" cx="30%" cy="107%" r="150%">
+          <stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs>
+          <rect width="48" height="48" rx="12" fill="url(#ig)"/>
+          <rect x="12" y="12" width="24" height="24" rx="7" fill="none" stroke="#fff" stroke-width="3"/>
+          <circle cx="24" cy="24" r="6" fill="none" stroke="#fff" stroke-width="3"/>
+          <circle cx="31.5" cy="16.5" r="1.8" fill="#fff"/></svg>
+      </a>
+    </div>
+    <div class="copyright">&copy; PabloHoney Bikes</div>
+  </footer>
+
+<script src="site.js"></script>
+</body>
+</html>

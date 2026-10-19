@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Photography — Jordan Chapman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0A0A0A; --surface:#111111; --text:#F0EDE8; --muted:#8A8780;
+  --accent:#C9A96E; --border:rgba(240,237,232,0.12);
+  --display:'Playfair Display',serif; --body:'Cormorant Garamond',serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-weight:300;line-height:1.7;overflow-x:hidden;cursor:none}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent)}
+
+/* CURSOR */
+#cur{width:7px;height:7px;background:var(--accent);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
+#cur-ring{width:34px;height:34px;border:1px solid rgba(201,169,110,.4);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
+body.ch #cur{width:13px;height:13px;background:var(--text)}
+body.ch #cur-ring{width:48px;height:48px;border-color:var(--accent)}
+
+/* LOADER */
+.loader{position:fixed;inset:0;background:var(--bg);z-index:9000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;transition:opacity .7s,visibility .7s}
+.loader.gone{opacity:0;visibility:hidden;pointer-events:none}
+.loader img{height:100px;width:auto;animation:pulse 1.4s ease infinite}
+.ld-bar{width:150px;height:1px;background:rgba(240,237,232,.08);position:relative;overflow:hidden}
+.ld-bar::after{content:'';position:absolute;inset:0;background:var(--accent);animation:ldBar 1.2s ease forwards}
+@keyframes ldBar{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1)}}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 52px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .4s,backdrop-filter .4s}
+nav.scrolled{background:rgba(10,10,10,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:12px 52px;border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;transition:opacity .3s}
+.nav-logo:hover{opacity:.75}
+.nav-logo img{height:60px;width:auto;display:block}
+.nav-links{display:flex;gap:44px;list-style:none}
+.nav-links a{font-family:var(--body);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;position:relative;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:100%;height:1px;background:var(--accent);transition:right .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-links a:hover::after,.nav-links a.active::after{right:0}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:none;padding:4px}
+.hamburger span{display:block;width:24px;height:1px;background:var(--text);transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.98);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:40px;opacity:0;pointer-events:none;transition:opacity .4s}
+.mob-menu.open{opacity:1;pointer-events:all}
+.mob-menu a{font-family:var(--display);font-size:2.4rem;color:var(--text);text-decoration:none;transition:color .3s}
+.mob-menu a:hover{color:var(--accent)}
+
+/* HERO */
+#hero{position:relative;width:100%;height:100vh;min-height:700px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-bg{position:absolute;inset:0;background:url('cardiff-castle.jpg') center 30%/cover no-repeat;transform:scale(1.06);filter:brightness(.5) saturate(.75)}
+.hero-grain{position:absolute;inset:0;opacity:.25;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.97) 0%,rgba(10,10,10,.3) 45%,rgba(10,10,10,.15) 70%,rgba(10,10,10,.45) 100%)}
+.hero-content{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.hero-logo{opacity:0;transform:translateY(16px);animation:fup 1s .3s forwards}
+.hero-logo img{height:150px;width:auto;display:block}
+.hero-name{font-family:var(--body);font-size:.75rem;letter-spacing:.42em;text-transform:uppercase;color:var(--muted);opacity:0;animation:fup 1s .55s forwards}
+.hero-tag{font-family:var(--display);font-size:clamp(2.1rem,5vw,3.8rem);font-weight:400;font-style:italic;line-height:1.15;color:var(--text);opacity:0;animation:fup 1s .75s forwards}
+.hero-sub{font-family:var(--body);font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);opacity:0;animation:fup 1s .95s forwards}
+.hero-cta{margin-top:8px;font-family:var(--body);font-size:.84rem;letter-spacing:.26em;text-transform:uppercase;color:var(--text);text-decoration:none;position:relative;padding-bottom:4px;opacity:0;animation:fup 1s 1.15s forwards;transition:color .3s}
+.hero-cta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--text);transition:background .3s}
+.hero-cta:hover{color:var(--accent)}.hero-cta:hover::after{background:var(--accent)}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fin 1s 1.9s forwards}
+.hero-scroll span{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,var(--muted),transparent);animation:sp 2s 2s infinite}
+@keyframes fup{to{opacity:1;transform:translateY(0)}}
+@keyframes fin{to{opacity:1}}
+@keyframes sp{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* PORTFOLIO */
+#portfolio{padding:120px 48px;background:var(--bg)}
+.section-label{font-family:var(--body);font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.section-label::before{content:'';display:block;width:26px;height:1px;background:var(--accent)}
+.portfolio-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;gap:20px}
+.portfolio-title{font-family:var(--display);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:400;line-height:1.1;color:var(--text)}
+.portfolio-title em{font-style:italic;color:var(--accent)}
+.portfolio-count{font-family:var(--body);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding-bottom:4px;white-space:nowrap}
+
+/* MASONRY — pure flexbox columns, no JS sizing needed */
+.masonry-wrap{display:flex;gap:12px;align-items:flex-start}
+.m-col{display:flex;flex-direction:column;gap:12px;flex:1;min-width:0}
+.m-item{position:relative;overflow:hidden;cursor:none;line-height:0}
+.m-item img{display:block;width:100%;height:auto;transition:transform .65s cubic-bezier(.25,.46,.45,.94),filter .4s ease;filter:brightness(.88) saturate(.85)}
+.m-item:hover img{transform:scale(1.04);filter:brightness(1) saturate(1)}
+.m-item::after{content:'';position:absolute;inset:0;border:1px solid transparent;transition:border-color .4s;pointer-events:none;z-index:2}
+.m-item:hover::after{border-color:var(--accent)}
+.m-cap{position:absolute;bottom:0;left:0;right:0;padding:48px 16px 15px;background:linear-gradient(to top,rgba(10,10,10,.9),transparent);font-family:var(--body);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text);opacity:0;transform:translateY(4px);transition:opacity .4s,transform .4s;z-index:3;line-height:1}
+.m-item:hover .m-cap{opacity:1;transform:translateY(0)}
+
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;z-index:5000;background:rgba(5,5,5,.97);align-items:center;justify-content:center;flex-direction:column}
+.lb.on{display:flex}
+.lb-img{max-width:88vw;max-height:82vh;object-fit:contain;border:1px solid var(--border)}
+.lb-close{position:absolute;top:24px;right:32px;font-family:var(--body);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:none;border:none;cursor:none;transition:color .3s}
+.lb-close:hover{color:var(--accent)}
+.lb-cap{margin-top:14px;font-family:var(--body);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;cursor:none;font-size:2.2rem;color:rgba(240,237,232,.35);padding:20px;transition:color .3s;line-height:1}
+.lb-btn:hover{color:var(--accent)}
+.lb-prev{left:8px}.lb-next{right:8px}
+
+/* ABOUT */
+#about{padding:130px 48px;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.about-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:360px 1fr;gap:96px;align-items:start}
+.portrait-box{width:100%;aspect-ratio:4/5;background:#181818;position:relative;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:5rem;font-weight:700;color:rgba(240,237,232,.04);letter-spacing:.1em}
+.portrait-accent{position:absolute;bottom:-16px;right:-16px;width:68px;height:68px;border:2px solid var(--accent)}
+.portrait-label{margin-top:24px;font-family:var(--body);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);text-align:center}
+.about-intro{font-family:var(--display);font-size:clamp(1.5rem,2.3vw,2rem);font-weight:400;font-style:italic;line-height:1.35;color:var(--text);margin-bottom:26px}
+.about-body{font-family:var(--body);font-size:1.08rem;font-weight:300;line-height:1.9;color:var(--muted);margin-bottom:46px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding-top:34px;border-top:1px solid var(--border)}
+.stat-n{font-family:var(--display);font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:4px}
+.stat-l{font-family:var(--body);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+/* SERVICES */
+#services{padding:130px 48px;background:var(--bg)}
+.svc-header{max-width:1180px;margin:0 auto 76px;display:flex;align-items:flex-end;gap:80px}
+.svc-title{font-family:var(--display);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:400;color:var(--text);line-height:1.1;flex:1}
+.svc-intro{flex:1;font-family:var(--body);font-size:1.04rem;color:var(--muted);line-height:1.8;padding-bottom:4px}
+.svc-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.svc-card{background:var(--surface);border:1px solid var(--border);padding:48px 40px 44px;position:relative;overflow:hidden;transition:border-color .4s,background .4s}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
+.svc-card:hover{border-color:rgba(201,169,110,.3);background:#141414}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-n{font-family:var(--display);font-size:4rem;color:rgba(201,169,110,.13);line-height:1;margin-bottom:26px;transition:color .4s}
+.svc-card:hover .svc-n{color:rgba(201,169,110,.3)}
+.svc-name{font-family:var(--display);font-size:1.38rem;font-weight:500;color:var(--text);margin-bottom:12px;line-height:1.25}
+.svc-desc{font-family:var(--body);font-size:.95rem;color:var(--muted);line-height:1.75;font-weight:300}
+.svc-link{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-family:var(--body);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:gap .3s}
+.svc-link::after{content:'→'}
+.svc-link:hover{gap:16px}
+
+/* CONTACT */
+#contact{padding:130px 48px 96px;background:var(--surface);border-top:1px solid var(--border)}
+.contact-inner{max-width:760px;margin:0 auto;text-align:center}
+.contact-eye{font-family:var(--body);font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:14px}
+.contact-eye::before,.contact-eye::after{content:'';display:block;width:26px;height:1px;background:var(--accent)}
+.contact-head{font-family:var(--display);font-size:clamp(2.4rem,5.5vw,4.8rem);font-weight:400;font-style:italic;line-height:1.08;color:var(--text);margin-bottom:44px}
+.contact-email{display:inline-block;font-family:var(--body);font-size:clamp(1rem,2.2vw,1.45rem);color:var(--text);text-decoration:none;position:relative;padding-bottom:4px;margin-bottom:10px;transition:color .3s}
+.contact-email::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(.35);transform-origin:left;transition:transform .4s}
+.contact-email:hover{color:var(--accent)}.contact-email:hover::after{transform:scaleX(1)}
+.contact-ig{display:block;font-family:var(--body);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:64px;transition:color .3s}
+.contact-ig:hover{color:var(--text)}
+.cform{display:flex;flex-direction:column;text-align:left}
+.form-row{display:grid;grid-template-columns:1fr 1fr}
+.fg{position:relative;border-bottom:1px solid var(--border)}
+.form-row .fg:first-child{border-right:1px solid var(--border)}
+.fg label{position:absolute;top:20px;left:20px;font-family:var(--body);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);transition:top .3s,font-size .3s,color .3s;pointer-events:none}
+.fg input,.fg textarea{width:100%;background:transparent;border:none;padding:34px 20px 12px;font-family:var(--body);font-size:.98rem;font-weight:300;color:var(--text);outline:none;resize:none}
+.fg input:focus+label,.fg input:not(:placeholder-shown)+label,.fg textarea:focus+label,.fg textarea:not(:placeholder-shown)+label{top:8px;font-size:.56rem;color:var(--accent)}
+.fg input{height:74px}.fg textarea{height:145px}
+.fg-full{border-bottom:1px solid var(--border)}
+.form-btn{margin-top:30px;align-self:flex-start;font-family:var(--body);font-size:.76rem;letter-spacing:.26em;text-transform:uppercase;color:var(--text);background:none;border:1px solid var(--border);padding:14px 40px;cursor:none;position:relative;overflow:hidden;transition:color .4s,border-color .4s}
+.form-btn::before{content:'';position:absolute;inset:0;background:var(--accent);transform:translateX(-100%);transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
+.form-btn:hover{color:var(--bg);border-color:var(--accent)}.form-btn:hover::before{transform:translateX(0)}
+.form-btn span{position:relative;z-index:1}
+
+/* FOOTER */
+footer{padding:36px 52px;background:var(--bg);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.foot-copy{font-family:var(--body);font-size:.72rem;letter-spacing:.1em;color:var(--muted)}
+.foot-copy strong{color:var(--accent)}
+.foot-links{display:flex;gap:24px;list-style:none}
+.foot-links a{font-family:var(--body);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .3s}
+.foot-links a:hover{color:var(--accent)}
+
+/* FADE IN */
+.fi{opacity:0;transform:translateY(20px);transition:opacity .85s ease,transform .85s ease}
+.fi.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.32s}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .about-inner{grid-template-columns:290px 1fr;gap:56px}
+  .svc-header{flex-direction:column;gap:18px;align-items:flex-start}
+}
+@media(max-width:900px){
+  nav,nav.scrolled{padding:18px 28px}
+  .nav-links{display:none}.hamburger{display:flex}.mob-menu{display:flex}
+  #portfolio{padding:80px 24px}
+  .about-inner{grid-template-columns:1fr;gap:40px}
+  .svc-grid{grid-template-columns:1fr;gap:2px}
+  #services,#about,#contact{padding:80px 24px}
+  footer{flex-direction:column;gap:16px;text-align:center;padding:28px 24px}
+}
+@media(max-width:600px){
+  .form-row{grid-template-columns:1fr}
+  .form-row .fg:first-child{border-right:none;border-bottom:1px solid var(--border)}
+  .hero-tag{font-size:1.85rem}
+  .portfolio-header{flex-direction:column;align-items:flex-start;gap:12px}
+  nav,nav.scrolled{padding:14px 18px}
+  #portfolio,#services,#about,#contact{padding:60px 18px}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <img src="logo-transparent.png" alt="JC">
+  <div class="ld-bar"></div>
+</div>
+
+<!-- CURSOR -->
+<div id="cur"></div><div id="cur-ring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo"><img src="logo-transparent.png" alt="JC Productions"></a>
+  <ul class="nav-links">
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mob">
+  <a href="#portfolio" class="ml">Portfolio</a>
+  <a href="#about" class="ml">About</a>
+  <a href="#services" class="ml">Services</a>
+  <a href="#contact" class="ml">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" id="hbg"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-content">
+    <div class="hero-logo"><img src="logo-transparent.png" alt="JC Productions"></div>
+    <p class="hero-name">Jordan Chapman</p>
+    <h1 class="hero-tag">Documenting Cardiff,<br>one frame at a time.</h1>
+    <p class="hero-sub">Cardiff · Architecture · Street · Nature</p>
+    <a href="#portfolio" class="hero-cta">View Work</a>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="portfolio-header fi">
+    <div>
+      <div class="section-label">Selected Work</div>
+      <h2 class="portfolio-title">The <em>Portfolio</em></h2>
+    </div>
+    <p class="portfolio-count">20 Photographs</p>
+  </div>
+  <div class="masonry-wrap" id="masonry"></div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbc">Close · Esc</button>
+  <button class="lb-btn lb-prev" id="lbp">‹</button>
+  <img class="lb-img" src="" alt="" id="lbi">
+  <p class="lb-cap" id="lbcap"></p>
+  <button class="lb-btn lb-next" id="lbn">›</button>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="fi">
+      <div style="position:relative">
+        <div class="portrait-box">JC</div>
+        <div class="portrait-accent"></div>
+      </div>
+      <p class="portrait-label">Jordan Chapman · Cardiff, Wales</p>
+    </div>
+    <div>
+      <div class="section-label fi">The Photographer</div>
+      <p class="about-intro fi d1">"Light doesn't lie — it just reveals what you weren't looking for."</p>
+      <p class="about-body fi d2">Based in Cardiff, Wales. Documenting the city's architecture, people, and quiet moments in between. From the medieval stone of Cardiff Castle to the graffiti murals of Canton, every frame is a study in contrast — the ancient and the modern, the still and the fleeting. Available for editorial, commercial, and portrait commissions.</p>
+      <div class="about-stats fi d3">
+        <div><div class="stat-n">5+</div><div class="stat-l">Years Shooting</div></div>
+        <div><div class="stat-n">Cardiff</div><div class="stat-l">& Beyond</div></div>
+        <div><div class="stat-n">3</div><div class="stat-l">Disciplines</div></div>
+        <div><div class="stat-n">∞</div><div class="stat-l">Frames Left</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="svc-header">
+    <div class="fi">
+      <div class="section-label">What I Do</div>
+      <h2 class="svc-title">Services &<br><em style="font-style:italic;color:var(--accent)">Commissions</em></h2>
+    </div>
+    <p class="svc-intro fi d1">Whether you need a campaign shot, a building documented, or a portrait that goes beyond the standard — every commission is handled with the same care as the personal work.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card fi">
+      <div class="svc-n">01</div>
+      <h3 class="svc-name">Editorial Photography</h3>
+      <p class="svc-desc">Magazine-quality imagery for publications, brands, and campaigns. Storytelling through a documentary lens — honest, unpolished, real.</p>
+      <a href="#contact" class="svc-link">Enquire</a>
+    </div>
+    <div class="svc-card fi d1">
+      <div class="svc-n">02</div>
+      <h3 class="svc-name">Architectural & Urban</h3>
+      <p class="svc-desc">Buildings, landmarks, cityscapes. Capturing the personality of a structure — how it sits in its environment, how light transforms its surface.</p>
+      <a href="#contact" class="svc-link">Enquire</a>
+    </div>
+    <div class="svc-card fi d2">
+      <div class="svc-n">03</div>
+      <h3 class="svc-name">Portrait Sessions</h3>
+      <p class="svc-desc">Environmental portraits in Cardiff's streets, parks, or your own space. Natural light, natural expressions. No studio stiffness.</p>
+      <a href="#contact" class="svc-link">Enquire</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-eye fi">Get In Touch</div>
+    <h2 class="contact-head fi d1">Let's Work<br>Together</h2>
+    <a href="mailto:hello@jcphotography.co.uk" class="contact-email fi d2">hello@jcphotography.co.uk</a>
+    <a href="https://instagram.com/jcphotography" class="contact-ig fi d2">@jcphotography</a>
+    <form class="cform fi" onsubmit="doSubmit(event)">
+      <div class="form-row">
+        <div class="fg"><input type="text" id="fn" placeholder=" "><label for="fn">Name</label></div>
+        <div class="fg"><input type="email" id="fe" placeholder=" "><label for="fe">Email</label></div>
+      </div>
+      <div class="fg fg-full"><textarea id="fm" rows="6" placeholder=" "></textarea><label for="fm">Message</label></div>
+      <button type="submit" class="form-btn"><span>Send Message</span></button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="foot-copy">© 2024 <strong>Jordan Chapman Photography</strong>. All rights reserved.</p>
+  <ul class="foot-links">
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+<div style="text-align:center;padding:16px 0 4px;font-size:12px;opacity:.55;letter-spacing:.03em;"><a href="https://ronlenserdigital.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Website by Ron Lenser Digital</a></div>
+</footer>
+
+<script>
+// PHOTOS — exact filenames matching outputs folder
+const PHOTOS = [
+  {src:'green-corridor.jpg',      title:'Green Corridor'},
+  {src:'city-hall-tower.jpg',     title:'City Hall Tower'},
+  {src:'cardiff-castle.jpg',      title:'Cardiff Castle'},
+  {src:'pierhead-building.jpg',   title:'Pierhead Building'},
+  {src:'castle-clock-tower.jpg',  title:'Castle Clock Tower'},
+  {src:'river-sunset.jpg',        title:'River Sunset'},
+  {src:'principality-stadium.jpg',title:'Principality Stadium'},
+  {src:'st-johns-church.jpg',     title:"St John's Church"},
+  {src:'river-stadium.jpg',       title:'River Stadium'},
+  {src:'vita-building.jpg',       title:'VITA Building'},
+  {src:'limestone-quarry.jpg',    title:'Limestone Quarry'},
+  {src:'tulip-field.jpg',         title:'Tulip Field'},
+  {src:'urban-alley.jpg',         title:'Urban Alley'},
+  {src:'red-tulip.jpg',           title:'Red Tulip'},
+  {src:'scaffold-family.jpg',     title:'Scaffold Family'},
+  {src:'graffiti-portrait.jpg',   title:'Graffiti Portrait'},
+  {src:'street-mural.jpg',        title:'Street Mural'},
+  {src:'river-walk.jpg',          title:'River Walk'},
+  {src:'park-grove.jpg',          title:'Park Grove'},
+  {src:'st-marys-tower.jpg',      title:"St Mary's Tower"},
+];
+
+// BUILD MASONRY — 3 cols desktop, 2 tablet, 1 mobile
+function getColCount() {
+  return window.innerWidth <= 600 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+}
+function buildMasonry() {
+  const wrap = document.getElementById('masonry');
+  wrap.innerHTML = '';
+  const n = getColCount();
+  const cols = [];
+  for (let i = 0; i < n; i++) {
+    const col = document.createElement('div');
+    col.className = 'm-col';
+    wrap.appendChild(col);
+    cols.push(col);
+  }
+  PHOTOS.forEach((p, i) => {
+    const div = document.createElement('div');
+    div.className = 'm-item';
+    div.innerHTML = `<img src="${p.src}" alt="${p.title}" loading="lazy"><div class="m-cap">${p.title}</div>`;
+    div.addEventListener('click', () => openLB(i));
+    // add hover cursor class
+    div.addEventListener('mouseenter', () => document.body.classList.add('ch'));
+    div.addEventListener('mouseleave', () => document.body.classList.remove('ch'));
+    cols[i % n].appendChild(div);
+  });
+}
+buildMasonry();
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(buildMasonry, 200);
+});
+
+// LIGHTBOX
+let lbIdx = 0;
+const lb = document.getElementById('lb');
+const lbi = document.getElementById('lbi');
+const lbcap = document.getElementById('lbcap');
+function openLB(i) {
+  lbIdx = i;
+  lbi.src = PHOTOS[i].src;
+  lbi.alt = PHOTOS[i].title;
+  lbcap.textContent = PHOTOS[i].title;
+  lb.classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function closeLB() { lb.classList.remove('on'); document.body.style.overflow = ''; }
+document.getElementById('lbc').onclick = closeLB;
+document.getElementById('lbn').onclick = () => openLB((lbIdx + 1) % PHOTOS.length);
+document.getElementById('lbp').onclick = () => openLB((lbIdx - 1 + PHOTOS.length) % PHOTOS.length);
+lb.addEventListener('click', e => { if (e.target === lb) closeLB(); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('on')) return;
+  if (e.key === 'Escape') closeLB();
+  if (e.key === 'ArrowRight') openLB((lbIdx + 1) % PHOTOS.length);
+  if (e.key === 'ArrowLeft') openLB((lbIdx - 1 + PHOTOS.length) % PHOTOS.length);
+});
+
+// LOADER
+window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('gone'), 1200));
+
+// CURSOR
+const cur = document.getElementById('cur'), ring = document.getElementById('cur-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.style.left = mx+'px'; cur.style.top = my+'px'; });
+(function tick() { rx += (mx-rx)*.12; ry += (my-ry)*.12; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(tick); })();
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('ch'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('ch'));
+});
+
+// NAV SCROLL
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), {passive:true});
+
+// HAMBURGER
+const ham = document.getElementById('ham'), mob = document.getElementById('mob');
+ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open'); });
+document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', () => {
+  ham.classList.remove('open'); mob.classList.remove('open');
+}));
+
+// PARALLAX HERO
+const hbg = document.getElementById('hbg');
+window.addEventListener('scroll', () => {
+  if (scrollY < innerHeight) hbg.style.transform = `scale(1.06) translateY(${scrollY * .2}px)`;
+}, {passive:true});
+
+// FADE IN
+const obs = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) e.target.classList.add('vis');
+}), {threshold:.08, rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+// ACTIVE NAV
+const secs = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  secs.forEach(s => { if (scrollY >= s.offsetTop - 140) current = s.id; });
+  navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+}, {passive:true});
+
+// FORM
+function doSubmit(e) {
+  e.preventDefault();
+  const s = e.target.querySelector('.form-btn span');
+  s.textContent = 'Sent ✓'; s.style.color = 'var(--accent)';
+  setTimeout(() => { s.textContent = 'Send Message'; s.style.color = ''; e.target.reset(); }, 3000);
+}
+</script>
+</body>
+</html>

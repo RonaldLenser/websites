@@ -1,0 +1,34 @@
+[
+  {
+    "q": "What do you actually build?",
+    "a": "AI agents that do one job in a supply business: read a quote request and price it from your catalog, chase open quotes and predictable reorders, answer the phone and the site chat. Underneath: GoHighLevel pipelines and, when you need it, custom software. We build with AI tools and ship in weeks. You own the result."
+  },
+  {
+    "q": "Why would this work when other automation did not?",
+    "a": "Because we start with one workflow, connect it to your real catalog and CRM, and tune it for 30 days after launch with your team. Most failed automations were generic chatbots with no data and nobody watching."
+  },
+  {
+    "q": "What if the agent does not know the answer?",
+    "a": "It stops and hands the thread to a person with everything attached: the request, the catalog matches it found, the price it would have quoted. It never invents a part number, a price, or a lead time. You set what it may answer alone, what needs approval, and when it must stay quiet."
+  },
+  {
+    "q": "How much does it cost?",
+    "a": "A free 30 minute call first. Then a fixed price in writing for the build, no hourly billing. Some agents run on a monthly plan that covers hosting, minutes, and tuning. Nothing is owed monthly unless you choose that."
+  },
+  {
+    "q": "How long does it take?",
+    "a": "Receptionist 2 to 3 weeks. Reorder follow-up 2 to 4. Quote desk 3 to 5. Custom apps 3 to 8. We give you the date before you pay."
+  },
+  {
+    "q": "Who owns the code, the data, and the accounts?",
+    "a": "You do. The GoHighLevel sub-account, the repo, the domain, the integrations. If we disappeared tomorrow, everything keeps running and your team has the runbook."
+  },
+  {
+    "q": "Do we need GoHighLevel?",
+    "a": "No, but it is the fastest way to get pipelines, follow-up, and reporting in one place. If you already have HubSpot or Zoho, we can build on that or migrate you."
+  },
+  {
+    "q": "Is our data safe?",
+    "a": "Agents get access to exactly what the job needs: your catalog, price rules, and CRM. No patient data, no card numbers, no bank logins. Everything runs inside accounts you own. We document every connection and you can revoke any of them without calling us."
+  }
+]

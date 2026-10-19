@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Southern MN Top-Tier Leads</title>
+<style>
+  :root {
+    --bg: #0b1020;
+    --panel: rgba(17, 24, 39, 0.86);
+    --panel-2: rgba(15, 23, 42, 0.96);
+    --line: rgba(255,255,255,0.08);
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --gold: #fbbf24;
+    --gold-2: #f59e0b;
+    --green: #22c55e;
+    --red: #ef4444;
+    --blue: #38bdf8;
+    --shadow: 0 18px 50px rgba(0,0,0,0.35);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background:
+      radial-gradient(circle at top right, rgba(251,191,36,0.14), transparent 22%),
+      radial-gradient(circle at top left, rgba(56,189,248,0.10), transparent 18%),
+      linear-gradient(180deg, #060915 0%, #0b1020 100%);
+    color: var(--text);
+  }
+  .wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 28px;
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: 1.4fr .9fr;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .hero-card, .stats, .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+  }
+  .hero-card {
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(251,191,36,0.15), transparent 38%);
+    pointer-events: none;
+  }
+  .eyebrow {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  h1 {
+    margin: 12px 0 10px;
+    font-size: 40px;
+    line-height: 1.02;
+  }
+  .sub {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 780px;
+  }
+  .stats {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .stat {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 18px;
+  }
+  .stat .k {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .stat .l {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .toolbar {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1.2fr .65fr .65fr;
+    gap: 14px;
+  }
+  .panel {
+    padding: 16px;
+  }
+  .search {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: var(--panel-2);
+    color: var(--text);
+    outline: none;
+    font-size: 14px;
+  }
+  select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: var(--panel-2);
+    color: var(--text);
+    outline: none;
+    font-size: 14px;
+  }
+  .tabs {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .tab {
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.03);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 11px 16px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .tab.active {
+    background: linear-gradient(180deg, rgba(251,191,36,0.22), rgba(245,158,11,0.16));
+    border-color: rgba(251,191,36,0.3);
+    color: #fff7d6;
+  }
+  .table-wrap {
+    margin-top: 18px;
+    overflow: hidden;
+  }
+  .table-scroll {
+    overflow: auto;
+    border-radius: 22px;
+    border: 1px solid var(--line);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1180px;
+    background: rgba(15, 23, 42, 0.88);
+  }
+  thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #111827;
+    color: #f8fafc;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+  th, td {
+    padding: 14px 14px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+  tbody tr:hover { background: rgba(255,255,255,0.03); }
+  .pill {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .p-high { background: rgba(34,197,94,.18); color: #bbf7d0; border: 1px solid rgba(34,197,94,.22); }
+  .cat-pm { background: rgba(56,189,248,.16); color: #bae6fd; border: 1px solid rgba(56,189,248,.2); }
+  .cat-hoa { background: rgba(251,191,36,.16); color: #fde68a; border: 1px solid rgba(251,191,36,.2); }
+  .cat-comm { background: rgba(168,85,247,.16); color: #e9d5ff; border: 1px solid rgba(168,85,247,.2); }
+  a {
+    color: #7dd3fc;
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+  .muted { color: var(--muted); }
+  .countline {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .footer {
+    padding: 18px 2px 4px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  @media (max-width: 980px) {
+    .hero, .toolbar {
+      grid-template-columns: 1fr;
+    }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Southern Minnesota • Lead Command Center</div>
+        <h1>Top-Tier HOA & Property Management Leads</h1>
+        <p class="sub">Built for fast outbound targeting. This dashboard is filtered around your boss’s actual ask: HOA / association management companies and Southern Minnesota property management companies worth calling first.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="k">29</div><div class="l">Total curated leads</div></div>
+        <div class="stat"><div class="k">14</div><div class="l">Property management</div></div>
+        <div class="stat"><div class="k">11</div><div class="l">HOA / association managers</div></div>
+        <div class="stat"><div class="k">4</div><div class="l">HOA communities surfaced</div></div>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <div class="panel"><input id="search" class="search" placeholder="Search business, city, phone, website, notes..." /></div>
+      <div class="panel">
+        <select id="cityFilter">
+          <option value="">All cities</option>
+        </select>
+      </div>
+      <div class="panel">
+        <select id="categoryFilter">
+          <option value="">All categories</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="All Leads">All Leads</button>
+      <button class="tab" data-tab="Property Management">Property Management</button>
+      <button class="tab" data-tab="HOA Managers">HOA Managers</button>
+      <button class="tab" data-tab="HOA Communities">HOA Communities</button>
+    </div>
+
+    <div class="countline"><span id="resultCount">0</span> results shown</div>
+
+    <section class="table-wrap">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Priority</th>
+              <th>Category</th>
+              <th>Business Name</th>
+              <th>Contact</th>
+              <th>Phone</th>
+              <th>Website</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>County</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="footer">Standalone HTML dashboard. No external dependencies. Open it in any browser.</div>
+  </div>
+
+<script>
+const rows = [{"Category": "Property Management Company", "Business Name": "Atwood Management", "Contact Name": "", "Phone": "(507) 388-9375", "Email": "", "Website": "http://atwoodliving.com/", "Address": "209 S 2nd St #100, Mankato, Minnesota", "City": "Mankato", "County": "Blue Earth County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "Connect Property Management", "Contact Name": "", "Phone": "(507) 779-7319", "Email": "", "Website": "https://www.rentwithconnect.com/", "Address": "530 W Pleasant St, Mankato, Minnesota", "City": "Mankato", "County": "Blue Earth County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "Factor Property Management", "Contact Name": "", "Phone": "(507) 304-7575", "Email": "", "Website": "http://factor.rent/", "Address": "1409 N Riverfront Dr, Mankato, Minnesota", "City": "Mankato", "County": "Blue Earth County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "HOM Property Management", "Contact Name": "", "Phone": "(507) 344-1128", "Email": "", "Website": "http://hompm.com/", "Address": "224 E Washington St, Mankato, Minnesota", "City": "Mankato", "County": "Blue Earth County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "Landmark Manager", "Contact Name": "", "Phone": "(507) 345-1607", "Email": "", "Website": "https://www.landmarkmanager.com/", "Address": "931 Madison Ave, Mankato, Minnesota", "City": "Mankato", "County": "Blue Earth County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "Lloyd Management", "Contact Name": "", "Phone": "(507) 625-5573", "Email": "", "Website": "http://lloydmanagement.com/", "Address": "135 W Lind St, Mankato, Minnesota", "City": "Mankato", "County": "Blue Earth County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "Orange Property Management Mankato Office", "Contact Name": "", "Phone": "(507) 514-1688", "Email": "", "Website": "http://www.orangeproperties.com/", "Address": "520 James Ave, Mankato, Minnesota", "City": "Mankato", "County": "Blue Earth County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "Top Tier Management", "Contact Name": "", "Phone": "(507) 593-9088", "Email": "", "Website": "http://www.ttproperties.net/", "Address": "223 S Broad St #103, Mankato, Minnesota", "City": "Mankato", "County": "Blue Earth County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "Trekk Properties", "Contact Name": "", "Phone": "(507) 334-3499", "Email": "", "Website": "http://trekkproperties.com/", "Address": "303 1st Ave NE, Faribault, Minnesota", "City": "Faribault", "County": "Rice County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "Piller Properties", "Contact Name": "", "Phone": "(507) 210-9639", "Email": "", "Website": "", "Address": "417 Lincoln Ave NW, Faribault, Minnesota", "City": "Faribault", "County": "Rice County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "Upper Midwest Management Corporation", "Contact Name": "", "Phone": "(507) 359-2004", "Email": "", "Website": "", "Address": "1314 Westridge Rd, New Ulm, Minnesota", "City": "New Ulm", "County": "Brown County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "CCL Properties", "Contact Name": "", "Phone": "(507) 344-1128", "Email": "", "Website": "http://www.cclproperties.com/", "Address": "121 N 6th St, Mankato, Minnesota", "City": "Mankato", "County": "Blue Earth County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "Coldwell Banker Commercial Fisher Group", "Contact Name": "", "Phone": "(507) 625-4715", "Email": "", "Website": "https://cbcfishergroup.com/", "Address": "201 N Riverfront Dr Suite 230, Mankato, Minnesota", "City": "Mankato", "County": "Blue Earth County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "Property Management Company", "Business Name": "River Center Properties", "Contact Name": "", "Phone": "(507) 387-7368", "Email": "", "Website": "http://www.rentkatoapts.com/", "Address": "111 W Lind Ct, Mankato, Minnesota", "City": "Mankato", "County": "Blue Earth County", "Notes": "Southern MN target; high-fit PM company from Apify Maps runs.", "Priority": "High"}, {"Category": "HOA / Association Management Company", "Business Name": "Alliance HOA", "Contact Name": "", "Phone": "(952) 564-5535", "Email": "", "Website": "http://www.alliancehoa.com/", "Address": "1301 Cliff Rd E Suite 106, Burnsville, Minnesota", "City": "Burnsville", "County": "Dakota County", "Notes": "Statewide HOA/association manager; may serve Southern MN even if office is outside target counties.", "Priority": "High"}, {"Category": "HOA / Association Management Company", "Business Name": "Associa Minnesota", "Contact Name": "", "Phone": "(763) 225-6400", "Email": "", "Website": "https://www.associaminnesota.com/?utm_source=gmb&utm_medium=Yext&y_source=1_Mjc2NjU5MDUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D", "Address": "7100 Northland Cir N Suite 300, Brooklyn Park, Minnesota", "City": "Brooklyn Park", "County": "Hennepin County", "Notes": "Statewide HOA/association manager; may serve Southern MN even if office is outside target counties.", "Priority": "High"}, {"Category": "HOA / Association Management Company", "Business Name": "Association One", "Contact Name": "", "Phone": "(833) 737-8663", "Email": "", "Website": "https://associationone.com/", "Address": "8400 Normandale Lake Blvd, Bloomington, Minnesota", "City": "Bloomington", "County": "Hennepin County", "Notes": "Statewide HOA/association manager; may serve Southern MN even if office is outside target counties.", "Priority": "High"}, {"Category": "HOA / Association Management Company", "Business Name": "Community Association Group LLC", "Contact Name": "", "Phone": "(651) 882-0400", "Email": "", "Website": "http://www.cagmn.com/", "Address": "4672 Slater Rd, Eagan, Minnesota", "City": "Eagan", "County": "Dakota County", "Notes": "Statewide HOA/association manager; may serve Southern MN even if office is outside target counties.", "Priority": "High"}, {"Category": "HOA / Association Management Company", "Business Name": "FirstService Residential Bloomington", "Contact Name": "", "Phone": "(952) 277-2700", "Email": "", "Website": "https://www.fsresidential.com/minnesota/offices/minnesota", "Address": "8100 Old Cedar Ave S #300, Bloomington, Minnesota", "City": "Bloomington", "County": "Hennepin County", "Notes": "Statewide HOA/association manager; may serve Southern MN even if office is outside target counties.", "Priority": "High"}, {"Category": "HOA / Association Management Company", "Business Name": "Gassen HOA Management", "Contact Name": "", "Phone": "(952) 922-5575", "Email": "", "Website": "https://www.gassen.com/", "Address": "6438 City West Pkwy, Eden Prairie, Minnesota", "City": "Eden Prairie", "County": "Hennepin County", "Notes": "Statewide HOA/association manager; may serve Southern MN even if office is outside target counties.", "Priority": "High"}, {"Category": "HOA / Association Management Company", "Business Name": "HOALiving Minnesota", "Contact Name": "", "Phone": "(612) 234-6464", "Email": "", "Website": "https://hoalivingmn.com/", "Address": "6 Pine Tree Dr Suite 180, Arden Hills, Minnesota", "City": "Arden Hills", "County": "Ramsey County", "Notes": "Statewide HOA/association manager; may serve Southern MN even if office is outside target counties.", "Priority": "High"}, {"Category": "HOA / Association Management Company", "Business Name": "Premier Association Management", "Contact Name": "", "Phone": "(952) 683-9400", "Email": "", "Website": "https://www.premieram.com/contact", "Address": "1120 S 2nd St, Minneapolis, Minnesota", "City": "Minneapolis", "County": "Hennepin County", "Notes": "Statewide HOA/association manager; may serve Southern MN even if office is outside target counties.", "Priority": "High"}, {"Category": "HOA / Association Management Company", "Business Name": "RowCal", "Contact Name": "", "Phone": "(651) 233-1307", "Email": "", "Website": "https://www.rowcal.com/locations/minnesota/champlin/?utm_source=GBP&utm_medium=organic", "Address": "11125 Zealand Ave N, Champlin, Minnesota", "City": "Champlin", "County": "", "Notes": "Statewide HOA/association manager; may serve Southern MN even if office is outside target counties.", "Priority": "High"}, {"Category": "HOA / Association Management Company", "Business Name": "Advantage Townhome Management", "Contact Name": "", "Phone": "(651) 429-2223", "Email": "", "Website": "http://www.advtm.com/", "Address": "1310 County Hwy 96 #214, White Bear Lake, Minnesota", "City": "White Bear Lake", "County": "Ramsey County", "Notes": "Statewide HOA/association manager; may serve Southern MN even if office is outside target counties.", "Priority": "High"}, {"Category": "HOA / Association Management Company", "Business Name": "Valhalla Management Associates", "Contact Name": "", "Phone": "(507) 288-8347", "Email": "", "Website": "https://valhallacondos.com/", "Address": "342 Elton Hills Dr NW, Rochester, Minnesota", "City": "Rochester", "County": "Olmsted County", "Notes": "Statewide HOA/association manager; may serve Southern MN even if office is outside target counties.", "Priority": "High"}, {"Category": "HOA Community (President Not Listed)", "Business Name": "JHW Homeowners Association", "Contact Name": "", "Phone": "", "Email": "", "Website": "https://business.northfieldchamber.com/members/member/jhw-townhomes-association-401", "Address": "1120 Highland Ave W, Northfield, Minnesota", "City": "Northfield", "County": "Rice County", "Notes": "HOA surfaced in Southern MN run; uploaded data did not include president name.", "Priority": "High"}, {"Category": "HOA Community (President Not Listed)", "Business Name": "Lake Drive Homeowners Association", "Contact Name": "", "Phone": "", "Email": "", "Website": "https://business.northfieldchamber.com/members/member/lake-drive-townhome-association-388", "Address": "2035 Lake Dr, Northfield, Minnesota", "City": "Northfield", "County": "Rice County", "Notes": "HOA surfaced in Southern MN run; uploaded data did not include president name.", "Priority": "High"}, {"Category": "HOA Community (President Not Listed)", "Business Name": "Sibley View Homeowners Association", "Contact Name": "", "Phone": "", "Email": "", "Website": "https://business.northfieldchamber.com/members/member/sibley-view-townhouse-association-784", "Address": "1819 Estate Ln, Northfield, Minnesota", "City": "Northfield", "County": "Rice County", "Notes": "HOA surfaced in Southern MN run; uploaded data did not include president name.", "Priority": "High"}, {"Category": "HOA Community (President Not Listed)", "Business Name": "Valley Pond Homeowners Association", "Contact Name": "", "Phone": "", "Email": "", "Website": "https://valleypond.org/", "Address": "2123 Hidden Valley Rd, Northfield, Minnesota", "City": "Northfield", "County": "Rice County", "Notes": "HOA surfaced in Southern MN run; uploaded data did not include president name.", "Priority": "High"}];
+let activeTab = "All Leads";
+
+const tbody = document.getElementById("tbody");
+const search = document.getElementById("search");
+const cityFilter = document.getElementById("cityFilter");
+const categoryFilter = document.getElementById("categoryFilter");
+const resultCount = document.getElementById("resultCount");
+
+function categoryClass(cat) {
+  if (/Property Management/i.test(cat)) return "cat-pm";
+  if (/Association|HOA \/|HOA\/|HOA /i.test(cat)) return "cat-hoa";
+  if (/HOA Community/i.test(cat)) return "cat-comm";
+  return "cat-pm";
+}
+
+function websiteLink(url) {
+  if (!url) return '<span class="muted">—</span>';
+  let fixed = url;
+  if (!/^https?:\/\//i.test(fixed)) fixed = 'https://' + fixed;
+  return `<a href="${fixed}" target="_blank" rel="noopener">Open site</a>`;
+}
+
+function contactText(name) {
+  return name ? name : '<span class="muted">—</span>';
+}
+
+function phoneText(phone) {
+  return phone ? phone : '<span class="muted">—</span>';
+}
+
+function fillFilters() {
+  const cities = [...new Set(rows.map(r => r["City"]).filter(Boolean))].sort();
+  const cats = [...new Set(rows.map(r => r["Category"]).filter(Boolean))].sort();
+  cities.forEach(c => {
+    const opt = document.createElement("option");
+    opt.value = c;
+    opt.textContent = c;
+    cityFilter.appendChild(opt);
+  });
+  cats.forEach(c => {
+    const opt = document.createElement("option");
+    opt.value = c;
+    opt.textContent = c;
+    categoryFilter.appendChild(opt);
+  });
+}
+
+function tabFilter(r) {
+  if (activeTab === "All Leads") return true;
+  if (activeTab === "Property Management") return /Property Management/i.test(r["Category"]);
+  if (activeTab === "HOA Managers") return /Association|HOA \/|HOA\/|HOA /i.test(r["Category"]) && !/HOA Community/i.test(r["Category"]);
+  if (activeTab === "HOA Communities") return /HOA Community/i.test(r["Category"]);
+  return true;
+}
+
+function render() {
+  const q = search.value.trim().toLowerCase();
+  const city = cityFilter.value;
+  const cat = categoryFilter.value;
+
+  const filtered = rows.filter(r => {
+    if (!tabFilter(r)) return false;
+    if (city && r["City"] !== city) return false;
+    if (cat && r["Category"] !== cat) return false;
+    if (!q) return true;
+    return Object.values(r).join(" ").toLowerCase().includes(q);
+  });
+
+  tbody.innerHTML = filtered.map(r => `
+    <tr>
+      <td><span class="pill p-high">${r["Priority"] || "High"}</span></td>
+      <td><span class="pill ${categoryClass(r["Category"])}">${r["Category"]}</span></td>
+      <td><strong>${r["Business Name"] || ""}</strong></td>
+      <td>${contactText(r["Contact Name"])}</td>
+      <td>${phoneText(r["Phone"])}</td>
+      <td>${websiteLink(r["Website"])}</td>
+      <td>${r["Address"] || '<span class="muted">—</span>'}</td>
+      <td>${r["City"] || '<span class="muted">—</span>'}</td>
+      <td>${r["County"] || '<span class="muted">—</span>'}</td>
+      <td>${r["Notes"] || '<span class="muted">—</span>'}</td>
+    </tr>
+  `).join("");
+
+  resultCount.textContent = filtered.length;
+}
+
+document.querySelectorAll(".tab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeTab = btn.dataset.tab;
+    render();
+  });
+});
+
+[search, cityFilter, categoryFilter].forEach(el => el.addEventListener("input", render));
+fillFilters();
+render();
+</script>
+</body>
+</html>

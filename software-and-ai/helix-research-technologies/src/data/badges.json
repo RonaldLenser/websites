@@ -1,0 +1,10 @@
+[
+  { "name": "GoHighLevel", "note": "CRM and automation" },
+  { "name": "Anthropic Claude", "note": "Agent reasoning" },
+  { "name": "OpenAI", "note": "Voice and language" },
+  { "name": "n8n", "note": "Workflow engine" },
+  { "name": "Vercel", "note": "Hosting" },
+  { "name": "Supabase", "note": "Data" },
+  { "name": "Twilio", "note": "Voice and SMS" },
+  { "name": "Next.js", "note": "Apps and sites" }
+]

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tania Home Health Services | Portsmouth, VA</title>
+  <meta name="description" content="Compassionate in-home care in Portsmouth, VA. Companion care, daily packages, transportation, and more. Reliable support. Peace of mind." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">&#9825;</span>
+        <div class="logo-text">
+          <span class="logo-name">Tania</span>
+          <span class="logo-sub">Home Health Services</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#policies">Policies</a></li>
+        <li><a href="#contact" class="nav-cta">Book a Consultation</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#services" class="mobile-link">Services</a></li>
+        <li><a href="#packages" class="mobile-link">Packages</a></li>
+        <li><a href="#policies" class="mobile-link">Policies</a></li>
+        <li><a href="#contact" class="mobile-link">Book a Consultation</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grain"></div>
+      <div class="hero-circles">
+        <div class="h-circle h-circle-1"></div>
+        <div class="h-circle h-circle-2"></div>
+        <div class="h-circle h-circle-3"></div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-up">Portsmouth, Virginia</p>
+      <h1 class="hero-title reveal-up" data-delay="100">
+        Care That Feels<br />
+        <em>Like Family</em>
+      </h1>
+      <p class="hero-sub reveal-up" data-delay="200">
+        Compassionate. Reliable. Personal. In-home support tailored to your loved one's life — right here in Portsmouth.
+      </p>
+      <div class="hero-actions reveal-up" data-delay="300">
+        <a href="#contact" class="btn-primary">Request Care Today</a>
+        <a href="#services" class="btn-ghost">View Services</a>
+      </div>
+      <div class="hero-contact reveal-up" data-delay="400">
+        <a href="tel:9482136204" class="hero-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.07 2.82 2 2 0 012.05 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (948) 213-6204
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Compassionate Care</span>
+      <span class="dot">&#9825;</span>
+      <span>Reliable Support</span>
+      <span class="dot">&#9825;</span>
+      <span>Peace of Mind</span>
+      <span class="dot">&#9825;</span>
+      <span>Portsmouth, VA</span>
+      <span class="dot">&#9825;</span>
+      <span>Private Pay</span>
+      <span class="dot">&#9825;</span>
+      <span>Compassionate Care</span>
+      <span class="dot">&#9825;</span>
+      <span>Reliable Support</span>
+      <span class="dot">&#9825;</span>
+      <span>Peace of Mind</span>
+      <span class="dot">&#9825;</span>
+      <span>Portsmouth, VA</span>
+      <span class="dot">&#9825;</span>
+      <span>Private Pay</span>
+      <span class="dot">&#9825;</span>
+    </div>
+  </div>
+
+  <!-- ABOUT STRIP -->
+  <section class="about-strip">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-col reveal-up">
+          <div class="about-icon">&#10024;</div>
+          <h3>Personalized Support</h3>
+          <p>Every client receives care built around their individual routine, preferences, and needs — not a one-size-fits-all plan.</p>
+        </div>
+        <div class="about-col reveal-up" data-delay="100">
+          <div class="about-icon">&#9825;</div>
+          <h3>Genuine Compassion</h3>
+          <p>We treat your loved ones the way we'd want our own family treated — with patience, warmth, and consistent attention.</p>
+        </div>
+        <div class="about-col reveal-up" data-delay="200">
+          <div class="about-icon">&#127968;</div>
+          <h3>Local & Trusted</h3>
+          <p>Proudly serving Portsmouth, VA only — so your caregiver knows your community, your streets, and your neighbors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURLY SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title">Hourly <em>Services</em></h2>
+        <p class="section-desc">Flexible care that fits your schedule and budget. All services available by the hour.</p>
+      </div>
+
+      <div class="services-category reveal-up" data-delay="100">
+        <div class="category-label">Standard Hourly</div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div class="service-card-body">
+              <h4>Companion Care</h4>
+              <p>Companionship, meaningful conversation, and regular wellness check-ins for your loved one.</p>
+            </div>
+            <div class="service-card-price">$25<span>/hr</span></div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            </div>
+            <div class="service-card-body">
+              <h4>Companion + Support</h4>
+              <p>All companion services plus light housekeeping, meal preparation, and medication reminders.</p>
+            </div>
+            <div class="service-card-price">$30<span>/hr</span></div>
+          </div>
+
+          <div class="service-card service-card--featured">
+            <div class="service-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            <div class="service-card-body">
+              <h4>Full Support Services</h4>
+              <p>All companion services plus errands, appointment assistance, and routine day-to-day guidance.</p>
+            </div>
+            <div class="service-card-price">$35<span>/hr</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-category reveal-up" data-delay="150">
+        <div class="category-label">Transportation &amp; Errands</div>
+        <div class="services-grid services-grid--2">
+          <div class="service-card">
+            <div class="service-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="service-card-body">
+              <h4>Transportation</h4>
+              <p>Safe, reliable transportation within Portsmouth. Mileage fee covers fuel, wear &amp; tear, and travel time.</p>
+              <span class="service-note">Portsmouth Only</span>
+            </div>
+            <div class="service-card-price">$30<span>/hr + $0.65/mi</span></div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+            </div>
+            <div class="service-card-body">
+              <h4>Errands / Pickup Services</h4>
+              <p>Grocery runs, pharmacy pickups, and essential errand assistance handled efficiently and with care.</p>
+            </div>
+            <div class="service-card-price">$30<span>/hr + $0.65/mi</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-category reveal-up" data-delay="200">
+        <div class="category-label">Specialty Services</div>
+        <div class="services-grid services-grid--2">
+          <div class="service-card">
+            <div class="service-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="service-card-body">
+              <h4>Appointment Support</h4>
+              <p>We stay and assist throughout your loved one's appointment — transportation, check-in, and full support included.</p>
+              <span class="service-note">Stay + Assist</span>
+            </div>
+            <div class="service-card-price">$35<span>/hr + $0.65/mi</span></div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </div>
+            <div class="service-card-body">
+              <h4>Check-In Visits</h4>
+              <p>Short, purposeful wellness visits for clients who need a check-in without a full session. Maximum 30 minutes.</p>
+              <span class="service-note">30 min max</span>
+            </div>
+            <div class="service-card-price">$20<span>/visit</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="packages" id="packages">
+    <div class="packages-bg">
+      <div class="pkg-glow pkg-glow-1"></div>
+      <div class="pkg-glow pkg-glow-2"></div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-label section-label--light">Best Value</p>
+        <h2 class="section-title section-title--light">Combo Care <em>Packages</em></h2>
+        <p class="section-desc section-desc--light">Everything your loved one needs, bundled into one clear price. No surprises.</p>
+      </div>
+
+      <div class="packages-grid">
+        <div class="pkg-card reveal-up" data-delay="0">
+          <div class="pkg-badge">Starter</div>
+          <div class="pkg-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <h3 class="pkg-name">Daily Care Package</h3>
+          <div class="pkg-price">
+            <span class="pkg-amount">$90</span>
+            <span class="pkg-duration">3 Hours</span>
+          </div>
+          <ul class="pkg-features">
+            <li><span class="check">&#10003;</span> Companion care</li>
+            <li><span class="check">&#10003;</span> Meal preparation</li>
+            <li><span class="check">&#10003;</span> Light housekeeping</li>
+            <li><span class="check">&#10003;</span> Medication reminders</li>
+          </ul>
+          <a href="#contact" class="pkg-btn">Get Started</a>
+        </div>
+
+        <div class="pkg-card pkg-card--featured reveal-up" data-delay="100">
+          <div class="pkg-badge">Most Popular</div>
+          <div class="pkg-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M17 18a5 5 0 00-10 0"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/><line x1="2" y1="18" x2="4" y2="18"/><line x1="20" y1="18" x2="22" y2="18"/><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/></svg>
+          </div>
+          <h3 class="pkg-name">Half-Day Package</h3>
+          <div class="pkg-price">
+            <span class="pkg-amount">$160</span>
+            <span class="pkg-duration">5 Hours</span>
+          </div>
+          <ul class="pkg-features">
+            <li><span class="check">&#10003;</span> Full companion support</li>
+            <li><span class="check">&#10003;</span> Errands or appointments included</li>
+            <li><span class="check">&#10003;</span> Routine assistance</li>
+          </ul>
+          <a href="#contact" class="pkg-btn">Get Started</a>
+        </div>
+
+        <div class="pkg-card reveal-up" data-delay="200">
+          <div class="pkg-badge">Premium</div>
+          <div class="pkg-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </div>
+          <h3 class="pkg-name">Full-Day Package</h3>
+          <div class="pkg-price">
+            <span class="pkg-amount">$300</span>
+            <span class="pkg-duration">8 Hours</span>
+          </div>
+          <ul class="pkg-features">
+            <li><span class="check">&#10003;</span> Full service coverage</li>
+            <li><span class="check">&#10003;</span> Transportation included <em>(mileage separate)</em></li>
+            <li><span class="check">&#10003;</span> Priority scheduling</li>
+          </ul>
+          <a href="#contact" class="pkg-btn">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POLICIES -->
+  <section class="policies" id="policies">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-label">Transparency First</p>
+        <h2 class="section-title">Our <em>Policies</em></h2>
+        <p class="section-desc">We believe in clear, honest communication. Here's how we work together.</p>
+      </div>
+      <div class="policies-grid">
+        <div class="policy-card reveal-up">
+          <div class="policy-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Payment Policy</h3>
+          <ul class="policy-list">
+            <li>Private pay only</li>
+            <li>Payments due per agreed schedule</li>
+            <li>$25 late fee after due date</li>
+            <li>Services paused after 7 days non-payment</li>
+            <li>Balances over 30 days may result in further action</li>
+          </ul>
+        </div>
+        <div class="policy-card reveal-up" data-delay="100">
+          <div class="policy-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>Cancellation Policy</h3>
+          <ul class="policy-list">
+            <li>24-hour notice required for cancellations</li>
+            <li>Less than 24-hour notice: $50 cancellation fee</li>
+          </ul>
+        </div>
+        <div class="policy-card reveal-up" data-delay="200">
+          <div class="policy-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Service Area</h3>
+          <p class="policy-area-text">Portsmouth, VA Only</p>
+          <p class="policy-area-sub">We proudly serve the entire Portsmouth community with dedicated, local care.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE SECTION -->
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-inner reveal-up">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">Caring for today, supporting tomorrow.</p>
+        <div class="quote-attr">— Tania Home Health Services</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left reveal-up">
+          <p class="section-label">Ready to Begin</p>
+          <h2 class="contact-title">Let's Talk About <em>Your Loved One</em></h2>
+          <p class="contact-desc">Reach out today and we'll work together to find the right level of care. No pressure, no obligations — just an honest conversation.</p>
+          <div class="contact-details">
+            <a href="tel:9482136204" class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.07 2.82 2 2 0 012.05 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <span class="ci-label">Phone</span>
+                <span class="ci-value">(948) 213-6204</span>
+              </div>
+            </a>
+            <a href="mailto:TaniaHomeHealth@gmail.com" class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <span class="ci-label">Email</span>
+                <span class="ci-value">TaniaHomeHealth@gmail.com</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span class="ci-label">Location</span>
+                <span class="ci-value">Portsmouth, VA — Local Care Only</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-right reveal-up" data-delay="150">
+          <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+            <input type="hidden" name="subject" value="New Care Request - Tania Home Health" />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(757) 000-0000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option>Companion Care ($25/hr)</option>
+                <option>Companion + Support ($30/hr)</option>
+                <option>Full Support Services ($35/hr)</option>
+                <option>Daily Care Package ($90 / 3hrs)</option>
+                <option>Half-Day Package ($160 / 5hrs)</option>
+                <option>Full-Day Package ($300 / 8hrs)</option>
+                <option>Transportation / Errands</option>
+                <option>Check-In Visits ($20/visit)</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Loved One</label>
+              <textarea id="message" name="message" rows="4" placeholder="Share any details that will help us provide the best care possible..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full" id="submitBtn">
+              <span>Send My Request</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <span>&#10003;</span> Thank you! We'll be in touch shortly.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="logo-icon">&#9825;</span>
+              <div class="logo-text">
+                <span class="logo-name">Tania</span>
+                <span class="logo-sub">Home Health Services</span>
+              </div>
+            </div>
+            <p class="footer-tagline">Compassionate Care. Reliable Support. Peace of Mind.</p>
+          </div>
+          <div class="footer-links">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#services">Companion Care</a></li>
+              <li><a href="#services">Full Support</a></li>
+              <li><a href="#services">Transportation</a></li>
+              <li><a href="#services">Check-In Visits</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Packages</h4>
+            <ul>
+              <li><a href="#packages">Daily ($90)</a></li>
+              <li><a href="#packages">Half-Day ($160)</a></li>
+              <li><a href="#packages">Full-Day ($300)</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Contact</h4>
+            <a href="tel:9482136204">(948) 213-6204</a>
+            <a href="mailto:TaniaHomeHealth@gmail.com">TaniaHomeHealth@gmail.com</a>
+            <p>Portsmouth, VA Only</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-inner">
+          <p class="footer-script">Caring for today, supporting tomorrow.</p>
+          <p class="footer-copy">&copy; 2025 Tania Home Health Services. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+# Helix Research Technologies
+
+> AI agents for lab, medical, and B2B supply companies. Quote Desk Agent, Reorder Follow-up Agent, AI Receptionist, GoHighLevel systems, custom apps. Fixed price quoted in writing after one call. Client owns the code, accounts, and data. Based in Fredericksburg, VA, serving the US.
+
+## What we build
+- [Quote Desk Agent](https://helixresearchtech.com/services/quote-desk-agent): answers quote requests in minutes with real prices from the client's catalog.
+- [Reorder Follow-up Agent](https://helixresearchtech.com/services/reorder-follow-up-agent): follows up on open quotes and predictable reorders.
+- [AI Receptionist](https://helixresearchtech.com/services/ai-receptionist): voice and chat agent that answers, books, and logs.
+- [GoHighLevel Systems](https://helixresearchtech.com/services/ghl-systems): CRM, pipelines, automations, reporting.
+- [Custom Apps and Sites](https://helixresearchtech.com/services/custom-apps): portals, dashboards, integrations, marketing sites.
+
+## Who it is for
+- [Lab and research supply](https://helixresearchtech.com/industries/lab-supply)
+- [Medical supply](https://helixresearchtech.com/industries/medical-supply)
+- [B2B distributors](https://helixresearchtech.com/industries/distributors)
+
+## Pricing
+- [How pricing works](https://helixresearchtech.com/pricing): free 30 minute call, priced workflow audit credited against the build, fixed-price builds, optional monthly agent plans. No hourly, no seat fees.
+
+## Compare
+- [Chatbot vs AI agent](https://helixresearchtech.com/compare/chatbot-vs-ai-agent)
+- [Helix vs hiring](https://helixresearchtech.com/compare/helix-vs-hiring)
+- [Helix vs a freelancer](https://helixresearchtech.com/compare/helix-vs-freelancer)
+- [Helix vs DIY GoHighLevel](https://helixresearchtech.com/compare/helix-vs-diy-ghl)
+
+## Company
+- [Founders](https://helixresearchtech.com/about)
+- [Book a call](https://helixresearchtech.com/contact)
+- Email: hello@helixresearchtech.com

@@ -1,0 +1,73 @@
+[
+  {
+    "slug": "lab-supply",
+    "name": "Lab and research supply",
+    "short": "Consumables, reagents, equipment, and culture media distributors.",
+    "headline": "Your quote desk is where lab supply revenue leaks.",
+    "intro": "Lab buyers send a spec, a part number, or a photo and expect a price the same hour. Most suppliers answer the next day. The ones that answer in minutes win the order and the reorders that follow.",
+    "signals": [
+      { "signal": "Request a quote form on the site", "fix": "Quote intake, routing, and automatic follow-up so nothing sits" },
+      { "signal": "Cart or quote form but no live chat", "fix": "AI product and spec assistant that answers in the buyer's session" },
+      { "signal": "Footer copyright 2023 or older", "fix": "Site refresh with product launch pages built to rank" },
+      { "signal": "No tap-to-call on mobile", "fix": "Mobile fix plus an AI receptionist on the line" }
+    ],
+    "useCases": [
+      "Quote Desk Agent reading part numbers and specs from email and forms",
+      "Reorder reminders timed to typical consumable usage",
+      "Spec and compatibility questions answered from your catalog",
+      "Distributor and rep handoffs logged in one CRM"
+    ],
+    "faq": [
+      { "q": "Can it quote from our catalog?", "a": "Yes. We connect to your price list, catalog export, or ERP and the agent quotes from that. Anything outside the catalog gets routed to a person with the request attached." },
+      { "q": "What about special pricing and contracts?", "a": "Account-level pricing rules are part of the setup. The agent applies them or routes to approval, whichever you decide." },
+      { "q": "Our buyers are picky about specs.", "a": "The agent answers from your documentation and says so when it is not sure. It never invents a spec." }
+    ]
+  },
+  {
+    "slug": "medical-supply",
+    "name": "Medical supply",
+    "short": "Clinic, practice, and facility suppliers and distributors.",
+    "headline": "Clinics reorder from whoever answers first.",
+    "intro": "Practice managers order in the gaps between patients. If the reply is not there when they look, they reorder from the rep who texted back. An agent that answers, quotes, and confirms in minutes keeps those accounts.",
+    "signals": [
+      { "signal": "Request a quote form on the site", "fix": "Quote intake with account pricing and automatic follow-up" },
+      { "signal": "Cart but no chat", "fix": "Order and product assistant that captures the reorder" },
+      { "signal": "Old site, no mobile call button", "fix": "Refresh plus AI receptionist on the main line" },
+      { "signal": "Reps chasing reorders by hand", "fix": "Reorder Follow-up Agent with reply handling" }
+    ],
+    "useCases": [
+      "Reorder reminders based on order history",
+      "AI receptionist taking orders and booking rep calls",
+      "Quote desk for equipment and bulk orders",
+      "Account pricing applied automatically"
+    ],
+    "faq": [
+      { "q": "Do you handle patient data?", "a": "No. We build on the commercial side: quotes, orders, reorders, accounts. Patient information stays out of scope and we design the workflows that way." },
+      { "q": "Can the agent take orders by phone?", "a": "Yes. The receptionist captures the order details, confirms with the buyer, and logs it for your team to fulfill or approve." },
+      { "q": "How fast can we be live?", "a": "Receptionist in 2 to 3 weeks. Quote desk in 3 to 5. We start with one workflow, prove it, then add the next." }
+    ]
+  },
+  {
+    "slug": "distributors",
+    "name": "B2B distributors",
+    "short": "Industrial, scientific, and specialty distributors with a quote-driven sales cycle.",
+    "headline": "If you sell by quote, you win by speed.",
+    "intro": "Any distributor whose sales start with a request for pricing has the same leak: the time between request and reply. We close it with agents that quote, follow up, and answer, then hand the account to your rep warm.",
+    "signals": [
+      { "signal": "Quote form present", "fix": "Quote intake and automatic follow-up" },
+      { "signal": "No chat, no callback", "fix": "AI receptionist and product assistant" },
+      { "signal": "Spreadsheet CRM", "fix": "GoHighLevel pipelines and dashboards" },
+      { "signal": "Per-seat software costs climbing", "fix": "Custom portal you own outright" }
+    ],
+    "useCases": [
+      "Quote desk with account pricing rules",
+      "Open quote and reorder follow-up sequences",
+      "Customer reorder portal",
+      "ERP to CRM integration"
+    ],
+    "faq": [
+      { "q": "We are not in lab or medical. Does this still fit?", "a": "If quotes and reorders drive your revenue, yes. The workflows are the same, the catalog changes." },
+      { "q": "Will it work with our ERP?", "a": "We integrate with what you have through exports, APIs, or a nightly sync. We scope this on the first call." }
+    ]
+  }
+]

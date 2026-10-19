@@ -1,0 +1,106 @@
+/* =============================================================
+   DESIGN TOKENS — Edit this file to rebrand the entire site.
+   Everything else reads from these variables.
+   ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Archivo:wght@400;500;600;700&display=swap');
+
+:root {
+  /* -- BRAND IDENTITY ------------------------------------------ */
+  --club-initials: "SSC";       /* Used in crest fallback */
+  --club-est-year: "Est. 2024"; /* Shown in footer / crest */
+
+  /* -- COLOR (OKLCH — edit hue/chroma to rebrand) -------------- */
+  /* Primary: deep navy (matches crest). Shift hue 155 for forest green, 25 for crimson. */
+  --navy-900: oklch(0.18 0.06 255);
+  --navy-800: oklch(0.26 0.11 258);
+  --navy-700: oklch(0.34 0.13 258);
+  --navy-600: oklch(0.44 0.14 258);
+
+  /* Accent: championship gold (matches crest banner). */
+  --gold-600: oklch(0.76 0.16 82);
+  --gold-500: oklch(0.84 0.15 86);
+  --gold-300: oklch(0.92 0.09 88);
+
+  /* Secondary: forest green (crest laurels). Use sparingly. */
+  --forest-600: oklch(0.42 0.10 155);
+  --forest-800: oklch(0.28 0.08 155);
+
+  /* Flag: for match-day urgency, bookings, alerts. */
+  --flag-600: oklch(0.52 0.20 28);
+
+  /* Surfaces — warm cream neutrals (keeps the collegiate feel). */
+  --cream-50:  oklch(0.98 0.012 90);
+  --cream-100: oklch(0.955 0.018 85);
+  --cream-200: oklch(0.915 0.022 85);
+  --chalk-300: oklch(0.85 0.018 120);
+  --line-400:  oklch(0.80 0.015 85);
+
+  /* Ink — tinted near-black for text (cool, matches navy). */
+  --ink-900: oklch(0.18 0.04 258);
+  --ink-700: oklch(0.34 0.04 258);
+  --ink-500: oklch(0.50 0.03 258);
+
+  /* Back-compat aliases for any rule still using the old names. */
+  --pitch-900: var(--navy-900);
+  --pitch-800: var(--navy-800);
+  --pitch-700: var(--navy-700);
+  --pitch-600: var(--navy-600);
+
+  /* Semantic aliases */
+  --bg: var(--cream-50);
+  --bg-raised: var(--cream-100);
+  --bg-inset: var(--cream-200);
+  --text: var(--ink-900);
+  --text-muted: var(--ink-700);
+  --text-subtle: var(--ink-500);
+  --brand: var(--navy-800);
+  --brand-deep: var(--navy-900);
+  --accent: var(--gold-600);
+  --accent-soft: var(--gold-300);
+  --hot: var(--flag-600);
+  --rule: var(--line-400);
+
+  /* -- TYPOGRAPHY ---------------------------------------------- */
+  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --font-body: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Fluid modular scale — 1.333 ratio. Min viewport 360, max 1440. */
+  --step--1: clamp(0.83rem, 0.80rem + 0.15vw, 0.92rem);
+  --step-0:  clamp(1.00rem, 0.94rem + 0.25vw, 1.125rem);
+  --step-1:  clamp(1.25rem, 1.15rem + 0.45vw, 1.50rem);
+  --step-2:  clamp(1.67rem, 1.45rem + 0.95vw, 2.25rem);
+  --step-3:  clamp(2.22rem, 1.80rem + 1.85vw, 3.75rem);
+  --step-4:  clamp(2.96rem, 2.20rem + 3.30vw, 5.80rem);
+  --step-5:  clamp(3.95rem, 2.60rem + 5.80vw, 9.00rem);
+
+  /* -- SPACING (4pt scale, semantic names) --------------------- */
+  --space-2xs: 4px;
+  --space-xs:  8px;
+  --space-sm:  12px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 144px;
+
+  /* -- LAYOUT -------------------------------------------------- */
+  --page-max: 1280px;
+  --page-pad: clamp(20px, 4vw, 56px);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 12px;
+
+  /* -- MOTION -------------------------------------------------- */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo:  cubic-bezier(0.19, 1, 0.22, 1);
+  --dur-fast: 160ms;
+  --dur-base: 240ms;
+  --dur-slow: 420ms;
+
+  /* -- ELEVATION (rare; prefer borders + color contrast) ------- */
+  --shadow-1: 0 1px 0 oklch(0.17 0.03 155 / 0.06);
+  --shadow-2: 0 6px 24px -12px oklch(0.17 0.03 155 / 0.22);
+}

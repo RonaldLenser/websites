@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STITCHED — Bespoke Leather & Tailored Luxury</title>
+  <meta name="description" content="Made-to-order luxury leather goods and custom suits. Handcrafted for those who refuse to settle for anything less than perfect." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">STITCHED</div>
+      <div class="preloader-line"></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#" class="nav-link nav-link--sm">Atelier</a>
+        <a href="#" class="nav-link nav-link--sm">Process</a>
+      </div>
+      <a href="#" class="nav-logo">STITCHED</a>
+      <div class="nav-right">
+        <a href="#collection" class="nav-link nav-link--sm">Collection</a>
+        <a href="#order" class="nav-cta">Commission</a>
+      </div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-inner">
+        <a href="#collection" class="mobile-link" data-close>Collection</a>
+        <a href="#suits" class="mobile-link" data-close>Bespoke Suits</a>
+        <a href="#shoes" class="mobile-link" data-close>Leather Shoes</a>
+        <a href="#bags" class="mobile-link" data-close>Leather Bags</a>
+        <a href="#process" class="mobile-link" data-close>The Process</a>
+        <a href="#order" class="mobile-link mobile-link--cta" data-close>Commission a Piece</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grain"></div>
+      <div class="hero-gradient"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">
+        <span class="eyebrow-line"></span>
+        <span>Made to Order · Handcrafted · One of One</span>
+        <span class="eyebrow-line"></span>
+      </div>
+      <h1 class="hero-title reveal-up">
+        <span class="hero-title-line">Wear What</span>
+        <span class="hero-title-line hero-title-line--italic">No One</span>
+        <span class="hero-title-line">Else Can.</span>
+      </h1>
+      <p class="hero-sub reveal-up">
+        Bespoke leather shoes, custom suits &amp; made-to-order bags.<br>
+        Crafted from your vision. Built to outlast trends.
+      </p>
+      <div class="hero-actions reveal-up">
+        <a href="#order" class="btn btn--primary">Commission Your Piece</a>
+        <a href="#collection" class="btn btn--ghost">Explore Collection</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+    <!-- Floating badge -->
+    <div class="hero-badge">
+      <div class="hero-badge-text">
+        <span>Fully Custom</span>
+        <span class="badge-dot">·</span>
+        <span>Made to Order</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Strip -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Bespoke Suits</span>
+      <span class="marquee-sep">◆</span>
+      <span>Custom Leather Shoes</span>
+      <span class="marquee-sep">◆</span>
+      <span>Made-to-Order Bags</span>
+      <span class="marquee-sep">◆</span>
+      <span>Hand Stitched</span>
+      <span class="marquee-sep">◆</span>
+      <span>One of One</span>
+      <span class="marquee-sep">◆</span>
+      <span>Bespoke Suits</span>
+      <span class="marquee-sep">◆</span>
+      <span>Custom Leather Shoes</span>
+      <span class="marquee-sep">◆</span>
+      <span>Made-to-Order Bags</span>
+      <span class="marquee-sep">◆</span>
+      <span>Hand Stitched</span>
+      <span class="marquee-sep">◆</span>
+      <span>One of One</span>
+      <span class="marquee-sep">◆</span>
+    </div>
+  </div>
+
+  <!-- Philosophy Section -->
+  <section class="philosophy" id="philosophy">
+    <div class="philosophy-inner">
+      <div class="philosophy-text">
+        <div class="section-eyebrow reveal">Our Philosophy</div>
+        <h2 class="philosophy-heading reveal-up">
+          Nothing here<br>
+          <em>exists yet.</em><br>
+          Until you say so.
+        </h2>
+        <p class="philosophy-body reveal-up">
+          We don't stock shelves. We don't sell what's already been made. Every piece in our collection begins as a conversation—a sketch, a preference, a vision. Then we build it. By hand. For you. Only.
+        </p>
+        <a href="#process" class="btn btn--outline reveal-up">See How It Works</a>
+      </div>
+      <div class="philosophy-visual reveal-right">
+        <div class="philosophy-img-frame">
+          <div class="philosophy-img-bg"></div>
+          <div class="philosophy-img-overlay">
+            <div class="philosophy-stat">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Custom Built</div>
+            </div>
+          </div>
+        </div>
+        <div class="philosophy-accent-box">
+          <p>"Luxury is not about the price.<br>It's about the impossibility of replication."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection Navigation -->
+  <section class="collection-nav" id="collection">
+    <div class="collection-nav-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">The Collection</div>
+        <h2 class="section-title reveal-up">Three Pillars of<br><em>Bespoke Luxury</em></h2>
+      </div>
+      <div class="collection-grid">
+
+        <!-- Suits -->
+        <div class="collection-card reveal-up" data-delay="0">
+          <a href="#suits" class="collection-card-inner">
+            <div class="collection-card-img">
+              <div class="collection-card-bg collection-card-bg--suits"></div>
+              <div class="collection-card-overlay">
+                <div class="card-hover-detail">
+                  <span>From $3,800</span>
+                </div>
+              </div>
+            </div>
+            <div class="collection-card-body">
+              <div class="card-num">01</div>
+              <h3 class="card-title">Bespoke Suits</h3>
+              <p class="card-sub">Tailored to your exact measurements. Cut from the world's finest wools, linens, and silks.</p>
+              <div class="card-arrow">→</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Shoes -->
+        <div class="collection-card reveal-up" data-delay="150">
+          <a href="#shoes" class="collection-card-inner">
+            <div class="collection-card-img">
+              <div class="collection-card-bg collection-card-bg--shoes"></div>
+              <div class="collection-card-overlay">
+                <div class="card-hover-detail">
+                  <span>From $1,200</span>
+                </div>
+              </div>
+            </div>
+            <div class="collection-card-body">
+              <div class="card-num">02</div>
+              <h3 class="card-title">Leather Shoes</h3>
+              <p class="card-sub">Goodyear-welted, hand-lasted, built to your exact last. Men's styles: boots, loafers, oxfords, monk straps.</p>
+              <div class="card-arrow">→</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Bags -->
+        <div class="collection-card reveal-up" data-delay="300">
+          <a href="#bags" class="collection-card-inner">
+            <div class="collection-card-img">
+              <div class="collection-card-bg collection-card-bg--bags"></div>
+              <div class="collection-card-overlay">
+                <div class="card-hover-detail">
+                  <span>From $950</span>
+                </div>
+              </div>
+            </div>
+            <div class="collection-card-body">
+              <div class="card-num">03</div>
+              <h3 class="card-title">Leather Bags</h3>
+              <p class="card-sub">Every stitch, every strap, every compartment—specified by you. Tote, messenger, briefcase, duffel.</p>
+              <div class="card-arrow">→</div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Suits Deep Dive -->
+  <section class="product-feature" id="suits">
+    <div class="product-feature-inner product-feature-inner--left">
+      <div class="product-feature-visual">
+        <div class="feature-img feature-img--suits"></div>
+        <div class="feature-img-accent">
+          <div class="accent-label">Bespoke Suiting</div>
+          <div class="accent-price">From $3,800</div>
+        </div>
+      </div>
+      <div class="product-feature-content reveal-up">
+        <div class="section-eyebrow">01 — Bespoke Suits</div>
+        <h2 class="feature-title">A Suit That<br><em>Fits Only You.</em><br>By Design.</h2>
+        <p class="feature-body">
+          Off-the-rack is dead. Our bespoke suiting process starts with your measurements, your lifestyle, and your vision. We source premium fabrics — Italian wool, Loro Piana blends, Japanese selvedge linings — and build from scratch. Every seam placed. Every button hole hand-stitched.
+        </p>
+        <ul class="feature-list">
+          <li>Full canvas construction (not fused)</li>
+          <li>16+ measurement points taken</li>
+          <li>Multiple fitting rounds until perfect</li>
+          <li>Italian & British mill fabrics available</li>
+          <li>Custom monogram included</li>
+        </ul>
+        <a href="#order" class="btn btn--primary">Commission a Suit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shoes Deep Dive -->
+  <section class="product-feature product-feature--dark" id="shoes">
+    <div class="product-feature-inner product-feature-inner--right">
+      <div class="product-feature-content reveal-up">
+        <div class="section-eyebrow">02 — Leather Shoes</div>
+        <h2 class="feature-title">Shoes Molded<br><em>To Your Foot.</em><br>No One Else's.</h2>
+        <p class="feature-body">
+          Your feet are asymmetrical. Mass-produced shoes aren't built for that. Ours are. We craft each pair on a custom last — hand-lasted, Goodyear-welted, with full leather soles. Choose your leather, your color, your sole, your hardware.
+        </p>
+        <div class="shoe-styles">
+          <div class="shoe-style-pill">Chelsea Boot</div>
+          <div class="shoe-style-pill">Oxford</div>
+          <div class="shoe-style-pill">Monk Strap</div>
+          <div class="shoe-style-pill">Loafer</div>
+          <div class="shoe-style-pill">Derby</div>
+          <div class="shoe-style-pill">Jodhpur Boot</div>
+        </div>
+        <a href="#order" class="btn btn--primary">Design Your Shoes</a>
+      </div>
+      <div class="product-feature-visual">
+        <div class="feature-img feature-img--shoes"></div>
+        <div class="feature-img-accent feature-img-accent--right">
+          <div class="accent-label">Men's Leather Shoes</div>
+          <div class="accent-price">From $1,200</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bags Deep Dive -->
+  <section class="product-feature" id="bags">
+    <div class="product-feature-inner product-feature-inner--left">
+      <div class="product-feature-visual">
+        <div class="feature-img feature-img--bags"></div>
+        <div class="feature-img-accent">
+          <div class="accent-label">Made-to-Order Bags</div>
+          <div class="accent-price">From $950</div>
+        </div>
+      </div>
+      <div class="product-feature-content reveal-up">
+        <div class="section-eyebrow">03 — Leather Bags</div>
+        <h2 class="feature-title">Built for<br><em>Your Life.</em><br>Not the Mass Market.</h2>
+        <p class="feature-body">
+          Every bag begins with purpose. What do you carry? Where do you go? What do you want to say when you walk into a room? We design around your answers — full-grain leather, hand-burnished edges, solid brass hardware. Briefcases, totes, messengers, duffels. All fully custom.
+        </p>
+        <ul class="feature-list">
+          <li>Full-grain & exotic leather options</li>
+          <li>Custom interior layouts available</li>
+          <li>Solid brass or antique hardware</li>
+          <li>Hand-burnished edges on every piece</li>
+          <li>Personalized monogram or deboss</li>
+        </ul>
+        <a href="#order" class="btn btn--primary">Commission a Bag</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process" id="process">
+    <div class="process-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">The Process</div>
+        <h2 class="section-title reveal-up">How Your Piece<br><em>Comes to Life</em></h2>
+        <p class="section-sub reveal-up">Every commission follows our four-stage atelier process.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal-up" data-delay="0">
+          <div class="step-num">01</div>
+          <div class="step-line"></div>
+          <div class="step-body">
+            <h3 class="step-title">Commission</h3>
+            <p class="step-desc">Submit your commission request. We'll respond within 48 hours to schedule your design consultation — in person or virtual.</p>
+          </div>
+        </div>
+        <div class="process-step reveal-up" data-delay="150">
+          <div class="step-num">02</div>
+          <div class="step-line"></div>
+          <div class="step-body">
+            <h3 class="step-title">Design</h3>
+            <p class="step-desc">We take your measurements, gather your preferences, and co-design your piece. You approve the spec sheet before a single cut is made.</p>
+          </div>
+        </div>
+        <div class="process-step reveal-up" data-delay="300">
+          <div class="step-num">03</div>
+          <div class="step-line"></div>
+          <div class="step-body">
+            <h3 class="step-title">Craft</h3>
+            <p class="step-desc">Our artisans build your piece by hand. For suits: multiple fittings. For shoes and bags: material previews before final construction.</p>
+          </div>
+        </div>
+        <div class="process-step reveal-up" data-delay="450">
+          <div class="step-num">04</div>
+          <div class="step-line"></div>
+          <div class="step-body">
+            <h3 class="step-title">Deliver</h3>
+            <p class="step-desc">Your finished piece arrives packaged as it deserves — in a STITCHED dust bag, tissue, and keepsake box. Yours. Permanently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials Section -->
+  <section class="materials">
+    <div class="materials-inner">
+      <div class="materials-text reveal-up">
+        <div class="section-eyebrow">Materials</div>
+        <h2 class="materials-title">Only the<br><em>World's Finest</em><br>Make the Cut.</h2>
+        <p class="materials-body">We source from the same tanneries and mills that supply the houses that charge ten times our price. The difference is we pass the access — not the markup — to you.</p>
+      </div>
+      <div class="materials-grid">
+        <div class="material-card reveal-up" data-delay="0">
+          <div class="material-icon">◆</div>
+          <h4>Full-Grain Leather</h4>
+          <p>The strongest, most durable cut of hide. Develops a patina with age. Only gets better.</p>
+        </div>
+        <div class="material-card reveal-up" data-delay="100">
+          <div class="material-icon">◆</div>
+          <h4>Italian Mill Wools</h4>
+          <p>Loro Piana, Zegna, Scabal. The fabrics that define global suiting at the highest level.</p>
+        </div>
+        <div class="material-card reveal-up" data-delay="200">
+          <div class="material-icon">◆</div>
+          <h4>Solid Brass Hardware</h4>
+          <p>No zinc. No pot metal. Every buckle, zipper pull, and stud is solid brass or antique bronze.</p>
+        </div>
+        <div class="material-card reveal-up" data-delay="300">
+          <div class="material-icon">◆</div>
+          <h4>Goodyear Welt</h4>
+          <p>The gold standard of shoe construction. Resoleable, weather-resistant, built to last decades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commission CTA -->
+  <section class="commission-cta" id="order">
+    <div class="commission-cta-inner">
+      <div class="cta-bg-elements">
+        <div class="cta-circle cta-circle--1"></div>
+        <div class="cta-circle cta-circle--2"></div>
+      </div>
+      <div class="cta-content reveal-up">
+        <div class="section-eyebrow">Ready to Begin?</div>
+        <h2 class="cta-title">Commission Your<br><em>One-of-One</em><br>Piece Today.</h2>
+        <p class="cta-body">Tell us what you want. We'll make it happen. No inventory. No compromises. No off-the-shelf anything. Just yours.</p>
+        <div class="commission-form-wrap">
+          <form class="commission-form" id="commissionForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name">Full Name</label>
+                <input type="text" id="f-name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="f-email">Email Address</label>
+                <input type="email" id="f-email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-phone">Phone (Optional)</label>
+                <input type="tel" id="f-phone" name="phone" placeholder="+1 (000) 000-0000" />
+              </div>
+              <div class="form-group">
+                <label for="f-type">Commission Type</label>
+                <select id="f-type" name="type" required>
+                  <option value="" disabled selected>Select a category</option>
+                  <option value="suit">Bespoke Suit</option>
+                  <option value="shoes">Custom Leather Shoes</option>
+                  <option value="bag">Made-to-Order Bag</option>
+                  <option value="full">Full Look (Suit + Shoes)</option>
+                  <option value="other">Something Else</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group form-group--full">
+              <label for="f-vision">Describe Your Vision</label>
+              <textarea id="f-vision" name="vision" rows="4" placeholder="Tell us about the piece you have in mind — occasion, style, colors, materials, anything that matters to you..." required></textarea>
+            </div>
+            <div class="form-row form-row--actions">
+              <div class="form-note">We respond within 48 hours. Commission slots are limited.</div>
+              <button type="submit" class="btn btn--primary btn--lg">Submit Commission →</button>
+            </div>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✓</div>
+            <h3>Commission Received.</h3>
+            <p>We'll be in touch within 48 hours to begin your design consultation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">STITCHED</div>
+          <p class="footer-tagline">Bespoke leather goods & custom suits.<br>Made to order. Made for you. Made once.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/stitched_leather" target="_blank" rel="noopener" class="social-link">Instagram</a>
+            <a href="https://m.facebook.com/people/Stitched-Leather/100092277789369/" target="_blank" rel="noopener" class="social-link">Facebook</a>
+            <a href="https://www.tiktok.com/@stitchedleather" target="_blank" rel="noopener" class="social-link">TikTok</a>
+          </div>
+        </div>
+        <div class="footer-nav-cols">
+          <div class="footer-col">
+            <div class="footer-col-title">Collection</div>
+            <a href="#suits">Bespoke Suits</a>
+            <a href="#shoes">Leather Shoes</a>
+            <a href="#bags">Leather Bags</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Atelier</div>
+            <a href="#process">The Process</a>
+            <a href="#order">Commission</a>
+            <a href="https://www.instagram.com/stitched_leather" target="_blank">Custom Gallery</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Info</div>
+            <a href="https://stitchedleather.com/pages/faq">FAQs</a>
+            <a href="https://stitchedleather.com/pages/care">Product Care</a>
+            <a href="https://stitchedleather.com/pages/contact">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">© 2025 STITCHED. All rights reserved. Made to order. One of one.</div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

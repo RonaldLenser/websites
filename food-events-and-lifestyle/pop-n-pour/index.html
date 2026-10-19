@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop N' Pour & Ace of Spirits | Premium Mobile Bartending</title>
+    <meta name="description" content="Pop N' Pour for lit parties & casual events. Ace of Spirits for elegant weddings & private affairs. Premium mobile bartending — we travel to you.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-champagne">
+                <div class="bubble b1"></div>
+                <div class="bubble b2"></div>
+                <div class="bubble b3"></div>
+                <div class="bubble b4"></div>
+                <div class="bubble b5"></div>
+            </div>
+            <span class="preloader-text">PNP</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="nav-logo-pnp">PNP</span>
+                <span class="nav-logo-divider">&</span>
+                <span class="nav-logo-aos">AoS</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#pnp" class="nav-link">Pop N' Pour</a>
+                <a href="#aos" class="nav-link">Ace of Spirits</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#contact" class="nav-link nav-link-cta">Book Now</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-bg"></div>
+        <div class="mobile-menu-content">
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#pnp" class="mobile-link">Pop N' Pour</a>
+            <a href="#aos" class="mobile-link">Ace of Spirits</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#gallery" class="mobile-link">Gallery</a>
+            <a href="#contact" class="mobile-link mobile-link-cta">Book Now</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient-1"></div>
+            <div class="hero-gradient-2"></div>
+            <div class="hero-sparkles" id="heroSparkles"></div>
+            <div class="hero-grain"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-logo-wrapper reveal">
+                <img src="popnpour.png" alt="Pop N' Pour Logo" class="hero-logo-img">
+            </div>
+            <div class="hero-text">
+                <div class="hero-tagline reveal reveal-delay-1">
+                    <span class="hero-tag-line"></span>
+                    <span class="hero-tag-text">Premium Mobile Bartending</span>
+                    <span class="hero-tag-line"></span>
+                </div>
+                <h1 class="hero-title reveal reveal-delay-2">
+                    <span class="hero-title-line">We Bring The</span>
+                    <span class="hero-title-line hero-title-accent">Party To You</span>
+                </h1>
+                <p class="hero-sub reveal reveal-delay-3">From lit birthday bashes to elegant wedding receptions — we pour perfection for every occasion.</p>
+                <div class="hero-ctas reveal reveal-delay-4">
+                    <a href="#pnp" class="btn btn-primary">
+                        <span>Pop N' Pour</span>
+                        <span class="btn-sub">Casual & Lit Events</span>
+                    </a>
+                    <a href="#aos" class="btn btn-secondary">
+                        <span>Ace of Spirits</span>
+                        <span class="btn-sub">Elegant & Formal</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="hero-scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-inner">
+            <div class="section-header reveal">
+                <span class="section-tag">Who We Are</span>
+                <h2 class="section-title">Two Brands.<br><span class="accent">One Mission.</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card reveal reveal-delay-1">
+                    <div class="about-card-icon">🥂</div>
+                    <h3>Pop N' Pour</h3>
+                    <p>The life of the party. PNP is your go-to for birthday bashes, girls' nights, casual kickbacks, and any event where the vibe needs to be <strong>lit</strong>. We bring the bar, the energy, and the drinks that keep the night going.</p>
+                </div>
+                <div class="about-card about-card-dark reveal reveal-delay-2">
+                    <div class="about-card-icon">🍸</div>
+                    <h3>Ace of Spirits</h3>
+                    <p>Refined. Elegant. Unforgettable. Ace of Spirits is our premium service for weddings, corporate events, private dinners, and any occasion that calls for a <strong>sophisticated</strong> bar experience with white-glove service.</p>
+                </div>
+            </div>
+            <div class="about-bottom reveal reveal-delay-3">
+                <p class="about-bottom-text">Whether you want the party turned up or the glasses raised — we've got you covered.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pop N' Pour Section -->
+    <section class="brand-section pnp-section" id="pnp">
+        <div class="brand-bg pnp-bg">
+            <div class="brand-gradient"></div>
+            <div class="brand-pattern"></div>
+        </div>
+        <div class="brand-inner">
+            <div class="brand-header">
+                <span class="brand-tag reveal">The Lit Side</span>
+                <h2 class="brand-title reveal reveal-delay-1">Pop N' Pour</h2>
+                <p class="brand-subtitle reveal reveal-delay-2">Casual · Lit · Bday Parties · Mobile Bar</p>
+            </div>
+            <div class="brand-features">
+                <div class="feature-card reveal">
+                    <div class="feature-number">01</div>
+                    <h4>Birthday Bashes</h4>
+                    <p>Custom cocktail menus, themed setups, and bartenders who match your energy. Your birthday, your rules.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-number">02</div>
+                    <h4>Girls' Night Out</h4>
+                    <p>Signature cocktails, champagne towers, and that perfect backdrop. We make it Instagram-worthy.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-number">03</div>
+                    <h4>House Parties & Kickbacks</h4>
+                    <p>Full mobile bar setup at your spot. No more running to the store — we bring everything to you.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-number">04</div>
+                    <h4>Pop-Up Events</h4>
+                    <p>Festivals, block parties, brand launches — we pull up and pour up wherever the crowd is.</p>
+                </div>
+            </div>
+            <div class="brand-cta reveal">
+                <a href="#contact" class="btn btn-primary btn-large">Book Pop N' Pour</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ace of Spirits Section -->
+    <section class="brand-section aos-section" id="aos">
+        <div class="brand-bg aos-bg">
+            <div class="brand-gradient"></div>
+            <div class="brand-pattern"></div>
+        </div>
+        <div class="brand-inner">
+            <div class="brand-header">
+                <span class="brand-tag reveal">The Elegant Side</span>
+                <h2 class="brand-title aos-title reveal reveal-delay-1">Ace of Spirits</h2>
+                <p class="brand-subtitle reveal reveal-delay-2">Weddings · Private Events · Corporate · Formal</p>
+            </div>
+            <div class="brand-features">
+                <div class="feature-card aos-card reveal">
+                    <div class="feature-number">01</div>
+                    <h4>Weddings</h4>
+                    <p>Full-service bar with craft cocktails tailored to your special day. Elegant setup, professional staff, flawless execution.</p>
+                </div>
+                <div class="feature-card aos-card reveal reveal-delay-1">
+                    <div class="feature-number">02</div>
+                    <h4>Corporate Events</h4>
+                    <p>Impress clients and colleagues with a premium open bar experience. Sophisticated, seamless, on-brand.</p>
+                </div>
+                <div class="feature-card aos-card reveal reveal-delay-2">
+                    <div class="feature-number">03</div>
+                    <h4>Private Dinners</h4>
+                    <p>Intimate cocktail pairings curated for your menu. A personal bartender for your exclusive gathering.</p>
+                </div>
+                <div class="feature-card aos-card reveal reveal-delay-3">
+                    <div class="feature-number">04</div>
+                    <h4>Galas & Fundraisers</h4>
+                    <p>White-glove service that matches the caliber of your event. Premium spirits, flawless presentation.</p>
+                </div>
+            </div>
+            <div class="brand-cta reveal">
+                <a href="#contact" class="btn btn-gold btn-large">Book Ace of Spirits</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / How It Works -->
+    <section class="services" id="services">
+        <div class="services-inner">
+            <div class="section-header reveal">
+                <span class="section-tag">How It Works</span>
+                <h2 class="section-title">Booking Is <span class="accent">Easy</span></h2>
+            </div>
+            <div class="steps">
+                <div class="step reveal">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Tell Us About Your Event</h4>
+                        <p>Fill out our quick booking form with your date, guest count, event type, and vibe. We'll match you with the right brand — PNP or Ace of Spirits.</p>
+                    </div>
+                </div>
+                <div class="step-connector reveal"></div>
+                <div class="step reveal reveal-delay-1">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Get Your Custom Quote</h4>
+                        <p>We'll put together a tailored package with a drink menu, setup details, and pricing — all personalized to your event.</p>
+                    </div>
+                </div>
+                <div class="step-connector reveal"></div>
+                <div class="step reveal reveal-delay-2">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>We Pull Up & Pour Up</h4>
+                        <p>Our team arrives early, sets up a gorgeous bar, and handles everything. You just enjoy your event — we handle the drinks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included">
+        <div class="included-inner">
+            <div class="section-header reveal">
+                <span class="section-tag">What You Get</span>
+                <h2 class="section-title">Every Booking <span class="accent">Includes</span></h2>
+            </div>
+            <div class="included-grid">
+                <div class="included-item reveal">
+                    <div class="included-icon">🍹</div>
+                    <span>Custom Cocktail Menu</span>
+                </div>
+                <div class="included-item reveal reveal-delay-1">
+                    <div class="included-icon">🧊</div>
+                    <span>All Mixers, Garnishes & Ice</span>
+                </div>
+                <div class="included-item reveal reveal-delay-2">
+                    <div class="included-icon">🪩</div>
+                    <span>Full Bar Setup & Breakdown</span>
+                </div>
+                <div class="included-item reveal reveal-delay-3">
+                    <div class="included-icon">👩‍🍳</div>
+                    <span>Professional Bartender(s)</span>
+                </div>
+                <div class="included-item reveal">
+                    <div class="included-icon">🥤</div>
+                    <span>Cups, Napkins & Barware</span>
+                </div>
+                <div class="included-item reveal reveal-delay-1">
+                    <div class="included-icon">✨</div>
+                    <span>Themed Decor Options</span>
+                </div>
+                <div class="included-item reveal reveal-delay-2">
+                    <div class="included-icon">📋</div>
+                    <span>Event Consultation</span>
+                </div>
+                <div class="included-item reveal reveal-delay-3">
+                    <div class="included-icon">🚗</div>
+                    <span>Mobile Setup Anywhere</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery / Mood Section -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-inner">
+            <div class="section-header reveal">
+                <span class="section-tag">The Vibe</span>
+                <h2 class="section-title">Set The <span class="accent">Mood</span></h2>
+            </div>
+            <div class="mood-cards">
+                <div class="mood-card mood-card-1 reveal">
+                    <div class="mood-card-content">
+                        <span class="mood-emoji">🎂</span>
+                        <h4>Birthday Energy</h4>
+                        <p>Turn up with custom cocktails and a bar that matches your theme.</p>
+                    </div>
+                </div>
+                <div class="mood-card mood-card-2 reveal reveal-delay-1">
+                    <div class="mood-card-content">
+                        <span class="mood-emoji">💒</span>
+                        <h4>Wedding Elegance</h4>
+                        <p>Craft cocktails and premium service for your most memorable day.</p>
+                    </div>
+                </div>
+                <div class="mood-card mood-card-3 reveal reveal-delay-2">
+                    <div class="mood-card-content">
+                        <span class="mood-emoji">🎉</span>
+                        <h4>Party Mode</h4>
+                        <p>House parties, kickbacks, block parties — we bring the bar to you.</p>
+                    </div>
+                </div>
+                <div class="mood-card mood-card-4 reveal reveal-delay-3">
+                    <div class="mood-card-content">
+                        <span class="mood-emoji">🥂</span>
+                        <h4>VIP Experience</h4>
+                        <p>Private events with white-glove service and premium spirits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel / Service Area -->
+    <section class="area">
+        <div class="area-inner">
+            <div class="area-content reveal">
+                <span class="section-tag">Mobile</span>
+                <h2 class="section-title">We Travel <span class="accent">To You</span></h2>
+                <p class="area-text">We're a fully mobile bartending service — we bring the whole bar setup, the drinks, and the energy straight to your location. Wherever your event is, we pull up and pour up. Just tell us where and when.</p>
+                <a href="#contact" class="btn btn-primary">Check Availability</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Booking -->
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <div class="section-header reveal">
+                <span class="section-tag">Let's Go</span>
+                <h2 class="section-title">Book Your <span class="accent">Event</span></h2>
+                <p class="contact-sub">Fill out the form and we'll get back to you within 24 hours with a custom quote.</p>
+            </div>
+            <div class="contact-form-wrapper reveal reveal-delay-1">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Event Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guests">Estimated Guests</label>
+                            <input type="number" id="guests" name="guests" placeholder="e.g. 50" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brand">Which Brand?</label>
+                            <select id="brand" name="brand" required>
+                                <option value="" disabled selected>Select one</option>
+                                <option value="pnp">Pop N' Pour — Casual & Lit</option>
+                                <option value="aos">Ace of Spirits — Elegant & Formal</option>
+                                <option value="unsure">Not Sure Yet</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="eventType">Type of Event</label>
+                        <input type="text" id="eventType" name="eventType" placeholder="Birthday, Wedding, House Party, Corporate, etc.">
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="details">Tell Us More</label>
+                        <textarea id="details" name="details" rows="4" placeholder="Any special requests, themes, drink preferences, or questions?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large btn-full">
+                        <span>Send Booking Request</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logos">
+                        <span class="footer-pnp">Pop N' Pour</span>
+                        <span class="footer-amp">&</span>
+                        <span class="footer-aos">Ace of Spirits</span>
+                    </div>
+                    <p class="footer-tagline">Premium Mobile Bartending<br>We Travel To You</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#pnp">Pop N' Pour</a>
+                    <a href="#aos">Ace of Spirits</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Book Now</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="TikTok">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.69a8.28 8.28 0 004.76 1.5V6.75a4.83 4.83 0 01-1-.06z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pop N' Pour & Ace of Spirits. All Rights Reserved.</p>
+                <p class="footer-credit">Website by <a href="https://www.ronlenserdigital.com" target="_blank" rel="noopener">Ron Lenser Digital</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

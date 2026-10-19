@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HEIM — Stitch by stitch.</title>
+  <meta name="description" content="HEIM. Rooted in silence. Built to last. A streetwear studio crafted with intention. First capsule loading." />
+
+  <!-- Social / link preview (replace image path once you have a real OG asset) -->
+  <meta property="og:title" content="HEIM — Stitch by stitch." />
+  <meta property="og:description" content="Rooted in silence. Built to last. First capsule loading." />
+  <meta property="og:type" content="website" />
+  <!-- <meta property="og:image" content="assets/og-heim.jpg" /> -->
+
+  <!-- Fonts: Cormorant Garamond (display serif) + Jost (spaced sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Film grain overlay (purely decorative) -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Thin red frame, echoing the poster -->
+  <div class="frame" aria-hidden="true"></div>
+
+  <!-- ============ MINIMAL TOP BAR (intentionally light, not navbar-heavy) ============ -->
+  <header class="topbar">
+    <a href="#top" class="topbar__mark" aria-label="HEIM home">HEIM</a>
+    <a href="#inquiry" class="topbar__link">Inquire</a>
+  </header>
+
+  <main id="top">
+
+    <!-- ====================== 1. HERO ====================== -->
+    <section class="hero" id="hero">
+      <!-- vertical microcopy, left & right (matches reference poster) -->
+      <span class="vtext vtext--left" aria-hidden="true">Crafted with intention.</span>
+      <span class="vtext vtext--right" aria-hidden="true">Quality. Purpose. Identity.</span>
+
+      <div class="hero__inner">
+        <p class="eyebrow reveal" data-delay="1">First capsule loading</p>
+        <h1 class="hero__title reveal" data-delay="2">HEIM</h1>
+        <p class="hero__tagline reveal" data-delay="3">Stitch by stitch.</p>
+        <p class="hero__statement reveal" data-delay="4">Rooted in silence. Built to last.</p>
+
+        <div class="hero__actions reveal" data-delay="5">
+          <a href="#inquiry" class="btn btn--solid">Inquire</a>
+          <a href="#studio" class="btn btn--ghost">Enter the studio</a>
+        </div>
+      </div>
+
+      <div class="hero__foot reveal" data-delay="6">
+        <span>Est. 2024</span>
+        <span class="hero__foot-dot" aria-hidden="true"></span>
+        <span>HEIM Apparel</span>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="scroll-cue__line"></span>
+      </div>
+    </section>
+
+    <!-- ====================== 2. BRAND CONCEPT / THE STUDIO ====================== -->
+    <section class="studio" id="studio">
+      <p class="section-label reveal">01 — The Studio</p>
+      <div class="studio__lines">
+        <p class="studio__line reveal">Not rushed.</p>
+        <p class="studio__line reveal">Not random.</p>
+        <p class="studio__line studio__line--muted reveal">Every piece begins as a blank.<br />What we add, we mean.</p>
+      </div>
+      <p class="studio__seal reveal">Identity in every thread.</p>
+    </section>
+
+    <!-- ====================== 3. CAPSULE PREVIEW (no fake products) ====================== -->
+    <section class="capsule" id="capsule">
+      <header class="capsule__head">
+        <p class="section-label reveal">02 — First Capsule</p>
+        <h2 class="capsule__title reveal">In development.</h2>
+      </header>
+
+      <div class="capsule__grid">
+
+        <!-- CARD 01 -->
+        <article class="card reveal">
+          <!-- To add real imagery later: drop a photo inside .card__media (e.g. <img src="assets/essentials.jpg" alt="">) and remove the .card__media--placeholder class -->
+          <div class="card__media card__media--placeholder" aria-hidden="true">
+            <span class="card__index">01</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">Embroidered Essentials</h3>
+            <p class="card__desc">Heavyweight blanks carrying the red mark. The foundation, nothing more.</p>
+            <span class="status">In development</span>
+          </div>
+        </article>
+
+        <!-- CARD 02 -->
+        <article class="card reveal">
+          <div class="card__media card__media--placeholder" aria-hidden="true">
+            <span class="card__index">02</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">Studio Cut Pieces</h3>
+            <p class="card__desc">Reworked silhouettes. Distressed by hand, finished with intent.</p>
+            <span class="status">Coming soon</span>
+          </div>
+        </article>
+
+        <!-- CARD 03 -->
+        <article class="card reveal">
+          <div class="card__media card__media--placeholder" aria-hidden="true">
+            <span class="card__index">03</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">Limited Capsule</h3>
+            <p class="card__desc">Numbered. Few. Gone once they are gone.</p>
+            <span class="status">Coming soon</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ====================== 4. VISUAL IDENTITY / MANIFESTO ====================== -->
+    <section class="details" id="details">
+      <div class="details__left">
+        <p class="section-label reveal">03 — The Details</p>
+        <p class="manifesto reveal">
+          We do not print on fabric. We stitch into it.
+          Heavy blanks, contrast thread, and a single red mark
+          that says everything without saying much at all.
+        </p>
+        <p class="manifesto manifesto--small reveal">
+          Minimal branding. Maximum intention. The kind of piece
+          you keep, not the kind you replace.
+        </p>
+      </div>
+
+      <div class="details__right">
+        <!-- ===== HM MONOGRAM =====
+             Placeholder inline SVG below approximates the HEIM mark so the page looks
+             complete out of the box. Replace the entire <svg> with your real logo,
+             e.g.  <img src="assets/heim-monogram.svg" alt="HEIM monogram" class="monogram" />
+        -->
+        <div class="monogram reveal" aria-label="HEIM monogram">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img">
+            <text x="62" y="150" class="mono-letter" text-anchor="middle">H</text>
+            <text x="128" y="158" class="mono-letter" text-anchor="middle">M</text>
+            <line x1="40" y1="100" x2="160" y2="100" class="mono-rule" />
+            <text x="100" y="104" class="mono-word" text-anchor="middle">HEIM</text>
+          </svg>
+        </div>
+
+        <ul class="details__list reveal">
+          <li>Embroidered, never printed</li>
+          <li>Heavyweight blanks</li>
+          <li>Contrast stitching</li>
+          <li>Minimal branding</li>
+          <li>The red mark</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====================== 5. INQUIRY (Web3Forms) ====================== -->
+    <section class="inquiry" id="inquiry">
+      <header class="inquiry__head">
+        <p class="section-label reveal">04 — Inquire</p>
+        <h2 class="inquiry__title reveal">Speak to the studio.</h2>
+        <p class="inquiry__sub reveal">Wholesale, collaboration, press, or a custom order. Real inquiries only.</p>
+      </header>
+
+      <form id="heim-form" class="form reveal" novalidate>
+        <!-- ===== REPLACE WITH YOUR REAL WEB3FORMS ACCESS KEY ===== -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <!-- Subject line that lands in your inbox -->
+        <input type="hidden" name="subject" value="New HEIM Website Inquiry" />
+        <input type="hidden" name="from_name" value="HEIM Website" />
+
+        <!-- Honeypot: real users never fill this; bots do -->
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <div class="form__row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="type">Inquiry type</label>
+          <div class="select-wrap">
+            <select id="type" name="inquiry_type" required>
+              <option value="" disabled selected>Select one</option>
+              <option>General Inquiry</option>
+              <option>Wholesale</option>
+              <option>Collaboration</option>
+              <option>Press</option>
+              <option>Custom Order</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--solid form__submit">
+          <span class="form__submit-text">Send inquiry</span>
+        </button>
+
+        <p id="form-status" class="form__status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ====================== 6. FOOTER ====================== -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__mark">HEIM</span>
+        <span class="footer__tag">Stitch by stitch.</span>
+      </div>
+      <nav class="footer__links" aria-label="HEIM links">
+        <!-- REPLACE href with your real Instagram URL -->
+        <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <!-- REPLACE with your real contact email -->
+        <a href="mailto:hello@heim.worldwide">hello@heim.worldwide</a>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <span class="barcode" aria-hidden="true"></span>
+      <span class="footer__est">Est. 2024 — HEIM Apparel</span>
+      <span class="footer__legal">© <span id="year"></span> HEIM. All rights reserved.</span>
+    </div>
+  
+<div style="text-align:center;padding:16px 0 4px;font-size:12px;opacity:.55;letter-spacing:.03em;"><a href="https://ronlenserdigital.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Website by Ron Lenser Digital</a></div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

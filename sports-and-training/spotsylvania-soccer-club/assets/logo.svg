@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Spotsylvania Soccer Club crest">
+  <defs>
+    <clipPath id="crestClip">
+      <path d="M50 4 L92 18 V48 C92 72 74 90 50 96 C26 90 8 72 8 48 V18 Z"/>
+    </clipPath>
+  </defs>
+  <!-- Shield -->
+  <path d="M50 4 L92 18 V48 C92 72 74 90 50 96 C26 90 8 72 8 48 V18 Z"
+        fill="currentColor" />
+  <g clip-path="url(#crestClip)">
+    <!-- Horizontal band -->
+    <rect x="0" y="56" width="100" height="10" fill="#d9a53a" />
+    <!-- Eagle silhouette (abstracted) -->
+    <path d="M50 20
+             C42 22 36 26 34 32
+             C32 30 28 29 26 32
+             C28 34 30 37 34 38
+             C32 40 31 44 34 46
+             C37 44 41 44 44 46
+             L44 54
+             L38 54
+             L50 62
+             L62 54
+             L56 54
+             L56 46
+             C59 44 63 44 66 46
+             C69 44 68 40 66 38
+             C70 37 72 34 74 32
+             C72 29 68 30 66 32
+             C64 26 58 22 50 20 Z"
+          fill="#f5f1e8" />
+    <!-- Soccer ball -->
+    <circle cx="50" cy="78" r="8" fill="#f5f1e8" />
+    <path d="M50 70 L52 74 L50 76 L48 74 Z M50 86 L48 82 L50 80 L52 82 Z
+             M42 78 L46 76 L48 78 L46 80 Z M58 78 L54 80 L52 78 L54 76 Z"
+          fill="currentColor" opacity="0.85"/>
+  </g>
+  <!-- Border stroke -->
+  <path d="M50 4 L92 18 V48 C92 72 74 90 50 96 C26 90 8 72 8 48 V18 Z"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+</svg>

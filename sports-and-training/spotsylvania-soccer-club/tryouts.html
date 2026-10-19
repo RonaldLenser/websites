@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tryouts — Spotsylvania Soccer Club</title>
+  <meta name="description" content="2026–27 travel soccer tryouts for boys and girls at Spotsylvania SC." />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .tryout-table { width: 100%; border-collapse: collapse; }
+    .tryout-table th, .tryout-table td { padding: 16px; border-bottom: 1px solid var(--rule); text-align: left; }
+    .tryout-table th { font-family: var(--font-body); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-subtle); }
+    .tryout-table td { font-variant-numeric: tabular-nums; }
+    .steps { display: grid; gap: var(--space-2xl); grid-template-columns: 1fr; }
+    @media (min-width: 720px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step__num { font-family: var(--font-display); font-weight: 900; font-size: var(--step-4); line-height: 0.85; color: var(--accent); letter-spacing: -0.03em; }
+    .step h3 { margin-top: var(--space-md); font-size: var(--step-1); }
+    .step p { margin-top: var(--space-sm); color: var(--text-muted); }
+    .faq summary { font-family: var(--font-display); font-weight: 700; font-size: var(--step-1); line-height: 1.2; padding: var(--space-lg) 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: var(--space-md); }
+    .faq summary::after { content: "+"; font-weight: 400; color: var(--brand); transition: transform var(--dur-fast); }
+    .faq[open] summary::after { transform: rotate(45deg); }
+    .faq { border-bottom: 1px solid var(--rule); }
+    .faq p { padding-bottom: var(--space-lg); color: var(--text-muted); max-width: 70ch; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="page">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="nav__brand">
+          <img src="assets/logo.png" alt="Spotsylvania Soccer Club crest" class="crest" />
+          <span class="nav__brand-text">Spotsylvania SC<small>Est. 2024 · VA</small></span>
+        </a>
+        <ul class="nav__links">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="teams.html">Teams</a></li>
+          <li><a class="nav__link" href="coaches.html">Coaches</a></li>
+          <li><a class="nav__link" href="schedule.html">Schedule</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav__cta-group">
+          <a class="btn btn--accent" aria-current="page" href="tryouts.html">Tryouts
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+    <div class="nav__sheet" hidden>
+      <div class="page">
+        <ul>
+          <li><a href="teams.html">Teams</a></li>
+          <li><a href="coaches.html">Coaches</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a class="btn btn--accent" href="tryouts.html">Register for tryouts</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="page">
+        <div class="hero__grid">
+          <div>
+            <span class="eyebrow reveal">2026–27 Season</span>
+            <h1 class="hero__headline reveal" style="margin-top: var(--space-md); font-size: var(--step-4);">
+              Tryouts open <span class="mark">May 12.</span><br/>Every player, every school, welcome.
+            </h1>
+          </div>
+          <div class="hero__meta">
+            <p class="hero__lede reveal">
+              There's no fee to try out. Bring shin guards, a water bottle, and a ball if you have one.
+              Evaluations are held at the Spotsylvania Courthouse Sports Complex.
+            </p>
+            <div class="hero__actions reveal">
+              <a class="btn btn--primary" href="#register">Register now</a>
+              <a class="btn btn--ghost" href="#what-to-expect">What to expect</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- Tryout schedule -->
+    <section class="section">
+      <div class="page">
+        <div class="split" style="margin-bottom: var(--space-2xl);">
+          <div class="split__label reveal">
+            <span class="eyebrow">Evaluation dates</span>
+            <h2 style="font-size: var(--step-3);">When to show up.</h2>
+          </div>
+          <div class="reveal">
+            <p style="color: var(--text-muted); max-width: 52ch;">
+              Each player's evaluation is two sessions. If you miss your first session, make it
+              up the following week — no problem. Rain dates roll to the next weekend.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal" style="overflow-x: auto;">
+          <table class="tryout-table">
+            <thead>
+              <tr>
+                <th>Age group</th>
+                <th>Session 1</th>
+                <th>Session 2</th>
+                <th>Time</th>
+                <th>Field</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>U8–U9 Coed</strong></td><td>Mon May 12</td><td>Wed May 14</td><td>5:30 – 6:30 PM</td><td>Courthouse 4</td></tr>
+              <tr><td><strong>U10–U11 Boys</strong></td><td>Tue May 13</td><td>Thu May 15</td><td>6:00 – 7:30 PM</td><td>Courthouse 2</td></tr>
+              <tr><td><strong>U10–U11 Girls</strong></td><td>Tue May 13</td><td>Thu May 15</td><td>6:00 – 7:30 PM</td><td>Courthouse 3</td></tr>
+              <tr><td><strong>U12–U13 Boys</strong></td><td>Mon May 19</td><td>Wed May 21</td><td>6:30 – 8:00 PM</td><td>Courthouse 1</td></tr>
+              <tr><td><strong>U12–U13 Girls</strong></td><td>Mon May 19</td><td>Wed May 21</td><td>6:30 – 8:00 PM</td><td>Courthouse 2</td></tr>
+              <tr><td><strong>U14–U16 Boys</strong></td><td>Tue May 20</td><td>Thu May 22</td><td>6:30 – 8:00 PM</td><td>Courthouse 1</td></tr>
+              <tr><td><strong>U14–U16 Girls</strong></td><td>Tue May 20</td><td>Thu May 22</td><td>6:30 – 8:00 PM</td><td>Courthouse 3</td></tr>
+              <tr><td><strong>U17–U19</strong></td><td>Sat May 24</td><td>Sat May 31</td><td>9:00 – 11:00 AM</td><td>Courthouse 1 &amp; 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="what-to-expect" class="band band--dark section">
+      <div class="page">
+        <div class="stack-md reveal" style="margin-bottom: var(--space-2xl); max-width: 50ch;">
+          <span class="eyebrow">How it works</span>
+          <h2 style="font-size: var(--step-3);">Three evenings, one decision.</h2>
+        </div>
+
+        <div class="steps reveal">
+          <div class="step">
+            <div class="step__num">01</div>
+            <h3>Register online</h3>
+            <p>Takes about four minutes. We'll send a confirmation email with your evaluation dates, a medical release form, and directions to the fields.</p>
+          </div>
+          <div class="step">
+            <div class="step__num">02</div>
+            <h3>Come play</h3>
+            <p>Two 90-minute sessions per age group. Your player will train with current rostered players and be evaluated by two independent coaches. We look for technical ability, decision-making, and attitude.</p>
+          </div>
+          <div class="step">
+            <div class="step__num">03</div>
+            <h3>Get your offer</h3>
+            <p>Roster decisions are emailed within 72 hours of your second session. You'll have one week to accept and submit your first-payment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fees -->
+    <section class="section">
+      <div class="page">
+        <div class="split">
+          <div class="split__label reveal">
+            <span class="eyebrow">Club fees</span>
+            <h2 style="font-size: var(--step-3);">No surprises.</h2>
+          </div>
+          <div class="stack-lg reveal">
+            <p>
+              Club dues cover two practices per week year-round, league registration, referee fees,
+              a complete kit (home, away, training top, shorts, socks), and field maintenance.
+              Tournament fees are billed per event.
+            </p>
+
+            <div style="border: 1px solid var(--rule); padding: var(--space-lg); display: grid; gap: var(--space-md);">
+              <div style="display: flex; justify-content: space-between; gap: var(--space-md);"><span>Juniors (U6–U8)</span><strong>$650 / year</strong></div>
+              <div style="display: flex; justify-content: space-between; gap: var(--space-md); border-top: 1px solid var(--rule); padding-top: var(--space-md);"><span>Academy (U9–U11)</span><strong>$1,250 / year</strong></div>
+              <div style="display: flex; justify-content: space-between; gap: var(--space-md); border-top: 1px solid var(--rule); padding-top: var(--space-md);"><span>Competitive (U12–U15)</span><strong>$1,850 / year</strong></div>
+              <div style="display: flex; justify-content: space-between; gap: var(--space-md); border-top: 1px solid var(--rule); padding-top: var(--space-md);"><span>College Prep (U16–U19)</span><strong>$2,350 / year</strong></div>
+            </div>
+
+            <p style="color: var(--text-muted); font-size: 0.94rem;">
+              <strong style="color: var(--text);">Financial aid is available.</strong> No player has ever been turned
+              away from SSC because of cost. If you need assistance, let us know when you register —
+              the conversation is confidential.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Register form -->
+    <section id="register" class="band band--accent section">
+      <div class="page">
+        <div class="split">
+          <div class="split__label reveal">
+            <span class="eyebrow" style="color: var(--brand-deep);">
+              <span style="background: var(--brand-deep); width: 24px; height: 2px; display: inline-block;"></span>
+              Register
+            </span>
+            <h2 style="font-size: var(--step-3);">Sign your player up.</h2>
+            <p style="margin-top: var(--space-md); max-width: 38ch;">
+              Four minutes. We'll follow up within 48 hours with your evaluation date and a confirmation packet.
+            </p>
+          </div>
+          <form class="form reveal" data-form="contact" novalidate style="background: var(--bg); padding: var(--space-xl); border-radius: var(--radius-md);">
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="player-first">Player first name</label>
+                <input class="form__input" type="text" id="player-first" name="player-first" required />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="player-last">Last name</label>
+                <input class="form__input" type="text" id="player-last" name="player-last" required />
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="player-dob">Date of birth</label>
+                <input class="form__input" type="date" id="player-dob" name="player-dob" required />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="player-age">Age group</label>
+                <select class="form__select" id="player-age" name="player-age" required>
+                  <option value="">Select…</option>
+                  <option>U6–U8 Juniors</option>
+                  <option>U9–U11 Academy</option>
+                  <option>U12–U15 Competitive</option>
+                  <option>U16–U19 College Prep</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="parent-name">Parent / guardian name</label>
+              <input class="form__input" type="text" id="parent-name" name="parent-name" required />
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="parent-email">Email</label>
+                <input class="form__input" type="email" id="parent-email" name="parent-email" required />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="parent-phone">Phone</label>
+                <input class="form__input" type="tel" id="parent-phone" name="parent-phone" required />
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="notes">Anything we should know?</label>
+              <textarea class="form__textarea" id="notes" name="notes" placeholder="Current team, injuries, preferred position — optional"></textarea>
+            </div>
+            <p class="form__note">By submitting, you agree to receive emails about your player's evaluation.</p>
+            <button type="submit" class="btn btn--primary">Send registration</button>
+            <p data-form-status hidden style="color: var(--brand-deep); font-weight: 600;"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="page" style="max-width: 840px;">
+        <div class="stack-md reveal" style="margin-bottom: var(--space-xl);">
+          <span class="eyebrow">Common questions</span>
+          <h2 style="font-size: var(--step-3);">What parents ask.</h2>
+        </div>
+
+        <details class="faq reveal">
+          <summary>Do we have to attend both sessions?</summary>
+          <p>We strongly prefer two sessions so coaches can see your player on different days with different groups. If you can only make one, email us beforehand and we'll work something out — but try for both.</p>
+        </details>
+        <details class="faq reveal">
+          <summary>What if my player is between age groups?</summary>
+          <p>Birthdate determines age group per US Soccer rules, but we can play a strong player up a year at the coach's discretion. Come try out for the bracket that matches your birth year and we'll talk after.</p>
+        </details>
+        <details class="faq reveal">
+          <summary>Is there a tryout fee?</summary>
+          <p>No. There is never a fee to try out at Spotsylvania SC.</p>
+        </details>
+        <details class="faq reveal">
+          <summary>My player has never done travel before. Are they welcome?</summary>
+          <p>Absolutely. Many of our Academy (U9–U11) players are trying out for travel for the first time. We don't expect tryout-day performance — we're looking at trajectory and attitude.</p>
+        </details>
+        <details class="faq reveal">
+          <summary>When will we know if our player made the team?</summary>
+          <p>You'll receive an offer (or a note about alternate options) within 72 hours of your second session. Offers are first-come, first-served within age groups, so please respond within a week.</p>
+        </details>
+        <details class="faq reveal">
+          <summary>What if we can't afford the club dues?</summary>
+          <p>Tell us on the registration form. We have financial aid available for every age group — no player has ever been turned away for cost.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="page">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/logo.png" alt="Spotsylvania Soccer Club crest" class="crest" />
+          <div class="footer__brand-name">Spotsylvania<br/>Soccer Club</div>
+          <p class="footer__motto">Competing with heart in every corner of Virginia since 2024.</p>
+        </div>
+        <div>
+          <h4>Club</h4>
+          <ul class="footer__nav">
+            <li><a href="about.html">About</a></li>
+            <li><a href="teams.html">Teams</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Join</h4>
+          <ul class="footer__nav">
+            <li><a href="tryouts.html">Tryouts</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Parent handbook</a></li>
+            <li><a href="#">Volunteer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer__contact">
+            <a href="tel:5718660596">571-866-0596</a>
+            <a href="mailto:SPVEAGLES@GMAIL.COM">SPVEAGLES@GMAIL.COM</a>
+            <span>Spotsylvania, VA</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year">2024</span> Spotsylvania Soccer Club · All rights reserved</span>
+        <span>Go Eagles</span>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
+</body>
+</html>
