@@ -2,7 +2,7 @@
 
 # Websites
 
-51 websites I built with AI for local businesses, brands and my own projects. One repo, sorted by industry.
+50+ websites I built with AI for local businesses, brands and my own projects. One repo, sorted by industry.
 
 I don't hand code. I direct AI tools (Claude, Claude Code) to design, build and ship each site, then handle the domain, hosting and handoff myself.
 
@@ -22,7 +22,6 @@ I don't hand code. I direct AI tools (Claude, Claude Code) to design, build and 
 | Site | What it is | Live | Code |
 |---|---|---|---|
 | **TutorTime** | Tutoring web app for ACT and SAT prep with booking flow and score focused landing pages. | [view](https://tutortimeact.com/) | [tutortime](software-and-ai/tutortime) |
-| **Helix Research Technologies** | Site for an AI agent agency serving lab and medical supply companies. | [view](https://ronlenserdigital.github.io/helix-website/) | [helix-research-technologies](software-and-ai/helix-research-technologies) |
 | **Onyx Supplements SEO Audit** | Interactive SEO audit report delivered as a web page. | [view](https://ronlenserdigital.github.io/onyxsupps-seo-audit/) | [onyx-seo-audit](software-and-ai/onyx-seo-audit) |
 | **Stormline** | Lead generation landing page for storm damage leads. | [view](https://ronlenserdigital.github.io/chasethestorm/) | [stormline](software-and-ai/stormline) |
 | **Top-Tier Leads Dashboard** | Searchable lead dashboard of HOA and property management companies for a roofing outbound campaign. | [view](https://ronlenserdigital.github.io/getontheroof/) | [top-tier-leads-dashboard](software-and-ai/top-tier-leads-dashboard) |
